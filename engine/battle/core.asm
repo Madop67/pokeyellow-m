@@ -824,40 +824,9 @@ FaintEnemyPokemon:
 	call SaveScreenTilesToBuffer1
 	xor a
 	ld [wBattleResult], a
-	ld b, EXP_ALL
-	call IsItemInBag
-	push af
-	jr z, .giveExpToMonsThatFought ; if no exp all, then jump
-
-; the player has exp all
-; halve the base exp (which determines normal exp)
-; EV gain is no longer based on the enemy's base stats, so those are left alone
-	ld hl, wEnemyMonBaseExp
-	srl [hl]
-
-; give exp (divided evenly) to the mons that actually fought in battle against the enemy mon that has fainted
-; if exp all is in the bag, this will be only be half of the stat exp and normal exp, due to the above loop
-.giveExpToMonsThatFought
-	xor a
+; every party member gains full exp (see GainExperience), so the old
+; Exp.All halving and second distribution pass are gone
 	ld [wBoostExpByExpAll], a
-	callfar GainExperience
-	pop af
-	ret z ; return if no exp all
-
-; the player has exp all
-; now, set the gain exp flag for every party member
-; half of the total stat exp and normal exp will divided evenly amongst every party member
-	ld a, TRUE
-	ld [wBoostExpByExpAll], a
-	ld a, [wPartyCount]
-	ld b, 0
-.gainExpFlagsLoop
-	scf
-	rl b
-	dec a
-	jr nz, .gainExpFlagsLoop
-	ld a, b
-	ld [wPartyGainExpFlags], a
 	jpfar GainExperience
 
 EnemyMonFaintedText:

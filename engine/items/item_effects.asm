@@ -529,7 +529,7 @@ ItemUseBall:
 	cp BATTLE_TYPE_OLD_MAN ; is this the old man battle?
 	jp z, .oldManCaughtMon ; if so, don't give the player the caught Pokémon
 	cp BATTLE_TYPE_PIKACHU
-	jr z, .oldManCaughtMon ; same with Pikachu battle
+	jp z, .oldManCaughtMon ; same with Pikachu battle
 	ld hl, ItemUseBallText05
 	call PrintText
 
@@ -561,6 +561,18 @@ ItemUseBall:
 	predef ShowPokedexData
 
 .skipShowingPokedexData
+; catching a wild Pokémon awards the party experience as if it had fainted
+; (modern exp mechanics); this happens before AddPartyMon so the caught
+; Pokémon doesn't gain exp from its own capture
+	ld a, [wBattleType]
+	cp BATTLE_TYPE_SAFARI
+	jr z, .skipCaptureExp ; no exp in the Safari Zone (no mon is sent out)
+	ld a, [wWhichPokemon]
+	push af ; wWhichPokemon holds the ball's bag slot; GainExperience clobbers it
+	callfar GainExperience
+	pop af
+	ld [wWhichPokemon], a
+.skipCaptureExp
 	ld a, $1
 	ld [wPikachuEmotionModifier], a
 	ld a, $85

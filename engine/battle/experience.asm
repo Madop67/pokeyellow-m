@@ -2,7 +2,9 @@ GainExperience:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
-	call DivideExpDataByNumMonsGainingExp
+; every conscious party member gains full experience, whether or not it
+; participated in the battle (modern exp mechanics); exp is not divided,
+; so wPartyGainExpFlags is ignored here
 	ld hl, wPartyMon1
 	xor a
 	ld [wWhichPokemon], a
@@ -11,16 +13,6 @@ GainExperience:
 	ld a, [hli]
 	or [hl] ; is mon's HP 0?
 	jp z, .nextMon ; if so, go to next mon
-	push hl
-	ld hl, wPartyGainExpFlags
-	ld a, [wWhichPokemon]
-	ld c, a
-	ld b, FLAG_TEST
-	predef FlagActionPredef
-	ld a, c
-	and a ; is mon's gain exp flag set?
-	pop hl
-	jp z, .nextMon ; if mon's gain exp flag not set, go to next mon
 	ld de, (MON_HP_EXP + 1) - (MON_HP + 1)
 	add hl, de
 	ld d, h
@@ -347,40 +339,6 @@ GainExperience:
 	ld [hl], a
 	pop bc
 	predef_jump FlagActionPredef ; set the fought current enemy flag for the mon that is currently out
-
-; divide enemy base stats, catch rate, and base exp by the number of mons gaining exp
-DivideExpDataByNumMonsGainingExp:
-	ld a, [wPartyGainExpFlags]
-	ld b, a
-	xor a
-	ld c, $8
-	ld d, $0
-.countSetBitsLoop ; loop to count set bits in wPartyGainExpFlags
-	xor a
-	srl b
-	adc d
-	ld d, a
-	dec c
-	jr nz, .countSetBitsLoop
-	cp $2
-	ret c ; return if only one mon is gaining exp
-	ld [wTempByteValue], a ; store number of mons gaining exp
-	ld hl, wEnemyMonBaseStats
-	ld c, wEnemyMonBaseExp + 1 - wEnemyMonBaseStats
-.divideLoop
-	xor a
-	ldh [hDividend], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld a, [wTempByteValue]
-	ldh [hDivisor], a
-	ld b, $2
-	call Divide ; divide value by number of mons gaining exp
-	ldh a, [hQuotient + 3]
-	ld [hli], a
-	dec c
-	jr nz, .divideLoop
-	ret
 
 ; multiplies exp by 1.5
 BoostExp:
