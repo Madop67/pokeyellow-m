@@ -260,46 +260,57 @@ PrintStatsBox:
 	hlcoord 0, 8
 	lb bc, 8, 8
 	call TextBoxBorder
-	hlcoord 1, 9
-	ld bc, SCREEN_WIDTH + 5 ; one row down and 5 columns right
+	hlcoord 1, 10
+	ld bc, 5 ; distance from each stat label to its value
 	jr .PrintStats
 .LevelUpStatsBox
 	hlcoord 9, 2
 	lb bc, 8, 9
 	call TextBoxBorder
-	hlcoord 11, 3
-	ld bc, SCREEN_WIDTH + 4 ; one row down and 4 columns right
+	hlcoord 11, 4
+	ld bc, 4 ; distance from each stat label to its value
 .PrintStats
+; hl = coord of the first stat label; bc = distance from a label to its value
 	push bc
 	push hl
+	ldh a, [hUILayoutFlags]
+	set BIT_SINGLE_SPACED_LINES, a
+	ldh [hUILayoutFlags], a
 	ld de, .StatsText
 	call PlaceString
+	ldh a, [hUILayoutFlags]
+	res BIT_SINGLE_SPACED_LINES, a
+	ldh [hUILayoutFlags], a
 	pop hl
 	pop bc
-	add hl, bc
+	add hl, bc ; hl = coord of the first stat value
 	ld de, wLoadedMonAttack
-	lb bc, 2, 3
 	call .PrintStat
 	ld de, wLoadedMonDefense
 	call .PrintStat
 	ld de, wLoadedMonSpeed
 	call .PrintStat
 	ld de, wLoadedMonSpecial
+	call .PrintStat
+	ld de, wLoadedMonSpDefense
+	lb bc, 2, 3
 	jp PrintNumber
 
 .PrintStat:
 	push hl
+	lb bc, 2, 3
 	call PrintNumber
 	pop hl
-	ld de, SCREEN_WIDTH * 2
+	ld de, SCREEN_WIDTH
 	add hl, de
 	ret
 
 .StatsText:
-	db   "ATTACK"
-	next "DEFENSE"
-	next "SPEED"
-	next "SPCL.ATK@"
+	db   "ATK"
+	next "DEF"
+	next "SPD"
+	next "SP.A"
+	next "SP.D@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
