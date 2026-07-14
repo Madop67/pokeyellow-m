@@ -107,13 +107,14 @@ AIMoveChoiceModificationFunctionPointers:
 	dw AIMoveChoiceModification1
 	dw AIMoveChoiceModification2
 	dw AIMoveChoiceModification3
-	dw AIMoveChoiceModification4 ; unused, does nothing
+	dw AIMoveChoiceModification4 ; boss: expected-damage move selection (smart_ai.asm)
+	dw AIMoveChoiceModification5 ; boss: early sleep/setup planning (smart_ai.asm)
 
-; discourages moves that cause no damage but only a status ailment if player's mon already has one
+; effectively forbids pure status moves that cannot work:
+; the player is already statused/confused/seeded, or is immune to the effect
+; (paralysis vs Electric types or Electric moves vs Ground, poison vs
+; Poison/Steel types, Leech Seed vs Grass types)
 AIMoveChoiceModification1:
-	ld a, [wBattleMonStatus]
-	and a
-	ret z ; return if no status ailment on player's mon
 	ld hl, wBuffer - 1 ; temp move selection array (-1 byte offset)
 	ld de, wEnemyMonMoves ; enemy moves
 	ld b, NUM_MOVES + 1
@@ -130,6 +131,10 @@ AIMoveChoiceModification1:
 	and a
 	jr nz, .nextMove
 	ld a, [wEnemyMoveEffect]
+	cp LEECH_SEED_EFFECT
+	jr z, .leechSeed
+	cp CONFUSION_EFFECT
+	jr z, .confusion
 	push hl
 	push de
 	push bc
@@ -140,10 +145,56 @@ AIMoveChoiceModification1:
 	pop de
 	pop hl
 	jr nc, .nextMove
-	ld a, [hl]
-	add $5 ; heavily discourage move
-	ld [hl], a
+; the move inflicts a major status ailment
+	ld a, [wBattleMonStatus]
+	and a
+	jr nz, .discourage ; player's mon already has a status ailment
+	ld a, [wEnemyMoveEffect]
+	cp POISON_EFFECT
+	jr z, .poison
+	cp PARALYZE_EFFECT
+	jr z, .paralyze
 	jr .nextMove
+.poison
+; Poison- and Steel-type targets can't be poisoned
+	ld a, POISON
+	call AICheckPlayerType
+	jr z, .discourage
+	ld a, STEEL
+	call AICheckPlayerType
+	jr z, .discourage
+	jr .nextMove
+.paralyze
+; Electric-type targets can't be paralyzed,
+; and Ground-type targets are immune to Electric-type paralysis moves
+	ld a, ELECTRIC
+	call AICheckPlayerType
+	jr z, .discourage
+	ld a, [wEnemyMoveType]
+	cp ELECTRIC
+	jr nz, .nextMove
+	ld a, GROUND
+	call AICheckPlayerType
+	jr z, .discourage
+	jr .nextMove
+.leechSeed
+; Grass-type targets are immune, and an already-seeded target can't be re-seeded
+	ld a, GRASS
+	call AICheckPlayerType
+	jr z, .discourage
+	ld a, [wPlayerBattleStatus2]
+	bit SEEDED, a
+	jr nz, .discourage
+	jr .nextMove
+.confusion
+	ld a, [wPlayerBattleStatus1]
+	bit CONFUSED, a
+	jr z, .nextMove
+.discourage
+	ld a, [hl]
+	add $14 ; effectively forbid this move while alternatives exist
+	ld [hl], a
+	jp .nextMove
 
 StatusAilmentMoveEffects:
 	db EFFECT_01 ; unused sleep effect
@@ -185,9 +236,9 @@ AIMoveChoiceModification2:
 	dec [hl] ; slightly encourage this move
 	jr .nextMove
 
-; encourages moves that are effective against the player's mon (even if non-damaging).
-; discourage damaging moves that are ineffective or not very effective against the player's mon,
-; unless there's no damaging move that deals at least neutral damage
+; encourages damaging moves that are super effective against the player's mon
+; (more so for double weaknesses), forbids moves the player is immune to, and
+; discourages not-very-effective moves unless no better move is known
 AIMoveChoiceModification3:
 	ld hl, wBuffer - 1 ; temp move selection array (-1 byte offset)
 	ld de, wEnemyMonMoves ; enemy moves
@@ -201,6 +252,9 @@ AIMoveChoiceModification3:
 	ret z ; no more moves in move set
 	inc de
 	call ReadMove
+	ld a, [wEnemyMovePower]
+	and a
+	jr z, .nextMove ; only damaging moves are scored by type matchup
 	push hl
 	push bc
 	push de
@@ -209,12 +263,25 @@ AIMoveChoiceModification3:
 	pop bc
 	pop hl
 	ld a, [wTypeEffectiveness]
-	cp $10
-	jr z, .nextMove
+	cp EFFECTIVE
+	jr z, .nextMove ; neutral
 	jr c, .notEffectiveMove
-	dec [hl] ; slightly encourage this move
+; super effective
+	dec [hl] ; encourage this move
+	cp SUPER_EFFECTIVE * 2
+	jr nz, .nextMove
+	dec [hl] ; encourage double weaknesses even more
 	jr .nextMove
 .notEffectiveMove ; discourages non-effective moves if better moves are available
+	ld a, [wTypeEffectiveness]
+	and a
+	jr nz, .checkForBetterMove
+; the player is immune: effectively forbid this move
+	ld a, [hl]
+	add $14
+	ld [hl], a
+	jr .nextMove
+.checkForBetterMove
 	push hl
 	push de
 	push bc
@@ -255,8 +322,6 @@ AIMoveChoiceModification3:
 	jr z, .nextMove
 	inc [hl] ; slightly discourage this move
 	jr .nextMove
-AIMoveChoiceModification4:
-	ret
 
 ReadMove:
 	push hl
@@ -272,6 +337,8 @@ ReadMove:
 	pop de
 	pop hl
 	ret
+
+INCLUDE "engine/battle/smart_ai.asm"
 
 INCLUDE "data/trainers/move_choices.asm"
 
@@ -340,118 +407,98 @@ BlackbeltAI:
 	ret nc
 	jp AIUseXAttack
 
+; boss trainers share CommonBossAI (smart_ai.asm) with a per-class
+; heal-item tier in b and an optional opening X item routine in hl
+
+Rival1AI:
+	ld b, 0 ; Super Potion
+	ld hl, 0 ; no X item
+	jp CommonBossAI
+
 GiovanniAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseGuardSpec
+	ld b, 1 ; Hyper Potion
+	ld hl, AIUseGuardSpec
+	jp CommonBossAI
 
 CooltrainerMAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseXAttack
+	ld b, 0 ; Super Potion
+	ld hl, AIUseXAttack
+	jp CommonBossAI
 
 CooltrainerFAI:
-	; The intended 25% chance to consider switching will not apply.
-	; Uncomment the line below to fix this.
-	cp 25 percent + 1
-	; ret nc
-	ld a, 10
-	call AICheckIfHPBelowFraction
-	jp c, AIUseHyperPotion
-	ld a, 5
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AISwitchIfEnoughMons
+	ld b, 0 ; Super Potion
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 BrockAI:
-; if his active monster has a status condition, use a full heal
-	ld a, [wEnemyMonStatus]
-	and a
-	ret z
-	jp AIUseFullHeal
+	ld b, 0 ; Super Potion
+	ld hl, AIUseXDefend
+	jp CommonBossAI
 
 MistyAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseXDefend
+	ld b, 0 ; Super Potion
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 LtSurgeAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseXSpeed
+	ld b, 0 ; Super Potion
+	ld hl, AIUseXSpeed
+	jp CommonBossAI
 
 ErikaAI:
-	cp 50 percent + 1
-	ret nc
-	ld a, 10
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUseSuperPotion
+	ld b, 0 ; Super Potion
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 KogaAI:
-	cp 13 percent - 1
-	ret nc
-	jp AIUseXAttack
+	ld b, 1 ; Hyper Potion
+	ld hl, AIUseXAccuracy
+	jp CommonBossAI
 
 BlaineAI:
-	cp 25 percent + 1
-	ret nc
-	ld a, 10
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUseSuperPotion
+	ld b, 1 ; Hyper Potion
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 SabrinaAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseXDefend
+	ld b, 1 ; Hyper Potion
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
+
+ProfOakAI:
+	ld b, 2 ; Full Restore
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 Rival2AI:
-	cp 13 percent - 1
-	ret nc
-	ld a, 5
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUsePotion
+	ld b, 1 ; Hyper Potion
+	ld hl, 0 ; no X item
+	jp CommonBossAI
 
 Rival3AI:
-	cp 13 percent - 1
-	ret nc
-	ld a, 5
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUseFullRestore
+	ld b, 2 ; Full Restore
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 LoreleiAI:
-	cp 50 percent + 1
-	ret nc
-	ld a, 5
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUseSuperPotion
+	ld b, 2 ; Full Restore
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 BrunoAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseXDefend
+	ld b, 2 ; Full Restore
+	ld hl, AIUseXDefend
+	jp CommonBossAI
 
 AgathaAI:
-	cp 8 percent
-	jp c, AISwitchIfEnoughMons
-	cp 50 percent + 1
-	ret nc
-	ld a, 4
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUseSuperPotion
+	ld b, 2 ; Full Restore
+	ld hl, AIUseDireHit
+	jp CommonBossAI
 
 LanceAI:
-	cp 50 percent + 1
-	ret nc
-	ld a, 5
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AIUseHyperPotion
+	ld b, 2 ; Full Restore
+	ld hl, AIUseXSpecial
+	jp CommonBossAI
 
 GenericAI:
 	and a ; clear carry
@@ -644,7 +691,7 @@ AICureStatus:
 	res BADLY_POISONED, [hl]
 	ret
 
-AIUseXAccuracy: ; unreferenced
+AIUseXAccuracy:
 	call AIPlayRestoringSFX
 	ld hl, wEnemyBattleStatus2
 	set USING_X_ACCURACY, [hl]
@@ -658,7 +705,7 @@ AIUseGuardSpec:
 	ld a, GUARD_SPEC
 	jp AIPrintItemUse
 
-AIUseDireHit: ; unreferenced
+AIUseDireHit:
 	call AIPlayRestoringSFX
 	ld hl, wEnemyBattleStatus2
 	set GETTING_PUMPED, [hl]

@@ -1305,6 +1305,7 @@ EnemySendOutFirstMon:
 	ld hl, wPlayerUsedMove
 	ld [hli], a
 	ld [hl], a
+	ld [wAISwitchedOut], a ; new deployment: allow one voluntary AI switch again
 	dec a
 	ld [wAICount], a
 	ld hl, wPlayerBattleStatus1
@@ -1322,6 +1323,32 @@ EnemySendOutFirstMon:
 	ld [wWhichPokemon], a
 	jr .next3
 .next
+; if the trainer AI planned a specific switch-in, honor it (if still valid).
+; the plan is always consumed here so a stale target can never linger.
+	ld a, [wAISwitchTarget]
+	ld b, a
+	ld a, $ff
+	ld [wAISwitchTarget], a
+	ld a, b
+	inc a
+	jr z, .noPlannedTarget ; $ff = no plan
+	ld a, [wEnemyMonPartyPos]
+	cp b
+	jr z, .noPlannedTarget ; plan points at the active mon: ignore
+	ld hl, wEnemyMon1
+	ld a, b
+	ld [wWhichPokemon], a
+	push bc
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	pop bc
+	inc hl
+	ld a, [hli]
+	ld c, a
+	ld a, [hl]
+	or c
+	jr nz, .next3 ; planned switch-in is alive: use it
+.noPlannedTarget
 	ld b, $ff
 .next2
 	inc b
@@ -5342,10 +5369,9 @@ AdjustDamageForMoveType:
 	ret
 
 ; function to tell how effective the type of an enemy attack is on the player's current pokemon
-; this doesn't take into account the effects that dual types can have
+; unlike the vanilla version, this compounds dual-type matchups
 ; (e.g. 4x weakness / resistance, weaknesses and resistances canceling)
 ; the result is stored in [wTypeEffectiveness]
-; as far is can tell, this is only used once in some AI code to help decide which move to use
 AIGetTypeEffectiveness:
 	ld a, [wEnemyMoveType]
 	ld d, a                    ; d = type of enemy move
@@ -5353,42 +5379,213 @@ AIGetTypeEffectiveness:
 	ld b, [hl]                 ; b = type 1 of player's pokemon
 	inc hl
 	ld c, [hl]                 ; c = type 2 of player's pokemon
-	; initialize to neutral effectiveness
-	ld a, $10 ; bug: should be EFFECTIVE (10)
-	ld [wTypeEffectiveness], a
+	; fallthrough
+; returns the compounded effectiveness of attacking type d against a defender
+; with types b and c, as a multiplier x10 (0, 2, 5, 10, 20, 40),
+; in a and [wTypeEffectiveness]. preserves b, c, d.
+GetTypesEffectiveness:
+	ld e, EFFECTIVE            ; e = accumulated effectiveness x10
 	ld hl, TypeEffects
 .loop
 	ld a, [hli]
 	cp $ff
-	ret z
+	jr z, .done
 	cp d                      ; match the type of the move
 	jr nz, .nextTypePair1
 	ld a, [hli]
 	cp b                      ; match with type 1 of pokemon
-	jr z, .done
+	jr z, .matchingPairFound
 	cp c                      ; or match with type 2 of pokemon
-	jr z, .done
+	jr z, .matchingPairFound  ; (for mono-type mons b == c, but each table
+	                          ; pair still only matches once, via b)
 	jr .nextTypePair2
-.nextTypePair1
-	inc hl
+.matchingPairFound
+; e = e * multiplier / 10
+	ld a, [hl]
+	push hl
+	push de
+	push bc
+	ldh [hMultiplier], a
+	xor a
+	ldh [hMultiplicand], a
+	ldh [hMultiplicand + 1], a
+	ld a, e
+	ldh [hMultiplicand + 2], a
+	call Multiply
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 3]
+	pop bc
+	pop de
+	pop hl
+	ld e, a
 .nextTypePair2
 	inc hl
 	jr .loop
+.nextTypePair1
+	inc hl
+	inc hl
+	jr .loop
 .done
-	; 40% chance for Lorelei's Dewgong to ignore type effectiveness?
-	ld a, [wTrainerClass]
-	cp LORELEI
-	jr nz, .ok
-	ld a, [wEnemyMonSpecies]
-	cp DEWGONG
-	jr nz, .ok
-	call BattleRandom
-	cp $66 ; 40 percent
-	ret c
-.ok
-	ld a, [hl]
-	ld [wTypeEffectiveness], a ; store damage multiplier
+	ld a, e
+	ld [wTypeEffectiveness], a ; store compounded damage multiplier
 	ret
+
+; returns in [wTypeEffectiveness] the best compounded effectiveness (x10) among
+; the player's STAB types against the enemy's active pokemon.
+; used by the trainer AI to detect bad matchups. no register args (callfar-safe).
+AIGetPlayerStabVsEnemy:
+	ld hl, wEnemyMonType
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	ld a, [wBattleMonType1]
+	ld d, a
+	call GetTypesEffectiveness
+	push af
+	ld a, [wBattleMonType2]
+	ld d, a
+	call GetTypesEffectiveness ; preserves b, c
+	pop de
+	cp d ; d = first result
+	jr nc, .secondIsBest
+	ld a, d
+.secondIsBest
+	ld [wTypeEffectiveness], a
+	ret
+
+; estimate the damage of the enemy move currently loaded in wEnemyMove*
+; against the player's active pokemon, using the real damage pipeline
+; (category-aware stats, Reflect/Light Screen, STAB, compounded type chart)
+; but without crits or the random factor.
+; returns the estimate in de (0 if the move does no damage or is ineffective).
+; used by AI layer 4; clobbers wDamage and friends (safe during move selection).
+AICalcEnemyMoveDamage:
+	ldh a, [hWhoseTurn]
+	push af
+	ld a, $1
+	ldh [hWhoseTurn], a
+	xor a
+	ld [wCriticalHitOrOHKO], a
+	ld [wMoveMissed], a
+	call GetDamageVarsForEnemyAttack
+	jr z, .zeroDamage ; move power is zero
+	call CalculateDamage
+	call AdjustDamageForMoveType
+	ld a, [wMoveMissed]
+	and a
+	jr nz, .zeroDamage ; type immunity zeroed the damage
+	ld hl, wDamage
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	jr .done
+.zeroDamage
+	ld de, 0
+.done
+	xor a
+	ld [wMoveMissed], a
+	pop af
+	ldh [hWhoseTurn], a
+	ret
+
+; choose the best switch-in for the enemy trainer based on type matchups and
+; write its party index to [wAISwitchTarget] ($ff if no candidate improves on
+; a bad matchup). no register args (callfar-safe).
+; candidates are scored: +2 if one of their STAB types is super effective
+; against the player, +1 if neither player STAB type is effective against them.
+AIPickSwitchTarget:
+	ld a, $ff
+	ld [wAISwitchTarget], a
+	xor a
+	ld [wBuffer + 20], a ; current candidate index
+	ld [wBuffer + 21], a ; best score so far
+.candidateLoop
+	ld a, [wEnemyPartyCount]
+	ld b, a
+	ld a, [wBuffer + 20]
+	cp b
+	ret nc ; done: scanned the whole party
+	ld b, a
+	ld a, [wEnemyMonPartyPos]
+	cp b
+	jp z, .nextCandidate ; skip the active mon
+	ld hl, wEnemyMon1
+	ld a, b
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	push hl
+	ld bc, MON_HP
+	add hl, bc
+	ld a, [hli]
+	or [hl] ; is the candidate fainted?
+	pop hl
+	jp z, .nextCandidate
+	ld bc, MON_TYPE1
+	add hl, bc
+	ld a, [hli]
+	ld [wBuffer + 22], a ; candidate type 1
+	ld a, [hl]
+	ld [wBuffer + 23], a ; candidate type 2
+	xor a
+	ld [wBuffer + 24], a ; candidate score
+; candidate's STAB vs the player
+	ld hl, wBattleMonType
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	ld a, [wBuffer + 22]
+	ld d, a
+	call GetTypesEffectiveness
+	cp SUPER_EFFECTIVE
+	jr nc, .offenseGood
+	ld a, [wBuffer + 23]
+	ld d, a
+	call GetTypesEffectiveness ; preserves b, c
+	cp SUPER_EFFECTIVE
+	jr c, .checkDefense
+.offenseGood
+	ld a, [wBuffer + 24]
+	add 2
+	ld [wBuffer + 24], a
+.checkDefense
+; player's STAB vs the candidate
+	ld a, [wBuffer + 22]
+	ld b, a
+	ld a, [wBuffer + 23]
+	ld c, a
+	ld a, [wBattleMonType1]
+	ld d, a
+	call GetTypesEffectiveness
+	cp EFFECTIVE + 1
+	jr nc, .doneScoring ; player type 1 hits the candidate hard: no bonus
+	ld a, [wBattleMonType2]
+	ld d, a
+	call GetTypesEffectiveness
+	cp EFFECTIVE + 1
+	jr nc, .doneScoring
+	ld a, [wBuffer + 24]
+	inc a
+	ld [wBuffer + 24], a
+.doneScoring
+	ld a, [wBuffer + 21]
+	ld b, a
+	ld a, [wBuffer + 24]
+	cp b
+	jr z, .nextCandidate ; strictly better only
+	jr c, .nextCandidate
+	and a
+	jr z, .nextCandidate ; a candidate must score at least 1 to be worth it
+	ld [wBuffer + 21], a
+	ld a, [wBuffer + 20]
+	ld [wAISwitchTarget], a
+.nextCandidate
+	ld a, [wBuffer + 20]
+	inc a
+	ld [wBuffer + 20], a
+	jp .candidateLoop
 
 INCLUDE "data/types/type_matchups.asm"
 

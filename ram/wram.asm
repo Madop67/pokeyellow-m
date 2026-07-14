@@ -583,7 +583,10 @@ wForceEvolution:: db
 ; if [wAILayer2Encouragement] != 1, the second AI layer is not applied
 wAILayer2Encouragement:: db
 
-	ds 1
+; per-deployment trainer AI flags, cleared on enemy send-out:
+; bit 0: already used the voluntary switch (prevents switch ping-ponging)
+; bit 1: already used the opening X item
+wAISwitchedOut:: db
 
 ; current HP of player and enemy substitutes
 wPlayerSubstituteHP:: db
@@ -605,7 +608,11 @@ wLinkBattleRandomNumberListIndex:: db
 ; number of times remaining that AI action can occur
 wAICount:: db
 
-	ds 2
+; party index the trainer AI wants EnemySendOut to pick next; $ff = no plan.
+; consumed (reset to $ff) by EnemySendOutFirstMon whether or not it is used
+wAISwitchTarget:: db
+; bit 0: set by AI layer 4 when a guaranteed-KO move exists (read by layer 5)
+wAIScratchFlags:: db
 
 wEnemyMoveListIndex:: db
 

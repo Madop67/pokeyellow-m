@@ -25,8 +25,12 @@ InitBattleVariables:
 	ld [hli], a
 	dec b
 	jr nz, .loop
+	ld [wAISwitchedOut], a
+	ld [wAIScratchFlags], a
 	inc a ; POUND
 	ld [wTestBattlePlayerSelectedMove], a
+	ld a, $ff
+	ld [wAISwitchTarget], a ; no planned AI switch target
 	ld a, [wCurMap]
 	cp SAFARI_ZONE_EAST
 	jr c, .notSafariBattle
