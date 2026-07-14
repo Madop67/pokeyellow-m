@@ -24,35 +24,87 @@ GainExperience:
 	ld de, (MON_HP_EXP + 1) - (MON_HP + 1)
 	add hl, de
 	ld d, h
-	ld e, l
-	ld hl, wEnemyMonBaseStats
-	ld c, NUM_STATS
-.gainStatExpLoop
+	ld e, l ; de = ptr to the mon's HP EVs (low byte of the old stat exp field)
+; sum the mon's current EVs into hMultiplicand (16-bit) for the 510 total cap
+	ld h, d
+	ld l, e
+	xor a
+	ldh [hMultiplicand], a
+	ldh [hMultiplicand + 1], a
+	ld c, NUM_EV_STATS
+.sumEvLoop
 	ld a, [hli]
-	ld b, a ; enemy mon base stat
-	ld a, [de] ; stat exp
-	add b ; add enemy mon base state to stat exp
-	ld [de], a
-	jr nc, .nextBaseStat
-; if there was a carry, increment the upper byte
-	dec de
-	ld a, [de]
+	inc hl
+	ld b, a
+	ldh a, [hMultiplicand + 1]
+	add b
+	ldh [hMultiplicand + 1], a
+	jr nc, .sumEvNoCarry
+	ldh a, [hMultiplicand]
 	inc a
-	jr z, .maxStatExp ; jump if the value overflowed
+	ldh [hMultiplicand], a
+.sumEvNoCarry
+	dec c
+	jr nz, .sumEvLoop
+; look up the defeated species' EV yield
+	push de
+	ld a, [wEnemyMonSpecies]
+	ld [wPokedexNum], a
+	predef IndexToPokedex
+	ld a, [wPokedexNum]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EvYields
+	add hl, bc
+	sla c
+	rl b
+	sla c
+	rl b
+	add hl, bc ; hl = EvYields + (dex number - 1) * NUM_EV_STATS
+	pop de
+	ld c, NUM_EV_STATS
+.gainEvLoop
+	ld a, [hli]
+	ld b, a ; b = this stat's EV yield
+.addEvLoop
+	ld a, b
+	and a
+	jr z, .nextEv
+	dec b
+; enforce the 510 total EV cap
+	ldh a, [hMultiplicand]
+	cp HIGH(MAX_TOTAL_EV)
+	jr c, .totalEvOk
+	ldh a, [hMultiplicand + 1]
+	cp LOW(MAX_TOTAL_EV)
+	jr nc, .nextEv
+.totalEvOk
+; enforce the 252 per-stat EV cap
+	ld a, [de]
+	cp MAX_STAT_EV
+	jr nc, .nextEv
+	inc a
+	ld [de], a
+	ldh a, [hMultiplicand + 1]
+	inc a
+	ldh [hMultiplicand + 1], a
+	jr nz, .addEvLoop
+	ldh a, [hMultiplicand]
+	inc a
+	ldh [hMultiplicand], a
+	jr .addEvLoop
+.nextEv
+; clear the high byte of the old stat exp field; EVs only use the low byte
+	dec de
+	xor a
 	ld [de], a
 	inc de
-	jr .nextBaseStat
-.maxStatExp ; if the upper byte also overflowed, then we have hit the max stat exp
-	dec a ; ld a, $ff; a is 0 from previous check
-	ld [de], a
-	inc de
-	ld [de], a
-.nextBaseStat
 	dec c
 	jr z, .statExpDone
 	inc de
 	inc de
-	jr .gainStatExpLoop
+	jr .gainEvLoop
 .statExpDone
 	xor a
 	ldh [hMultiplicand], a
@@ -380,3 +432,5 @@ GrewLevelText:
 	text_far _GrewLevelText
 	sound_level_up
 	text_end
+
+INCLUDE "data/pokemon/ev_yields.asm"

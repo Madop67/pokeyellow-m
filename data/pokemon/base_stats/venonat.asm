@@ -1,7 +1,7 @@
 	db DEX_VENONAT ; pokedex id
 
-	db  60,  55,  50,  45,  40
-	;   hp  atk  def  spd  spc
+	db  60,  55,  50,  45,  40,  55
+	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, POISON ; type
 	db 190 ; catch rate
@@ -19,4 +19,3 @@
 	     BIDE,         REST,         PSYWAVE,      SUBSTITUTE,   FLASH
 	; end
 
-	db 0 ; padding

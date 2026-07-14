@@ -1,7 +1,7 @@
 	db DEX_ELECTRODE ; pokedex id
 
-	db  60,  50,  70, 140,  80
-	;   hp  atk  def  spd  spc
+	db  60,  50,  70, 140,  80,  80
+	;   hp  atk  def  spd  sat  sdf
 
 	db ELECTRIC, ELECTRIC ; type
 	db 60 ; catch rate
@@ -20,4 +20,3 @@
 	     THUNDER_WAVE, EXPLOSION,    SUBSTITUTE,   FLASH
 	; end
 
-	db 0 ; padding

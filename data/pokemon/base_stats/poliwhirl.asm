@@ -1,7 +1,7 @@
 	db DEX_POLIWHIRL ; pokedex id
 
-	db  65,  65,  65,  90,  50
-	;   hp  atk  def  spd  spc
+	db  65,  65,  65,  90,  50,  50
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 120 ; catch rate
@@ -22,4 +22,3 @@
 	     SURF,         STRENGTH
 	; end
 
-	db 0 ; padding

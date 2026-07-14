@@ -66,30 +66,27 @@ CalcStat::
 	pop hl
 	push hl
 	sla c
+	ld a, c
+	cp STAT_SPDEF * 2
+	jr nz, .notSpDef
+	ld c, STAT_SPECIAL * 2 ; Sp. Def shares the Special EV and DV
+.notSpDef
 	ld a, d
 	and a
-	jr z, .statExpDone  ; consider stat exp?
-	add hl, bc          ; skip to corresponding stat exp value
-.statExpLoop            ; calculates ceil(Sqrt(stat exp)) in b
-	xor a
-	ldh [hMultiplicand], a
-	ldh [hMultiplicand+1], a
-	inc b               ; increment current stat exp bonus
+	jr z, .statExpDone  ; consider EVs?
+	add hl, bc          ; skip to corresponding EV value
+	ld a, [hld]         ; a = EV (low byte of the old stat exp field)
+	ld b, a
+	ld a, [hl]          ; high byte is nonzero only for legacy stat exp values
+	and a
+	jr z, .checkEvCap
+	ld b, MAX_STAT_EV   ; treat oversized legacy stat exp as max EVs
+	jr .statExpDone
+.checkEvCap
 	ld a, b
-	cp $ff
-	jr z, .statExpDone
-	ldh [hMultiplicand+2], a
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, [hld]
-	ld d, a
-	ldh a, [hProduct + 3]
-	sub d
-	ld a, [hli]
-	ld d, a
-	ldh a, [hProduct + 2]
-	sbc d               ; test if (current stat exp bonus)^2 < stat exp
-	jr c, .statExpLoop
+	cp MAX_STAT_EV
+	jr c, .statExpDone
+	ld b, MAX_STAT_EV
 .statExpDone
 	srl c
 	pop hl
@@ -161,11 +158,11 @@ CalcStat::
 	sla e
 	rl d                      ; de = (Base + IV) * 2
 	srl b
-	srl b                     ; b = ceil(Sqrt(stat exp)) / 4
+	srl b                     ; b = EV / 4
 	ld a, b
 	add e
 	jr nc, .noCarry2
-	inc d                     ; de = (Base + IV) * 2 + ceil(Sqrt(stat exp)) / 4
+	inc d                     ; de = (Base + IV) * 2 + EV / 4
 .noCarry2
 	ldh [hMultiplicand+2], a
 	ld a, d

@@ -830,16 +830,10 @@ FaintEnemyPokemon:
 	jr z, .giveExpToMonsThatFought ; if no exp all, then jump
 
 ; the player has exp all
-; first, we halve the values that determine exp gain
-; the enemy mon base stats are added to stat exp, so they are halved
-; the base exp (which determines normal exp) is also halved
-	ld hl, wEnemyMonBaseStats
-	ld b, NUM_STATS + 2
-.halveExpDataLoop
+; halve the base exp (which determines normal exp)
+; EV gain is no longer based on the enemy's base stats, so those are left alone
+	ld hl, wEnemyMonBaseExp
 	srl [hl]
-	inc hl
-	dec b
-	jr nz, .halveExpDataLoop
 
 ; give exp (divided evenly) to the mons that actually fought in battle against the enemy mon that has fainted
 ; if exp all is in the bag, this will be only be half of the stat exp and normal exp, due to the above loop
@@ -4197,6 +4191,22 @@ IgnoredOrdersText:
 	text_far _IgnoredOrdersText
 	text_end
 
+INCLUDE "data/moves/categories.asm"
+
+; returns the damage category (CAT_* constant) of move a in a
+GetMoveCategory:
+	push hl
+	push bc
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, MoveCategories
+	add hl, bc
+	ld a, [hl]
+	pop bc
+	pop hl
+	ret
+
 ; sets b, c, d, and e for the CalculateDamage routine in the case of an attack by the player mon
 GetDamageVarsForPlayerAttack:
 	xor a
@@ -4204,13 +4214,14 @@ GetDamageVarsForPlayerAttack:
 	ld [hli], a
 	ld [hl], a
 	ld hl, wPlayerMovePower
-	ld a, [hli]
+	ld a, [hl]
 	and a
 	ld d, a ; d = move power
 	ret z ; return if move power is zero
-	ld a, [hl] ; a = [wPlayerMoveType]
-	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	ld a, [wPlayerMoveNum]
+	call GetMoveCategory
+	cp CAT_SPECIAL
+	jr z, .specialAttack
 ; physical attack
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
@@ -4242,25 +4253,25 @@ GetDamageVarsForPlayerAttack:
 	pop bc
 	jr .scaleStats
 .specialAttack
-	ld hl, wEnemyMonSpecial
+	ld hl, wEnemyMonSpDefense
 	ld a, [hli]
 	ld b, a
-	ld c, [hl] ; bc = enemy special
+	ld c, [hl] ; bc = enemy special defense
 	ld a, [wEnemyBattleStatus3]
 	bit HAS_LIGHT_SCREEN_UP, a ; check for Light Screen
 	jr z, .specialAttackCritCheck
-; if the enemy has used Light Screen, double the enemy's special
+; if the enemy has used Light Screen, double the enemy's special defense
 	sla c
 	rl b
 ; reflect and light screen boosts do not cap the stat at MAX_STAT_VALUE, so weird things will happen during stats scaling
-; if a Pokemon with 512 or more Defense has used Reflect, or if a Pokemon with 512 or more Special has used Light Screen
+; if a Pokemon with 512 or more Defense has used Reflect, or if a Pokemon with 512 or more Sp. Def has used Light Screen
 .specialAttackCritCheck
 	ld hl, wBattleMonSpecial
 	ld a, [wCriticalHitOrOHKO]
 	and a ; check for critical hit
 	jr z, .scaleStats
-; in the case of a critical hit, reset the player's and enemy's specials to their base values
-	ld c, STAT_SPECIAL
+; in the case of a critical hit, reset the player's Sp. Atk and enemy's Sp. Def to their base values
+	ld c, STAT_SPDEF
 	call GetEnemyMonStat
 	ldh a, [hProduct + 2]
 	ld b, a
@@ -4301,11 +4312,6 @@ GetDamageVarsForPlayerAttack:
 	        ; (c already contains enemy's defensive stat (possibly scaled))
 	ld a, [wBattleMonLevel]
 	ld e, a ; e = level
-	ld a, [wCriticalHitOrOHKO]
-	and a ; check for critical hit
-	jr z, .done
-	sla e ; double level if it was a critical hit
-.done
 	ld a, 1
 	and a
 	ret
@@ -4317,13 +4323,14 @@ GetDamageVarsForEnemyAttack:
 	ld [hli], a
 	ld [hl], a
 	ld hl, wEnemyMovePower
-	ld a, [hli]
+	ld a, [hl]
 	ld d, a ; d = move power
 	and a
 	ret z ; return if move power is zero
-	ld a, [hl] ; a = [wEnemyMoveType]
-	cp SPECIAL ; types >= SPECIAL are all special
-	jr nc, .specialAttack
+	ld a, [wEnemyMoveNum]
+	call GetMoveCategory
+	cp CAT_SPECIAL
+	jr z, .specialAttack
 ; physical attack
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -4355,25 +4362,25 @@ GetDamageVarsForEnemyAttack:
 	pop bc
 	jr .scaleStats
 .specialAttack
-	ld hl, wBattleMonSpecial
+	ld hl, wBattleMonSpDefense
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
 	ld a, [wPlayerBattleStatus3]
 	bit HAS_LIGHT_SCREEN_UP, a ; check for Light Screen
 	jr z, .specialAttackCritCheck
-; if the player has used Light Screen, double the player's special
+; if the player has used Light Screen, double the player's special defense
 	sla c
 	rl b
 ; reflect and light screen boosts do not cap the stat at MAX_STAT_VALUE, so weird things will happen during stats scaling
-; if a Pokemon with 512 or more Defense has used Reflect, or if a Pokemon with 512 or more Special has used Light Screen
+; if a Pokemon with 512 or more Defense has used Reflect, or if a Pokemon with 512 or more Sp. Def has used Light Screen
 .specialAttackCritCheck
 	ld hl, wEnemyMonSpecial
 	ld a, [wCriticalHitOrOHKO]
 	and a ; check for critical hit
 	jr z, .scaleStats
-; in the case of a critical hit, reset the player's and enemy's specials to their base values
-	ld hl, wPartyMon1Special
+; in the case of a critical hit, reset the player's Sp. Def and enemy's Sp. Atk to their base values
+	ld hl, wPartyMon1SpDefense
 	ld a, [wPlayerMonNumber]
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
@@ -4414,11 +4421,6 @@ GetDamageVarsForEnemyAttack:
 	        ; (c already contains player's defensive stat (possibly scaled))
 	ld a, [wEnemyMonLevel]
 	ld e, a
-	ld a, [wCriticalHitOrOHKO]
-	and a ; check for critical hit
-	jr z, .done
-	sla e ; double level if it was a critical hit
-.done
 	ld a, $1
 	and a
 	and a
@@ -4630,6 +4632,37 @@ CalculateDamage:
 	inc [hl]
 .dont_floor
 
+; A critical hit multiplies damage by 1.5 (modern behavior), capped at 999.
+	ld a, [wCriticalHitOrOHKO]
+	dec a ; is this a critical hit?
+	jr nz, .noCritBoost
+	ld hl, wDamage
+	ld a, [hli]
+	ld b, a
+	ld c, [hl] ; bc = damage
+	srl b
+	rr c       ; bc = damage / 2
+	ld a, [hl]
+	add c
+	ld [hld], a
+	ld a, [hl]
+	adc b
+	ld [hl], a ; damage += damage / 2
+	jr c, .critCap
+	cp HIGH(MAX_NEUTRAL_DAMAGE)
+	jr c, .noCritBoost
+	jr nz, .critCap
+	inc hl
+	ld a, [hld]
+	cp LOW(MAX_NEUTRAL_DAMAGE) + 1
+	jr c, .noCritBoost
+.critCap
+	ld a, HIGH(MAX_NEUTRAL_DAMAGE)
+	ld [hli], a
+	ld a, LOW(MAX_NEUTRAL_DAMAGE)
+	ld [hld], a
+.noCritBoost
+
 ; Returns nz and nc.
 	ld a, 1
 	and a
@@ -4644,73 +4677,59 @@ JumpToOHKOMoveEffect:
 INCLUDE "data/battle/unused_critical_hit_moves.asm"
 
 ; determines if attack is a critical hit
-; Azure Heights claims "the fastest pokémon (who are, not coincidentally,
-; among the most popular) tend to CH about 20 to 25% of the time."
+; uses the modern staged system: base 1/24, +1 stage for high crit-ratio
+; moves, +2 stages for Focus Energy; stage 3 or higher always crits
 CriticalHitTest:
 	xor a
 	ld [wCriticalHitOrOHKO], a
 	ldh a, [hWhoseTurn]
 	and a
-	ld a, [wEnemyMonSpecies]
-	jr nz, .handleEnemy
-	ld a, [wBattleMonSpecies]
-.handleEnemy
-	ld [wCurSpecies], a
-	call GetMonHeader
-	ld a, [wMonHBaseSpeed]
-	ld b, a
-	srl b                        ; (effective (base speed/2))
-	ldh a, [hWhoseTurn]
-	and a
 	ld hl, wPlayerMovePower
 	ld de, wPlayerBattleStatus2
-	jr z, .calcCriticalHitProbability
+	jr z, .getMovePower
 	ld hl, wEnemyMovePower
 	ld de, wEnemyBattleStatus2
-.calcCriticalHitProbability
+.getMovePower
 	ld a, [hld]                  ; read base power from RAM
 	and a
 	ret z                        ; do nothing if zero
 	dec hl
 	ld c, [hl]                   ; read move id
+	ld b, 0                      ; b = critical hit stage
 	ld a, [de]
 	bit GETTING_PUMPED, a        ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
-	                             ; resulting in 1/4 the usual crit chance
-	sla b                        ; (effective (base speed/2)*2)
-	jr nc, .noFocusEnergyUsed
-	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
-.noFocusEnergyUsed
+	jr z, .noFocusEnergy
+	ld b, 2                     ; Focus Energy adds 2 stages
+.noFocusEnergy
 	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
 	ld a, [hli]                  ; read move from move table
 	cp c                         ; does it match the move about to be used?
-	jr z, .HighCritical          ; if so, the move about to be used is a high critical hit ratio move
+	jr z, .highCritical          ; if so, the move gets an extra stage
 	inc a                        ; move on to the next move, FF terminates loop
 	jr nz, .Loop                 ; check the next move in HighCriticalMoves
-	srl b                        ; /2 for regular move (effective (base speed / 2))
-	jr .SkipHighCritical         ; continue as a normal move
-.HighCritical
-	sla b                        ; *2 for high critical hit moves
-	jr nc, .noCarry
-	ld b, $ff                    ; cap at 255/256
-.noCarry
-	sla b                        ; *4 for high critical move (effective (base speed/2)*8))
-	jr nc, .SkipHighCritical
-	ld b, $ff
-.SkipHighCritical
-	call BattleRandom            ; generates a random value, in "a"
-	rlc a
-	rlc a
-	rlc a
-	cp b                         ; check a against calculated crit rate
+	jr .gotStage
+.highCritical
+	inc b
+.gotStage
+	ld a, b
+	cp 3
+	jr nc, .guaranteedCrit       ; stage 3+ always crits
+	ld c, b
+	ld b, 0
+	ld hl, .critChances
+	add hl, bc
+	ld b, [hl]
+	call BattleRandom
+	cp b                         ; check random value against the stage's crit rate
 	ret nc                       ; no critical hit if no borrow
+.guaranteedCrit
 	ld a, $1
 	ld [wCriticalHitOrOHKO], a   ; set critical hit flag
 	ret
+
+.critChances
+	db 11, 32, 128 ; out of 256: ~1/24, 1/8, 1/2
 
 INCLUDE "data/battle/critical_hit_moves.asm"
 
@@ -4744,14 +4763,12 @@ HandleCounterMove:
 	ld a, [de]
 	and a
 	ret z ; miss if the opponent's last selected move's Base Power is 0.
-; check if the move the target last selected was Normal or Fighting type
-	inc de
-	ld a, [de]
-	and a ; normal type
+; check if the move the target last selected was physical (modern Counter behavior)
+	ld a, [hl]
+	call GetMoveCategory
+	cp CAT_PHYSICAL
 	jr z, .counterableType
-	cp FIGHTING
-	jr z, .counterableType
-; if the move wasn't Normal or Fighting type, miss
+; if the move wasn't physical, miss
 	xor a
 	ret
 .counterableType
@@ -5502,7 +5519,9 @@ MoveHitTest:
 	ld b, a
 .doAccuracyCheck
 ; if the random number generated is greater than or equal to the scaled accuracy, the move misses
-; note that this means that even the highest accuracy is still just a 255/256 chance, not 100%
+	ld a, b
+	inc a ; a scaled accuracy of $ff always hits (fixes the Gen 1 1/256 miss glitch)
+	ret z
 	call BattleRandom
 	cp b
 	jr nc, .moveMissed

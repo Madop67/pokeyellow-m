@@ -119,9 +119,11 @@ TransformEffect_:
 	call GetMonName
 	ld hl, wEnemyMonUnmodifiedAttack
 	ld de, wPlayerMonUnmodifiedAttack
+	ld bc, (NUM_STATS - 1) * 2
 	call .copyBasedOnTurn ; original (unmodified) stats
 	ld hl, wEnemyMonStatMods
 	ld de, wPlayerMonStatMods
+	ld bc, NUM_STAT_MODS
 	call .copyBasedOnTurn ; stat mods
 	ld hl, TransformedText
 	jp PrintText
@@ -135,7 +137,6 @@ TransformEffect_:
 	ld l, e
 	pop de
 .gotStatsOrModsToCopy
-	ld bc, (NUM_STATS - 1) * 2
 	jp CopyData
 
 .failed

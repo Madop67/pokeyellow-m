@@ -1,9 +1,9 @@
 	db DEX_STARYU ; pokedex id
 
-	db  30,  45,  55,  85,  70
-	;   hp  atk  def  spd  spc
+	db  30,  45,  55,  85,  70,  55
+	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db WATER, LIGHT ; type
 	db 225 ; catch rate
 	db 106 ; base exp
 
@@ -21,4 +21,3 @@
 	     PSYWAVE,      TRI_ATTACK,   SUBSTITUTE,   SURF,         FLASH
 	; end
 
-	db 0 ; padding

@@ -299,7 +299,7 @@ PrintStatsBox:
 	db   "ATTACK"
 	next "DEFENSE"
 	next "SPEED"
-	next "SPECIAL@"
+	next "SPCL.ATK@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]

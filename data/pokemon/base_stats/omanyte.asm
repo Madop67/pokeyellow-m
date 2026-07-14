@@ -1,7 +1,7 @@
 	db DEX_OMANYTE ; pokedex id
 
-	db  35,  40, 100,  35,  90
-	;   hp  atk  def  spd  spc
+	db  35,  40, 100,  35,  90,  55
+	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, WATER ; type
 	db 45 ; catch rate
@@ -20,4 +20,3 @@
 	     SURF
 	; end
 
-	db 0 ; padding

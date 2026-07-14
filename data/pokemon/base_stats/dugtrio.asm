@@ -1,7 +1,7 @@
 	db DEX_DUGTRIO ; pokedex id
 
-	db  35,  80,  50, 120,  70
-	;   hp  atk  def  spd  spc
+	db  35,  80,  50, 120,  50,  70
+	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GROUND ; type
 	db 50 ; catch rate
@@ -20,4 +20,3 @@
 	     CUT
 	; end
 
-	db 0 ; padding

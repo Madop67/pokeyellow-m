@@ -1,7 +1,7 @@
 	db DEX_EXEGGCUTE ; pokedex id
 
-	db  60,  40,  80,  40,  60
-	;   hp  atk  def  spd  spc
+	db  60,  40,  80,  40,  60,  45
+	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, PSYCHIC_TYPE ; type
 	db 90 ; catch rate
@@ -20,4 +20,3 @@
 	     SUBSTITUTE
 	; end
 
-	db 0 ; padding

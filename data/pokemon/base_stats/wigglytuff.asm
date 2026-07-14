@@ -1,9 +1,9 @@
 	db DEX_WIGGLYTUFF ; pokedex id
 
-	db 140,  70,  45,  45,  50
-	;   hp  atk  def  spd  spc
+	db 140,  70,  45,  45,  85,  50
+	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db SOUND, FAIRY ; type
 	db 50 ; catch rate
 	db 109 ; base exp
 
@@ -23,4 +23,3 @@
 	     SUBSTITUTE,   STRENGTH,     FLASH
 	; end
 
-	db 0 ; padding

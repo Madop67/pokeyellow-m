@@ -1,7 +1,7 @@
 	db DEX_SPEAROW ; pokedex id
 
-	db  40,  60,  30,  70,  31
-	;   hp  atk  def  spd  spc
+	db  40,  60,  30,  70,  31,  31
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
 	db 255 ; catch rate
@@ -19,4 +19,3 @@
 	     SKY_ATTACK,   REST,         SUBSTITUTE,   FLY
 	; end
 
-	db 0 ; padding

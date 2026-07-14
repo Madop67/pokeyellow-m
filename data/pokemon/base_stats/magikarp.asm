@@ -1,7 +1,7 @@
 	db DEX_MAGIKARP ; pokedex id
 
-	db  20,  10,  55,  80,  20
-	;   hp  atk  def  spd  spc
+	db  20,  10,  55,  80,  15,  20
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 255 ; catch rate
@@ -17,4 +17,3 @@
 	tmhm
 	; end
 
-	db 0 ; padding

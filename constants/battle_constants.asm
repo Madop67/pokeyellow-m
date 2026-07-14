@@ -13,18 +13,24 @@ DEF MAX_STAT_LEVEL EQU 13
 	const STAT_ATTACK
 	const STAT_DEFENSE
 	const STAT_SPEED
-	const STAT_SPECIAL
+	const STAT_SPECIAL ; Special Attack
+	const STAT_SPDEF
 DEF NUM_STATS EQU const_value - 1
+
+; number of stat experience / EV fields in the mon structs
+; (Sp. Atk and Sp. Def share the Special EV, as they share the Special DV)
+DEF NUM_EV_STATS EQU 5
 
 ; StatModTextStrings indexes (see data/battle/stat_mod_names.asm)
 	const_def
 	const MOD_ATTACK
 	const MOD_DEFENSE
 	const MOD_SPEED
-	const MOD_SPECIAL
+	const MOD_SPECIAL ; Special Attack
+	const MOD_SPDEF
 	const MOD_ACCURACY
 	const MOD_EVASION
-	const_skip 2
+	const_skip 1
 DEF NUM_STAT_MODS EQU const_value
 
 ; Moves struct fields (see data/moves/moves.asm)
@@ -59,6 +65,12 @@ DEF MORE_EFFECTIVE     EQU 15
 DEF EFFECTIVE          EQU 10
 DEF NOT_VERY_EFFECTIVE EQU 05
 DEF NO_EFFECT          EQU 00
+
+; move damage categories (see MoveCategories in data/moves/categories.asm)
+	const_def
+	const CAT_PHYSICAL
+	const CAT_SPECIAL
+	const CAT_STATUS
 
 ; non-volatile statuses
 DEF SLP_MASK EQU %111 ; 0-7 turns

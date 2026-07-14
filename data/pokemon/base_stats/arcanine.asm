@@ -1,7 +1,7 @@
 	db DEX_ARCANINE ; pokedex id
 
-	db  90, 110,  80,  95,  80
-	;   hp  atk  def  spd  spc
+	db  90, 110,  80,  95, 100,  80
+	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
 	db 75 ; catch rate
@@ -20,4 +20,3 @@
 	     SKULL_BASH,   REST,         SUBSTITUTE
 	; end
 
-	db 0 ; padding

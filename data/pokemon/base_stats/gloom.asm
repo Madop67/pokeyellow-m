@@ -1,7 +1,7 @@
 	db DEX_GLOOM ; pokedex id
 
-	db  60,  65,  70,  40,  85
-	;   hp  atk  def  spd  spc
+	db  60,  65,  70,  40,  85,  75
+	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type
 	db 120 ; catch rate
@@ -19,4 +19,3 @@
 	     BIDE,         REST,         SUBSTITUTE,   CUT
 	; end
 
-	db 0 ; padding

@@ -1,9 +1,9 @@
 	db DEX_MR_MIME ; pokedex id
 
-	db  40,  45,  65,  90, 100
-	;   hp  atk  def  spd  spc
+	db  40,  45,  65,  90, 100, 120
+	;   hp  atk  def  spd  sat  sdf
 
-	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
+	db PSYCHIC_TYPE, FAIRY ; type
 	db 45 ; catch rate
 	db 136 ; base exp
 
@@ -22,4 +22,3 @@
 	     SUBSTITUTE,   FLASH
 	; end
 
-	db 0 ; padding

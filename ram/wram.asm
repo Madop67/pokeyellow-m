@@ -705,7 +705,8 @@ wPlayerMonUnmodifiedMaxHP:: dw
 wPlayerMonUnmodifiedAttack:: dw
 wPlayerMonUnmodifiedDefense:: dw
 wPlayerMonUnmodifiedSpeed:: dw
-wPlayerMonUnmodifiedSpecial:: dw
+wPlayerMonUnmodifiedSpecial:: dw ; Special Attack
+wPlayerMonUnmodifiedSpDefense:: dw
 
 ; stat modifiers for the player's current pokemon
 ; value can range from 1 - 13 ($1 to $D)
@@ -714,10 +715,11 @@ wPlayerMonStatMods::
 wPlayerMonAttackMod:: db
 wPlayerMonDefenseMod:: db
 wPlayerMonSpeedMod:: db
-wPlayerMonSpecialMod:: db
+wPlayerMonSpecialMod:: db ; Special Attack
+wPlayerMonSpDefenseMod:: db
 wPlayerMonAccuracyMod:: db
 wPlayerMonEvasionMod:: db
-	ds 2
+	ds 1
 wPlayerMonStatModsEnd::
 
 	ds 1
@@ -727,7 +729,8 @@ wEnemyMonUnmodifiedMaxHP:: dw
 wEnemyMonUnmodifiedAttack:: dw
 wEnemyMonUnmodifiedDefense:: dw
 wEnemyMonUnmodifiedSpeed:: dw
-wEnemyMonUnmodifiedSpecial:: dw
+wEnemyMonUnmodifiedSpecial:: dw ; Special Attack
+wEnemyMonUnmodifiedSpDefense:: dw
 
 ; stat modifiers for the enemy's current pokemon
 ; value can range from 1 - 13 ($1 to $D)
@@ -736,10 +739,11 @@ wEnemyMonStatMods::
 wEnemyMonAttackMod:: db
 wEnemyMonDefenseMod:: db
 wEnemyMonSpeedMod:: db
-wEnemyMonSpecialMod:: db
+wEnemyMonSpecialMod:: db ; Special Attack
+wEnemyMonSpDefenseMod:: db
 wEnemyMonAccuracyMod:: db
 wEnemyMonEvasionMod:: db
-	ds 2
+	ds 1
 wEnemyMonStatModsEnd::
 
 NEXTU
@@ -1706,7 +1710,8 @@ wMonHBaseHP:: db
 wMonHBaseAttack:: db
 wMonHBaseDefense:: db
 wMonHBaseSpeed:: db
-wMonHBaseSpecial:: db
+wMonHBaseSpecial:: db ; Special Attack
+wMonHBaseSpDefense:: db
 wMonHTypes::
 wMonHType1:: db
 wMonHType2:: db
@@ -2295,7 +2300,7 @@ wRoute18Gate1FCurScript:: db
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+	ds 20 ; shrunk from 56 to make room for the Sp. Def stat split
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 

@@ -1405,15 +1405,50 @@ ItemUseMedicine:
 	jr nc, .noCarry2
 	inc h
 .noCarry2
-	ld a, 10
-	ld b, a
-	ld a, [hl] ; a = MSB of stat experience of the appropriate stat
-	cp 100 ; is there already at least 25600 (256 * 100) stat experience?
-	jr nc, .vitaminNoEffect ; if so, vitamins can't add any more
-	add b ; add 2560 (256 * 10) stat experience
-	jr nc, .noCarry3 ; a carry should be impossible here, so this will always jump
-	ld a, 255
-.noCarry3
+	inc hl ; hl = the chosen stat's EV byte (low byte of the old stat exp field)
+; sum the mon's current EVs into de for the 510 total cap
+	pop de
+	push de ; de = mon struct ptr
+	push hl
+	ld hl, MON_HP_EXP + 1
+	add hl, de
+	ld de, 0
+	ld b, NUM_EV_STATS
+.sumEvLoop
+	ld a, [hli]
+	inc hl
+	add e
+	ld e, a
+	jr nc, .sumEvNoCarry
+	inc d
+.sumEvNoCarry
+	dec b
+	jr nz, .sumEvLoop
+	pop hl
+; add up to 10 EVs, respecting the 252 per-stat and 510 total caps
+	ld b, 10
+.addEvLoop
+	ld a, d
+	cp HIGH(MAX_TOTAL_EV)
+	jr c, .totalEvOk
+	ld a, e
+	cp LOW(MAX_TOTAL_EV)
+	jr nc, .doneAdding
+.totalEvOk
+	ld a, [hl]
+	cp MAX_STAT_EV
+	jr nc, .doneAdding
+	inc [hl]
+	inc de
+	dec b
+	jr nz, .addEvLoop
+.doneAdding
+	ld a, b
+	cp 10
+	jr z, .vitaminNoEffect ; no room for any more EVs
+; clear the high byte of the old stat exp field; EVs only use the low byte
+	dec hl
+	xor a
 	ld [hl], a
 	pop hl
 	call .recalculateStats
@@ -3083,7 +3118,7 @@ SendNewMonToBox:
 	ld [de], a
 	inc de
 	xor a
-	ld b, NUM_STATS * 2
+	ld b, NUM_EV_STATS * 2
 .statLoop
 	ld [de], a
 	inc de

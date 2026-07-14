@@ -7,4 +7,4 @@ VitaminStats:
 	li "DEFENSE"
 	li "SPEED"
 	li "SPECIAL"
-	assert_list_length NUM_STATS
+	assert_list_length NUM_EV_STATS

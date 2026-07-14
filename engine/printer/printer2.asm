@@ -171,7 +171,7 @@ Printer_GetMonStats:
 	db   "ATTACK"
 	next "DEFENSE"
 	next "SPEED"
-	next "SPECIAL@"
+	next "SPCL.ATK@"
 
 .Blank:
 	db "--------------@"

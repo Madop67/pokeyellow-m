@@ -1,7 +1,7 @@
 	db DEX_GEODUDE ; pokedex id
 
-	db  40,  80, 100,  20,  30
-	;   hp  atk  def  spd  spc
+	db  40,  80, 100,  20,  30,  30
+	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, GROUND ; type
 	db 255 ; catch rate
@@ -21,4 +21,3 @@
 	     ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
 	; end
 
-	db 0 ; padding

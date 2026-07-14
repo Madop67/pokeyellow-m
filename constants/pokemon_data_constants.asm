@@ -7,7 +7,8 @@ DEF BASE_HP          rb
 DEF BASE_ATK         rb
 DEF BASE_DEF         rb
 DEF BASE_SPD         rb
-DEF BASE_SPC         rb
+DEF BASE_SPC         rb ; Special Attack
+DEF BASE_SDF         rb
 DEF BASE_TYPES       rw
 rsset BASE_TYPES
 DEF BASE_TYPE_1      rb
@@ -20,7 +21,6 @@ DEF BASE_BACKPIC     rw
 DEF BASE_MOVES       rb NUM_MOVES
 DEF BASE_GROWTH_RATE rb
 DEF BASE_TMHM        rb (NUM_TM_HM + 7) / 8
-                     rb_skip
 DEF BASE_DATA_SIZE EQU _RS
 
 ; party_struct members (see macros/ram.asm)
@@ -52,8 +52,13 @@ DEF MON_MAXHP      rw
 DEF MON_ATK        rw
 DEF MON_DEF        rw
 DEF MON_SPD        rw
-DEF MON_SPC        rw
-DEF PARTYMON_STRUCT_LENGTH EQU _RS ; $2c
+DEF MON_SPC        rw ; Special Attack
+DEF MON_SDF        rw
+DEF PARTYMON_STRUCT_LENGTH EQU _RS ; $2e
+
+; effort values (modern EV system; stored in the low byte of the MON_*_EXP fields)
+DEF MAX_STAT_EV  EQU 252
+DEF MAX_TOTAL_EV EQU 510
 
 DEF PARTY_LENGTH EQU 6
 

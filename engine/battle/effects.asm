@@ -103,8 +103,12 @@ PoisonEffect:
 	ld a, [hli]
 	cp POISON ; can't poison a poison-type target
 	jr z, .noEffect
+	cp STEEL ; can't poison a steel-type target (modern behavior)
+	jr z, .noEffect
 	ld a, [hld]
 	cp POISON ; can't poison a poison-type target
+	jr z, .noEffect
+	cp STEEL ; can't poison a steel-type target (modern behavior)
 	jr z, .noEffect
 	ld a, [de]
 	cp POISON_SIDE_EFFECT1
@@ -251,6 +255,12 @@ FreezeBurnParalyzeEffect:
 	cp FREEZE_SIDE_EFFECT1
 	jr z, .freeze1
 ; paralyze1
+	ld a, [wEnemyMonType1]
+	cp ELECTRIC
+	ret z ; electric-types can't be paralyzed (modern behavior)
+	ld a, [wEnemyMonType2]
+	cp ELECTRIC
+	ret z
 	ld a, 1 << PAR
 	ld [wEnemyMonStatus], a
 	call QuarterSpeedDueToParalysis ; quarter speed of affected mon
@@ -314,6 +324,12 @@ FreezeBurnParalyzeEffect:
 	cp FREEZE_SIDE_EFFECT1
 	jr z, .freeze2
 ; paralyze2
+	ld a, [wBattleMonType1]
+	cp ELECTRIC
+	ret z ; electric-types can't be paralyzed (modern behavior)
+	ld a, [wBattleMonType2]
+	cp ELECTRIC
+	ret z
 	ld a, 1 << PAR
 	ld [wBattleMonStatus], a
 	call QuarterSpeedDueToParalysis
@@ -396,8 +412,19 @@ StatModifierUpEffect:
 	ld a, [de]
 	sub ATTACK_UP1_EFFECT
 	cp EVASION_UP1_EFFECT + $3 - ATTACK_UP1_EFFECT ; covers all +1 effects
-	jr c, .incrementStatMod
+	jr c, .gotStatModIndex
 	sub ATTACK_UP2_EFFECT - ATTACK_UP1_EFFECT ; map +2 effects to equivalent +1 effect
+.gotStatModIndex
+	cp MOD_SPDEF
+	jr c, .checkAmnesia
+	inc a ; accuracy and evasion sit above the Sp. Def mod slot
+.checkAmnesia
+	ld b, a
+	ld a, [de]
+	cp SPECIAL_UP2_EFFECT
+	ld a, b
+	jr nz, .incrementStatMod
+	ld a, MOD_SPDEF ; Amnesia raises Sp. Def (modern behavior)
 .incrementStatMod
 	ld c, a
 	ld b, $0
@@ -418,7 +445,7 @@ StatModifierUpEffect:
 .ok
 	ld [hl], b
 	ld a, c
-	cp $4
+	cp MOD_ACCURACY
 	jr nc, UpdateStatDone ; jump if mod affected is evasion/accuracy
 	push hl
 	ld hl, wBattleMonAttack + 1
@@ -599,6 +626,9 @@ StatModifierDownEffect:
 	jp nc, CantLowerAnymore
 	ld a, [de]
 	sub ATTACK_DOWN_SIDE_EFFECT ; map each stat to 0-3
+	cp MOD_SPECIAL
+	jr nz, .decrementStatMod
+	ld a, MOD_SPDEF ; special stat-down side effects lower Sp. Def (modern behavior)
 	jr .decrementStatMod
 .nonSideEffect ; non-side effects only
 	push hl
@@ -617,8 +647,12 @@ StatModifierDownEffect:
 	ld a, [de]
 	sub ATTACK_DOWN1_EFFECT
 	cp EVASION_DOWN1_EFFECT + $3 - ATTACK_DOWN1_EFFECT ; covers all -1 effects
-	jr c, .decrementStatMod
+	jr c, .gotStatModIndex
 	sub ATTACK_DOWN2_EFFECT - ATTACK_DOWN1_EFFECT ; map -2 effects to corresponding -1 effect
+.gotStatModIndex
+	cp MOD_SPDEF
+	jr c, .decrementStatMod
+	inc a ; accuracy and evasion sit above the Sp. Def mod slot
 .decrementStatMod
 	ld c, a
 	ld b, $0
@@ -637,7 +671,7 @@ StatModifierDownEffect:
 .ok
 	ld [hl], b ; save modified mod
 	ld a, c
-	cp $4
+	cp MOD_ACCURACY
 	jr nc, UpdateLoweredStatDone ; jump for evasion/accuracy
 	push hl
 	push de

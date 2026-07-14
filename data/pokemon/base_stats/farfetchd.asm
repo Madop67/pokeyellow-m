@@ -1,7 +1,7 @@
 	db DEX_FARFETCHD ; pokedex id
 
-	db  52,  65,  55,  60,  58
-	;   hp  atk  def  spd  spc
+	db  52,  65,  55,  60,  58,  62
+	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type
 	db 45 ; catch rate
@@ -20,4 +20,3 @@
 	     SUBSTITUTE,   CUT,          FLY
 	; end
 
-	db 0 ; padding

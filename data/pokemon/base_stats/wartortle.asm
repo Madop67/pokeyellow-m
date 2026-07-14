@@ -1,7 +1,7 @@
 	db DEX_WARTORTLE ; pokedex id
 
-	db  59,  63,  80,  58,  65
-	;   hp  atk  def  spd  spc
+	db  59,  63,  80,  58,  65,  80
+	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type
 	db 45 ; catch rate
@@ -21,4 +21,3 @@
 	     REST,         SUBSTITUTE,   SURF,         STRENGTH
 	; end
 
-	db 0 ; padding

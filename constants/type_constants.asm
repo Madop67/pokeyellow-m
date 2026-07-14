@@ -11,6 +11,7 @@ DEF PHYSICAL EQU const_value
 	const BIRD         ; $06
 	const BUG          ; $07
 	const GHOST        ; $08
+	const STEEL        ; $09
 
 DEF UNUSED_TYPES EQU const_value
 	const_next 20
@@ -24,5 +25,11 @@ DEF SPECIAL EQU const_value
 	const PSYCHIC_TYPE ; $18
 	const ICE          ; $19
 	const DRAGON       ; $1A
+	const DARK         ; $1B
+	const FAIRY        ; $1C
+	const STELLAR      ; $1D
+	const SOUND        ; $1E
+	const LIGHT        ; $1F
+	const TYPELESS     ; $20 ; "???"; used by Struggle, neutral against everything
 
 DEF NUM_TYPES EQU const_value

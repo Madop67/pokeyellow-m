@@ -1,9 +1,9 @@
 	db DEX_STARMIE ; pokedex id
 
-	db  60,  75,  85, 115, 100
-	;   hp  atk  def  spd  spc
+	db  60,  75,  85, 115, 100,  85
+	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, PSYCHIC_TYPE ; type
+	db WATER, LIGHT ; type
 	db 60 ; catch rate
 	db 207 ; base exp
 
@@ -22,4 +22,3 @@
 	     FLASH
 	; end
 
-	db 0 ; padding

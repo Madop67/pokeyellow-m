@@ -219,7 +219,7 @@ _AddPartyMon::
 	ldh a, [hExperience + 2]
 	ld [de], a
 	xor a
-	ld b, NUM_STATS * 2
+	ld b, NUM_EV_STATS * 2
 .writeEVsLoop              ; set all EVs to 0
 	inc de
 	ld [de], a

@@ -1,7 +1,7 @@
 	db DEX_HAUNTER ; pokedex id
 
-	db  45,  50,  45,  95, 115
-	;   hp  atk  def  spd  spc
+	db  45,  50,  45,  95, 115,  55
+	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, POISON ; type
 	db 90 ; catch rate
@@ -19,4 +19,3 @@
 	     DREAM_EATER,  REST,         PSYWAVE,      EXPLOSION,    SUBSTITUTE
 	; end
 
-	db 0 ; padding
