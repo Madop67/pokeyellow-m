@@ -49,61 +49,42 @@ GetItemName::
 	ret
 
 GetMachineName::
-; copies the name of the TM/HM in [wNamedObjectIndex] to wNameBuffer
+; copies the name of the move contained in the TM/HM in [wNamedObjectIndex]
+; to wNameBuffer, so TM/HM items display as the move they teach
 	push hl
 	push de
 	push bc
 	ld a, [wNamedObjectIndex]
+	push af ; save the item ID so we can restore it afterwards
+; convert the item ID into a 0-based index into TechnicalMachines
+	sub TM01
+	jr nc, .gotMachineIndex ; TMs are TM01 and up
+; HMs sit just below TM01, and their moves follow the TMs in the table
+	add TM01
+	sub HM01
+	add NUM_TMS
+.gotMachineIndex
+	ld c, a
+	ld b, 0
+	ldh a, [hLoadedROMBank]
 	push af
-	cp TM01 ; is this a TM? [not HM]
-	jr nc, .WriteTM
-; if HM, then write "HM" and add NUM_HMS to the item ID, so we can reuse the
-; TM printing code
-	add NUM_HMS
+	ld a, BANK(TechnicalMachines)
+	ldh [hLoadedROMBank], a
+	ld [rROMB], a
+	ld hl, TechnicalMachines
+	add hl, bc
+	ld a, [hl] ; the move taught by this TM/HM
 	ld [wNamedObjectIndex], a
-	ld hl, HiddenPrefix ; points to "HM"
-	ld bc, 2
-	jr .WriteMachinePrefix
-.WriteTM
-	ld hl, TechnicalPrefix ; points to "TM"
-	ld bc, 2
-.WriteMachinePrefix
-	ld de, wNameBuffer
-	call CopyData
-
-; now get the machine number and convert it to text
-	ld a, [wNamedObjectIndex]
-	sub TM01 - 1
-	ld b, '0'
-.FirstDigit
-	sub 10
-	jr c, .SecondDigit
-	inc b
-	jr .FirstDigit
-.SecondDigit
-	add 10
-	push af
-	ld a, b
-	ld [de], a
-	inc de
 	pop af
-	ld b, '0'
-	add b
-	ld [de], a
-	inc de
-	ld a, '@'
-	ld [de], a
+	ldh [hLoadedROMBank], a
+	ld [rROMB], a
+	call GetMoveName
 	pop af
-	ld [wNamedObjectIndex], a
+	ld [wNamedObjectIndex], a ; restore the item ID
 	pop bc
 	pop de
 	pop hl
 	ret
-
-TechnicalPrefix::
-	db "TM"
-HiddenPrefix::
-	db "HM"
 
 ; sets carry if item is HM, clears carry if item is not HM
 ; Input: a = item ID

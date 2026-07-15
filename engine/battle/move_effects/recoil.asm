@@ -7,16 +7,27 @@ RecoilEffect_:
 	ld a, [wEnemyMoveNum]
 	ld hl, wEnemyMonMaxHP
 .recoilEffect
-	ld d, a
+	cp STRUGGLE
+	jr z, .struggleRecoil
+; other recoil moves deal recoil equal to 1/4 of the damage dealt
 	ld a, [wDamage]
 	ld b, a
 	ld a, [wDamage + 1]
 	ld c, a
 	srl b
 	rr c
-	ld a, d
-	cp STRUGGLE ; struggle deals 50% recoil damage
-	jr z, .gotRecoilDamage
+	srl b
+	rr c
+	jr .gotRecoilDamage
+.struggleRecoil
+; Struggle deals recoil equal to 1/4 of the user's max HP (modern behavior),
+; rather than a fraction of the damage dealt
+	ld a, [hli]
+	ld b, a
+	ld a, [hld]
+	ld c, a
+	srl b
+	rr c
 	srl b
 	rr c
 .gotRecoilDamage

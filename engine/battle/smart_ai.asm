@@ -274,34 +274,16 @@ AIMoveChoiceModification5:
 	jr .nextMove
 
 ; shared deterministic boss item/switch AI, dispatched from TrainerAI.
-; b = heal-item tier (0 = Super Potion, 1 = Hyper Potion, 2 = Full Restore)
 ; hl = X-item routine to use on the first action opportunity (0 = none)
 ; returns carry if an action consumed the turn.
 ; wAICount (the per-mon budget from TrainerAIPointers) still caps item uses.
+; Boss trainers never restore HP: only status cures and stat-boost items.
 CommonBossAI:
-; 1) cure crippling status (sleep/freeze) immediately
+; 1) cure a crippling status (sleep/freeze) with a Full Heal — never HP restore
 	ld a, [wEnemyMonStatus]
 	and SLP_MASK | (1 << FRZ)
-	jr z, .checkHP
-	ld a, b
-	cp 2
-	jp z, AIUseFullRestore
+	jr z, .checkXItem
 	jp AIUseFullHeal
-.checkHP
-; 2) heal when it actually matters: below 1/3 of max HP
-	push hl
-	push bc
-	ld a, 3
-	call AICheckIfHPBelowFraction
-	pop bc
-	pop hl
-	jr nc, .checkXItem
-	ld a, b
-	and a
-	jp z, AIUseSuperPotion
-	dec a
-	jp z, AIUseHyperPotion
-	jp AIUseFullRestore
 .checkXItem
 ; 3) open with the class's X item, once per deployment
 ; (wAILayer2Encouragement only counts attacks, so an item turn wouldn't

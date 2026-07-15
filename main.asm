@@ -162,7 +162,6 @@ INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
-INCLUDE "gfx/trade.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
 
 
@@ -171,6 +170,14 @@ INCLUDE "engine/pokemon/evos_moves.asm"
 SECTION "Pokemon Cries", ROMX
 
 INCLUDE "data/pokemon/cries.asm"
+
+
+; Moved out of "Battle Engine 6" to make room for the expanded boss trainer
+; movesets; the trade animation graphics are always loaded with
+; BANK(TradingAnimationGraphics), so they can float freely.
+SECTION "Trade Animation GFX", ROMX
+
+INCLUDE "gfx/trade.asm"
 
 
 SECTION "Battle Core", ROMX

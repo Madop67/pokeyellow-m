@@ -631,4 +631,110 @@ GetMonLearnset:
 	jr nz, .skipEvolutionDataLoop ; if not, jump back up
 	ret
 
+DEF LEARNSET_FIRST_ROW EQU 3
+DEF LEARNSET_MAX_ROWS   EQU 11
+
+; Displays the level-up learnset of the Pokémon whose index is in [wPokedexNum].
+; Invoked from the Pokédex side menu ("MOVES"). Reuses the Pokédex palette/tiles.
+Pokedex_ShowLearnset::
+	ld a, [wPokedexNum]
+	ld [wCurPartySpecies], a
+	ldh a, [hTileAnimations]
+	push af
+	xor a
+	ldh [hTileAnimations], a
+	call GBPalWhiteOut
+	ld b, SET_PAL_POKEDEX
+	call RunPaletteCommand
+	call .drawScreen
+	ld c, 10
+	call DelayFrames
+.waitForButton
+	call JoypadLowSensitivity
+	ldh a, [hJoy5]
+	and PAD_A | PAD_B
+	jr z, .waitForButton
+	pop af
+	ldh [hTileAnimations], a
+	call GBPalWhiteOut
+	call ClearScreen
+	ret
+
+.drawScreen
+	call ClearScreen
+; print the Pokémon's name at the top
+	ld a, [wCurPartySpecies]
+	ld [wNamedObjectIndex], a
+	call GetMonName
+	hlcoord 1, 1
+	ld de, wNameBuffer
+	call PlaceString
+; copy the (level, move) pairs into wBuffer so we can freely reuse registers
+	call GetMonLearnset ; hl -> first (level, move) pair
+	ld de, wBuffer
+	ld b, LEARNSET_MAX_ROWS
+.copyLoop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	and a ; a level of 0 terminates the learnset
+	jr z, .copied
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec b
+	jr nz, .copyLoop
+	xor a
+	ld [de], a ; cap overly long learnsets with a terminator
+.copied
+	ld b, 0 ; row index
+.rowLoop
+	ld a, b
+	add a ; each pair is 2 bytes
+	ld e, a
+	ld d, 0
+	ld hl, wBuffer
+	add hl, de
+	ld a, [hli] ; level
+	and a
+	jr z, .drawDone
+	ld [wTempByteValue], a ; hold the level for PrintNumber
+	ld c, [hl] ; move id (kept in c; wNamedObjectIndex aliases wTempByteValue)
+	push bc ; save the row index and move id across the drawing calls
+; compute the destination coord = (1, LEARNSET_FIRST_ROW + row index)
+	hlcoord 1, LEARNSET_FIRST_ROW
+	ld a, b
+	and a
+	jr z, .coordReady
+	ld de, SCREEN_WIDTH
+.coordMul
+	add hl, de
+	dec a
+	jr nz, .coordMul
+.coordReady
+	ld a, CHARVAL("L")
+	ld [hli], a
+	ld de, wTempByteValue
+	lb bc, LEADING_ZEROES | 1, 2
+	call PrintNumber ; print the level as two digits (before clobbering wTempByteValue)
+	ld a, CHARVAL(" ") ; separate the level from the move name
+	ld [hli], a
+	pop bc ; restore the row index and move id
+	ld a, c
+	ld [wNamedObjectIndex], a ; now safe to set the move id for GetMoveName
+	push bc
+	push hl
+	call GetMoveName ; move id in [wNamedObjectIndex] -> wNameBuffer
+	pop hl
+	ld de, wNameBuffer
+	call PlaceString
+	pop bc
+	inc b
+	ld a, b
+	cp LEARNSET_MAX_ROWS
+	jr c, .rowLoop
+.drawDone
+	call GBPalNormal
+	ret
+
 INCLUDE "data/pokemon/evos_moves.asm"

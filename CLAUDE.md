@@ -118,6 +118,15 @@ Key top-level files/dirs:
   `tools/gen_pokemon_docs.py` from the game data files — **do not hand-edit it; rerun that
   script after changing any Pokémon/move data** so the doc stays in sync. It is the fastest
   way to see the fork's current balance without decoding the raw data tables.
+- `docs/trainer_reference.md` — **generated** reference for every trainer battle in the game
+  (all classes, not just bosses): class, location, party, each Pokémon's level/types, and
+  the exact moveset it uses in battle (level-up default per `WriteMonMoves`, with
+  `special_moves.asm` overrides shown in bold). Produced by `tools/gen_trainer_docs.py`
+  (which imports the parsers in `gen_pokemon_docs.py`) — **do not hand-edit it; rerun that
+  script after changing trainer parties, special moves, or any Pokémon/move data.**
+- `docs/trainer_overhaul_plan.html` — design spec for the trainer-battle overhaul (item AI,
+  competitive movesets, rebuilt six-mon boss teams) with an implementation log of what
+  shipped. Hand-written; update it when continuing that work.
 
 ### Build dependency system
 

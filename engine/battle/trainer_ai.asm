@@ -407,96 +407,79 @@ BlackbeltAI:
 	ret nc
 	jp AIUseXAttack
 
-; boss trainers share CommonBossAI (smart_ai.asm) with a per-class
-; heal-item tier in b and an optional opening X item routine in hl
+; boss trainers share CommonBossAI (smart_ai.asm), each supplying an
+; optional opening X item routine in hl (0 = none). There is no heal-item
+; tier: boss AI uses status cures and stat-boost items only, never HP restore.
 
 Rival1AI:
-	ld b, 0 ; Super Potion
 	ld hl, 0 ; no X item
 	jp CommonBossAI
 
 GiovanniAI:
-	ld b, 1 ; Hyper Potion
 	ld hl, AIUseGuardSpec
 	jp CommonBossAI
 
 CooltrainerMAI:
-	ld b, 0 ; Super Potion
 	ld hl, AIUseXAttack
 	jp CommonBossAI
 
 CooltrainerFAI:
-	ld b, 0 ; Super Potion
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 BrockAI:
-	ld b, 0 ; Super Potion
 	ld hl, AIUseXDefend
 	jp CommonBossAI
 
 MistyAI:
-	ld b, 0 ; Super Potion
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 LtSurgeAI:
-	ld b, 0 ; Super Potion
 	ld hl, AIUseXSpeed
 	jp CommonBossAI
 
 ErikaAI:
-	ld b, 0 ; Super Potion
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 KogaAI:
-	ld b, 1 ; Hyper Potion
 	ld hl, AIUseXAccuracy
 	jp CommonBossAI
 
 BlaineAI:
-	ld b, 1 ; Hyper Potion
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 SabrinaAI:
-	ld b, 1 ; Hyper Potion
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 ProfOakAI:
-	ld b, 2 ; Full Restore
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 Rival2AI:
-	ld b, 1 ; Hyper Potion
 	ld hl, 0 ; no X item
 	jp CommonBossAI
 
 Rival3AI:
-	ld b, 2 ; Full Restore
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 LoreleiAI:
-	ld b, 2 ; Full Restore
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 
 BrunoAI:
-	ld b, 2 ; Full Restore
 	ld hl, AIUseXDefend
 	jp CommonBossAI
 
 AgathaAI:
-	ld b, 2 ; Full Restore
 	ld hl, AIUseDireHit
 	jp CommonBossAI
 
 LanceAI:
-	ld b, 2 ; Full Restore
 	ld hl, AIUseXSpecial
 	jp CommonBossAI
 

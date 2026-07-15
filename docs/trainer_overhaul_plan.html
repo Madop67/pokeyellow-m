@@ -1,0 +1,600 @@
+<title>Trainer Battle Overhaul — Chromatic Yellow</title>
+<style>
+  :root{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+      --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+      --line:#2c281f; --line-strong:#3a3527;
+      --accent:#eab53f; --accent-ink:#f0c463;
+      --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+      --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+  }
+  :root[data-theme="dark"]{
+    --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+    --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+    --line:#2c281f; --line-strong:#3a3527;
+    --accent:#eab53f; --accent-ink:#f0c463;
+    --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+    --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+  a{color:var(--accent-ink)}
+
+  /* ---- header ---- */
+  header.mast{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-ink);margin:0 0 14px;font-weight:600}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.04;margin:0;letter-spacing:-.02em;
+    text-wrap:balance;font-weight:800}
+  h1 .sub{display:block;font-size:clamp(15px,2.4vw,19px);font-weight:500;color:var(--muted);
+    letter-spacing:0;margin-top:14px;max-width:60ch}
+  .metaline{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:6px 18px}
+  .metaline b{color:var(--muted);font-weight:600}
+
+  /* ---- sections ---- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 6px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+  h2 .n{color:var(--accent);font-weight:700}
+  .lead{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+  p{margin:0 0 14px;max-width:66ch}
+  h3{font-size:16px;margin:26px 0 10px;font-weight:700}
+  strong{font-weight:700}
+  .mono{font-family:var(--mono)}
+
+  /* ---- goals grid ---- */
+  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:6px 0 0}
+  .goal{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px}
+  .goal .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:6px}
+  .goal p{font-size:14px;margin:0;color:var(--ink)}
+
+  /* ---- rule list ---- */
+  ol.rules{counter-reset:r;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  ol.rules li{counter-increment:r;position:relative;padding:14px 16px 14px 52px;
+    background:var(--surface);border:1px solid var(--line);border-radius:9px}
+  ol.rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:16px;top:13px;
+    font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+  ol.rules li b{display:block;margin-bottom:2px}
+  ol.rules li span{font-size:14px;color:var(--muted)}
+
+  /* ---- code ---- */
+  .code{background:var(--surface-2);border:1px solid var(--line-strong);border-radius:9px;
+    overflow-x:auto;margin:0 0 16px}
+  .code .cap{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint);padding:9px 14px;border-bottom:1px solid var(--line)}
+  pre{margin:0;padding:14px;font-family:var(--mono);font-size:12.5px;line-height:1.55;white-space:pre}
+  .code .del{color:var(--boss)}
+  .code .add{color:var(--good)}
+  .code .cm{color:var(--faint)}
+
+  /* ---- generic table ---- */
+  .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:4px 0 8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;background:var(--surface-2)}
+  tr:last-child td{border-bottom:none}
+  td.lv{font-family:var(--mono);color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---- boss cards ---- */
+  .boss{background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;
+    padding:20px 20px 8px;margin:16px 0}
+  .boss.e4{border-left:3px solid var(--boss)}
+  .boss-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;
+    padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+  .boss-head .name{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .boss-head .role{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint)}
+  .boss-head .arrow{color:var(--faint)}
+  .themebadge{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+  .roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:12px 0}
+  .mon{display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid var(--line);
+    border-radius:8px;background:var(--surface-2);font-size:14px}
+  .mon .lvl{font-family:var(--mono);font-size:12px;color:var(--accent-ink);
+    font-variant-numeric:tabular-nums;min-width:22px}
+  .mon .nm{font-weight:600;flex:1}
+  .mon.ace{background:var(--ace-bg);border-color:var(--accent)}
+  .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+    padding:2px 6px;border-radius:5px;font-weight:700;white-space:nowrap}
+  .tag.kept{background:var(--good-bg);color:var(--good)}
+  .tag.new{background:var(--new-bg);color:var(--new)}
+  .tag.ace{background:var(--accent);color:#26200a}
+  :root[data-theme="dark"] .tag.ace{color:#181405}
+  @media (prefers-color-scheme:dark){.tag.ace{color:#181405}}
+
+  .aceline{font-size:13px;color:var(--muted);padding:8px 2px 12px;border-top:1px dashed var(--line)}
+  .aceline b{color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;margin-right:8px}
+  .aceline .mv{font-family:var(--mono);color:var(--accent-ink);font-size:12.5px}
+
+  /* ---- type chips ---- */
+  .ty{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;font-weight:700;
+    padding:2px 5px;border-radius:4px;text-transform:uppercase;line-height:1.4;white-space:nowrap}
+  .ty.ROC{background:#c9b98e;color:#3a2f10}.ty.GRD{background:#dcc79a;color:#4a370c}
+  .ty.WTR{background:#a9cdea;color:#123a5c}.ty.ICE{background:#b6e0e4;color:#0f4650}
+  .ty.ELE{background:#f2d98a;color:#5a4400}.ty.STL{background:#c3c9d1;color:#2c3742}
+  .ty.GRS{background:#b3d8a3;color:#1e4415}.ty.FAI{background:#efc2d6;color:#5e1c3c}
+  .ty.POI{background:#cdaedd;color:#3d1554}.ty.SND{background:#e6cfa0;color:#4d3a0d}
+  .ty.PSY{background:#f2b6c1;color:#5c1526}.ty.FIR{background:#f3b892;color:#6a2a06}
+  .ty.FIG{background:#d9a58f;color:#54200e}.ty.GHO{background:#b3a4d0;color:#2c1c50}
+  .ty.DRK{background:#a79c93;color:#241c14}.ty.NOR{background:#d5cfc0;color:#3a352a}
+  .ty.FLY{background:#bcc9ea;color:#233258}.ty.BUG{background:#c3d093;color:#33420c}
+  .ty.DRG{background:#a9b6e6;color:#1f2a63}.ty.LGT{background:#f0e6a8;color:#5a5210}
+  @media (prefers-color-scheme:dark){
+    .ty{filter:saturate(.82) brightness(.92)}
+  }
+  :root[data-theme="dark"] .ty{filter:saturate(.82) brightness(.92)}
+  :root[data-theme="light"] .ty{filter:none}
+
+  /* ---- phases ---- */
+  .phase{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .phase:last-child{border-bottom:none}
+  .phase .pn{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;
+    min-width:60px;padding-top:2px}
+  .phase .pb b{display:block;margin-bottom:2px}
+  .phase .pb span{font-size:14px;color:var(--muted)}
+  .phase .pb code{font-family:var(--mono);font-size:12px;background:var(--surface-2);
+    padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+
+  .callout{background:var(--surface-2);border:1px solid var(--line-strong);border-left:3px solid var(--accent);
+    border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14px}
+  .callout b{color:var(--accent-ink)}
+  .decision{border-left-color:var(--boss)}
+  .decision b{color:var(--boss)}
+
+  .statusbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .pill{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:4px 10px;
+    border-radius:20px;border:1px solid var(--line-strong);font-weight:600}
+  .pill.done{background:var(--good-bg);color:var(--good);border-color:var(--good)}
+  .pill.todo{background:var(--surface-2);color:var(--muted)}
+  .pill.defer{background:var(--surface-2);color:var(--faint)}
+  .log{display:flex;flex-direction:column;gap:0}
+  .log .row{display:flex;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .log .row:last-child{border-bottom:none}
+  .log .when{font-family:var(--mono);font-size:12px;color:var(--faint);min-width:96px;padding-top:2px;
+    font-variant-numeric:tabular-nums}
+  .log .what b{display:block;margin-bottom:4px}
+  .log .what span{font-size:14px;color:var(--muted)}
+  .log .what code{font-family:var(--mono);font-size:12px;background:var(--surface-2);
+    padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+  footer{padding:40px 0 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  @media (max-width:560px){.wrap{padding:0 16px 80px}h1{font-size:28px}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Pokémon Chromatic Yellow · Design Spec</p>
+  <h1>Trainer Battle Overhaul
+    <span class="sub">Smarter items, competitive movesets, and rebuilt six-mon boss teams — every gym leader, Elite Four member, and the Champion given a dual-type identity while keeping their vanilla ace.</span>
+  </h1>
+  <div class="metaline">
+    <span><b>Touches:</b> data/trainers/*, engine/battle/smart_ai.asm</span>
+    <span><b>Build:</b> plain <span class="mono">make -j</span> (no hash compare)</span>
+    <span><b>Bosses:</b> 13</span>
+  </div>
+  <div class="statusbar">
+    <span class="pill done">Phase 1 · AI &amp; items — done</span>
+    <span class="pill done">Phase 2 · rosters — written</span>
+    <span class="pill done">Phase 3 · boss movesets — written</span>
+    <span class="pill defer">Phase 4 · 4-move sweep — deferred to own change</span>
+  </div>
+</header>
+
+<!-- GOALS -->
+<section>
+  <h2><span class="n">00</span> Objective</h2>
+  <p class="lead">Make trainer fights feel deliberate instead of scripted — opponents that carry the right four moves, press advantages with items, and field bosses that read as designed teams.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">Items</div><p>Trainers may use <strong>status heals &amp; stat-boost items only</strong> — never HP recovery.</p></div>
+    <div class="goal"><div class="k">Movesets</div><p>Competitive sets drawn from each mon's legal learnset ∪ TM pool. Four moves whenever four are legal.</p></div>
+    <div class="goal"><div class="k">Boss teams</div><p>Six mons, no duplicate species, STAB + coverage + a stat move each.</p></div>
+    <div class="goal"><div class="k">Identity</div><p>Every boss gets a second type theme; ≥3 original mons kept; vanilla ace species preserved.</p></div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section>
+  <h2><span class="n">01</span> Global design rules</h2>
+  <p class="lead">Four rules govern every change below. They are the contract the data has to satisfy.</p>
+  <ol class="rules">
+    <li><b>Items: status &amp; stats, never HP</b><span>Boss AI may cure a crippling status (Full Heal) and set up with X-items (X Attack/Defend/Speed/Special/Accuracy, Guard Spec., Dire Hit). All HP-restoring behavior — Potion, Super/Hyper Potion, Full Restore — is removed from the AI.</span></li>
+    <li><b>Moves must be legal for the species</b><span>A move is allowed only if it is in the mon's level-up list (learn level ≤ its level) <em>or</em> its TM/HM compatibility list. Level-up moves above the mon's level are not used; TM moves have no level gate (gym-leader convention). Every mon whose legal pool has ≥4 moves is given 4.</span></li>
+    <li><b>Boss mons = STAB + coverage + stat</b><span>Each boss Pokémon carries its STAB attack(s), at least one coverage move against a common answer, and one stat-boosting or stat-lowering move (Swords Dance, Screech, Reflect, Thunder Wave, Leer, Growl, Double Team…).</span></li>
+    <li><b>Boss composition</b><span>Six unique species · no repeats · a second type theme on the roster · keep ≥3 of the vanilla roster (or all, if it had fewer) · the highest-level mon stays the vanilla ace species.</span></li>
+  </ol>
+</section>
+
+<!-- AI / ITEMS -->
+<section>
+  <h2><span class="n">02</span> AI &amp; item logic</h2>
+  <p class="lead">The fork already has a smart boss AI. The change is surgical: delete the HP-heal branch and retarget the status branch from Full Restore to Full Heal.</p>
+  <p><span class="mono">CommonBossAI</span> in <strong>engine/battle/smart_ai.asm</strong> runs four steps: (1) cure sleep/freeze, (2) heal when below ⅓ HP, (3) open with an X-item, (4) switch out of a bad matchup. Steps 3–4 stay. Step 2 is deleted. Step 1 stops using Full Restore.</p>
+
+  <div class="code">
+    <div class="cap">engine/battle/smart_ai.asm — CommonBossAI (before → after)</div>
+<pre><span class="cm">; 1) cure crippling status (sleep/freeze) immediately</span>
+    ld a, [wEnemyMonStatus]
+    and SLP_MASK | (1 &lt;&lt; FRZ)
+    jr z, .checkXItem        <span class="cm">; was .checkHP</span>
+<span class="del">-   ld a, b</span>
+<span class="del">-   cp 2</span>
+<span class="del">-   jp z, AIUseFullRestore   ; HP+status — removed</span>
+<span class="add">+   jp AIUseFullHeal         ; status cure only, no HP</span>
+<span class="cm">.checkHP  ; ---- ENTIRE STEP 2 DELETED ----</span>
+<span class="del">-   ld a, 3</span>
+<span class="del">-   call AICheckIfHPBelowFraction</span>
+<span class="del">-   jr nc, .checkXItem</span>
+<span class="del">-   ... AIUseSuperPotion / AIUseHyperPotion / AIUseFullRestore</span>
+<span class="cm">.checkXItem   ; unchanged — open with class X-item</span>
+<span class="cm">.checkSwitch  ; unchanged — switch on bad matchup</span></pre>
+  </div>
+
+  <p>Then in <strong>engine/battle/trainer_ai.asm</strong> the per-class boss routines lose their now-meaningless heal-tier byte. The <span class="mono">ld b, N</span> line goes; the X-item pointer in <span class="mono">hl</span> stays and defines each boss's setup flavor.</p>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Boss</th><th>Opening X-item</th><th>Reads as</th></tr></thead>
+      <tbody>
+        <tr><td>Brock / Bruno</td><td class="mono">X Defend</td><td>immovable defense</td></tr>
+        <tr><td>Misty / Erika / Blaine / Sabrina / Lorelei / Lance</td><td class="mono">X Special</td><td>special sweeper</td></tr>
+        <tr><td>Lt. Surge</td><td class="mono">X Speed</td><td>fast aggression</td></tr>
+        <tr><td>Koga</td><td class="mono">X Accuracy</td><td>ninja precision (poison/sound moves land)</td></tr>
+        <tr><td>Giovanni</td><td class="mono">Guard Spec.</td><td>blocks status back</td></tr>
+        <tr><td>Agatha</td><td class="mono">Dire Hit</td><td>crit pressure</td></tr>
+        <tr><td>Rival (Champion)</td><td class="mono">X Special</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout"><b>Dead code kept tidy:</b> <span class="mono">AIUsePotion</span>, <span class="mono">AIUseSuperPotion</span>, <span class="mono">AIUseHyperPotion</span>, and <span class="mono">AIUseFullRestore</span> become unreferenced. Leave them assembled (harmless) or delete in the same pass — no other caller exists. <span class="mono">AIUseFullHeal</span> and the X-item routines are all retained.</div>
+  <p><strong>Optional flavor:</strong> a few late-game regular classes (Cooltrainer M/F, Juggler, Blackbelt) already reach for X-items — that stays. No regular class needs HP items since none currently use them.</p>
+</section>
+
+<!-- MOVESET METHOD -->
+<section>
+  <h2><span class="n">03</span> Moveset construction</h2>
+  <p class="lead">Trainer mon moves come from two places; we drive both.</p>
+  <p>By default a trainer mon inherits the <strong>last four level-up moves</strong> it would know at its level (via <span class="mono">AddPartyMon</span>). <strong>data/trainers/special_moves.asm</strong> then overrides individual slots: <span class="mono">db partyPosition, moveSlot, MOVE_ID</span>. That override writes any move id regardless of level — the mechanism through which we assign TM moves and competitive picks.</p>
+  <h3>The four-move rule</h3>
+  <p>For every trainer mon, count the legal pool (level-up ≤ level ∪ TMs). If it is ≥4 but the default set left empty slots (common for early evolutions and mid-level mons), fill to four via <span class="mono">special_moves.asm</span>. Mons that genuinely cannot field four (Caterpie, Magikarp, a low-level Abra) are exempt — the rule is "can have four," not "must invent four."</p>
+  <h3>Boss recipe (applied per mon)</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Slot</th><th>Purpose</th><th>Example (Onix, Brock)</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">1</td><td>Primary STAB</td><td><span class="ty ROC">Rock</span> Rock Slide</td></tr>
+        <tr><td class="mono">2</td><td>Secondary STAB / dual-type identity</td><td><span class="ty GRD">Grd</span> Earthquake</td></tr>
+        <tr><td class="mono">3</td><td>Coverage vs. a common answer</td><td><span class="ty STL">Stl</span> Iron Head</td></tr>
+        <tr><td class="mono">4</td><td>Stat move (boost/lower/control)</td><td><span class="ty SND">Snd</span> Screech ↓Def</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout"><b>Type theme via moves, not just bodies.</b> The fork only has a handful of new-type <em>species</em> (Magneton = Electric/Steel, Wigglytuff = Sound/Fairy, Staryu/Starmie = Water/Light). Themes like Koga's <span class="ty SND">Sound</span> and Giovanni/Agatha's <span class="ty DRK">Dark</span> are delivered mainly through <strong>retyped moves</strong> — Supersonic, Screech, Hyper Voice (Sound); Bite, Crunch, Dark Pulse (Dark) — which any compatible mon can carry. This matches the existing Koga set, which already runs Supersonic.</div>
+</section>
+
+<!-- BOSS REDESIGNS -->
+<section>
+  <h2><span class="n">04</span> Boss redesigns — gym leaders</h2>
+  <p class="lead">Each card: the new second type, the six-mon roster (<span class="tag kept" style="font-size:9px">kept</span> vanilla · <span class="tag new" style="font-size:9px">new</span> addition · <span class="tag ace" style="font-size:9px">ace</span> preserved), and the ace's sample set.</p>
+
+  <!-- BROCK -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Brock</span><span class="role">Gym 1</span>
+      <span class="arrow">·</span><span class="ty ROC">Rock</span><span class="arrow">→</span><span class="ty ROC">Rock</span><span class="ty GRD">Ground</span>
+      <span class="themebadge">theme: caves &amp; mountains</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Vanilla had only 2 mons (Geodude, Onix) — both kept; team built out with the mountain's Ground-types. Levels stay first-gym-low.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">10</span><span class="ty GRD">Grd</span><span class="nm">Diglett</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">10</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Geodude</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">11</span><span class="ty GRD">Grd</span><span class="nm">Sandshrew</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">11</span><span class="ty GRD">Grd</span><span class="nm">Cubone</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">12</span><span class="ty GRD">Grd</span><span class="ty ROC">Roc</span><span class="nm">Rhyhorn</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">14</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Onix</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Onix</b><span class="mv">Rock Slide · Earthquake · Iron Tail · Screech ↓Def</span></div>
+  </div>
+
+  <!-- MISTY -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Misty</span><span class="role">Gym 2</span>
+      <span class="arrow">·</span><span class="ty WTR">Water</span><span class="arrow">→</span><span class="ty WTR">Water</span><span class="ty ICE">Ice</span>
+      <span class="themebadge">theme: cool, elegant water</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Ice patches Water's Grass weakness and hits Grass/Flying attackers. Both vanilla mons (Staryu, Starmie) kept; Ice delivered through Seel/Shellder and Ice-Beam TM.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">18</span><span class="ty WTR">Wtr</span><span class="nm">Psyduck</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">18</span><span class="ty WTR">Wtr</span><span class="nm">Seel</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">18</span><span class="ty WTR">Wtr</span><span class="nm">Shellder</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">19</span><span class="ty WTR">Wtr</span><span class="ty LGT">Lgt</span><span class="nm">Staryu</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">19</span><span class="ty WTR">Wtr</span><span class="nm">Horsea</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">21</span><span class="ty WTR">Wtr</span><span class="ty LGT">Lgt</span><span class="nm">Starmie</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Starmie</b><span class="mv">Bubblebeam · Photon Beam · Thunderbolt · Reflect ↑Def</span></div>
+  </div>
+
+  <!-- SURGE -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Lt. Surge</span><span class="role">Gym 3</span>
+      <span class="arrow">·</span><span class="ty ELE">Electric</span><span class="arrow">→</span><span class="ty ELE">Electric</span><span class="ty STL">Steel</span>
+      <span class="themebadge">theme: military machines</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Steel fits the "Lightning American" gadget theme (Magnemite line is literally Electric/Steel) and adds Rock/Ice resistances. Only vanilla mon (Raichu) kept as ace.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">24</span><span class="ty ELE">Ele</span><span class="nm">Voltorb</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">24</span><span class="ty ELE">Ele</span><span class="ty STL">Stl</span><span class="nm">Magnemite</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">25</span><span class="ty ELE">Ele</span><span class="nm">Electrode</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">25</span><span class="ty ELE">Ele</span><span class="nm">Electabuzz</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">26</span><span class="ty ELE">Ele</span><span class="ty STL">Stl</span><span class="nm">Magneton</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">28</span><span class="ty ELE">Ele</span><span class="nm">Raichu</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Raichu</b><span class="mv">Thunderbolt · Iron Tail · Thunder Wave par · Growl ↓Atk</span></div>
+  </div>
+
+  <!-- ERIKA -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Erika</span><span class="role">Gym 4</span>
+      <span class="arrow">·</span><span class="ty GRS">Grass</span><span class="arrow">→</span><span class="ty GRS">Grass</span><span class="ty FAI">Fairy</span>
+      <span class="themebadge">theme: flower-fairy garden</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Fairy (Clefairy) suits the elegant floral persona and answers Grass's Fighting/Poison-attacker problems. Keeps 3 originals (Tangela, Weepinbell, Gloom). Ace = Gloom (see note).</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">29</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Bellsprout</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">30</span><span class="ty GRS">Grs</span><span class="nm">Tangela</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">31</span><span class="ty FAI">Fai</span><span class="nm">Clefairy</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">32</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Weepinbell</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">32</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Victreebel</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">34</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Gloom</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Gloom</b><span class="mv">Energy Ball · Sludge Bomb · Sleep Powder · Swords Dance ↑Atk</span></div>
+  </div>
+
+  <!-- KOGA -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Koga</span><span class="role">Gym 5</span>
+      <span class="arrow">·</span><span class="ty POI">Poison</span><span class="arrow">→</span><span class="ty POI">Poison</span><span class="ty SND">Sound</span>
+      <span class="themebadge">theme: sonic ninja</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px"><strong>Fixes the 3×Venonat repeat.</strong> Sound is the ninja's disorienting screech, carried on moves (Supersonic, Screech, Hyper Voice) across a proper Poison roster. Venomoth ace kept; one Venonat retained.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">44</span><span class="ty BUG">Bug</span><span class="ty POI">Poi</span><span class="nm">Venonat</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">45</span><span class="ty POI">Poi</span><span class="ty FLY">Fly</span><span class="nm">Golbat</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">46</span><span class="ty POI">Poi</span><span class="nm">Weezing</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">47</span><span class="ty POI">Poi</span><span class="nm">Muk</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">48</span><span class="ty POI">Poi</span><span class="nm">Arbok</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">50</span><span class="ty BUG">Bug</span><span class="ty POI">Poi</span><span class="nm">Venomoth</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Venomoth</b><span class="mv">Bug Buzz · Sludge Bomb · Psychic · Sleep Powder / Supersonic</span></div>
+  </div>
+
+  <!-- SABRINA -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Sabrina</span><span class="role">Gym 6</span>
+      <span class="arrow">·</span><span class="ty PSY">Psychic</span><span class="arrow">→</span><span class="ty PSY">Psychic</span><span class="ty FAI">Fairy</span>
+      <span class="themebadge">theme: mystic / mind</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Breaks up the all-Abra-line team. Fairy (Mr. Mime) fits the mystical persona and resists the Dark/Ghost that Psychic fears. Keeps the whole vanilla line (Abra, Kadabra, Alakazam).</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">48</span><span class="ty PSY">Psy</span><span class="nm">Abra</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">49</span><span class="ty PSY">Psy</span><span class="nm">Hypno</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty PSY">Psy</span><span class="nm">Kadabra</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty ICE">Ice</span><span class="ty PSY">Psy</span><span class="nm">Jynx</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty PSY">Psy</span><span class="ty FAI">Fai</span><span class="nm">Mr. Mime</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">52</span><span class="ty PSY">Psy</span><span class="nm">Alakazam</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Alakazam</b><span class="mv">Psychic · Dazzle Gleam · Shadow Ball · Reflect ↑Def</span></div>
+  </div>
+
+  <!-- BLAINE -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Blaine</span><span class="role">Gym 7</span>
+      <span class="arrow">·</span><span class="ty FIR">Fire</span><span class="arrow">→</span><span class="ty FIR">Fire</span><span class="ty ROC">Rock</span>
+      <span class="themebadge">theme: Cinnabar volcano</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Volcanic Rock adds a body that isn't Water-frail bait and gives coverage vs. opposing Fire/Flying/Ice. Keeps all 3 originals (Ninetales, Rapidash, Arcanine).</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">46</span><span class="ty FIR">Fir</span><span class="nm">Ponyta</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">48</span><span class="ty FIR">Fir</span><span class="nm">Ninetales</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">49</span><span class="ty FIR">Fir</span><span class="nm">Magmar</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty FIR">Fir</span><span class="nm">Rapidash</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">51</span><span class="ty GRD">Grd</span><span class="ty ROC">Roc</span><span class="nm">Rhydon</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">54</span><span class="ty FIR">Fir</span><span class="nm">Arcanine</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Arcanine</b><span class="mv">Flamethrower · Crunch · Dragon Pulse · Reflect ↑Def</span></div>
+  </div>
+
+  <!-- GIOVANNI -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Giovanni</span><span class="role">Gym 8</span>
+      <span class="arrow">·</span><span class="ty GRD">Ground</span><span class="arrow">→</span><span class="ty GRD">Ground</span><span class="ty DRK">Dark</span>
+      <span class="themebadge">theme: Rocket boss</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Dark = the crime-boss menace, carried on moves (Persian's Crunch/Bite). Vanilla already had 5 distinct mons — all kept, one Ground body added. Rhydon ace preserved.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">50</span><span class="ty GRD">Grd</span><span class="nm">Dugtrio</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">52</span><span class="ty GRD">Grd</span><span class="nm">Marowak</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">53</span><span class="ty NOR">Nor</span><span class="nm">Persian</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">53</span><span class="ty POI">Poi</span><span class="ty GRD">Grd</span><span class="nm">Nidoqueen</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty POI">Poi</span><span class="ty GRD">Grd</span><span class="nm">Nidoking</span><span class="tag kept">kept</span></div>
+      <div class="mon ace"><span class="lvl">55</span><span class="ty GRD">Grd</span><span class="ty ROC">Roc</span><span class="nm">Rhydon</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Rhydon</b><span class="mv">Earthquake · Rock Slide · Fire Blast · Leer ↓Def</span></div>
+  </div>
+</section>
+
+<!-- E4 -->
+<section>
+  <h2><span class="n">05</span> Elite Four &amp; Champion</h2>
+
+  <!-- LORELEI -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Lorelei</span><span class="role">Elite Four</span>
+      <span class="arrow">·</span><span class="ty ICE">Ice</span><span class="arrow">→</span><span class="ty ICE">Ice</span><span class="ty WTR">Water</span>
+      <span class="themebadge">theme: already dual — refined</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Ice/Water is her canonical identity, kept. No repeats to fix. Adds a fast Water special-attacker as the 6th; keeps 4 originals. Lapras ace preserved.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">53</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Cloyster</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">54</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Dewgong</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">54</span><span class="ty WTR">Wtr</span><span class="ty PSY">Psy</span><span class="nm">Slowbro</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty WTR">Wtr</span><span class="ty LGT">Lgt</span><span class="nm">Starmie</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty ICE">Ice</span><span class="ty PSY">Psy</span><span class="nm">Jynx</span><span class="tag kept">kept</span></div>
+      <div class="mon ace"><span class="lvl">56</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Lapras</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Lapras</b><span class="mv">Ice Beam · Surf · Thunderbolt · Sing slp</span></div>
+  </div>
+
+  <!-- BRUNO -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Bruno</span><span class="role">Elite Four</span>
+      <span class="arrow">·</span><span class="ty FIG">Fighting</span><span class="arrow">→</span><span class="ty FIG">Fighting</span><span class="ty ROC">Rock</span>
+      <span class="themebadge">theme: mountain martial artist</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px"><strong>Fixes the 2×Onix repeat.</strong> One Onix stays; the duplicate becomes Golem (keeps his Rock backbone). Poliwrath adds Water/Fighting coverage. Machamp ace preserved.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">53</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Onix</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">54</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Golem</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty FIG">Fig</span><span class="nm">Hitmonlee</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty FIG">Fig</span><span class="nm">Hitmonchan</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty WTR">Wtr</span><span class="ty FIG">Fig</span><span class="nm">Poliwrath</span><span class="tag new">new</span></div>
+      <div class="mon ace"><span class="lvl">58</span><span class="ty FIG">Fig</span><span class="nm">Machamp</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Machamp</b><span class="mv">Hi Jump Kick · Earthquake · Rock Slide · Focus Energy ↑crit</span></div>
+  </div>
+
+  <!-- AGATHA -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Agatha</span><span class="role">Elite Four</span>
+      <span class="arrow">·</span><span class="ty GHO">Ghost</span><span class="arrow">→</span><span class="ty GHO">Ghost</span><span class="ty DRK">Dark</span>
+      <span class="themebadge">theme: menacing sorceress</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px"><strong>Fixes the 2×Gengar repeat.</strong> One Gengar (ace) stays; the duplicate and roster fill out with Poison gas-mons. Dark (Crunch/Dark Pulse) is her intimidation. Keeps 4 originals.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">55</span><span class="ty GHO">Gho</span><span class="ty POI">Poi</span><span class="nm">Haunter</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty POI">Poi</span><span class="ty FLY">Fly</span><span class="nm">Golbat</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty POI">Poi</span><span class="nm">Weezing</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">57</span><span class="ty POI">Poi</span><span class="nm">Muk</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">58</span><span class="ty POI">Poi</span><span class="nm">Arbok</span><span class="tag kept">kept</span></div>
+      <div class="mon ace"><span class="lvl">60</span><span class="ty GHO">Gho</span><span class="ty POI">Poi</span><span class="nm">Gengar</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Gengar</b><span class="mv">Shadow Ball · Sludge Bomb · Dark Pulse · Hypnosis slp</span></div>
+  </div>
+
+  <!-- LANCE -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Lance</span><span class="role">Elite Four</span>
+      <span class="arrow">·</span><span class="ty DRG">Dragon</span><span class="arrow">→</span><span class="ty DRG">Dragon</span><span class="ty FLY">Flying</span>
+      <span class="themebadge">theme: dragon master</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px"><strong>Fixes the 2×Dragonair repeat.</strong> The duplicate becomes Charizard (pseudo-dragon, on-theme). Pidgeot is the fast Flying scout — swap for Scyther/Fearow to taste. Keeps 4 originals; Dragonite ace preserved.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">56</span><span class="ty DRG">Drg</span><span class="nm">Dragonair</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">57</span><span class="ty NOR">Nor</span><span class="ty FLY">Fly</span><span class="nm">Pidgeot</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">58</span><span class="ty WTR">Wtr</span><span class="ty FLY">Fly</span><span class="nm">Gyarados</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">58</span><span class="ty FIR">Fir</span><span class="ty FLY">Fly</span><span class="nm">Charizard</span><span class="tag new">new</span></div>
+      <div class="mon"><span class="lvl">60</span><span class="ty ROC">Roc</span><span class="ty FLY">Fly</span><span class="nm">Aerodactyl</span><span class="tag kept">kept</span></div>
+      <div class="mon ace"><span class="lvl">62</span><span class="ty DRG">Drg</span><span class="ty FLY">Fly</span><span class="nm">Dragonite</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Dragonite</b><span class="mv">Outrage · Air Slash · Ice Beam · Thunder Wave par</span></div>
+  </div>
+
+  <!-- RIVAL / CHAMPION -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Rival</span><span class="role">Champion</span>
+      <span class="arrow">·</span><span class="ty NOR">Mixed</span><span class="themebadge">theme: rounded ace team — kept</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">Already 6 mons, no repeats, and intentionally multi-type — so <strong>no type reassignment</strong>. The three starter-branch variants and the Eeveelution ace (Lv 65) are preserved; only movesets are upgraded to the boss recipe. Shown: the Jolteon branch.</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">59</span><span class="ty PSY">Psy</span><span class="nm">Alakazam</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">61</span><span class="ty GRD">Grd</span><span class="nm">Sandslash</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">61</span><span class="ty GRS">Grs</span><span class="ty PSY">Psy</span><span class="nm">Exeggutor</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">61</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Cloyster</span><span class="tag kept">kept</span></div>
+      <div class="mon"><span class="lvl">63</span><span class="ty FIR">Fir</span><span class="nm">Ninetales</span><span class="tag kept">kept</span></div>
+      <div class="mon ace"><span class="lvl">65</span><span class="ty ELE">Ele</span><span class="nm">Jolteon</span><span class="tag ace">ace</span></div>
+    </div>
+    <div class="aceline"><b>Jolteon</b><span class="mv">Thunderbolt · Low Kick · Thunder Wave par · Agility ↑Spe</span></div>
+  </div>
+</section>
+
+<!-- TYPE SUMMARY -->
+<section>
+  <h2><span class="n">06</span> Type reassignment at a glance</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Boss</th><th>Primary</th><th>Added</th><th>Delivered by</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>Brock</td><td class="mono">Rock</td><td class="mono">Ground</td><td>bodies</td><td>caves/mountains theme</td></tr>
+        <tr><td>Misty</td><td class="mono">Water</td><td class="mono">Ice</td><td>bodies + moves</td><td>covers Grass weakness</td></tr>
+        <tr><td>Lt. Surge</td><td class="mono">Electric</td><td class="mono">Steel</td><td>bodies</td><td>machine/military theme</td></tr>
+        <tr><td>Erika</td><td class="mono">Grass</td><td class="mono">Fairy</td><td>body + moves</td><td>floral persona; covers Fighting/Poison</td></tr>
+        <tr><td>Koga</td><td class="mono">Poison</td><td class="mono">Sound</td><td>moves</td><td>sonic-ninja theme</td></tr>
+        <tr><td>Sabrina</td><td class="mono">Psychic</td><td class="mono">Fairy</td><td>body + moves</td><td>mystic; resists Dark/Ghost</td></tr>
+        <tr><td>Blaine</td><td class="mono">Fire</td><td class="mono">Rock</td><td>body + moves</td><td>volcano; covers Fire/Flying/Ice</td></tr>
+        <tr><td>Giovanni</td><td class="mono">Ground</td><td class="mono">Dark</td><td>moves</td><td>crime-boss persona</td></tr>
+        <tr><td>Lorelei</td><td class="mono">Ice</td><td class="mono">Water</td><td>bodies</td><td>canonical dual identity</td></tr>
+        <tr><td>Bruno</td><td class="mono">Fighting</td><td class="mono">Rock</td><td>bodies</td><td>his Onix backbone</td></tr>
+        <tr><td>Agatha</td><td class="mono">Ghost</td><td class="mono">Dark</td><td>moves</td><td>menace; covers Ghost mirror</td></tr>
+        <tr><td>Lance</td><td class="mono">Dragon</td><td class="mono">Flying</td><td>bodies</td><td>canonical dual identity</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13.5px;color:var(--muted)">"Moves" delivery = the second type appears through retyped attacks (Sound, Dark, Fairy, Ice-Beam) rather than a second type on the mon's body, because the fork has few new-typed species. This is already how the vanilla Koga set works.</p>
+</section>
+
+<!-- IMPLEMENTATION -->
+<section>
+  <h2><span class="n">07</span> Implementation &amp; verification</h2>
+  <div class="phase"><div class="pn">Phase 1</div><div class="pb"><b>AI &amp; items</b><span>Edit <code>engine/battle/smart_ai.asm</code> (delete step 2, retarget step 1 → Full Heal) and <code>engine/battle/trainer_ai.asm</code> (drop heal-tier bytes). Smallest, highest-leverage change. Build &amp; battle-test one boss.</span></div></div>
+  <div class="phase"><div class="pn">Phase 2</div><div class="pb"><b>Boss rosters</b><span>Rewrite the 13 boss entries in <code>data/trainers/parties.asm</code> to the six-mon lists above. Purely additive to <code>$FF</code>-format (per-mon level) entries.</span></div></div>
+  <div class="phase"><div class="pn">Phase 3</div><div class="pb"><b>Boss movesets</b><span>Populate <code>data/trainers/special_moves.asm</code> with the full 4-move set for every boss mon per the STAB+coverage+stat recipe. Verify each move id against the mon's entry in <code>docs/pokemon_reference.md</code>.</span></div></div>
+  <div class="phase"><div class="pn">Phase 4</div><div class="pb"><b>Four-move sweep (regular trainers)</b><span>Audit the ~180 non-boss parties; add <code>special_moves</code> overrides where a mon's default set left an empty slot but 4 legal moves exist. Optional/incremental — bosses already satisfy the brief without it.</span></div></div>
+  <div class="phase"><div class="pn">Verify</div><div class="pb"><b>Build &amp; playtest</b><span><code>make -j$(nproc)</code> — a clean assemble+link is the pass signal (hash compare is expected to fail in this fork). Then fight each rebuilt boss in the debug ROM to confirm rosters, movesets, item use, and no HP-heal behavior.</span></div></div>
+</section>
+
+<!-- DECISIONS -->
+<section style="border-bottom:none">
+  <h2><span class="n">08</span> Open calls for you</h2>
+  <div class="callout decision"><b>Erika's ace is a vanilla tie.</b> Weepinbell and Gloom are both Lv 32 in vanilla — no single "highest." This plan makes <strong>Gloom</strong> the Lv 34 ace (its Vileplume line is Erika's canonical signature). Say the word to make Weepinbell the ace instead.</div>
+  <div class="callout decision"><b>Sabrina keeps a Lv 48 Abra.</b> To honor "keep ≥3 originals," the whole Abra→Kadabra→Alakazam line is retained — but a high-level Abra is a weak lead with a shallow movepool. Alternative: keep only Kadabra + Alakazam and add a third distinct Psychic (e.g. Slowbro/Exeggutor), treating the single evolutionary line as fewer than three distinct picks.</div>
+  <div class="callout decision"><b>Sound / Dark as move-flavor.</b> Koga's Sound, Giovanni's &amp; Agatha's Dark are delivered through moves, not a second type on the body, since no such species exist. If you'd rather see a literal Sound body on Koga, Wigglytuff (Sound/Fairy) is the only option — flag it and it goes in over Arbok.</div>
+  <div class="callout decision"><b>Scope of Phase 4.</b> The four-move sweep across ~180 regular parties is large and mechanical. Bosses meet the brief without it — decide whether to do it now, roll it out route-by-route, or skip.</div>
+</section>
+
+<!-- IMPLEMENTATION LOG -->
+<section style="border-bottom:none">
+  <h2><span class="n">09</span> Implementation log</h2>
+  <p class="lead">What was actually built, newest first. Kept in sync as phases land.</p>
+  <div class="log">
+    <div class="row">
+      <div class="when">2026-07-15</div>
+      <div class="what">
+        <b>Phase 1 — AI &amp; items · shipped</b>
+        <span>Stripped all HP recovery from boss AI. In <code>engine/battle/smart_ai.asm</code>, <code>CommonBossAI</code> step 2 (the "heal below ⅓ HP" branch) was deleted outright, and step 1 now cures sleep/freeze with <code>AIUseFullHeal</code> instead of <code>AIUseFullRestore</code>. In <code>engine/battle/trainer_ai.asm</code> the per-class heal-tier byte (<code>ld b, N</code>) was removed from all 18 boss routines — the opening X-item pointer in <code>hl</code> is now the only per-class parameter. Bosses use status cures + X-items only. The old <code>AIUsePotion</code>/<code>AIUseSuperPotion</code>/<code>AIUseHyperPotion</code>/<code>AIUseFullRestore</code>/<code>AIRecoverHP</code> routines are left in place but unreferenced (harmless dead code; no assembler warning). Verified: clean <code>make -j4</code>, both ROMs regenerated.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2026-07-15</div>
+      <div class="what">
+        <b>Phase 2 &amp; 3 — rosters + boss movesets · shipped</b>
+        <span>All 12 mono-type bosses in <code>data/trainers/parties.asm</code> rebuilt to six unique mons (repeats fixed: Koga, Bruno, Agatha, Lance; Sabrina's Abra replaced with Slowbro; Erika's ace = Gloom), vanilla aces preserved. <code>data/trainers/special_moves.asm</code> now fully specifies a legal 4-move set (STAB + coverage + stat) for every boss mon, including the Champion's three starter branches. Two supporting fixes were needed: (1) <b>PP bug</b> — <code>read_trainer_party.asm</code> now recomputes each roster mon's PP after special moves are applied, since overwriting an empty move slot otherwise leaves it at 0 PP (this also repairs the pre-existing Brock Onix set); (2) <b>bank space</b> — "Battle Engine 6" overflowed by 536 bytes, so the trade-animation graphics (<code>gfx/trade.asm</code>, 848 B, always loaded via <code>BANK()</code>) were floated to their own section, mirroring the earlier CryData move. Verified: clean <code>make -j4</code>, both ROMs regenerated.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Chromatic Yellow · trainer overhaul · Phase 1 shipped 2026-07-15 — rosters &amp; sample sets subject to playtest tuning</footer>
+
+</div>

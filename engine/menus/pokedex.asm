@@ -90,7 +90,7 @@ HandlePokedexSideMenu:
 	xor a
 	ld [hli], a ; current menu item ID
 	inc hl
-	ld a, 4
+	ld a, 5
 	ld [hli], a ; max menu item ID
 	ld a, PAD_A | PAD_B
 	ld [hli], a ; menu watched keys (A button and B button)
@@ -110,6 +110,8 @@ HandlePokedexSideMenu:
 	jr z, .choseCry
 	dec a
 	jr z, .choseArea
+	dec a
+	jr z, .choseMoves
 	dec a
 	vc_patch Forbid_printing_Pokedex
 IF DEF (_YELLOW_VC)
@@ -164,6 +166,11 @@ ENDC
 
 .choseArea
 	predef LoadTownMap_Nest ; display pokemon areas
+	ld b, 0
+	jr .exitSideMenu
+
+.choseMoves
+	callfar Pokedex_ShowLearnset ; display the level-up learnset
 	ld b, 0
 	jr .exitSideMenu
 
@@ -348,6 +355,7 @@ PokedexMenuItemsText:
 	db   "DATA"
 	next "CRY"
 	next "AREA"
+	next "MOVE"
 	next "PRNT"
 	next "QUIT@"
 

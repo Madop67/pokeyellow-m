@@ -121,6 +121,33 @@ ReadTrainer:
 	jr nz, .loopSkipTrainer
 	jr .loopAdditionalMoveData
 .FinishUp
+; SpecialTrainerMoves can overwrite move slots that WriteMonMoves left empty
+; (an empty slot is assigned 0 PP). Recompute every roster mon's PP so any
+; move added this way is actually usable instead of being stuck at 0 PP.
+	ld a, [wEnemyPartyCount]
+	and a
+	jr z, .clearMoneyWon
+	ld c, a ; number of party mons
+	ld b, 0 ; current mon index
+.recomputePPLoop
+	push bc
+	ld a, b
+	ld hl, wEnemyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes ; hl = this mon's moves
+	push hl
+	ld de, MON_PP - MON_MOVES - 1
+	add hl, de
+	ld d, h
+	ld e, l ; de = this mon's PP - 1
+	pop hl
+	predef LoadMovePPs
+	pop bc
+	inc b
+	ld a, b
+	cp c
+	jr nz, .recomputePPLoop
+.clearMoneyWon
 ; clear wAmountMoneyWon addresses
 	xor a
 	ld de, wAmountMoneyWon
