@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/rhyhorn.pic", 0, 1 ; sprite dimensions
 	dw RhyhornPicFront, RhyhornPicBack
 
-	db HORN_ATTACK, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db HEADBUTT, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         THUNDERBOLT,  THUNDER,      EARTHQUAKE,   FISSURE,      \
-	     DIG,          MIMIC,        DOUBLE_TEAM,  BIDE,         FIRE_BLAST,   \
-	     SKULL_BASH,   REST,         ROCK_SLIDE,   SUBSTITUTE,   STRENGTH
+	tmhm STRENGTH,    TOXIC,       STONE_EDGE,  DOUBLE_EDGE, COUNTER,     \
+	     IRON_TAIL,   THUNDERBOLT, THUNDER,     EARTHQUAKE,  FISSURE,     \
+	     DIG,         SHOCK_WAVE,  MIMIC,       DOUBLE_TEAM, FIRE_BLAST,  \
+	     REST,        ROCK_SLIDE,  SUBSTITUTE
 	; end
 

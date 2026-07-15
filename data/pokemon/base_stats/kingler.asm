@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/kingler.pic", 0, 1 ; sprite dimensions
 	dw KinglerPicFront, KinglerPicBack
 
-	db BUBBLE, LEER, VICEGRIP, NO_MOVE ; level 1 learnset
+	db WATER_GUN, HEADBUTT, LEER, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
-	     RAGE,         MIMIC,        DOUBLE_TEAM,  BIDE,         REST,         \
-	     SUBSTITUTE,   CUT,          SURF,         STRENGTH
+	tmhm CUT,          SURF,         STRENGTH,     SWORDS_DANCE, TOXIC,        \
+	     DOUBLE_EDGE,  BUBBLEBEAM,   ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
+	     COUNTER,      MIMIC,        DOUBLE_TEAM,  X_SCISSOR,    REST,         \
+	     SUBSTITUTE
 	; end
 

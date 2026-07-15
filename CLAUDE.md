@@ -4,8 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A **heavily modified fork** of the [pret/pokeyellow](https://github.com/pret/pokeyellow)
-disassembly of **Pokémon Yellow** (Game Boy Color), built with `rgbds`. Nearly all source
+**Pokémon Chromatic Yellow** — a **heavily modified fork** of the
+[pret/pokeyellow](https://github.com/pret/pokeyellow)
+disassembly of **Pokémon Yellow** (Game Boy Color), built with `rgbds`.
+The hack's name appears on the title screen (`gfx/title/pokemon_logo.png` +
+`pokemon_logo.tilemap`) and in the cartridge header title (`PKMN CHROMATIC`,
+set via `RGBFIXFLAGS` in the Makefile; the header field caps at 15 chars). Nearly all source
 is Game Boy Z80 assembly (`.asm`); there is no application/business logic outside of the
 game's own code.
 
@@ -144,8 +148,16 @@ authoritative, generated summary):
 - **Crits** — modern staged rates (1/24 base, 1/8 high-crit, 1/2 with Focus Energy,
   guaranteed at stage 3+), **1.5×** on unmodified stats; the Focus Energy bug is fixed.
 - **Fixed vanilla bugs/quirks** — the 1/256-miss glitch (100%-accuracy moves can't miss),
-  Steel can't be poisoned / Electric can't be paralyzed, and Exp. All no longer halves the
-  enemy's base stats/catch rate.
+  Steel can't be poisoned / Electric can't be paralyzed, Exp. All no longer halves the
+  enemy's base stats/catch rate, and `GetName` no longer corrupts names for ids ≥ $C4.
+- **Complete move overhaul** — the move list was redone from scratch (225 moves,
+  `NUM_ATTACKS` = 225): every attacking type has one move per power band
+  (weak/moderate/strong/strongest × physical/special), all 55 vanilla status moves and a
+  few signature moves survive with their original ids, and every learnset/TM was rebuilt.
+  Design doc: `docs/move_overhaul_plan.md`; applied by `tools/apply_move_overhaul.py`
+  (which requires the pre-overhaul data files to re-run). New moves reuse vanilla
+  animations via their `AttackAnimationPointers` rows — the `move` macro's first byte must
+  stay equal to the move's own id (`ReadMove` copies it into `wPlayerMoveNum`).
 
 Because the game data is edited freely here, most changes to `engine/`, `data/`,
 `home/`, or `scripts/` are **intended** to change the resulting ROM. There is no

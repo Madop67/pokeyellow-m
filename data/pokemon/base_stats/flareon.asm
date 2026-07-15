@@ -10,12 +10,12 @@
 	INCBIN "gfx/pokemon/front/flareon.pic", 0, 1 ; sprite dimensions
 	dw FlareonPicFront, FlareonPicBack
 
-	db TACKLE, TAIL_WHIP, QUICK_ATTACK, EMBER ; level 1 learnset
+	db EMBER, TACKLE, QUICK_ATTACK, TAIL_WHIP ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     FIRE_BLAST,   SWIFT,        SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm STRENGTH,     TOXIC,        DOUBLE_EDGE,  HYPER_BEAM,   COUNTER,      \
+	     FLAMETHROWER, MIMIC,        DOUBLE_TEAM,  REFLECT,      FIRE_BLAST,   \
+	     SWIFT,        REST,         LIGHT_SCREEN, SUBSTITUTE
 	; end
 

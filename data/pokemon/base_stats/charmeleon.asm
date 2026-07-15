@@ -10,14 +10,13 @@
 	INCBIN "gfx/pokemon/front/charmeleon.pic", 0, 1 ; sprite dimensions
 	dw CharmeleonPicFront, CharmeleonPicBack
 
-	db SCRATCH, GROWL, EMBER, NO_MOVE ; level 1 learnset
+	db EMBER, TACKLE, GROWL, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm MEGA_PUNCH,   SWORDS_DANCE, MEGA_KICK,    TOXIC,        BODY_SLAM,    \
-	     TAKE_DOWN,    DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, \
-	     RAGE,         DRAGON_RAGE,  DIG,          MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   CUT,          STRENGTH
+	tmhm CUT,          STRENGTH,     SWORDS_DANCE, TOXIC,        DOUBLE_EDGE,  \
+	     COUNTER,      SEISMIC_TOSS, FLAMETHROWER, DIG,          MIMIC,        \
+	     DOUBLE_TEAM,  REFLECT,      FIRE_BLAST,   SWIFT,        REST,         \
+	     SUBSTITUTE
 	; end
 

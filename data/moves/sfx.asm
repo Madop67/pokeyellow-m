@@ -1,6 +1,8 @@
 MoveSoundTable:
 	table_width 3
 	; ID, pitch mod, tempo mod
+	; Indexed by ANIM_* animation-script id (the battle_anim sound byte),
+	; NOT by move id — the 165 rows stay in the original move order.
 	db SFX_POUND,              $00, $80 ; POUND
 	db SFX_BATTLE_0C,          $10, $80 ; KARATE_CHOP
 	db SFX_DOUBLESLAP,         $00, $80 ; DOUBLESLAP
@@ -166,5 +168,5 @@ MoveSoundTable:
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
-	assert_table_length NUM_ATTACKS
+	assert_table_length NUM_MOVE_ANIMS
 	db SFX_BATTLE_0B,          $00, $80

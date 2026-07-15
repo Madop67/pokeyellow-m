@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/jolteon.pic", 0, 1 ; sprite dimensions
 	dw JolteonPicFront, JolteonPicBack
 
-	db TACKLE, TAIL_WHIP, QUICK_ATTACK, THUNDERSHOCK ; level 1 learnset
+	db TACKLE, THUNDERSHOCK, QUICK_ATTACK, TAIL_WHIP ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         SWIFT,        SKULL_BASH,   REST,         \
-	     THUNDER_WAVE, SUBSTITUTE,   FLASH
+	tmhm STRENGTH,     FLASH,        TOXIC,        DOUBLE_EDGE,  HYPER_BEAM,   \
+	     COUNTER,      THUNDERBOLT,  THUNDER,      SHOCK_WAVE,   MIMIC,        \
+	     DOUBLE_TEAM,  REFLECT,      SWIFT,        REST,         THUNDER_WAVE, \
+	     LIGHT_SCREEN, SUBSTITUTE
 	; end
 

@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/persian.pic", 0, 1 ; sprite dimensions
 	dw PersianPicFront, PersianPicBack
 
-	db SCRATCH, GROWL, BITE, SCREECH ; level 1 learnset
+	db TACKLE, BITE, GROWL, SCREECH ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   \
-	     WATER_GUN,    HYPER_BEAM,   PAY_DAY,      RAGE,         THUNDERBOLT,  \
-	     THUNDER,      MIMIC,        DOUBLE_TEAM,  BIDE,         SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm STRENGTH,    TOXIC,       DOUBLE_EDGE, BUBBLEBEAM,  HYPER_VOICE, \
+	     HYPER_BEAM,  PAY_DAY,     COUNTER,     THUNDERBOLT, THUNDER,     \
+	     SHOCK_WAVE,  MIMIC,       DOUBLE_TEAM, SWIFT,       REST,        \
+	     EXPLOSION,   TRI_ATTACK,  SUBSTITUTE
 	; end
 

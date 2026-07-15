@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/electrode.pic", 0, 1 ; sprite dimensions
 	dw ElectrodePicFront, ElectrodePicBack
 
-	db TACKLE, SCREECH, SONICBOOM, NO_MOVE ; level 1 learnset
+	db SONICBOOM, TACKLE, SCREECH, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        TAKE_DOWN,    HYPER_BEAM,   RAGE,         THUNDERBOLT,  \
-	     THUNDER,      TELEPORT,     MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SELFDESTRUCT, SWIFT,        SKULL_BASH,   REST,         \
-	     THUNDER_WAVE, EXPLOSION,    SUBSTITUTE,   FLASH
+	tmhm FLASH,        TOXIC,        DOUBLE_EDGE,  HYPER_VOICE,  HYPER_BEAM,   \
+	     COUNTER,      THUNDERBOLT,  THUNDER,      SHOCK_WAVE,   MIMIC,        \
+	     DOUBLE_TEAM,  REFLECT,      SWIFT,        REST,         THUNDER_WAVE, \
+	     EXPLOSION,    SUBSTITUTE
 	; end
 

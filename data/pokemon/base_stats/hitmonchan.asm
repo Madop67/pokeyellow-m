@@ -10,13 +10,12 @@
 	INCBIN "gfx/pokemon/front/hitmonchan.pic", 0, 1 ; sprite dimensions
 	dw HitmonchanPicFront, HitmonchanPicBack
 
-	db COMET_PUNCH, AGILITY, NO_MOVE, NO_MOVE ; level 1 learnset
+	db TACKLE, AGILITY, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm MEGA_PUNCH,   MEGA_KICK,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    \
-	     DOUBLE_EDGE,  SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  BIDE,         METRONOME,    SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE,   STRENGTH
+	tmhm STRENGTH,     TOXIC,        STONE_EDGE,   DOUBLE_EDGE,  AURA_SPHERE,  \
+	     COUNTER,      SEISMIC_TOSS, MIMIC,        DOUBLE_TEAM,  METRONOME,    \
+	     SWIFT,        REST,         SUBSTITUTE
 	; end
 

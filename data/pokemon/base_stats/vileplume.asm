@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/vileplume.pic", 0, 1 ; sprite dimensions
 	dw VileplumePicFront, VileplumePicBack
 
-	db STUN_SPORE, SLEEP_POWDER, ACID, PETAL_DANCE ; level 1 learnset
+	db ACID, ENERGY_BALL, SLEEP_POWDER, STUN_SPORE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     HYPER_BEAM,   RAGE,         MEGA_DRAIN,   SOLARBEAM,    MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         REST,         SUBSTITUTE,   \
-	     CUT
+	tmhm CUT,          STRENGTH,     SLUDGE_BOMB,  SWORDS_DANCE, TOXIC,        \
+	     ENERGY_BALL,  DOUBLE_EDGE,  HYPER_BEAM,   COUNTER,      MEGA_DRAIN,   \
+	     SOLARBEAM,    MIMIC,        DOUBLE_TEAM,  REFLECT,      REST,         \
+	     SUBSTITUTE
 	; end
 

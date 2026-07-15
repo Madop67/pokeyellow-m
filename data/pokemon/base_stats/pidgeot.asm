@@ -10,13 +10,12 @@
 	INCBIN "gfx/pokemon/front/pidgeot.pic", 0, 1 ; sprite dimensions
 	dw PidgeotPicFront, PidgeotPicBack
 
-	db GUST, SAND_ATTACK, QUICK_ATTACK, NO_MOVE ; level 1 learnset
+	db GUST, QUICK_ATTACK, SAND_ATTACK, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   WHIRLWIND,    TOXIC,        TAKE_DOWN,    DOUBLE_EDGE,  \
-	     HYPER_BEAM,   RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SWIFT,        SKY_ATTACK,   REST,         SUBSTITUTE,   \
-	     FLY
+	tmhm FLY,         AIR_SLASH,   TOXIC,       DOUBLE_EDGE, HYPER_BEAM,  \
+	     PAY_DAY,     COUNTER,     MIMIC,       DOUBLE_TEAM, REFLECT,     \
+	     SWIFT,       REST,        EXPLOSION,   TRI_ATTACK,  SUBSTITUTE
 	; end
 

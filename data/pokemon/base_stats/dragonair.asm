@@ -10,14 +10,14 @@
 	INCBIN "gfx/pokemon/front/dragonair.pic", 0, 1 ; sprite dimensions
 	dw DragonairPicFront, DragonairPicBack
 
-	db WRAP, LEER, THUNDER_WAVE, NO_MOVE ; level 1 learnset
+	db TACKLE, LEER, THUNDER_WAVE, NO_MOVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         \
-	     DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  \
-	     REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
-	     REST,         THUNDER_WAVE, SUBSTITUTE,   SURF
+	tmhm SURF,         STRENGTH,     TOXIC,        DOUBLE_EDGE,  BUBBLEBEAM,   \
+	     ICE_BEAM,     BLIZZARD,     COUNTER,      IRON_TAIL,    THUNDERBOLT,  \
+	     THUNDER,      SHOCK_WAVE,   MIMIC,        DOUBLE_TEAM,  REFLECT,      \
+	     FIRE_BLAST,   SWIFT,        DRAGON_PULSE, REST,         THUNDER_WAVE, \
+	     SUBSTITUTE
 	; end
 

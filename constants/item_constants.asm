@@ -158,52 +158,52 @@ MACRO add_tm
 ENDM
 
 DEF TM01 EQU const_value
-	add_tm MEGA_PUNCH   ; $C9
-	add_tm RAZOR_WIND   ; $CA
+	add_tm SLUDGE_BOMB  ; $C9
+	add_tm AIR_SLASH    ; $CA
 	add_tm SWORDS_DANCE ; $CB
-	add_tm WHIRLWIND    ; $CC
-	add_tm MEGA_KICK    ; $CD
+	add_tm SHADOW_BALL  ; $CC
+	add_tm DAZZLE_GLEAM ; $CD
 	add_tm TOXIC        ; $CE
-	add_tm HORN_DRILL   ; $CF
-	add_tm BODY_SLAM    ; $D0
-	add_tm TAKE_DOWN    ; $D1
+	add_tm STONE_EDGE   ; $CF
+	add_tm CRUNCH       ; $D0
+	add_tm ENERGY_BALL  ; $D1
 	add_tm DOUBLE_EDGE  ; $D2
 	add_tm BUBBLEBEAM   ; $D3
-	add_tm WATER_GUN    ; $D4
+	add_tm HYPER_VOICE  ; $D4
 	add_tm ICE_BEAM     ; $D5
 	add_tm BLIZZARD     ; $D6
 	add_tm HYPER_BEAM   ; $D7
 	add_tm PAY_DAY      ; $D8
-	add_tm SUBMISSION   ; $D9
+	add_tm AURA_SPHERE  ; $D9
 	add_tm COUNTER      ; $DA
 	add_tm SEISMIC_TOSS ; $DB
-	add_tm RAGE         ; $DC
+	add_tm FLAMETHROWER ; $DC
 	add_tm MEGA_DRAIN   ; $DD
 	add_tm SOLARBEAM    ; $DE
-	add_tm DRAGON_RAGE  ; $DF
+	add_tm IRON_TAIL    ; $DF
 	add_tm THUNDERBOLT  ; $E0
 	add_tm THUNDER      ; $E1
 	add_tm EARTHQUAKE   ; $E2
 	add_tm FISSURE      ; $E3
 	add_tm DIG          ; $E4
 	add_tm PSYCHIC_M    ; $E5
-	add_tm TELEPORT     ; $E6
+	add_tm SHOCK_WAVE   ; $E6
 	add_tm MIMIC        ; $E7
 	add_tm DOUBLE_TEAM  ; $E8
 	add_tm REFLECT      ; $E9
-	add_tm BIDE         ; $EA
+	add_tm DARK_PULSE   ; $EA
 	add_tm METRONOME    ; $EB
-	add_tm SELFDESTRUCT ; $EC
-	add_tm EGG_BOMB     ; $ED
+	add_tm FLASH_CANNON ; $EC
+	add_tm PHOTON_BEAM  ; $ED
 	add_tm FIRE_BLAST   ; $EE
 	add_tm SWIFT        ; $EF
-	add_tm SKULL_BASH   ; $F0
+	add_tm X_SCISSOR    ; $F0
 	add_tm SOFTBOILED   ; $F1
-	add_tm DREAM_EATER  ; $F2
-	add_tm SKY_ATTACK   ; $F3
+	add_tm DRAGON_PULSE ; $F2
+	add_tm BUG_BUZZ     ; $F3
 	add_tm REST         ; $F4
 	add_tm THUNDER_WAVE ; $F5
-	add_tm PSYWAVE      ; $F6
+	add_tm LIGHT_SCREEN ; $F6
 	add_tm EXPLOSION    ; $F7
 	add_tm ROCK_SLIDE   ; $F8
 	add_tm TRI_ATTACK   ; $F9

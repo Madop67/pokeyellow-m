@@ -90,7 +90,7 @@ ViridianCityPrintFisherText::
 	jr nz, .got_item
 	ld hl, .YouCanHaveThisText
 	call PrintText
-	lb bc, TM_DREAM_EATER, 1
+	lb bc, TM_DRAGON_PULSE, 1
 	call GiveItem
 	jr nc, .bag_full
 	ld hl, .ReceivedTM42Text

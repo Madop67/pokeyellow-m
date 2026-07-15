@@ -10,7 +10,6 @@ MoveGrammar:
 
 ; 1: originally "[mon]は<LINE>[move]を　した！" ("[mon]<LINE>did [move]!")
 	db RECOVER
-	db SELFDESTRUCT
 	db AMNESIA
 	db 0 ; end set
 
@@ -20,22 +19,11 @@ MoveGrammar:
 	db TELEPORT
 	db MIMIC
 	db DOUBLE_TEAM
-	db BIDE ; corrected JP grammar: moved from set 1 in pokered
-	db BARRAGE
 	db 0 ; end set
 
 ; 3: originally "[mon]の<LINE>[move]　こうげき！" ("[mon]'s<LINE>[move] attack!")
-	db POUND
-	db SCRATCH
-	db VICEGRIP
 	db WING_ATTACK
 	db FLY
-	db BIND
-	db SLAM
-	db HORN_ATTACK
-	db BODY_SLAM
-	db WRAP
-	db THRASH
 	db TAIL_WHIP
 	db LEER
 	db BITE
@@ -45,7 +33,6 @@ MoveGrammar:
 	db PECK
 	db COUNTER
 	db STRENGTH
-	db ABSORB
 	db STRING_SHOT
 	db EARTHQUAKE
 	db FISSURE
@@ -58,15 +45,11 @@ MoveGrammar:
 	db DEFENSE_CURL
 	db METRONOME
 	db LICK
-	db CLAMP
-	db CONSTRICT
 	db POISON_GAS
 	db LEECH_LIFE
-	db BUBBLE
 	db FLASH
 	db SPLASH
 	db ACID_ARMOR
-	db FURY_SWIPES
 	db REST
 	db SHARPEN
 	db SLASH

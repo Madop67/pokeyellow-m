@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/nidorino.pic", 0, 1 ; sprite dimensions
 	dw NidorinoPicFront, NidorinoPicBack
 
-	db LEER, TACKLE, HORN_ATTACK, NO_MOVE ; level 1 learnset
+	db TACKLE, HEADBUTT, LEER, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         \
-	     THUNDERBOLT,  THUNDER,      MIMIC,        DOUBLE_TEAM,  REFLECT,      \
-	     BIDE,         SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm STRENGTH,    SLUDGE_BOMB, TOXIC,       DOUBLE_EDGE, BUBBLEBEAM,  \
+	     ICE_BEAM,    BLIZZARD,    COUNTER,     THUNDERBOLT, THUNDER,     \
+	     SHOCK_WAVE,  MIMIC,       DOUBLE_TEAM, REFLECT,     REST,        \
+	     SUBSTITUTE
 	; end
 

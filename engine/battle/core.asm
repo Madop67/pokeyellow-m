@@ -519,7 +519,7 @@ HandlePoisonBurnLeechSeed:
 	ldh [hWhoseTurn], a
 	xor a
 	ld [wAnimationType], a
-	ld a, ABSORB
+	ld a, MEGA_DRAIN ; drain animation (Absorb was removed in the move overhaul)
 	call PlayMoveAnimation ; play leech seed animation (from opposing mon)
 	pop af
 	ldh [hWhoseTurn], a
@@ -3684,7 +3684,7 @@ CheckPlayerStatusConditions:
 	xor a
 	ld [hli], a
 	ld [hl], a
-	ld a, BIDE
+	ld a, COUNTER ; unreachable: no move has BIDE_EFFECT since the move overhaul
 	ld [wPlayerMoveNum], a
 	ld hl, HandleIfPlayerMoveMissed ; skip damage calculation, DecrementPP and MoveHitTest
 	jp .returnToHL
@@ -3692,7 +3692,7 @@ CheckPlayerStatusConditions:
 .ThrashingAboutCheck
 	bit THRASHING_ABOUT, [hl] ; is mon using thrash or petal dance?
 	jr z, .MultiturnMoveCheck
-	ld a, THRASH
+	ld a, OUTRAGE ; the only THRASH_PETAL_DANCE_EFFECT move
 	ld [wPlayerMoveNum], a
 	ld hl, ThrashingAboutText
 	call PrintText
@@ -3730,7 +3730,7 @@ CheckPlayerStatusConditions:
 	ld a, [wPlayerBattleStatus2]
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkPlayerStatusConditionsDone ; if we made it this far, mon can move normally this turn
-	ld a, RAGE
+	ld a, OUTRAGE ; unreachable: no move has RAGE_EFFECT since the move overhaul
 	ld [wNamedObjectIndex], a
 	call GetMoveName
 	call CopyToStringBuffer
@@ -4835,10 +4835,8 @@ ApplyAttackToEnemyPokemon:
 	ld b, SONICBOOM_DAMAGE ; 20
 	cp SONICBOOM
 	jr z, .storeDamage
-	ld b, DRAGON_RAGE_DAMAGE ; 40
-	cp DRAGON_RAGE
-	jr z, .storeDamage
-; Psywave
+; fixed-damage fallback (was Psywave; Dragon Rage and Psywave were removed
+; in the move overhaul, so only Seismic Toss/Night Shade/Sonicboom reach here)
 	ld a, [hl]
 	ld b, a
 	srl a
@@ -4954,10 +4952,8 @@ ApplyAttackToPlayerPokemon:
 	ld b, SONICBOOM_DAMAGE
 	cp SONICBOOM
 	jr z, .storeDamage
-	ld b, DRAGON_RAGE_DAMAGE
-	cp DRAGON_RAGE
-	jr z, .storeDamage
-; Psywave
+; fixed-damage fallback (was Psywave; Dragon Rage and Psywave were removed
+; in the move overhaul, so only Seismic Toss/Night Shade/Sonicboom reach here)
 	ld a, [hl]
 	ld b, a
 	srl a
@@ -5129,7 +5125,7 @@ HandleBuildingRage:
 	pop hl
 	xor a
 	ld [hld], a ; null move effect
-	ld a, RAGE
+	ld a, OUTRAGE ; unreachable: no move has RAGE_EFFECT since the move overhaul
 	ld [hl], a ; restore the target pokemon's move number to Rage
 	ldh a, [hWhoseTurn]
 	xor $01 ; flip turn back to the way it was
@@ -5213,9 +5209,10 @@ MetronomePickMove:
 	call BattleRandom
 	and a
 	jr z, .pickMoveLoop
+	cp NUM_ATTACKS + 1
+	jr nc, .pickMoveLoop ; not a move id
 	cp STRUGGLE
-	ASSERT NUM_ATTACKS == STRUGGLE ; random numbers greater than STRUGGLE are not moves
-	jr nc, .pickMoveLoop
+	jr z, .pickMoveLoop
 	cp METRONOME
 	jr z, .pickMoveLoop
 	ld [hl], a
@@ -6174,7 +6171,7 @@ CheckEnemyStatusConditions:
 	xor a
 	ld [wAnimationType], a
 	ldh [hWhoseTurn], a
-	ld a, POUND
+	ld a, TACKLE ; generic hit animation (Pound was removed in the move overhaul)
 	call PlayMoveAnimation
 	ld a, $1
 	ldh [hWhoseTurn], a
@@ -6265,7 +6262,7 @@ CheckEnemyStatusConditions:
 	xor a
 	ld [hli], a
 	ld [hl], a
-	ld a, BIDE
+	ld a, COUNTER ; unreachable: no move has BIDE_EFFECT since the move overhaul
 	ld [wEnemyMoveNum], a
 	call SwapPlayerAndEnemyLevels
 	ld hl, HandleIfEnemyMoveMissed ; skip damage calculation, DecrementPP and MoveHitTest
@@ -6273,7 +6270,7 @@ CheckEnemyStatusConditions:
 .checkIfThrashingAbout
 	bit THRASHING_ABOUT, [hl] ; is mon using thrash or petal dance?
 	jr z, .checkIfUsingMultiturnMove
-	ld a, THRASH
+	ld a, OUTRAGE ; the only THRASH_PETAL_DANCE_EFFECT move
 	ld [wEnemyMoveNum], a
 	ld hl, ThrashingAboutText
 	call PrintText
@@ -6308,7 +6305,7 @@ CheckEnemyStatusConditions:
 	ld a, [wEnemyBattleStatus2]
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkEnemyStatusConditionsDone ; if we made it this far, mon can move normally this turn
-	ld a, RAGE
+	ld a, OUTRAGE ; unreachable: no move has RAGE_EFFECT since the move overhaul
 	ld [wNamedObjectIndex], a
 	call GetMoveName
 	call CopyToStringBuffer
@@ -6980,9 +6977,7 @@ HandleExplodingAnimation:
 	ld de, wEnemyBattleStatus1
 	ld a, [wEnemyMoveNum]
 .player
-	cp SELFDESTRUCT
-	jr z, .isExplodingMove
-	cp EXPLOSION
+	cp EXPLOSION ; Selfdestruct was removed in the move overhaul
 	ret nz
 .isExplodingMove
 	ld a, [de]
@@ -6999,8 +6994,10 @@ HandleExplodingAnimation:
 	ret nz
 	ld a, ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT
 	ld [wAnimationType], a
-	ASSERT ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT == MEGA_PUNCH
-	; ld a, MEGA_PUNCH
+	; FORCE_PALM occupies Mega Punch's old slot 5, whose animation row
+	; still points at MegaPunchAnim (see tools/apply_move_overhaul.py).
+	ASSERT ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT == FORCE_PALM
+	; ld a, FORCE_PALM
 ; fallthrough
 PlayMoveAnimation:
 	ld [wAnimationID], a

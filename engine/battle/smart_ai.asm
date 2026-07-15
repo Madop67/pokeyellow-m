@@ -89,9 +89,6 @@ AIMoveChoiceModification4:
 	ld e, 20
 	cp SONICBOOM
 	jr z, .fixedDamage
-	ld e, 40
-	cp DRAGON_RAGE
-	jr z, .fixedDamage
 	ld a, [wEnemyMonLevel] ; Seismic Toss, Night Shade, ~Psywave
 	ld e, a
 .fixedDamage

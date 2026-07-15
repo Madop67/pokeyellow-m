@@ -14,10 +14,9 @@
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   RAGE,         THUNDERBOLT,  \
-	     THUNDER,      EARTHQUAKE,   FISSURE,      MIMIC,        DOUBLE_TEAM,  \
-	     BIDE,         FIRE_BLAST,   SKULL_BASH,   REST,         SUBSTITUTE,   \
-	     STRENGTH
+	tmhm STRENGTH,    TOXIC,       DOUBLE_EDGE, ICE_BEAM,    BLIZZARD,    \
+	     HYPER_BEAM,  PAY_DAY,     COUNTER,     THUNDERBOLT, THUNDER,     \
+	     EARTHQUAKE,  FISSURE,     SHOCK_WAVE,  MIMIC,       DOUBLE_TEAM, \
+	     FIRE_BLAST,  REST,        EXPLOSION,   TRI_ATTACK,  SUBSTITUTE
 	; end
 

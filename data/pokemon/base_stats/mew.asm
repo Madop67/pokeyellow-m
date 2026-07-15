@@ -10,20 +10,20 @@
 	INCBIN "gfx/pokemon/front/mew.pic", 0, 1 ; sprite dimensions
 	dw MewPicFront, MewPicBack
 
-	db POUND, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
+	db TACKLE, NO_MOVE, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm MEGA_PUNCH,   RAZOR_WIND,   SWORDS_DANCE, WHIRLWIND,    MEGA_KICK,    \
-	     TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
-	     PAY_DAY,      SUBMISSION,   COUNTER,      SEISMIC_TOSS, RAGE,         \
-	     MEGA_DRAIN,   SOLARBEAM,    DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
-	     EARTHQUAKE,   FISSURE,      DIG,          PSYCHIC_M,    TELEPORT,     \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         METRONOME,    \
-	     SELFDESTRUCT, EGG_BOMB,     FIRE_BLAST,   SWIFT,        SKULL_BASH,   \
-	     SOFTBOILED,   DREAM_EATER,  SKY_ATTACK,   REST,         THUNDER_WAVE, \
-	     PSYWAVE,      EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE,   \
-	     CUT,          FLY,          SURF,         STRENGTH,     FLASH
+	tmhm CUT,          FLY,          SURF,         STRENGTH,     FLASH,        \
+	     SLUDGE_BOMB,  AIR_SLASH,    SWORDS_DANCE, SHADOW_BALL,  DAZZLE_GLEAM, \
+	     TOXIC,        STONE_EDGE,   CRUNCH,       ENERGY_BALL,  DOUBLE_EDGE,  \
+	     BUBBLEBEAM,   HYPER_VOICE,  ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
+	     PAY_DAY,      AURA_SPHERE,  COUNTER,      SEISMIC_TOSS, FLAMETHROWER, \
+	     MEGA_DRAIN,   SOLARBEAM,    IRON_TAIL,    THUNDERBOLT,  THUNDER,      \
+	     EARTHQUAKE,   FISSURE,      DIG,          PSYCHIC_M,    SHOCK_WAVE,   \
+	     MIMIC,        DOUBLE_TEAM,  REFLECT,      DARK_PULSE,   METRONOME,    \
+	     FLASH_CANNON, PHOTON_BEAM,  FIRE_BLAST,   SWIFT,        X_SCISSOR,    \
+	     SOFTBOILED,   DRAGON_PULSE, BUG_BUZZ,     REST,         THUNDER_WAVE, \
+	     LIGHT_SCREEN, EXPLOSION,    ROCK_SLIDE,   TRI_ATTACK,   SUBSTITUTE
 	; end
 

@@ -160,11 +160,17 @@ SECTION "Battle Engine 6", ROMX
 
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
-INCLUDE "data/pokemon/cries.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "gfx/trade.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
+
+
+; Moved out of "Battle Engine 6" to make room for the expanded move list;
+; CryData is always accessed with BANK(CryData), so it can float freely.
+SECTION "Pokemon Cries", ROMX
+
+INCLUDE "data/pokemon/cries.asm"
 
 
 SECTION "Battle Core", ROMX
@@ -297,12 +303,18 @@ INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/events/hidden_items.asm"
 
 
+; Moved out of "bank1E" to make room for the expanded move-animation tables;
+; the fishing_gfx table stores BANK() of each tile label, so this can float.
+SECTION "Fishing Graphics", ROMX
+
+INCLUDE "gfx/fishing.asm"
+
+
 SECTION "bank1E", ROMX
 
 INCLUDE "engine/battle/animations.asm"
 INCLUDE "engine/overworld/cut2.asm"
 INCLUDE "engine/overworld/dust_smoke.asm"
-INCLUDE "gfx/fishing.asm"
 INCLUDE "data/moves/animations.asm"
 INCLUDE "data/battle_anims/subanimations.asm"
 INCLUDE "data/battle_anims/frame_blocks.asm"

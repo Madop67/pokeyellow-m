@@ -10,14 +10,13 @@
 	INCBIN "gfx/pokemon/front/kabutops.pic", 0, 1 ; sprite dimensions
 	dw KabutopsPicFront, KabutopsPicBack
 
-	db SCRATCH, HARDEN, ABSORB, NO_MOVE ; level 1 learnset
+	db TACKLE, MEGA_DRAIN, HARDEN, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   SWORDS_DANCE, MEGA_KICK,    TOXIC,        BODY_SLAM,    \
-	     TAKE_DOWN,    DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     \
-	     BLIZZARD,     HYPER_BEAM,   SUBMISSION,   SEISMIC_TOSS, RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         SKULL_BASH,   \
-	     REST,         SUBSTITUTE,   CUT,          SURF
+	tmhm CUT,          SURF,         STRENGTH,     SWORDS_DANCE, TOXIC,        \
+	     STONE_EDGE,   DOUBLE_EDGE,  BUBBLEBEAM,   ICE_BEAM,     BLIZZARD,     \
+	     HYPER_BEAM,   COUNTER,      SEISMIC_TOSS, MIMIC,        DOUBLE_TEAM,  \
+	     REFLECT,      REST,         ROCK_SLIDE,   SUBSTITUTE
 	; end
 

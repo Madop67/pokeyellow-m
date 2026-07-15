@@ -15,19 +15,18 @@ GetName::
 ; [wPredefBank] = bank of list
 ;
 ; returns pointer to name in de
+	; TM names are separate from item names.
+	; The vanilla bug that applied this to every name list (not just items)
+	; is fixed here: the expanded move list has ids above HM01 ($C4), which
+	; would otherwise resolve to TM/HM names.
+	ld a, [wNameListType]
+	cp ITEM_NAME
 	ld a, [wNameListIndex]
 	ld [wNamedObjectIndex], a
-
-	; TM names are separate from item names.
-	; BUG: This applies to all names instead of just items.
-	ASSERT NUM_POKEMON_INDEXES < HM01, \
-		"A bug in GetName will get TM/HM names for Pokémon above ${x:HM01}."
-	ASSERT NUM_ATTACKS < HM01, \
-		"A bug in GetName will get TM/HM names for moves above ${x:HM01}."
-	ASSERT NUM_TRAINERS < HM01, \
-		"A bug in GetName will get TM/HM names for trainers above ${x:HM01}."
+	jr nz, .notMachineName
 	cp HM01
 	jp nc, GetMachineName
+.notMachineName
 
 	ldh a, [hLoadedROMBank]
 	push af

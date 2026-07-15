@@ -10,15 +10,14 @@
 	INCBIN "gfx/pokemon/front/dragonite.pic", 0, 1 ; sprite dimensions
 	dw DragonitePicFront, DragonitePicBack
 
-	db WRAP, LEER, THUNDER_WAVE, AGILITY ; level 1 learnset
+	db TACKLE, AGILITY, LEER, THUNDER_WAVE ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm RAZOR_WIND,   TOXIC,        HORN_DRILL,   BODY_SLAM,    TAKE_DOWN,    \
-	     DOUBLE_EDGE,  BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     \
-	     HYPER_BEAM,   RAGE,         DRAGON_RAGE,  THUNDERBOLT,  THUNDER,      \
-	     MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   \
-	     SWIFT,        SKULL_BASH,   REST,         THUNDER_WAVE, SUBSTITUTE,   \
-	     SURF,         STRENGTH
+	tmhm SURF,         STRENGTH,     AIR_SLASH,    TOXIC,        CRUNCH,       \
+	     DOUBLE_EDGE,  BUBBLEBEAM,   ICE_BEAM,     BLIZZARD,     HYPER_BEAM,   \
+	     COUNTER,      IRON_TAIL,    THUNDERBOLT,  THUNDER,      SHOCK_WAVE,   \
+	     MIMIC,        DOUBLE_TEAM,  REFLECT,      FIRE_BLAST,   SWIFT,        \
+	     DRAGON_PULSE, REST,         THUNDER_WAVE, LIGHT_SCREEN, SUBSTITUTE
 	; end
 

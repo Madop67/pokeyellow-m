@@ -14,9 +14,8 @@
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm WHIRLWIND,    TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     RAGE,         MIMIC,        DOUBLE_TEAM,  REFLECT,      BIDE,         \
-	     SKULL_BASH,   SKY_ATTACK,   REST,         TRI_ATTACK,   SUBSTITUTE,   \
-	     FLY
+	tmhm FLY,         STRENGTH,    AIR_SLASH,   TOXIC,       DOUBLE_EDGE, \
+	     HYPER_BEAM,  PAY_DAY,     COUNTER,     MIMIC,       DOUBLE_TEAM, \
+	     REFLECT,     REST,        EXPLOSION,   TRI_ATTACK,  SUBSTITUTE
 	; end
 

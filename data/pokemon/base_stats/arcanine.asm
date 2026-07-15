@@ -10,13 +10,13 @@
 	INCBIN "gfx/pokemon/front/arcanine.pic", 0, 1 ; sprite dimensions
 	dw ArcaninePicFront, ArcaninePicBack
 
-	db ROAR, EMBER, LEER, TAKE_DOWN ; level 1 learnset
+	db EMBER, DOUBLE_EDGE, LEER, ROAR ; level 1 learnset
 	db GROWTH_SLOW ; growth rate
 
 	; tm/hm learnset
-	tmhm TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  HYPER_BEAM,   \
-	     RAGE,         DRAGON_RAGE,  DIG,          TELEPORT,     MIMIC,        \
-	     DOUBLE_TEAM,  REFLECT,      BIDE,         FIRE_BLAST,   SWIFT,        \
-	     SKULL_BASH,   REST,         SUBSTITUTE
+	tmhm STRENGTH,     TOXIC,        CRUNCH,       DOUBLE_EDGE,  HYPER_VOICE,  \
+	     HYPER_BEAM,   COUNTER,      FLAMETHROWER, DIG,          MIMIC,        \
+	     DOUBLE_TEAM,  REFLECT,      FIRE_BLAST,   SWIFT,        DRAGON_PULSE, \
+	     REST,         SUBSTITUTE
 	; end
 

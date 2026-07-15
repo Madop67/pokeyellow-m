@@ -10,13 +10,12 @@
 	INCBIN "gfx/pokemon/front/krabby.pic", 0, 1 ; sprite dimensions
 	dw KrabbyPicFront, KrabbyPicBack
 
-	db BUBBLE, LEER, NO_MOVE, NO_MOVE ; level 1 learnset
+	db WATER_GUN, LEER, NO_MOVE, NO_MOVE ; level 1 learnset
 	db GROWTH_MEDIUM_FAST ; growth rate
 
 	; tm/hm learnset
-	tmhm SWORDS_DANCE, TOXIC,        BODY_SLAM,    TAKE_DOWN,    DOUBLE_EDGE,  \
-	     BUBBLEBEAM,   WATER_GUN,    ICE_BEAM,     BLIZZARD,     RAGE,         \
-	     MIMIC,        DOUBLE_TEAM,  BIDE,         REST,         SUBSTITUTE,   \
-	     CUT,          SURF,         STRENGTH
+	tmhm CUT,          SURF,         STRENGTH,     SWORDS_DANCE, TOXIC,        \
+	     DOUBLE_EDGE,  BUBBLEBEAM,   ICE_BEAM,     BLIZZARD,     COUNTER,      \
+	     MIMIC,        DOUBLE_TEAM,  X_SCISSOR,    REST,         SUBSTITUTE
 	; end
 

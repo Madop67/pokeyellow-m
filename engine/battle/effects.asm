@@ -1129,12 +1129,6 @@ ChargeMoveEffectText:
 	cp SOLARBEAM
 	ld hl, TookInSunlightText
 	jr z, .gotText
-	cp SKULL_BASH
-	ld hl, LoweredItsHeadText
-	jr z, .gotText
-	cp SKY_ATTACK
-	ld hl, SkyAttackGlowingText
-	jr z, .gotText
 	cp FLY
 	ld hl, FlewUpHighText
 	jr z, .gotText

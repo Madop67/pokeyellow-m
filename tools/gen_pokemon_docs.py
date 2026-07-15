@@ -95,13 +95,13 @@ MOVE_CHANGE_NOTES = {
     "SWIFT": "retyped Normal → Light",
     "FLASH": "retyped Normal → Light",
     "STRUGGLE": "retyped Normal → ??? (typeless; no STAB, hits Ghosts)",
-    "ACID": "side effect now lowers Sp. Def (was Defense)",
     "PSYCHIC_M": "side effect now lowers Sp. Def (was Special)",
     "AMNESIA": "now raises Sp. Def (was Special)",
     "COUNTER": "now counters any physical move (was Normal/Fighting only)",
 }
 
-HIGH_CRIT = {"KARATE_CHOP", "RAZOR_LEAF", "CRABHAMMER", "SLASH"}
+HIGH_CRIT = {"KARATE_CHOP", "RAZOR_LEAF", "CRABHAMMER", "SLASH",
+              "STONE_EDGE", "NIGHT_SLASH"}
 
 # ---------------------------------------------------------------- TM/HM
 def parse_tmhm():
@@ -295,10 +295,11 @@ STATIC_NOTES = {
 
 # ---------------------------------------------------------------- output
 INTRO = """\
-# Pokémon Reference (Modernized Mechanics Edition)
+# Pokémon Chromatic Yellow — Pokémon Reference
 
-This document covers all 151 Pokémon as they exist in **this fork**, which
-modernizes Yellow's combat mechanics. It is generated from the game data by
+This document covers all 151 Pokémon as they exist in **Pokémon Chromatic
+Yellow**, a ROM hack of Pokémon Yellow that modernizes its combat mechanics
+and completely redoes the move list. It is generated from the game data by
 `tools/gen_pokemon_docs.py`; rerun that script after changing any data file.
 
 ## Summary of mechanics changes vs. vanilla Yellow
@@ -330,6 +331,11 @@ modernizes Yellow's combat mechanics. It is generated from the game data by
   can't be paralyzed.
 - **Exp. All** no longer halves the enemy's base stats/catch rate (an
   original quirk); it only halves experience as intended.
+- **Complete move overhaul** — the move list was redone from scratch: every
+  type has one move in each of eight power bands (weak/moderate/strong/
+  strongest × physical/special), all 55 original status moves survive, and
+  learnsets/TMs were rebuilt accordingly. Design and rationale:
+  `docs/move_overhaul_plan.md`.
 
 """
 
@@ -377,7 +383,8 @@ def main():
     # ---- moves table
     out.append("## Moves\n")
     out.append("Power `—` = status move; `*` = set/varies. "
-               "High-crit moves: Karate Chop, Razor Leaf, Crabhammer, Slash.\n")
+               "High-crit moves: Karate Chop, Razor Leaf, Crabhammer, Slash, "
+               "Stone Edge, Night Slash.\n")
     out.append("| # | Move | Type | Category | Power | Acc | PP | Changes |")
     out.append("|---|------|------|----------|-------|-----|----|---------|")
     for const, mv in sorted(moves.items(), key=lambda kv: kv[1]["id"]):

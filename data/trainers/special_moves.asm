@@ -14,8 +14,8 @@ SpecialTrainerMoves:
 	db 0
 
 	db BROCK, 1
-	db 2, 3, BIND
-	db 2, 4, BIDE
+	db 2, 3, HEADBUTT
+	db 2, 4, COUNTER
 	db 0
 
 	db MISTY, 1
@@ -24,15 +24,15 @@ SpecialTrainerMoves:
 
 	db LT_SURGE, 1
 	db 1, 1, THUNDERBOLT
-	db 1, 2, MEGA_PUNCH
-	db 1, 3, MEGA_KICK
+	db 1, 2, STRENGTH
+	db 1, 3, DOUBLE_EDGE
 	db 1, 4, GROWL
 	db 0
 
 	db ERIKA, 1
 	db 1, 3, MEGA_DRAIN
 	db 2, 1, RAZOR_LEAF
-	db 3, 1, PETAL_DANCE
+	db 3, 1, ENERGY_BALL
 	db 0
 
 	db KOGA, 1
@@ -59,8 +59,8 @@ SpecialTrainerMoves:
 	db SABRINA, 1
 	db 1, 1, FLASH
 	db 2, 1, KINESIS
-	db 2, 4, PSYWAVE
-	db 3, 1, PSYWAVE
+	db 2, 4, CONFUSION
+	db 3, 1, CONFUSION
 	db 0
 
 	db GIOVANNI, 3
@@ -90,8 +90,8 @@ SpecialTrainerMoves:
 	db 1, 4, DIG
 	db 2, 3, FIRE_PUNCH
 	db 2, 4, DOUBLE_TEAM
-	db 3, 1, DOUBLE_KICK
-	db 3, 2, MEGA_KICK
+	db 3, 1, LOW_KICK
+	db 3, 2, DOUBLE_EDGE
 	db 3, 4, DOUBLE_TEAM
 	db 4, 1, ROCK_SLIDE
 	db 4, 2, SCREECH
@@ -107,16 +107,16 @@ SpecialTrainerMoves:
 	db 2, 2, TOXIC
 	db 2, 4, LEECH_LIFE
 	db 3, 2, LICK
-	db 4, 1, WRAP
+	db 4, 1, TACKLE
 	db 5, 2, PSYCHIC_M
 	db 0
 
 	db LANCE, 1
-	db 1, 1, DRAGON_RAGE
+	db 1, 1, TWISTER
 	db 2, 1, THUNDER_WAVE
 	db 2, 3, THUNDERBOLT
 	db 3, 1, BUBBLEBEAM
-	db 3, 2, WRAP
+	db 3, 2, TACKLE
 	db 3, 3, ICE_BEAM
 	db 4, 1, WING_ATTACK
 	db 4, 2, SWIFT
@@ -132,7 +132,7 @@ SpecialTrainerMoves:
 	db 3, 4, LEECH_SEED
 	db 4, 1, ICE_BEAM
 	db 5, 1, CONFUSE_RAY
-	db 5, 4, FIRE_SPIN
+	db 5, 4, FLAME_BURST
 	db 6, 3, QUICK_ATTACK
 	db 0
 
@@ -151,7 +151,7 @@ SpecialTrainerMoves:
 	db 2, 4, KINESIS
 	db 3, 4, LEECH_SEED
 	db 4, 1, CONFUSE_RAY
-	db 4, 4, FIRE_SPIN
+	db 4, 4, FLAME_BURST
 	db 5, 1, THUNDERBOLT
 	db 6, 1, AURORA_BEAM
 	db 6, 3, QUICK_ATTACK
