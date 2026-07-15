@@ -329,8 +329,11 @@ and completely redoes the move list. It is generated from the game data by
   moves cannot miss (accuracy/evasion stages still apply).
 - **Status immunities** — Steel types can't be poisoned; Electric types
   can't be paralyzed.
-- **Exp. All** no longer halves the enemy's base stats/catch rate (an
-  original quirk); it only halves experience as intended.
+- **Experience** — modern EXP sharing: the whole party earns experience
+  whenever an enemy Pokémon is knocked out *or* caught, not just the
+  Pokémon that participated. This makes the **Exp. All** item redundant, so
+  it is **deprecated** — it no longer does anything meaningful (and it no
+  longer halves the enemy's base stats/catch rate, an original quirk).
 - **Complete move overhaul** — the move list was redone from scratch: every
   type has one move in each of eight power bands (weak/moderate/strong/
   strongest × physical/special), all 55 original status moves survive, and
