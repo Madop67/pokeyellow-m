@@ -42,9 +42,7 @@ was rebuilt to match. Design rationale in [docs/move_overhaul_plan.md](docs/move
 
 - Boss teams rebuilt into competitive six-Pokémon parties with item-aware AI.
 - Regular trainers given curated, level-capped movesets (STAB + coverage + one utility).
-- See [docs/trainer_overhaul_plan.html](docs/trainer_overhaul_plan.html) and
-  [docs/trainer_overhaul_phase4.html](docs/trainer_overhaul_phase4.html) for the design specs.
-
+  
 ### Fixed vanilla bugs
 
 - The 1/256-miss glitch is gone — 100%-accuracy moves can't miss.
