@@ -350,7 +350,8 @@ INCLUDE "engine/battle/misc.asm"
 
 INCLUDE "engine/battle/read_trainer_party.asm"
 
-INCLUDE "data/trainers/special_moves.asm"
+; data/trainers/special_moves.asm moved to the "Trainer Special Moves" bank
+; (main.asm) — it outgrew this bank once every regular trainer got a moveset.
 
 INCLUDE "data/trainers/parties.asm"
 

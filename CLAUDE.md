@@ -124,9 +124,21 @@ Key top-level files/dirs:
   `special_moves.asm` overrides shown in bold). Produced by `tools/gen_trainer_docs.py`
   (which imports the parsers in `gen_pokemon_docs.py`) — **do not hand-edit it; rerun that
   script after changing trainer parties, special moves, or any Pokémon/move data.**
+- `tools/gen_regular_movesets.py` — **generator, not a doc**: (re)writes the regular-trainer
+  half of `data/trainers/special_moves.asm` from the game data, applying the Phase 4
+  "boss-lite" moveset doctrine (STAB + coverage + one utility, level-capped, natural-pool
+  preferred, emitted as surgical per-slot overrides). Preserves the hand-authored boss and
+  vanilla-quirk blocks verbatim. Rerun after changing trainer/move/Pokémon data, then rerun
+  `gen_trainer_docs.py` and rebuild. Note: the `SpecialTrainerMoves` table + its reader
+  `ApplySpecialTrainerMoves` live in the floating `"Trainer Special Moves"` bank (main.asm),
+  reached via `callfar` from `ReadTrainer` — they outgrew "Battle Engine 6".
 - `docs/trainer_overhaul_plan.html` — design spec for the trainer-battle overhaul (item AI,
   competitive movesets, rebuilt six-mon boss teams) with an implementation log of what
   shipped. Hand-written; update it when continuing that work.
+- `docs/trainer_overhaul_phase4.html` — design spec for Phase 4 (the regular-trainer moveset
+  sweep), the walkthrough sorted by location rather than class, with its implementation log.
+  Its per-region example tables are hand-written; the doctrine it documents is implemented by
+  `tools/gen_regular_movesets.py`.
 
 ### Build dependency system
 

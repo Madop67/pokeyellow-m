@@ -180,6 +180,15 @@ SECTION "Trade Animation GFX", ROMX
 INCLUDE "gfx/trade.asm"
 
 
+; The SpecialTrainerMoves table (now a full moveset for every regular trainer,
+; Phase 4) outgrew "Battle Engine 6". It and ApplySpecialTrainerMoves — the tail
+; of ReadTrainer, which reads the table same-bank — live here and are reached via
+; `callfar ApplySpecialTrainerMoves`, so the table can float freely.
+SECTION "Trainer Special Moves", ROMX
+
+INCLUDE "engine/battle/apply_special_moves.asm"
+
+
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"

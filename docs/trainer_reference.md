@@ -74,70 +74,70 @@ _Lv 11 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 11 | Normal | Tackle · Tail Whip · Quick Attack |
-| 2 | Ekans | 11 | Poison | Tackle · Leer · Poison Sting |
+| 1 | Rattata | 11 | Normal | Tackle · **Pay Day** · Quick Attack · **Shock Wave** |
+| 2 | Ekans | 11 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
 
 ### Youngster #2 — Route 3
 _Lv 14 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 14 | Normal/Flying | Peck · Growl · Leer |
+| 1 | Spearow | 14 | Normal/Flying | Peck · **Swift** · **Counter** · **Pay Day** |
 
 ### Youngster #3 — Mt. Moon 1F
 _Lv 10 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 10 | Normal | Tackle · Tail Whip · Quick Attack |
-| 2 | Rattata | 10 | Normal | Tackle · Tail Whip · Quick Attack |
-| 3 | Zubat | 10 | Poison/Flying | Leech Life · Poison Sting · Supersonic |
+| 1 | Rattata | 10 | Normal | Tackle · **Pay Day** · Quick Attack · **Shock Wave** |
+| 2 | Rattata | 10 | Normal | Tackle · **Pay Day** · Quick Attack · **Shock Wave** |
+| 3 | Zubat | 10 | Poison/Flying | Leech Life · Poison Sting · Supersonic · **Mega Drain** |
 
 ### Youngster #4 — Route 24
 _Lv 14 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 14 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Ekans | 14 | Poison | Tackle · Leer · Poison Sting |
-| 3 | Zubat | 14 | Poison/Flying | Leech Life · Poison Sting · Supersonic |
+| 1 | Rattata | 14 | Normal | Tackle · **Pay Day** · Quick Attack · Bite |
+| 2 | Ekans | 14 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
+| 3 | Zubat | 14 | Poison/Flying | Leech Life · Poison Sting · Supersonic · **Mega Drain** |
 
 ### Youngster #5 — Route 25
 _Lv 15 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 15 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Spearow | 15 | Normal/Flying | Peck · Growl · Leer · Tackle |
+| 1 | Rattata | 15 | Normal | Tackle · **Pay Day** · Quick Attack · Bite |
+| 2 | Spearow | 15 | Normal/Flying | Peck · **Pay Day** · **Swift** · Tackle |
 
 ### Youngster #6 — Route 25
 _Lv 17 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Slowpoke | 17 | Water/Psychic | Confusion |
+| 1 | Slowpoke | 17 | Water/Psychic | Confusion · **Bubblebeam** · **Tri Attack** · **Thunder Wave** |
 
 ### Youngster #7 — Route 25
 _Lv 14 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ekans | 14 | Poison | Tackle · Leer · Poison Sting |
-| 2 | Sandshrew | 14 | Ground | Tackle · Sand-Attack |
+| 1 | Ekans | 14 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
+| 2 | Sandshrew | 14 | Ground | Tackle · Sand-Attack · **Cut** · **Swift** |
 
 ### Youngster #8 — SS Anne 1F Rooms
 _Lv 21 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♂ | 21 | Poison | Leer · Headbutt · Low Kick · Poison Sting |
+| 1 | Nidoran♂ | 21 | Poison | **Tackle** · Headbutt · Low Kick · Poison Sting |
 
 ### Youngster #9 — Route 11
 _Lv 21 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ekans | 21 | Poison | Tackle · Leer · Poison Sting · Bite |
+| 1 | Ekans | 21 | Poison | Tackle · **Rock Slide** · Poison Sting · Bite |
 
 ### Youngster #10 — Route 11
 _Lv 19 · 2 Pokémon_
@@ -152,17 +152,17 @@ _Lv 17 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 17 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Rattata | 17 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 3 | Raticate | 17 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
+| 1 | Rattata | 17 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 2 | Rattata | 17 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 3 | Raticate | 17 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
 
 ### Youngster #12 — Route 11
 _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♂ | 18 | Poison | Leer · Headbutt · Low Kick · Poison Sting |
-| 2 | Nidorino | 18 | Poison | Tackle · Headbutt · Leer · Low Kick |
+| 1 | Nidoran♂ | 18 | Poison | **Tackle** · Headbutt · Low Kick · Poison Sting |
+| 2 | Nidorino | 18 | Poison | Tackle · Headbutt · **Bubblebeam** · Low Kick |
 
 ### Youngster #13 — Unused
 _Lv 17 · 4 Pokémon_
@@ -276,7 +276,7 @@ _Lv 20 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Butterfree | 20 | Bug/Flying | Poisonpowder · Stun Spore · Sleep Powder · Supersonic |
+| 1 | Butterfree | 20 | Bug/Flying | **Infestation** · **Confusion** · Sleep Powder · **Mega Drain** |
 
 ### Bug Catcher #12 — Unused
 _Lv 18 · 3 Pokémon_
@@ -292,8 +292,8 @@ _Lv 19 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Beedrill | 19 | Bug/Poison | Tackle · Focus Energy |
-| 2 | Beedrill | 19 | Bug/Poison | Tackle · Focus Energy |
+| 1 | Beedrill | 19 | Bug/Poison | Tackle · **Swords Dance** · **Cut** · **Mega Drain** |
+| 2 | Beedrill | 19 | Bug/Poison | Tackle · **Swords Dance** · **Cut** · **Mega Drain** |
 
 ### Bug Catcher #14 — Route 9
 _Lv 20 · 3 Pokémon_
@@ -302,7 +302,7 @@ _Lv 20 · 3 Pokémon_
 |---|---------|----|-------|-------|
 | 1 | Caterpie | 20 | Bug | Tackle · String Shot · Fury Cutter |
 | 2 | Weedle | 20 | Bug/Poison | Poison Sting · String Shot · Fury Cutter |
-| 3 | Venonat | 20 | Bug/Poison | Tackle · Disable · Supersonic · Confusion |
+| 3 | Venonat | 20 | Bug/Poison | Tackle · **Mega Drain** · Supersonic · Confusion |
 
 ### Bug Catcher #15 — Viridian Forest
 _Lv 8 · 2 Pokémon_
@@ -322,47 +322,47 @@ _Lv 9 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 9 | Normal/Flying | Gust · Sand-Attack |
-| 2 | Pidgey | 9 | Normal/Flying | Gust · Sand-Attack |
+| 1 | Pidgey | 9 | Normal/Flying | Gust · Sand-Attack · **Pay Day** · **Swift** |
+| 2 | Pidgey | 9 | Normal/Flying | Gust · Sand-Attack · **Pay Day** · **Swift** |
 
 ### Lass #2 — Route 3
 _Lv 10 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 10 | Normal | Tackle · Tail Whip · Quick Attack |
-| 2 | Nidoran♂ | 10 | Poison | Tackle · Leer · Headbutt |
+| 1 | Rattata | 10 | Normal | Tackle · **Pay Day** · Quick Attack · **Shock Wave** |
+| 2 | Nidoran♂ | 10 | Poison | Tackle · Leer · **Counter** · **Shock Wave** |
 
 ### Lass #3 — Route 3
 _Lv 14 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Jigglypuff | 14 | Sound/Fairy | Sing · Tackle · Disable |
+| 1 | Jigglypuff | 14 | Sound/Fairy | Sing · Tackle · **Counter** · **Shock Wave** |
 
 ### Lass #4 — Route 4
 _Lv 31 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Paras | 31 | Bug/Grass | Tackle · Stun Spore · Leech Life · Spore |
-| 2 | Paras | 31 | Bug/Grass | Tackle · Stun Spore · Leech Life · Spore |
-| 3 | Parasect | 31 | Bug/Grass | Leech Life · Stun Spore · Razor Leaf · Spore |
+| 1 | Paras | 31 | Bug/Grass | Tackle · **X-Scissor** · Leech Life · Spore |
+| 2 | Paras | 31 | Bug/Grass | Tackle · **X-Scissor** · Leech Life · Spore |
+| 3 | Parasect | 31 | Bug/Grass | Leech Life · **Tackle** · Razor Leaf · Spore |
 
 ### Lass #5 — Mt. Moon 1F
 _Lv 11 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Oddish | 11 | Grass/Poison | Mega Drain |
-| 2 | Bellsprout | 11 | Grass/Poison | Vine Whip · Growth |
+| 1 | Oddish | 11 | Grass/Poison | Mega Drain · **Cut** · **Counter** · **Double Team** |
+| 2 | Bellsprout | 11 | Grass/Poison | Vine Whip · **Swords Dance** · **Cut** · **Mega Drain** |
 
 ### Lass #6 — Mt. Moon 1F
 _Lv 14 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Clefairy | 14 | Fairy | Tackle · Growl · Sing |
+| 1 | Clefairy | 14 | Fairy | Tackle · **Counter** · Sing · **Shock Wave** |
 
 ### Lass #7 — Route 24
 _Lv 16 · 2 Pokémon_
@@ -370,7 +370,7 @@ _Lv 16 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Pidgey | 16 | Normal/Flying | Gust · Sand-Attack · Tackle · Quick Attack |
-| 2 | Nidoran♀ | 16 | Poison | Tackle · Growl · Low Kick |
+| 2 | Nidoran♀ | 16 | Poison | Tackle · **Counter** · Low Kick · **Shock Wave** |
 
 ### Lass #8 — Route 24
 _Lv 14 · 2 Pokémon_
@@ -378,24 +378,24 @@ _Lv 14 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Pidgey | 14 | Normal/Flying | Gust · Sand-Attack · Tackle · Quick Attack |
-| 2 | Nidoran♀ | 14 | Poison | Tackle · Growl · Low Kick |
+| 2 | Nidoran♀ | 14 | Poison | Tackle · **Counter** · Low Kick · **Shock Wave** |
 
 ### Lass #9 — Route 25
 _Lv 15 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♂ | 15 | Poison | Tackle · Leer · Headbutt · Low Kick |
-| 2 | Nidoran♀ | 15 | Poison | Tackle · Growl · Low Kick |
+| 1 | Nidoran♂ | 15 | Poison | Tackle · **Shock Wave** · **Counter** · Low Kick |
+| 2 | Nidoran♀ | 15 | Poison | Tackle · **Counter** · Low Kick · **Shock Wave** |
 
 ### Lass #10 — Route 25
 _Lv 13 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Oddish | 13 | Grass/Poison | Mega Drain |
+| 1 | Oddish | 13 | Grass/Poison | Mega Drain · **Cut** · **Counter** · **Double Team** |
 | 2 | Pidgey | 13 | Normal/Flying | Gust · Sand-Attack · Tackle · Quick Attack |
-| 3 | Oddish | 13 | Grass/Poison | Mega Drain |
+| 3 | Oddish | 13 | Grass/Poison | Mega Drain · **Cut** · **Counter** · **Double Team** |
 
 ### Lass #11 — SS Anne 1F Rooms
 _Lv 18 · 2 Pokémon_
@@ -403,74 +403,74 @@ _Lv 18 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Pidgey | 18 | Normal/Flying | Gust · Sand-Attack · Tackle · Quick Attack |
-| 2 | Nidoran♀ | 18 | Poison | Tackle · Growl · Low Kick · Poison Sting |
+| 2 | Nidoran♀ | 18 | Poison | Tackle · **Shock Wave** · Low Kick · Poison Sting |
 
 ### Lass #12 — SS Anne 2F Rooms
 _Lv 20 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Jigglypuff | 20 | Sound/Fairy | Sing · Tackle · Disable · Defense Curl |
+| 1 | Jigglypuff | 20 | Sound/Fairy | Sing · Tackle · **Bubblebeam** · **Tri Attack** |
 
 ### Lass #13 — Route 8
 _Lv 23 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♀ | 23 | Poison | Growl · Low Kick · Poison Sting · Tail Whip |
-| 2 | Nidorina | 23 | Poison | Growl · Low Kick · Poison Sting · Cross Poison |
+| 1 | Nidoran♀ | 23 | Poison | **Tackle** · Low Kick · Poison Sting · **Shock Wave** |
+| 2 | Nidorina | 23 | Poison | **Tackle** · Low Kick · Poison Sting · Cross Poison |
 
 ### Lass #14 — Route 8
 _Lv 24 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Meowth | 24 | Normal | Growl · Bite · Pay Day · Screech |
-| 2 | Meowth | 24 | Normal | Growl · Bite · Pay Day · Screech |
-| 3 | Meowth | 24 | Normal | Growl · Bite · Pay Day · Screech |
+| 1 | Meowth | 24 | Normal | **Tackle** · Bite · Pay Day · Screech |
+| 2 | Meowth | 24 | Normal | **Tackle** · Bite · Pay Day · Screech |
+| 3 | Meowth | 24 | Normal | **Tackle** · Bite · Pay Day · Screech |
 
 ### Lass #15 — Route 8
 _Lv 19 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 19 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Rattata | 19 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 3 | Nidoran♀ | 19 | Poison | Tackle · Growl · Low Kick · Poison Sting |
-| 4 | Meowth | 19 | Normal | Tackle · Growl · Bite · Pay Day |
-| 5 | Nidoran♂ | 19 | Poison | Leer · Headbutt · Low Kick · Poison Sting |
+| 1 | Pidgey | 19 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 3 | Nidoran♀ | 19 | Poison | Tackle · **Shock Wave** · Low Kick · Poison Sting |
+| 4 | Meowth | 19 | Normal | Tackle · **Tri Attack** · Bite · Pay Day |
+| 5 | Nidoran♂ | 19 | Poison | **Tackle** · Headbutt · Low Kick · Poison Sting |
 
 ### Lass #16 — Route 8
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Clefairy | 22 | Fairy | Tackle · Growl · Sing |
-| 2 | Clefairy | 22 | Fairy | Tackle · Growl · Sing |
+| 1 | Clefairy | 22 | Fairy | Tackle · **Tri Attack** · Sing · **Bubblebeam** |
+| 2 | Clefairy | 22 | Fairy | Tackle · **Tri Attack** · Sing · **Bubblebeam** |
 
 ### Lass #17 — Celadon Gym
 _Lv 23 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bellsprout | 23 | Grass/Poison | Tackle · Poisonpowder · Sleep Powder · Stun Spore |
-| 2 | Weepinbell | 23 | Grass/Poison | Growth · Poisonpowder · Sleep Powder · Stun Spore |
+| 1 | Bellsprout | 23 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
+| 2 | Weepinbell | 23 | Grass/Poison | **Vine Whip** · **Tackle** · Sleep Powder · **Mega Drain** |
 
 ### Lass #18 — Celadon Gym
 _Lv 23 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Oddish | 23 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
-| 2 | Gloom | 23 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
+| 1 | Oddish | 23 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
+| 2 | Gloom | 23 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
 
 ### Lass #19 — Viridian Forest
 _Lv 6 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♀ | 6 | Poison | Tackle · Growl |
-| 2 | Nidoran♂ | 6 | Poison | Tackle · Leer |
+| 1 | Nidoran♀ | 6 | Poison | Tackle · Growl · **Shock Wave** · **Counter** |
+| 2 | Nidoran♂ | 6 | Poison | Tackle · Leer · **Shock Wave** · **Counter** |
 
 
 ---
@@ -482,32 +482,32 @@ _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 18 | Fighting | Karate Chop |
-| 2 | Shellder | 18 | Water | Tackle · Withdraw · Supersonic |
+| 1 | Machop | 18 | Fighting | Karate Chop · **Rock Slide** · **Counter** · **Seismic Toss** |
+| 2 | Shellder | 18 | Water | Tackle · **Tri Attack** · Supersonic · **Bubblebeam** |
 
 ### Sailor #2 — SS Anne Stern
 _Lv 17 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 17 | Fighting | Karate Chop |
-| 2 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle |
+| 1 | Machop | 17 | Fighting | Karate Chop · **Rock Slide** · **Counter** · **Seismic Toss** |
+| 2 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle · **Bubblebeam** |
 
 ### Sailor #3 — SS Anne B1F Rooms
 _Lv 21 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Shellder | 21 | Water | Tackle · Withdraw · Supersonic |
+| 1 | Shellder | 21 | Water | Tackle · **Tri Attack** · Supersonic · **Bubblebeam** |
 
 ### Sailor #4 — SS Anne B1F Rooms
 _Lv 17 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Horsea | 17 | Water | Water Gun |
-| 2 | Shellder | 17 | Water | Tackle · Withdraw |
-| 3 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle |
+| 1 | Horsea | 17 | Water | Water Gun · **Swift** · **Bubblebeam** · **Counter** |
+| 2 | Shellder | 17 | Water | Tackle · **Swift** · **Bubblebeam** · **Tri Attack** |
+| 3 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle · **Bubblebeam** |
 
 ### Sailor #5 — SS Anne B1F Rooms
 _Lv 18 · 2 Pokémon_
@@ -515,30 +515,30 @@ _Lv 18 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Tentacool | 18 | Water/Poison | Acid · Supersonic · Tackle · Poison Sting |
-| 2 | Staryu | 18 | Water/Light | Tackle · Water Gun |
+| 2 | Staryu | 18 | Water/Light | Tackle · Water Gun · **Bubblebeam** · **Thunder Wave** |
 
 ### Sailor #6 — SS Anne B1F Rooms
 _Lv 17 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Horsea | 17 | Water | Water Gun |
-| 2 | Horsea | 17 | Water | Water Gun |
-| 3 | Horsea | 17 | Water | Water Gun |
+| 1 | Horsea | 17 | Water | Water Gun · **Swift** · **Bubblebeam** · **Counter** |
+| 2 | Horsea | 17 | Water | Water Gun · **Swift** · **Bubblebeam** · **Counter** |
+| 3 | Horsea | 17 | Water | Water Gun · **Swift** · **Bubblebeam** · **Counter** |
 
 ### Sailor #7 — SS Anne B1F Rooms
 _Lv 20 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 20 | Fighting | Karate Chop · Low Kick |
+| 1 | Machop | 20 | Fighting | Karate Chop · Low Kick · **Rock Slide** · **Counter** |
 
 ### Sailor #8 — Vermilion Gym
 _Lv 24 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Magnemite | 24 | Electric/Steel | Tackle · Sonicboom |
+| 1 | Magnemite | 24 | Electric/Steel | Tackle · Sonicboom · **Shock Wave** · **Thunder Wave** |
 
 
 ---
@@ -550,23 +550,23 @@ _Lv 9 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Diglett | 9 | Ground | Tackle |
-| 2 | Sandshrew | 9 | Ground | Tackle |
+| 1 | Diglett | 9 | Ground | Tackle · **Cut** · **Counter** · **Double Team** |
+| 2 | Sandshrew | 9 | Ground | Tackle · **Cut** · **Swift** · **Swords Dance** |
 
 ### Jr. Trainer♂ #2 — Route 24/Route 25
 _Lv 14 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 14 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Ekans | 14 | Poison | Tackle · Leer · Poison Sting |
+| 1 | Rattata | 14 | Normal | Tackle · **Pay Day** · Quick Attack · Bite |
+| 2 | Ekans | 14 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
 
 ### Jr. Trainer♂ #3 — Route 24
 _Lv 18 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mankey | 18 | Fighting | Tackle · Leer · Low Kick |
+| 1 | Mankey | 18 | Fighting | Tackle · **Shock Wave** · Low Kick · **Rock Slide** |
 
 ### Jr. Trainer♂ #4 — Unused
 _Lv 20 · 1 Pokémon_
@@ -580,8 +580,8 @@ _Lv 16 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 16 | Normal/Flying | Peck · Growl · Leer · Tackle |
-| 2 | Raticate | 16 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
+| 1 | Spearow | 16 | Normal/Flying | Peck · **Tri Attack** · **Pay Day** · Tackle |
+| 2 | Raticate | 16 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
 
 ### Jr. Trainer♂ #6 — Unused
 _Lv 18 · 3 Pokémon_
@@ -605,9 +605,9 @@ _Lv 19 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 19 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Diglett | 19 | Ground | Tackle · Growl · Bulldoze · Dig |
-| 3 | Ekans | 19 | Poison | Tackle · Leer · Poison Sting · Bite |
+| 1 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 2 | Diglett | 19 | Ground | Tackle · **Rock Slide** · Bulldoze · **Cut** |
+| 3 | Ekans | 19 | Poison | Tackle · **Rock Slide** · Poison Sting · Bite |
 | 4 | Sandshrew | 19 | Ground | Tackle · Sand-Attack · Bulldoze · Slash |
 
 ### Jr. Trainer♂ #9 — Route 12
@@ -615,15 +615,15 @@ _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♂ | 29 | Poison | Headbutt · Low Kick · Poison Sting · Focus Energy |
-| 2 | Nidorino | 29 | Poison | Low Kick · Poison Sting · Cross Poison · Focus Energy |
+| 1 | Nidoran♂ | 29 | Poison | Headbutt · Low Kick · Poison Sting · **Tackle** |
+| 2 | Nidorino | 29 | Poison | Low Kick · Poison Sting · Cross Poison · **Headbutt** |
 
 ### Jr. Trainer♂ #10 — Route 6
 _Lv 16 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weepinbell | 16 | Grass/Poison | Tackle · Vine Whip · Growth · Poisonpowder |
+| 1 | Weepinbell | 16 | Grass/Poison | Tackle · Vine Whip · **Mega Drain** · **Swords Dance** |
 
 
 ---
@@ -635,7 +635,7 @@ _Lv 19 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 19 | Water | Peck · Tail Whip · Supersonic |
+| 1 | Goldeen | 19 | Water | Peck · **Swift** · Supersonic · **Bubblebeam** |
 
 ### Jr. Trainer♀ #2 — Unused
 _Lv 16 · 2 Pokémon_
@@ -666,163 +666,163 @@ _Lv 18 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Oddish | 18 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore |
-| 2 | Bellsprout | 18 | Grass/Poison | Growth · Tackle · Poisonpowder · Sleep Powder |
-| 3 | Oddish | 18 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore |
-| 4 | Bellsprout | 18 | Grass/Poison | Growth · Tackle · Poisonpowder · Sleep Powder |
+| 1 | Oddish | 18 | Grass/Poison | Mega Drain · **Counter** · Stun Spore · **Cut** |
+| 2 | Bellsprout | 18 | Grass/Poison | **Vine Whip** · Tackle · **Mega Drain** · Sleep Powder |
+| 3 | Oddish | 18 | Grass/Poison | Mega Drain · **Counter** · Stun Spore · **Cut** |
+| 4 | Bellsprout | 18 | Grass/Poison | **Vine Whip** · Tackle · **Mega Drain** · Sleep Powder |
 
 ### Jr. Trainer♀ #6 — Route 9
 _Lv 23 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Meowth | 23 | Normal | Tackle · Growl · Bite · Pay Day |
+| 1 | Meowth | 23 | Normal | Tackle · **Tri Attack** · Bite · Pay Day |
 
 ### Jr. Trainer♀ #7 — Route 10
 _Lv 20 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Jigglypuff | 20 | Sound/Fairy | Sing · Tackle · Disable · Defense Curl |
-| 2 | Clefairy | 20 | Fairy | Tackle · Growl · Sing |
+| 1 | Jigglypuff | 20 | Sound/Fairy | Sing · Tackle · **Bubblebeam** · **Tri Attack** |
+| 2 | Clefairy | 20 | Fairy | Tackle · **Tri Attack** · Sing · **Bubblebeam** |
 
 ### Jr. Trainer♀ #8 — Route 10
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Pidgeotto | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
+| 1 | Pidgey | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Pidgeotto | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 
 ### Jr. Trainer♀ #9 — Rock Tunnel B1F
 _Lv 21 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Jigglypuff | 21 | Sound/Fairy | Sing · Tackle · Disable · Defense Curl |
-| 2 | Pidgey | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 3 | Meowth | 21 | Normal | Tackle · Growl · Bite · Pay Day |
+| 1 | Jigglypuff | 21 | Sound/Fairy | Sing · Tackle · **Bubblebeam** · **Tri Attack** |
+| 2 | Pidgey | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 3 | Meowth | 21 | Normal | Tackle · **Tri Attack** · Bite · Pay Day |
 
 ### Jr. Trainer♀ #10 — Rock Tunnel B1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Oddish | 22 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
-| 2 | Bulbasaur | 22 | Grass/Poison | Growl · Leech Seed · Vine Whip · Poisonpowder |
+| 1 | Oddish | 22 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
+| 2 | Bulbasaur | 22 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 
 ### Jr. Trainer♀ #11 — Celadon Gym
 _Lv 24 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bulbasaur | 24 | Grass/Poison | Growl · Leech Seed · Vine Whip · Poisonpowder |
-| 2 | Ivysaur | 24 | Grass/Poison | Growl · Leech Seed · Vine Whip · Poisonpowder |
+| 1 | Bulbasaur | 24 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
+| 2 | Ivysaur | 24 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 
 ### Jr. Trainer♀ #12 — Route 13
 _Lv 24 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 24 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Meowth | 24 | Normal | Growl · Bite · Pay Day · Screech |
-| 3 | Rattata | 24 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
-| 4 | Pidgey | 24 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 5 | Meowth | 24 | Normal | Growl · Bite · Pay Day · Screech |
+| 1 | Pidgey | 24 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Meowth | 24 | Normal | **Tackle** · Bite · Pay Day · Screech |
+| 3 | Rattata | 24 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
+| 4 | Pidgey | 24 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 5 | Meowth | 24 | Normal | **Tackle** · Bite · Pay Day · Screech |
 
 ### Jr. Trainer♀ #13 — Route 13
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle |
-| 2 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle |
+| 1 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
+| 2 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
 
 ### Jr. Trainer♀ #14 — Route 13
 _Lv 27 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 27 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Meowth | 27 | Normal | Growl · Bite · Pay Day · Screech |
-| 3 | Pidgey | 27 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 4 | Pidgeotto | 27 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
+| 1 | Pidgey | 27 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Meowth | 27 | Normal | **Tackle** · Bite · Pay Day · Screech |
+| 3 | Pidgey | 27 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 4 | Pidgeotto | 27 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
 ### Jr. Trainer♀ #15 — Route 13
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 28 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 2 | Poliwag | 28 | Water | Water Gun · Hypnosis · Tackle |
-| 3 | Horsea | 28 | Water | Water Gun · Smokescreen · Leer |
+| 1 | Goldeen | 28 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 2 | Poliwag | 28 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
+| 3 | Horsea | 28 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
 
 ### Jr. Trainer♀ #16 — Route 20
 _Lv 31 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 31 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 2 | Seaking | 31 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
+| 1 | Goldeen | 31 | Water | Peck · **Surf** · Supersonic · Headbutt |
+| 2 | Seaking | 31 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
 ### Jr. Trainer♀ #17 — Rock Tunnel 1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bellsprout | 22 | Grass/Poison | Tackle · Poisonpowder · Sleep Powder · Stun Spore |
-| 2 | Clefairy | 22 | Fairy | Tackle · Growl · Sing |
+| 1 | Bellsprout | 22 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
+| 2 | Clefairy | 22 | Fairy | Tackle · **Tri Attack** · Sing · **Bubblebeam** |
 
 ### Jr. Trainer♀ #18 — Rock Tunnel 1F
 _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Meowth | 20 | Normal | Tackle · Growl · Bite · Pay Day |
-| 2 | Oddish | 20 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
-| 3 | Pidgey | 20 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
+| 1 | Meowth | 20 | Normal | Tackle · **Tri Attack** · Bite · Pay Day |
+| 2 | Oddish | 20 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
+| 3 | Pidgey | 20 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 
 ### Jr. Trainer♀ #19 — Rock Tunnel 1F
 _Lv 19 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 19 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Rattata | 19 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 3 | Rattata | 19 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 4 | Bellsprout | 19 | Grass/Poison | Growth · Tackle · Poisonpowder · Sleep Powder |
+| 1 | Pidgey | 19 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 3 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 4 | Bellsprout | 19 | Grass/Poison | **Vine Whip** · Tackle · **Mega Drain** · Sleep Powder |
 
 ### Jr. Trainer♀ #20 — Route 15
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gloom | 28 | Grass/Poison | Poisonpowder · Stun Spore · Sleep Powder · Acid |
-| 2 | Oddish | 28 | Grass/Poison | Poisonpowder · Stun Spore · Sleep Powder · Acid |
-| 3 | Oddish | 28 | Grass/Poison | Poisonpowder · Stun Spore · Sleep Powder · Acid |
+| 1 | Gloom | 28 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
+| 2 | Oddish | 28 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
+| 3 | Oddish | 28 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
 
 ### Jr. Trainer♀ #21 — Route 15
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 29 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Wing Attack |
-| 2 | Pidgeotto | 29 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
+| 1 | Pidgey | 29 | Normal/Flying | Tackle · Quick Attack · **Sand-Attack** · Wing Attack |
+| 2 | Pidgeotto | 29 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
 ### Jr. Trainer♀ #22 — Route 15
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Clefairy | 33 | Fairy | Sing · Minimize · Drain Kiss · Metronome |
+| 1 | Clefairy | 33 | Fairy | Sing · **Tackle** · Drain Kiss · **Dazzle Gleam** |
 
 ### Jr. Trainer♀ #23 — Route 15
 _Lv 29 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bellsprout | 29 | Grass/Poison | Poisonpowder · Sleep Powder · Stun Spore · Acid |
-| 2 | Oddish | 29 | Grass/Poison | Poisonpowder · Stun Spore · Sleep Powder · Acid |
+| 1 | Bellsprout | 29 | Grass/Poison | **Vine Whip** · Sleep Powder · **Tackle** · Acid |
+| 2 | Oddish | 29 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
 | 3 | Tangela | 29 | Grass | Tackle · Headbutt · Mega Drain · Vine Whip |
 
 ### Jr. Trainer♀ #24 — Route 20
@@ -830,16 +830,16 @@ _Lv 30 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tentacool | 30 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 2 | Horsea | 30 | Water | Water Gun · Smokescreen · Leer |
-| 3 | Seel | 30 | Water | Headbutt · Water Gun · Growl |
+| 1 | Tentacool | 30 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 2 | Horsea | 30 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 3 | Seel | 30 | Water | Headbutt · Water Gun · **Pay Day** · **Bubblebeam** |
 
 ### Jr. Trainer♀ #25 — Route 6
 _Lv 20 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Cubone | 20 | Ground | Growl · Bone Club · Tail Whip · Headbutt |
+| 1 | Cubone | 20 | Ground | **Tackle** · Bone Club · **Bubblebeam** · Headbutt |
 
 
 ---
@@ -851,57 +851,57 @@ _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rhyhorn | 30 | Ground/Rock | Headbutt · Bone Club |
-| 2 | Lickitung | 30 | Normal | Supersonic · Headbutt · Disable · Defense Curl |
+| 1 | Rhyhorn | 30 | Ground/Rock | Headbutt · Bone Club · **Rock Slide** · **Shock Wave** |
+| 2 | Lickitung | 30 | Normal | Supersonic · Headbutt · **Bubblebeam** · **Tackle** |
 
 ### Poké Maniac #2 — Route 10
 _Lv 20 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Cubone | 20 | Ground | Growl · Bone Club · Tail Whip · Headbutt |
-| 2 | Slowpoke | 20 | Water/Psychic | Confusion · Disable |
+| 1 | Cubone | 20 | Ground | **Tackle** · Bone Club · **Bubblebeam** · Headbutt |
+| 2 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
 
 ### Poké Maniac #3 — Rock Tunnel B1F
 _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Slowpoke | 20 | Water/Psychic | Confusion · Disable |
-| 2 | Slowpoke | 20 | Water/Psychic | Confusion · Disable |
-| 3 | Slowpoke | 20 | Water/Psychic | Confusion · Disable |
+| 1 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
+| 2 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
+| 3 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
 
 ### Poké Maniac #4 — Rock Tunnel B1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Charmander | 22 | Fire | Growl · Ember · Leer · Headbutt |
-| 2 | Cubone | 22 | Ground | Growl · Bone Club · Tail Whip · Headbutt |
+| 1 | Charmander | 22 | Fire | **Tackle** · Ember · **Swift** · Headbutt |
+| 2 | Cubone | 22 | Ground | **Tackle** · Bone Club · **Bubblebeam** · Headbutt |
 
 ### Poké Maniac #5 — Rock Tunnel B1F
 _Lv 25 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Slowpoke | 25 | Water/Psychic | Confusion · Disable · Headbutt |
+| 1 | Slowpoke | 25 | Water/Psychic | Confusion · **Thunder Wave** · Headbutt · **Bubblebeam** |
 
 ### Poké Maniac #6 — Victory Road 2F
 _Lv 40 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Charmeleon | 40 | Fire | Growl · Leer · Headbutt · Slash |
-| 2 | Lapras | 40 | Water/Ice | Strength · Icy Wind · Confuse Ray · Ice Beam |
-| 3 | Lickitung | 40 | Normal | Headbutt · Disable · Defense Curl · Screech |
+| 1 | Charmeleon | 40 | Fire | **Ember** · **Tackle** · Headbutt · Slash |
+| 2 | Lapras | 40 | Water/Ice | Strength · **Bubblebeam** · **Sing** · Ice Beam |
+| 3 | Lickitung | 40 | Normal | Headbutt · **Hyper Voice** · **Tackle** · **Supersonic** |
 
 ### Poké Maniac #7 — Rock Tunnel 1F
 _Lv 23 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Cubone | 23 | Ground | Growl · Bone Club · Tail Whip · Headbutt |
-| 2 | Slowpoke | 23 | Water/Psychic | Confusion · Disable · Headbutt |
+| 1 | Cubone | 23 | Ground | **Tackle** · Bone Club · **Bubblebeam** · Headbutt |
+| 2 | Slowpoke | 23 | Water/Psychic | Confusion · **Thunder Wave** · Headbutt · **Bubblebeam** |
 
 
 ---
@@ -913,43 +913,43 @@ _Lv 11 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Magnemite | 11 | Electric/Steel | Tackle |
-| 2 | Voltorb | 11 | Electric | Tackle · Screech · Thundershock |
+| 1 | Magnemite | 11 | Electric/Steel | Tackle · **Shock Wave** · **Swift** · **Thunder Wave** |
+| 2 | Voltorb | 11 | Electric | Tackle · **Thunder Wave** · Thundershock · **Shock Wave** |
 
 ### Super Nerd #2 — Mt. Moon B2F
 _Lv 12 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 12 | Poison | Tackle · Disable |
-| 2 | Voltorb | 12 | Electric | Tackle · Screech · Thundershock |
-| 3 | Koffing | 12 | Poison | Tackle · Sludge |
+| 1 | Grimer | 12 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Voltorb | 12 | Electric | Tackle · **Thunder Wave** · Thundershock · **Shock Wave** |
+| 3 | Koffing | 12 | Poison | Tackle · **Double Team** · **Shock Wave** · **Counter** |
 
 ### Super Nerd #3 — Route 8
 _Lv 20 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 20 | Electric | Tackle · Screech · Thundershock · Sonicboom |
-| 2 | Koffing | 20 | Poison | Tackle · Sludge |
-| 3 | Voltorb | 20 | Electric | Tackle · Screech · Thundershock · Sonicboom |
-| 4 | Magnemite | 20 | Electric/Steel | Tackle |
+| 1 | Voltorb | 20 | Electric | Tackle · **Thunder Wave** · Thundershock · Sonicboom |
+| 2 | Koffing | 20 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Voltorb | 20 | Electric | Tackle · **Thunder Wave** · Thundershock · Sonicboom |
+| 4 | Magnemite | 20 | Electric/Steel | Tackle · **Shock Wave** · **Swift** · **Thunder Wave** |
 
 ### Super Nerd #4 — Route 8
 _Lv 22 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 22 | Poison | Tackle · Disable |
-| 2 | Muk | 22 | Poison | Tackle · Disable · Poison Gas |
-| 3 | Grimer | 22 | Poison | Tackle · Disable |
+| 1 | Grimer | 22 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Muk | 22 | Poison | Tackle · **Shock Wave** · **Counter** · **Mega Drain** |
+| 3 | Grimer | 22 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
 
 ### Super Nerd #5 — Route 8
 _Lv 26 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 26 | Poison | Tackle · Sludge |
+| 1 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Super Nerd #6 — Unused
 _Lv 22 · 3 Pokémon_
@@ -983,34 +983,34 @@ _Lv 36 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Vulpix | 36 | Fire | Quick Attack · Roar · Confuse Ray · Flamethrower |
-| 2 | Vulpix | 36 | Fire | Quick Attack · Roar · Confuse Ray · Flamethrower |
-| 3 | Ninetales | 36 | Fire | Quick Attack · Roar · Tail Whip · Flame Burst |
+| 1 | Vulpix | 36 | Fire | Quick Attack · **Ember** · Confuse Ray · Flamethrower |
+| 2 | Vulpix | 36 | Fire | Quick Attack · **Ember** · Confuse Ray · Flamethrower |
+| 3 | Ninetales | 36 | Fire | Quick Attack · **Ember** · **Flamethrower** · Flame Burst |
 
 ### Super Nerd #10 — Cinnabar Gym
 _Lv 34 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ponyta | 34 | Fire | Ember · Tail Whip · Headbutt |
-| 2 | Charmander | 34 | Fire | Ember · Leer · Headbutt · Slash |
-| 3 | Vulpix | 34 | Fire | Tail Whip · Quick Attack · Roar · Confuse Ray |
-| 4 | Growlithe | 34 | Fire | Roar · Ember · Leer · Double-Edge |
+| 1 | Ponyta | 34 | Fire | Ember · **Strength** · Headbutt · **Flamethrower** |
+| 2 | Charmander | 34 | Fire | Ember · **Tackle** · Headbutt · Slash |
+| 3 | Vulpix | 34 | Fire | **Ember** · Quick Attack · **Flamethrower** · Confuse Ray |
+| 4 | Growlithe | 34 | Fire | **Bite** · Ember · **Flamethrower** · **Crunch** |
 
 ### Super Nerd #11 — Cinnabar Gym
 _Lv 41 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rapidash | 41 | Fire | Headbutt · Growl · Tail Whip · Flame Burst |
+| 1 | Rapidash | 41 | Fire | Headbutt · **Ember** · **Flamethrower** · Flame Burst |
 
 ### Super Nerd #12 — Cinnabar Gym
 _Lv 37 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 37 | Fire | Roar · Ember · Leer · Double-Edge |
-| 2 | Vulpix | 37 | Fire | Quick Attack · Roar · Confuse Ray · Flamethrower |
+| 1 | Growlithe | 37 | Fire | **Bite** · Ember · **Flamethrower** · **Crunch** |
+| 2 | Vulpix | 37 | Fire | Quick Attack · **Ember** · Confuse Ray · Flamethrower |
 
 
 ---
@@ -1022,41 +1022,41 @@ _Lv 10 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 10 | Rock/Ground | Tackle |
-| 2 | Geodude | 10 | Rock/Ground | Tackle |
-| 3 | Onix | 10 | Rock/Ground | Tackle · Screech |
+| 1 | Geodude | 10 | Rock/Ground | Tackle · **Counter** · **Seismic Toss** · **Double Team** |
+| 2 | Geodude | 10 | Rock/Ground | Tackle · **Counter** · **Seismic Toss** · **Double Team** |
+| 3 | Onix | 10 | Rock/Ground | Tackle · Screech · **Counter** · **Double Team** |
 
 ### Hiker #2 — Route 25
 _Lv 15 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 15 | Fighting | Karate Chop |
-| 2 | Geodude | 15 | Rock/Ground | Tackle · Defense Curl |
+| 1 | Machop | 15 | Fighting | Karate Chop · **Counter** · **Seismic Toss** · **Double Team** |
+| 2 | Geodude | 15 | Rock/Ground | Tackle · Defense Curl · **Counter** · **Seismic Toss** |
 
 ### Hiker #3 — Route 25
 _Lv 13 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 13 | Rock/Ground | Tackle · Defense Curl |
-| 2 | Geodude | 13 | Rock/Ground | Tackle · Defense Curl |
-| 3 | Machop | 13 | Fighting | Karate Chop |
-| 4 | Geodude | 13 | Rock/Ground | Tackle · Defense Curl |
+| 1 | Geodude | 13 | Rock/Ground | Tackle · Defense Curl · **Counter** · **Seismic Toss** |
+| 2 | Geodude | 13 | Rock/Ground | Tackle · Defense Curl · **Counter** · **Seismic Toss** |
+| 3 | Machop | 13 | Fighting | Karate Chop · **Counter** · **Seismic Toss** · **Double Team** |
+| 4 | Geodude | 13 | Rock/Ground | Tackle · Defense Curl · **Counter** · **Seismic Toss** |
 
 ### Hiker #4 — Route 25
 _Lv 17 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Onix | 17 | Rock/Ground | Tackle · Screech · Headbutt |
+| 1 | Onix | 17 | Rock/Ground | Tackle · Screech · Headbutt · **Rock Slide** |
 
 ### Hiker #5 — Route 9
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
+| 1 | Geodude | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
 | 2 | Onix | 21 | Rock/Ground | Tackle · Screech · Headbutt · Rock Throw |
 
 ### Hiker #6 — Route 9
@@ -1064,16 +1064,16 @@ _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 20 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
-| 2 | Machop | 20 | Fighting | Karate Chop · Low Kick |
-| 3 | Geodude | 20 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
+| 1 | Geodude | 20 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
+| 2 | Machop | 20 | Fighting | Karate Chop · Low Kick · **Rock Slide** · **Counter** |
+| 3 | Geodude | 20 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
 
 ### Hiker #7 — Route 10
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
+| 1 | Geodude | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
 | 2 | Onix | 21 | Rock/Ground | Tackle · Screech · Headbutt · Rock Throw |
 
 ### Hiker #8 — Route 10
@@ -1082,30 +1082,30 @@ _Lv 19 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Onix | 19 | Rock/Ground | Tackle · Screech · Headbutt · Rock Throw |
-| 2 | Graveler | 19 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
+| 2 | Graveler | 19 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
 
 ### Hiker #9 — Rock Tunnel B1F
 _Lv 21 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
-| 2 | Geodude | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
-| 3 | Graveler | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
+| 1 | Geodude | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
+| 2 | Geodude | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
+| 3 | Graveler | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
 
 ### Hiker #10 — Rock Tunnel B1F
 _Lv 25 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 25 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
+| 1 | Geodude | 25 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
 
 ### Hiker #11 — Route 9/Rock Tunnel B1F
 _Lv 20 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 20 | Fighting | Karate Chop · Low Kick |
+| 1 | Machop | 20 | Fighting | Karate Chop · Low Kick · **Rock Slide** · **Counter** |
 | 2 | Onix | 20 | Rock/Ground | Tackle · Screech · Headbutt · Rock Throw |
 
 ### Hiker #12 — Rock Tunnel 1F
@@ -1113,10 +1113,10 @@ _Lv 19 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 19 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
-| 2 | Machop | 19 | Fighting | Karate Chop |
-| 3 | Geodude | 19 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
-| 4 | Geodude | 19 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
+| 1 | Geodude | 19 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
+| 2 | Machop | 19 | Fighting | Karate Chop · **Rock Slide** · **Counter** · **Seismic Toss** |
+| 3 | Geodude | 19 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
+| 4 | Geodude | 19 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
 
 ### Hiker #13 — Rock Tunnel 1F
 _Lv 20 · 3 Pokémon_
@@ -1125,15 +1125,15 @@ _Lv 20 · 3 Pokémon_
 |---|---------|----|-------|-------|
 | 1 | Onix | 20 | Rock/Ground | Tackle · Screech · Headbutt · Rock Throw |
 | 2 | Onix | 20 | Rock/Ground | Tackle · Screech · Headbutt · Rock Throw |
-| 3 | Geodude | 20 | Rock/Ground | Tackle · Defense Curl · Rock Throw |
+| 3 | Geodude | 20 | Rock/Ground | Tackle · **Counter** · Rock Throw · **Rock Slide** |
 
 ### Hiker #14 — Rock Tunnel 1F
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Geodude | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
-| 2 | Graveler | 21 | Rock/Ground | Tackle · Defense Curl · Rock Throw · Explosion |
+| 1 | Geodude | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
+| 2 | Graveler | 21 | Rock/Ground | Tackle · **Rock Slide** · Rock Throw · **Counter** |
 
 
 ---
@@ -1145,132 +1145,132 @@ _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 28 | Poison | Tackle · Sludge |
-| 2 | Koffing | 28 | Poison | Tackle · Sludge |
-| 3 | Koffing | 28 | Poison | Tackle · Sludge |
+| 1 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #2 — Route 14
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 29 | Poison | Tackle · Sludge |
-| 2 | Grimer | 29 | Poison | Tackle · Disable |
+| 1 | Koffing | 29 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Grimer | 29 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
 
 ### Biker #3 — Route 15
 _Lv 25 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 25 | Poison | Tackle · Sludge |
-| 2 | Koffing | 25 | Poison | Tackle · Sludge |
-| 3 | Weezing | 25 | Poison | Tackle · Sludge |
-| 4 | Koffing | 25 | Poison | Tackle · Sludge |
-| 5 | Grimer | 25 | Poison | Tackle · Disable |
+| 1 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Weezing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 4 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 5 | Grimer | 25 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
 
 ### Biker #4 — Route 15
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 28 | Poison | Tackle · Sludge |
-| 2 | Grimer | 28 | Poison | Tackle · Disable |
-| 3 | Weezing | 28 | Poison | Tackle · Sludge |
+| 1 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Grimer | 28 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 3 | Weezing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #5 — Route 16
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 29 | Poison | Tackle · Disable |
-| 2 | Koffing | 29 | Poison | Tackle · Sludge |
+| 1 | Grimer | 29 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Koffing | 29 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #6 — Route 16
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weezing | 33 | Poison | Tackle · Sludge |
+| 1 | Weezing | 33 | Poison | Tackle · Sludge · **Sludge Bomb** · **Thunderbolt** |
 
 ### Biker #7 — Route 16
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 26 | Poison | Tackle · Disable |
-| 2 | Grimer | 26 | Poison | Tackle · Disable |
-| 3 | Grimer | 26 | Poison | Tackle · Disable |
-| 4 | Grimer | 26 | Poison | Tackle · Disable |
+| 1 | Grimer | 26 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Grimer | 26 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 3 | Grimer | 26 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 4 | Grimer | 26 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
 
 ### Biker #8 — Route 17
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weezing | 28 | Poison | Tackle · Sludge |
-| 2 | Koffing | 28 | Poison | Tackle · Sludge |
-| 3 | Weezing | 28 | Poison | Tackle · Sludge |
+| 1 | Weezing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Weezing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #9 — Route 17
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Muk | 33 | Poison | Tackle · Disable · Poison Gas · Minimize |
+| 1 | Muk | 33 | Poison | Tackle · **Sludge Bomb** · **Strength** · **Hyper Voice** |
 
 ### Biker #10 — Route 17
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 29 | Electric | Thundershock · Sonicboom · Explosion · Light Screen |
-| 2 | Voltorb | 29 | Electric | Thundershock · Sonicboom · Explosion · Light Screen |
+| 1 | Voltorb | 29 | Electric | Thundershock · Sonicboom · **Tackle** · **Thunder Wave** |
+| 2 | Voltorb | 29 | Electric | Thundershock · Sonicboom · **Tackle** · **Thunder Wave** |
 
 ### Biker #11 — Route 17
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weezing | 29 | Poison | Tackle · Sludge |
-| 2 | Muk | 29 | Poison | Tackle · Disable · Poison Gas |
+| 1 | Weezing | 29 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Muk | 29 | Poison | Tackle · **Shock Wave** · **Counter** · **Mega Drain** |
 
 ### Biker #12 — Route 17
 _Lv 25 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 25 | Poison | Tackle · Sludge |
-| 2 | Weezing | 25 | Poison | Tackle · Sludge |
-| 3 | Koffing | 25 | Poison | Tackle · Sludge |
-| 4 | Koffing | 25 | Poison | Tackle · Sludge |
-| 5 | Weezing | 25 | Poison | Tackle · Sludge |
+| 1 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Weezing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 4 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 5 | Weezing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #13 — Route 14
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 26 | Poison | Tackle · Sludge |
-| 2 | Koffing | 26 | Poison | Tackle · Sludge |
-| 3 | Grimer | 26 | Poison | Tackle · Disable |
-| 4 | Koffing | 26 | Poison | Tackle · Sludge |
+| 1 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Grimer | 26 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 4 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #14 — Route 14
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 28 | Poison | Tackle · Disable |
-| 2 | Grimer | 28 | Poison | Tackle · Disable |
-| 3 | Koffing | 28 | Poison | Tackle · Sludge |
+| 1 | Grimer | 28 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Grimer | 28 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 3 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Biker #15 — Route 14
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 29 | Poison | Tackle · Sludge |
-| 2 | Muk | 29 | Poison | Tackle · Disable · Poison Gas |
+| 1 | Koffing | 29 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Muk | 29 | Poison | Tackle · **Shock Wave** · **Counter** · **Mega Drain** |
 
 
 ---
@@ -1306,47 +1306,47 @@ _Lv 36 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 36 | Fire | Roar · Ember · Leer · Double-Edge |
-| 2 | Vulpix | 36 | Fire | Quick Attack · Roar · Confuse Ray · Flamethrower |
-| 3 | Ninetales | 36 | Fire | Quick Attack · Roar · Tail Whip · Flame Burst |
+| 1 | Growlithe | 36 | Fire | **Bite** · Ember · **Flamethrower** · **Crunch** |
+| 2 | Vulpix | 36 | Fire | Quick Attack · **Ember** · Confuse Ray · Flamethrower |
+| 3 | Ninetales | 36 | Fire | Quick Attack · **Ember** · **Flamethrower** · Flame Burst |
 
 ### Burglar #5 — Cinnabar Gym
 _Lv 41 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ponyta | 41 | Fire | Tail Whip · Headbutt · Growl · Flame Burst |
+| 1 | Ponyta | 41 | Fire | **Ember** · Headbutt · **Flamethrower** · Flame Burst |
 
 ### Burglar #6 — Cinnabar Gym
 _Lv 37 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Vulpix | 37 | Fire | Quick Attack · Roar · Confuse Ray · Flamethrower |
-| 2 | Growlithe | 37 | Fire | Roar · Ember · Leer · Double-Edge |
+| 1 | Vulpix | 37 | Fire | Quick Attack · **Ember** · Confuse Ray · Flamethrower |
+| 2 | Growlithe | 37 | Fire | **Bite** · Ember · **Flamethrower** · **Crunch** |
 
 ### Burglar #7 — Mansion 2F
 _Lv 34 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Charmander | 34 | Fire | Ember · Leer · Headbutt · Slash |
-| 2 | Charmeleon | 34 | Fire | Growl · Leer · Headbutt · Slash |
+| 1 | Charmander | 34 | Fire | Ember · **Tackle** · Headbutt · Slash |
+| 2 | Charmeleon | 34 | Fire | **Ember** · **Tackle** · Headbutt · Slash |
 
 ### Burglar #8 — Mansion 3F
 _Lv 38 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ninetales | 38 | Fire | Roar · Tail Whip · Flame Burst · Flamethrower |
+| 1 | Ninetales | 38 | Fire | **Quick Attack** · **Ember** · Flame Burst · Flamethrower |
 
 ### Burglar #9 — Mansion B1F
 _Lv 34 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 34 | Fire | Roar · Ember · Leer · Double-Edge |
-| 2 | Ponyta | 34 | Fire | Ember · Tail Whip · Headbutt |
+| 1 | Growlithe | 34 | Fire | **Bite** · Ember · **Flamethrower** · **Crunch** |
+| 2 | Ponyta | 34 | Fire | Ember · **Strength** · Headbutt · **Flamethrower** |
 
 
 ---
@@ -1366,16 +1366,16 @@ _Lv 21 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Magnemite | 21 | Electric/Steel | Tackle · Sonicboom |
+| 1 | Magnemite | 21 | Electric/Steel | Tackle · Sonicboom · **Shock Wave** · **Thunder Wave** |
 
 ### Engineer #3 — Route 11
 _Lv 18 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Magnemite | 18 | Electric/Steel | Tackle |
-| 2 | Magnemite | 18 | Electric/Steel | Tackle |
-| 3 | Magneton | 18 | Electric/Steel | Sonicboom · Tackle · Thundershock |
+| 1 | Magnemite | 18 | Electric/Steel | Tackle · **Shock Wave** · **Swift** · **Thunder Wave** |
+| 2 | Magnemite | 18 | Electric/Steel | Tackle · **Shock Wave** · **Swift** · **Thunder Wave** |
+| 3 | Magneton | 18 | Electric/Steel | Sonicboom · Tackle · Thundershock · **Thunder Wave** |
 
 
 ---
@@ -1387,70 +1387,70 @@ _Lv 17 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 17 | Water | Peck · Tail Whip |
-| 2 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle |
-| 3 | Goldeen | 17 | Water | Peck · Tail Whip |
+| 1 | Goldeen | 17 | Water | Peck · **Counter** · **Bubblebeam** · **Swift** |
+| 2 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle · **Bubblebeam** |
+| 3 | Goldeen | 17 | Water | Peck · **Counter** · **Bubblebeam** · **Swift** |
 
 ### Fisherman #2 — SS Anne B1F Rooms
 _Lv 17 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle |
-| 2 | Staryu | 17 | Water/Light | Tackle · Water Gun |
-| 3 | Shellder | 17 | Water | Tackle · Withdraw |
+| 1 | Tentacool | 17 | Water/Poison | Acid · Supersonic · Tackle · **Bubblebeam** |
+| 2 | Staryu | 17 | Water/Light | Tackle · Water Gun · **Bubblebeam** · **Thunder Wave** |
+| 3 | Shellder | 17 | Water | Tackle · **Swift** · **Bubblebeam** · **Tri Attack** |
 
 ### Fisherman #3 — Route 12
 _Lv 22 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 22 | Water | Peck · Tail Whip · Supersonic |
-| 2 | Poliwag | 22 | Water | Water Gun · Hypnosis |
-| 3 | Goldeen | 22 | Water | Peck · Tail Whip · Supersonic |
+| 1 | Goldeen | 22 | Water | Peck · **Swift** · Supersonic · **Bubblebeam** |
+| 2 | Poliwag | 22 | Water | Water Gun · Hypnosis · **Counter** · **Bubblebeam** |
+| 3 | Goldeen | 22 | Water | Peck · **Swift** · Supersonic · **Bubblebeam** |
 
 ### Fisherman #4 — Route 12
 _Lv 24 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tentacool | 24 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 2 | Goldeen | 24 | Water | Peck · Tail Whip · Supersonic · Headbutt |
+| 1 | Tentacool | 24 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 2 | Goldeen | 24 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
 
 ### Fisherman #5 — Route 12
 _Lv 27 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 27 | Water | Peck · Tail Whip · Supersonic · Headbutt |
+| 1 | Goldeen | 27 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
 
 ### Fisherman #6 — Route 12
 _Lv 21 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Poliwag | 21 | Water | Water Gun · Hypnosis |
-| 2 | Shellder | 21 | Water | Tackle · Withdraw · Supersonic |
-| 3 | Goldeen | 21 | Water | Peck · Tail Whip · Supersonic |
-| 4 | Horsea | 21 | Water | Water Gun · Smokescreen |
+| 1 | Poliwag | 21 | Water | Water Gun · Hypnosis · **Counter** · **Bubblebeam** |
+| 2 | Shellder | 21 | Water | Tackle · **Tri Attack** · Supersonic · **Bubblebeam** |
+| 3 | Goldeen | 21 | Water | Peck · **Swift** · Supersonic · **Bubblebeam** |
+| 4 | Horsea | 21 | Water | Water Gun · Smokescreen · **Swift** · **Bubblebeam** |
 
 ### Fisherman #7 — Route 21
 _Lv 28 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Seaking | 28 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
-| 2 | Goldeen | 28 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 3 | Seaking | 28 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
-| 4 | Seaking | 28 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
+| 1 | Seaking | 28 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
+| 2 | Goldeen | 28 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 3 | Seaking | 28 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
+| 4 | Seaking | 28 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
 ### Fisherman #8 — Route 21
 _Lv 31 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Shellder | 31 | Water | Withdraw · Supersonic · Razor Shell · Aurora Beam |
-| 2 | Cloyster | 31 | Water/Ice | Razor Shell · Supersonic · Withdraw · Ice Fang |
+| 1 | Shellder | 31 | Water | **Tackle** · Supersonic · Razor Shell · Aurora Beam |
+| 2 | Cloyster | 31 | Water/Ice | Razor Shell · Supersonic · **Aurora Beam** · Ice Fang |
 
 ### Fisherman #9 — Route 21
 _Lv 27 · 6 Pokémon_
@@ -1469,8 +1469,8 @@ _Lv 33 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Seaking | 33 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
-| 2 | Goldeen | 33 | Water | Peck · Tail Whip · Supersonic · Headbutt |
+| 1 | Seaking | 33 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
+| 2 | Goldeen | 33 | Water | Peck · **Surf** · Supersonic · Headbutt |
 
 ### Fisherman #11 — Route 12
 _Lv 24 · 2 Pokémon_
@@ -1490,32 +1490,32 @@ _Lv 16 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Horsea | 16 | Water | Water Gun |
-| 2 | Shellder | 16 | Water | Tackle · Withdraw |
+| 1 | Horsea | 16 | Water | Water Gun · **Swift** · **Bubblebeam** · **Counter** |
+| 2 | Shellder | 16 | Water | Tackle · **Swift** · **Bubblebeam** · **Tri Attack** |
 
 ### Swimmer #2 — Route 19
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tentacool | 30 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 2 | Shellder | 30 | Water | Withdraw · Supersonic · Razor Shell · Aurora Beam |
+| 1 | Tentacool | 30 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 2 | Shellder | 30 | Water | **Tackle** · Supersonic · Razor Shell · Aurora Beam |
 
 ### Swimmer #3 — Route 19
 _Lv 29 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 29 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 2 | Horsea | 29 | Water | Water Gun · Smokescreen · Leer |
-| 3 | Staryu | 29 | Water/Light | Water Gun · Harden · Recover · Light Ray |
+| 1 | Goldeen | 29 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 2 | Horsea | 29 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 3 | Staryu | 29 | Water/Light | Water Gun · **Tackle** · **Thunder Wave** · Light Ray |
 
 ### Swimmer #4 — Route 19
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle |
+| 1 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
 | 2 | Poliwhirl | 30 | Water | Water Gun · Hypnosis · Razor Shell · Tackle |
 
 ### Swimmer #5 — Route 19
@@ -1523,86 +1523,86 @@ _Lv 27 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Horsea | 27 | Water | Water Gun · Smokescreen · Leer |
-| 2 | Tentacool | 27 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 3 | Tentacool | 27 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 4 | Goldeen | 27 | Water | Peck · Tail Whip · Supersonic · Headbutt |
+| 1 | Horsea | 27 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 2 | Tentacool | 27 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 3 | Tentacool | 27 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 4 | Goldeen | 27 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
 
 ### Swimmer #6 — Route 19
 _Lv 29 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 29 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 2 | Shellder | 29 | Water | Tackle · Withdraw · Supersonic · Razor Shell |
-| 3 | Seaking | 29 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
+| 1 | Goldeen | 29 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 2 | Shellder | 29 | Water | Tackle · **Bubblebeam** · Supersonic · Razor Shell |
+| 3 | Seaking | 29 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
 ### Swimmer #7 — Route 19
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Horsea | 30 | Water | Water Gun · Smokescreen · Leer |
-| 2 | Horsea | 30 | Water | Water Gun · Smokescreen · Leer |
+| 1 | Horsea | 30 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 2 | Horsea | 30 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
 
 ### Swimmer #8 — Route 19
 _Lv 27 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tentacool | 27 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 2 | Tentacool | 27 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 3 | Staryu | 27 | Water/Light | Tackle · Water Gun · Harden · Recover |
-| 4 | Horsea | 27 | Water | Water Gun · Smokescreen · Leer |
-| 5 | Tentacruel | 27 | Water/Poison | Tackle · Supersonic · Poison Sting · Bubblebeam |
+| 1 | Tentacool | 27 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 2 | Tentacool | 27 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 3 | Staryu | 27 | Water/Light | Tackle · Water Gun · **Bubblebeam** · **Thunder Wave** |
+| 4 | Horsea | 27 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 5 | Tentacruel | 27 | Water/Poison | **Acid** · Supersonic · Poison Sting · Bubblebeam |
 
 ### Swimmer #9 — Route 20
 _Lv 31 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Shellder | 31 | Water | Withdraw · Supersonic · Razor Shell · Aurora Beam |
-| 2 | Cloyster | 31 | Water/Ice | Razor Shell · Supersonic · Withdraw · Ice Fang |
+| 1 | Shellder | 31 | Water | **Tackle** · Supersonic · Razor Shell · Aurora Beam |
+| 2 | Cloyster | 31 | Water/Ice | Razor Shell · Supersonic · **Aurora Beam** · Ice Fang |
 
 ### Swimmer #10 — Route 20
 _Lv 35 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Staryu | 35 | Water/Light | Harden · Recover · Light Ray · Swift |
+| 1 | Staryu | 35 | Water/Light | **Water Gun** · **Thunder Wave** · Light Ray · Swift |
 
 ### Swimmer #11 — Route 20
 _Lv 28 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Horsea | 28 | Water | Water Gun · Smokescreen · Leer |
-| 2 | Horsea | 28 | Water | Water Gun · Smokescreen · Leer |
-| 3 | Seadra | 28 | Water | Water Gun · Smokescreen · Bubblebeam · Leer |
-| 4 | Horsea | 28 | Water | Water Gun · Smokescreen · Leer |
+| 1 | Horsea | 28 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 2 | Horsea | 28 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 3 | Seadra | 28 | Water | Water Gun · Smokescreen · Bubblebeam · **Swift** |
+| 4 | Horsea | 28 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
 
 ### Swimmer #12 — Route 21
 _Lv 33 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Seadra | 33 | Water | Water Gun · Smokescreen · Bubblebeam · Leer |
-| 2 | Tentacruel | 33 | Water/Poison | Supersonic · Poison Sting · Bubblebeam · Sludge |
+| 1 | Seadra | 33 | Water | Water Gun · Smokescreen · Bubblebeam · **Dragon Pulse** |
+| 2 | Tentacruel | 33 | Water/Poison | Supersonic · **Acid** · Bubblebeam · Sludge |
 
 ### Swimmer #13 — Route 21
 _Lv 37 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Starmie | 37 | Water/Light | Water Gun · Harden · Bubblebeam · Aurora Beam |
+| 1 | Starmie | 37 | Water/Light | **Light Ray** · **Thunder Wave** · Bubblebeam · Aurora Beam |
 
 ### Swimmer #14 — Route 21
 _Lv 33 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Staryu | 33 | Water/Light | Harden · Recover · Light Ray · Swift |
-| 2 | Wartortle | 33 | Water | Tail Whip · Bubblebeam · Bite · Withdraw |
+| 1 | Staryu | 33 | Water/Light | **Water Gun** · **Thunder Wave** · Light Ray · Swift |
+| 2 | Wartortle | 33 | Water | **Water Gun** · Bubblebeam · Bite · **Tackle** |
 
 ### Swimmer #15 — Route 21
 _Lv 32 · 3 Pokémon_
@@ -1610,8 +1610,8 @@ _Lv 32 · 3 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Poliwhirl | 32 | Water | Water Gun · Hypnosis · Razor Shell · Tackle |
-| 2 | Tentacool | 32 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 3 | Seadra | 32 | Water | Water Gun · Smokescreen · Bubblebeam · Leer |
+| 2 | Tentacool | 32 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 3 | Seadra | 32 | Water | Water Gun · Smokescreen · Bubblebeam · **Dragon Pulse** |
 
 
 ---
@@ -1623,74 +1623,74 @@ _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 28 | Fighting | Karate Chop · Low Kick · Leer |
-| 2 | Mankey | 28 | Fighting | Leer · Low Kick · Slash · Focus Energy |
-| 3 | Machop | 28 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Machop | 28 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
+| 2 | Mankey | 28 | Fighting | **Tackle** · Low Kick · Slash · **Rock Slide** |
+| 3 | Machop | 28 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Cue Ball #2 — Route 16
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mankey | 29 | Fighting | Leer · Low Kick · Slash · Focus Energy |
-| 2 | Machop | 29 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Mankey | 29 | Fighting | **Tackle** · Low Kick · Slash · **Rock Slide** |
+| 2 | Machop | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Cue Ball #3 — Route 16
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 33 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
+| 1 | Machop | 33 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
 
 ### Cue Ball #4 — Route 17
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mankey | 29 | Fighting | Leer · Low Kick · Slash · Focus Energy |
-| 2 | Primeape | 29 | Fighting | Leer · Slash · Focus Energy · Headbutt |
+| 1 | Mankey | 29 | Fighting | **Tackle** · Low Kick · Slash · **Rock Slide** |
+| 2 | Primeape | 29 | Fighting | **Low Kick** · Slash · **Karate Chop** · Headbutt |
 
 ### Cue Ball #5 — Route 17
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 29 | Fighting | Karate Chop · Low Kick · Leer |
-| 2 | Machoke | 29 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Machop | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
+| 2 | Machoke | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Cue Ball #6 — Route 17
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machoke | 33 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Machoke | 33 | Fighting | Karate Chop · Low Kick · **Aura Sphere** · **Earthquake** |
 
 ### Cue Ball #7 — Route 17
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mankey | 26 | Fighting | Tackle · Leer · Low Kick · Slash |
-| 2 | Mankey | 26 | Fighting | Tackle · Leer · Low Kick · Slash |
-| 3 | Machoke | 26 | Fighting | Karate Chop · Low Kick · Leer |
-| 4 | Machop | 26 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Mankey | 26 | Fighting | Tackle · **Rock Slide** · Low Kick · Slash |
+| 2 | Mankey | 26 | Fighting | Tackle · **Rock Slide** · Low Kick · Slash |
+| 3 | Machoke | 26 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
+| 4 | Machop | 26 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Cue Ball #8 — Route 17
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Primeape | 29 | Fighting | Leer · Slash · Focus Energy · Headbutt |
-| 2 | Machoke | 29 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Primeape | 29 | Fighting | **Low Kick** · Slash · **Karate Chop** · Headbutt |
+| 2 | Machoke | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Cue Ball #9 — Route 21
 _Lv 31 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tentacool | 31 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 2 | Tentacool | 31 | Water/Poison | Supersonic · Tackle · Poison Sting · Water Gun |
-| 3 | Tentacruel | 31 | Water/Poison | Supersonic · Poison Sting · Bubblebeam · Sludge |
+| 1 | Tentacool | 31 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 2 | Tentacool | 31 | Water/Poison | Supersonic · **Acid** · Poison Sting · Water Gun |
+| 3 | Tentacruel | 31 | Water/Poison | Supersonic · **Acid** · Bubblebeam · Sludge |
 
 
 ---
@@ -1702,41 +1702,41 @@ _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Poliwag | 18 | Water | Water Gun · Hypnosis |
-| 2 | Horsea | 18 | Water | Water Gun |
+| 1 | Poliwag | 18 | Water | Water Gun · Hypnosis · **Counter** · **Bubblebeam** |
+| 2 | Horsea | 18 | Water | Water Gun · **Swift** · **Bubblebeam** · **Counter** |
 
 ### Gambler #2 — Route 11
 _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bellsprout | 18 | Grass/Poison | Growth · Tackle · Poisonpowder · Sleep Powder |
-| 2 | Oddish | 18 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore |
+| 1 | Bellsprout | 18 | Grass/Poison | **Vine Whip** · Tackle · **Mega Drain** · Sleep Powder |
+| 2 | Oddish | 18 | Grass/Poison | Mega Drain · **Counter** · Stun Spore · **Cut** |
 
 ### Gambler #3 — Route 11
 _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 18 | Electric | Tackle · Screech · Thundershock · Sonicboom |
-| 2 | Magnemite | 18 | Electric/Steel | Tackle |
+| 1 | Voltorb | 18 | Electric | Tackle · **Thunder Wave** · Thundershock · Sonicboom |
+| 2 | Magnemite | 18 | Electric/Steel | Tackle · **Shock Wave** · **Swift** · **Thunder Wave** |
 
 ### Gambler #4 — Route 11
 _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 18 | Fire | Bite · Roar · Ember |
-| 2 | Vulpix | 18 | Fire | Ember · Tail Whip · Quick Attack |
+| 1 | Growlithe | 18 | Fire | Bite · **Counter** · Ember · **Swift** |
+| 2 | Vulpix | 18 | Fire | Ember · **Counter** · Quick Attack · **Swift** |
 
 ### Gambler #5 — Route 8
 _Lv 22 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Poliwag | 22 | Water | Water Gun · Hypnosis |
-| 2 | Poliwag | 22 | Water | Water Gun · Hypnosis |
-| 3 | Poliwhirl | 22 | Water | Water Gun · Hypnosis · Razor Shell |
+| 1 | Poliwag | 22 | Water | Water Gun · Hypnosis · **Counter** · **Bubblebeam** |
+| 2 | Poliwag | 22 | Water | Water Gun · Hypnosis · **Counter** · **Bubblebeam** |
+| 3 | Poliwhirl | 22 | Water | Water Gun · Hypnosis · Razor Shell · **Counter** |
 
 ### Gambler #6 — Unused
 _Lv 22 · 3 Pokémon_
@@ -1752,8 +1752,8 @@ _Lv 24 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 24 | Fire | Bite · Roar · Ember · Leer |
-| 2 | Vulpix | 24 | Fire | Ember · Tail Whip · Quick Attack · Roar |
+| 1 | Growlithe | 24 | Fire | Bite · **Swift** · Ember · **Counter** |
+| 2 | Vulpix | 24 | Fire | Ember · **Swift** · Quick Attack · **Counter** |
 
 
 ---
@@ -1765,58 +1765,58 @@ _Lv 21 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Oddish | 21 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
-| 2 | Bellsprout | 21 | Grass/Poison | Tackle · Poisonpowder · Sleep Powder · Stun Spore |
-| 3 | Oddish | 21 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
-| 4 | Bellsprout | 21 | Grass/Poison | Tackle · Poisonpowder · Sleep Powder · Stun Spore |
+| 1 | Oddish | 21 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
+| 2 | Bellsprout | 21 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
+| 3 | Oddish | 21 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
+| 4 | Bellsprout | 21 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
 
 ### Beauty #2 — Celadon Gym
 _Lv 24 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bellsprout | 24 | Grass/Poison | Tackle · Poisonpowder · Sleep Powder · Stun Spore |
-| 2 | Bellsprout | 24 | Grass/Poison | Tackle · Poisonpowder · Sleep Powder · Stun Spore |
+| 1 | Bellsprout | 24 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
+| 2 | Bellsprout | 24 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
 
 ### Beauty #3 — Celadon Gym
 _Lv 26 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Exeggcute | 26 | Grass/Psychic | Tackle · Hypnosis · Leafage · Reflect |
+| 1 | Exeggcute | 26 | Grass/Psychic | Tackle · Hypnosis · Leafage · **Mega Drain** |
 
 ### Beauty #4 — Route 13
 _Lv 27 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 27 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
-| 2 | Vulpix | 27 | Fire | Ember · Tail Whip · Quick Attack · Roar |
-| 3 | Rattata | 27 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
+| 1 | Rattata | 27 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
+| 2 | Vulpix | 27 | Fire | Ember · **Swift** · Quick Attack · **Counter** |
+| 3 | Rattata | 27 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
 
 ### Beauty #5 — Route 13
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Clefairy | 29 | Fairy | Tackle · Growl · Sing · Minimize |
-| 2 | Meowth | 29 | Normal | Growl · Bite · Pay Day · Screech |
+| 1 | Clefairy | 29 | Fairy | Tackle · **Bubblebeam** · Sing · **Tri Attack** |
+| 2 | Meowth | 29 | Normal | **Tackle** · Bite · Pay Day · Screech |
 
 ### Beauty #6 — Route 20
 _Lv 35 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Seaking | 35 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
+| 1 | Seaking | 35 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
 ### Beauty #7 — Route 20
 _Lv 30 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Shellder | 30 | Water | Withdraw · Supersonic · Razor Shell · Aurora Beam |
-| 2 | Shellder | 30 | Water | Withdraw · Supersonic · Razor Shell · Aurora Beam |
-| 3 | Cloyster | 30 | Water/Ice | Razor Shell · Supersonic · Withdraw · Ice Fang |
+| 1 | Shellder | 30 | Water | **Tackle** · Supersonic · Razor Shell · Aurora Beam |
+| 2 | Shellder | 30 | Water | **Tackle** · Supersonic · Razor Shell · Aurora Beam |
+| 3 | Cloyster | 30 | Water/Ice | Razor Shell · Supersonic · **Aurora Beam** · Ice Fang |
 
 ### Beauty #8 — Route 20
 _Lv 31 · 2 Pokémon_
@@ -1824,23 +1824,23 @@ _Lv 31 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Poliwag | 31 | Water | Water Gun · Hypnosis · Tackle · Strength |
-| 2 | Seaking | 31 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
+| 2 | Seaking | 31 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
 ### Beauty #9 — Route 15
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgeotto | 29 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
-| 2 | Wigglytuff | 29 | Sound/Fairy | Round · Defense Curl · Disable · Sing |
+| 1 | Pidgeotto | 29 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
+| 2 | Wigglytuff | 29 | Sound/Fairy | Round · **Tackle** · **Bubblebeam** · Sing |
 
 ### Beauty #10 — Route 15
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bulbasaur | 29 | Grass/Poison | Leech Seed · Vine Whip · Poisonpowder · Razor Leaf |
-| 2 | Ivysaur | 29 | Grass/Poison | Growl · Leech Seed · Vine Whip · Poisonpowder |
+| 1 | Bulbasaur | 29 | Grass/Poison | Leech Seed · Vine Whip · **Tackle** · Razor Leaf |
+| 2 | Ivysaur | 29 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 
 ### Beauty #11 — Unused
 _Lv 33 · 3 Pokémon_
@@ -1856,37 +1856,37 @@ _Lv 27 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Poliwag | 27 | Water | Water Gun · Hypnosis · Tackle |
-| 2 | Goldeen | 27 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 3 | Seaking | 27 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
-| 4 | Goldeen | 27 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 5 | Poliwag | 27 | Water | Water Gun · Hypnosis · Tackle |
+| 1 | Poliwag | 27 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
+| 2 | Goldeen | 27 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 3 | Seaking | 27 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
+| 4 | Goldeen | 27 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 5 | Poliwag | 27 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
 
 ### Beauty #13 — Route 19
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Goldeen | 30 | Water | Peck · Tail Whip · Supersonic · Headbutt |
-| 2 | Seaking | 30 | Water | Supersonic · Tail Whip · Razor Shell · Headbutt |
+| 1 | Goldeen | 30 | Water | Peck · **Bubblebeam** · Supersonic · Headbutt |
+| 2 | Seaking | 30 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
 ### Beauty #14 — Route 19
 _Lv 29 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Staryu | 29 | Water/Light | Water Gun · Harden · Recover · Light Ray |
-| 2 | Staryu | 29 | Water/Light | Water Gun · Harden · Recover · Light Ray |
-| 3 | Staryu | 29 | Water/Light | Water Gun · Harden · Recover · Light Ray |
+| 1 | Staryu | 29 | Water/Light | Water Gun · **Tackle** · **Thunder Wave** · Light Ray |
+| 2 | Staryu | 29 | Water/Light | Water Gun · **Tackle** · **Thunder Wave** · Light Ray |
+| 3 | Staryu | 29 | Water/Light | Water Gun · **Tackle** · **Thunder Wave** · Light Ray |
 
 ### Beauty #15 — Route 20
 _Lv 30 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Seadra | 30 | Water | Water Gun · Smokescreen · Bubblebeam · Leer |
-| 2 | Horsea | 30 | Water | Water Gun · Smokescreen · Leer |
-| 3 | Seadra | 30 | Water | Water Gun · Smokescreen · Bubblebeam · Leer |
+| 1 | Seadra | 30 | Water | Water Gun · Smokescreen · Bubblebeam · **Swift** |
+| 2 | Horsea | 30 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
+| 3 | Seadra | 30 | Water | Water Gun · Smokescreen · Bubblebeam · **Swift** |
 
 
 ---
@@ -1898,34 +1898,34 @@ _Lv 31 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Kadabra | 31 | Psychic | Confusion · Disable · Psybeam · Recover |
-| 2 | Slowpoke | 31 | Water/Psychic | Confusion · Disable · Headbutt · Growl |
-| 3 | Mr. Mime | 31 | Psychic/Fairy | Psybeam · Light Screen · Drain Kiss · Tackle |
-| 4 | Kadabra | 31 | Psychic | Confusion · Disable · Psybeam · Recover |
+| 1 | Kadabra | 31 | Psychic | Confusion · **Tackle** · Psybeam · **Kinesis** |
+| 2 | Slowpoke | 31 | Water/Psychic | Confusion · **Psychic** · Headbutt · **Thunder Wave** |
+| 3 | Mr. Mime | 31 | Psychic/Fairy | Psybeam · **Confusion** · Drain Kiss · **Thunder Wave** |
+| 4 | Kadabra | 31 | Psychic | Confusion · **Tackle** · Psybeam · **Kinesis** |
 
 ### Psychic #2 — Saffron Gym
 _Lv 34 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mr. Mime | 34 | Psychic/Fairy | Psybeam · Light Screen · Drain Kiss · Tackle |
-| 2 | Kadabra | 34 | Psychic | Confusion · Disable · Psybeam · Recover |
+| 1 | Mr. Mime | 34 | Psychic/Fairy | Psybeam · **Confusion** · Drain Kiss · **Thunder Wave** |
+| 2 | Kadabra | 34 | Psychic | Confusion · **Tackle** · Psybeam · **Kinesis** |
 
 ### Psychic #3 — Saffron Gym
 _Lv 33 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Slowpoke | 33 | Water/Psychic | Disable · Headbutt · Growl · Water Gun |
-| 2 | Slowpoke | 33 | Water/Psychic | Disable · Headbutt · Growl · Water Gun |
-| 3 | Slowbro | 33 | Water/Psychic | Disable · Bubblebeam · Growl · Psybeam |
+| 1 | Slowpoke | 33 | Water/Psychic | **Confusion** · Headbutt · **Thunder Wave** · Water Gun |
+| 2 | Slowpoke | 33 | Water/Psychic | **Confusion** · Headbutt · **Thunder Wave** · Water Gun |
+| 3 | Slowbro | 33 | Water/Psychic | **Confusion** · Bubblebeam · **Thunder Wave** · Psybeam |
 
 ### Psychic #4 — Saffron Gym
 _Lv 38 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Slowbro | 38 | Water/Psychic | Bubblebeam · Growl · Psybeam · Withdraw |
+| 1 | Slowbro | 38 | Water/Psychic | Bubblebeam · **Confusion** · Psybeam · **Thunder Wave** |
 
 
 ---
@@ -1937,17 +1937,17 @@ _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 20 | Electric | Tackle · Screech · Thundershock · Sonicboom |
-| 2 | Voltorb | 20 | Electric | Tackle · Screech · Thundershock · Sonicboom |
-| 3 | Voltorb | 20 | Electric | Tackle · Screech · Thundershock · Sonicboom |
+| 1 | Voltorb | 20 | Electric | Tackle · **Thunder Wave** · Thundershock · Sonicboom |
+| 2 | Voltorb | 20 | Electric | Tackle · **Thunder Wave** · Thundershock · Sonicboom |
+| 3 | Voltorb | 20 | Electric | Tackle · **Thunder Wave** · Thundershock · Sonicboom |
 
 ### Rocker #2 — Route 12
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 29 | Electric | Thundershock · Sonicboom · Explosion · Light Screen |
-| 2 | Electrode | 29 | Electric | Thundershock · Explosion · Shock Wave · Light Screen |
+| 1 | Voltorb | 29 | Electric | Thundershock · Sonicboom · **Tackle** · **Thunder Wave** |
+| 2 | Electrode | 29 | Electric | Thundershock · **Sonicboom** · Shock Wave · **Thunder Wave** |
 
 
 ---
@@ -1959,43 +1959,43 @@ _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Kadabra | 29 | Psychic | Teleport · Confusion · Disable · Psybeam |
-| 2 | Mr. Mime | 29 | Psychic/Fairy | Confusion · Barrier · Psybeam · Light Screen |
+| 1 | Kadabra | 29 | Psychic | **Tackle** · Confusion · **Kinesis** · Psybeam |
+| 2 | Mr. Mime | 29 | Psychic/Fairy | Confusion · **Shock Wave** · Psybeam · **Thunder Wave** |
 
 ### Juggler #2 — Victory Road 2F
 _Lv 41 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Drowzee | 41 | Psychic | Headbutt · Poison Gas · Psychic · Meditate |
-| 2 | Hypno | 41 | Psychic | Psybeam · Headbutt · Poison Gas · Psychic |
-| 3 | Kadabra | 41 | Psychic | Disable · Psybeam · Recover · Psychic |
-| 4 | Kadabra | 41 | Psychic | Disable · Psybeam · Recover · Psychic |
+| 1 | Drowzee | 41 | Psychic | Headbutt · **Confusion** · Psychic · **Hypnosis** |
+| 2 | Hypno | 41 | Psychic | Psybeam · Headbutt · **Hypnosis** · Psychic |
+| 3 | Kadabra | 41 | Psychic | **Tackle** · Psybeam · **Kinesis** · Psychic |
+| 4 | Kadabra | 41 | Psychic | **Tackle** · Psybeam · **Kinesis** · Psychic |
 
 ### Juggler #3 — Fuchsia Gym
 _Lv 31 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Drowzee | 31 | Psychic | Disable · Confusion · Headbutt · Poison Gas |
-| 2 | Drowzee | 31 | Psychic | Disable · Confusion · Headbutt · Poison Gas |
-| 3 | Kadabra | 31 | Psychic | Confusion · Disable · Psybeam · Recover |
-| 4 | Drowzee | 31 | Psychic | Disable · Confusion · Headbutt · Poison Gas |
+| 1 | Drowzee | 31 | Psychic | **Tackle** · Confusion · Headbutt · **Hypnosis** |
+| 2 | Drowzee | 31 | Psychic | **Tackle** · Confusion · Headbutt · **Hypnosis** |
+| 3 | Kadabra | 31 | Psychic | Confusion · **Tackle** · Psybeam · **Kinesis** |
+| 4 | Drowzee | 31 | Psychic | **Tackle** · Confusion · Headbutt · **Hypnosis** |
 
 ### Juggler #4 — Fuchsia Gym
 _Lv 34 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Drowzee | 34 | Psychic | Confusion · Headbutt · Poison Gas · Psychic |
-| 2 | Hypno | 34 | Psychic | Hypnosis · Psybeam · Headbutt · Poison Gas |
+| 1 | Drowzee | 34 | Psychic | Confusion · Headbutt · **Hypnosis** · Psychic |
+| 2 | Hypno | 34 | Psychic | Hypnosis · Psybeam · Headbutt · **Confusion** |
 
 ### Juggler #5 — Victory Road 2F
 _Lv 48 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mr. Mime | 48 | Psychic/Fairy | Drain Kiss · Tackle · Meditate · Substitute |
+| 1 | Mr. Mime | 48 | Psychic/Fairy | Drain Kiss · **Psybeam** · **Confusion** · **Thunder Wave** |
 
 ### Juggler #6 — Unused
 _Lv 33 · 1 Pokémon_
@@ -2009,15 +2009,15 @@ _Lv 38 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Hypno | 38 | Psychic | Psybeam · Headbutt · Poison Gas · Psychic |
+| 1 | Hypno | 38 | Psychic | Psybeam · Headbutt · **Hypnosis** · Psychic |
 
 ### Juggler #8 — Fuchsia Gym
 _Lv 34 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Drowzee | 34 | Psychic | Confusion · Headbutt · Poison Gas · Psychic |
-| 2 | Kadabra | 34 | Psychic | Confusion · Disable · Psybeam · Recover |
+| 1 | Drowzee | 34 | Psychic | Confusion · Headbutt · **Hypnosis** · Psychic |
+| 2 | Kadabra | 34 | Psychic | Confusion · **Tackle** · Psybeam · **Kinesis** |
 
 
 ---
@@ -2030,39 +2030,39 @@ _Lv 34 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Sandslash | 34 | Ground | Sand-Attack · Bulldoze · Slash · Poison Sting |
-| 2 | Arbok | 34 | Poison | Leer · Bite · Cross Poison · Glare |
+| 2 | Arbok | 34 | Poison | **Poison Sting** · Bite · Cross Poison · Glare |
 
 ### Tamer #2 — Fuchsia Gym
 _Lv 33 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Arbok | 33 | Poison | Leer · Bite · Cross Poison · Glare |
+| 1 | Arbok | 33 | Poison | **Poison Sting** · Bite · Cross Poison · Glare |
 | 2 | Sandslash | 33 | Ground | Sand-Attack · Bulldoze · Slash · Poison Sting |
-| 3 | Arbok | 33 | Poison | Leer · Bite · Cross Poison · Glare |
+| 3 | Arbok | 33 | Poison | **Poison Sting** · Bite · Cross Poison · Glare |
 
 ### Tamer #3 — Viridian Gym
 _Lv 43 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rhyhorn | 43 | Ground/Rock | Headbutt · Bone Club · Tail Whip |
+| 1 | Rhyhorn | 43 | Ground/Rock | Headbutt · Bone Club · **Stone Edge** · **Earthquake** |
 
 ### Tamer #4 — Viridian Gym
 _Lv 39 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Arbok | 39 | Poison | Bite · Cross Poison · Glare · Screech |
-| 2 | Tauros | 39 | Normal | Tackle · Headbutt · Tail Whip · Leer |
+| 1 | Arbok | 39 | Poison | Bite · Cross Poison · Glare · **Poison Sting** |
+| 2 | Tauros | 39 | Normal | Tackle · Headbutt · **Earthquake** · **Strength** |
 
 ### Tamer #5 — Victory Road 2F
 _Lv 44 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Persian | 44 | Normal | Pay Day · Headbutt · Slash · Strength |
-| 2 | Golduck | 44 | Water | Tail Whip · Water Gun · Bubblebeam · Confusion |
+| 1 | Persian | 44 | Normal | **Bite** · Headbutt · **Screech** · Strength |
+| 2 | Golduck | 44 | Water | **Tackle** · Water Gun · Bubblebeam · Confusion |
 
 ### Tamer #6 — Unused
 _Lv 42 · 4 Pokémon_
@@ -2084,97 +2084,97 @@ _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 29 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Wing Attack |
-| 2 | Pidgeotto | 29 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
+| 1 | Pidgey | 29 | Normal/Flying | Tackle · Quick Attack · **Sand-Attack** · Wing Attack |
+| 2 | Pidgeotto | 29 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
 ### Bird Keeper #2 — Route 13
 _Lv 25 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 25 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 2 | Pidgey | 25 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 3 | Pidgey | 25 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 4 | Spearow | 25 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 5 | Spearow | 25 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
+| 1 | Spearow | 25 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 2 | Pidgey | 25 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 3 | Pidgey | 25 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 4 | Spearow | 25 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 5 | Spearow | 25 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
 
 ### Bird Keeper #3 — Route 13
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Pidgeotto | 26 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
-| 3 | Spearow | 26 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 4 | Fearow | 26 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
+| 1 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Pidgeotto | 26 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
+| 3 | Spearow | 26 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 4 | Fearow | 26 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
 
 ### Bird Keeper #4 — Route 14
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Farfetch'd | 33 | Normal/Flying | Headbutt · Swords Dance · Wing Attack · Agility |
+| 1 | Farfetch'd | 33 | Normal/Flying | Headbutt · Swords Dance · Wing Attack · **Peck** |
 
 ### Bird Keeper #5 — Route 14
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 29 | Normal/Flying | Leer · Tackle · Mirror Move · Drill Peck |
-| 2 | Fearow | 29 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
+| 1 | Spearow | 29 | Normal/Flying | **Peck** · Tackle · **Tri Attack** · **Pay Day** |
+| 2 | Fearow | 29 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
 
 ### Bird Keeper #6 — Route 15
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgeotto | 26 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
-| 2 | Farfetch'd | 26 | Normal/Flying | Leer · Tackle · Headbutt · Swords Dance |
-| 3 | Doduo | 26 | Normal/Flying | Peck · Growl · Tackle |
-| 4 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
+| 1 | Pidgeotto | 26 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
+| 2 | Farfetch'd | 26 | Normal/Flying | **Peck** · Tackle · Headbutt · Swords Dance |
+| 3 | Doduo | 26 | Normal/Flying | Peck · **Pay Day** · Tackle · **Tri Attack** |
+| 4 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 
 ### Bird Keeper #7 — Route 15
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Dodrio | 28 | Normal/Flying | Peck · Tackle · Growl |
-| 2 | Doduo | 28 | Normal/Flying | Peck · Growl · Tackle |
-| 3 | Doduo | 28 | Normal/Flying | Peck · Growl · Tackle |
+| 1 | Dodrio | 28 | Normal/Flying | Peck · Tackle · **Pay Day** · **Tri Attack** |
+| 2 | Doduo | 28 | Normal/Flying | Peck · **Pay Day** · Tackle · **Tri Attack** |
+| 3 | Doduo | 28 | Normal/Flying | Peck · **Pay Day** · Tackle · **Tri Attack** |
 
 ### Bird Keeper #8 — Route 18
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 29 | Normal/Flying | Leer · Tackle · Mirror Move · Drill Peck |
-| 2 | Fearow | 29 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
+| 1 | Spearow | 29 | Normal/Flying | **Peck** · Tackle · **Tri Attack** · **Pay Day** |
+| 2 | Fearow | 29 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
 
 ### Bird Keeper #9 — Route 18
 _Lv 34 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Dodrio | 34 | Normal/Flying | Peck · Tackle · Growl · Drill Peck |
+| 1 | Dodrio | 34 | Normal/Flying | Peck · Tackle · **Strength** · Drill Peck |
 
 ### Bird Keeper #10 — Route 18
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 26 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 2 | Spearow | 26 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 3 | Fearow | 26 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
-| 4 | Spearow | 26 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
+| 1 | Spearow | 26 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 2 | Spearow | 26 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 3 | Fearow | 26 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
+| 4 | Spearow | 26 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
 
 ### Bird Keeper #11 — Route 20
 _Lv 30 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Fearow | 30 | Normal/Flying | Tackle · Headbutt · Mirror Move · Wing Attack |
-| 2 | Fearow | 30 | Normal/Flying | Tackle · Headbutt · Mirror Move · Wing Attack |
-| 3 | Pidgeotto | 30 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
+| 1 | Fearow | 30 | Normal/Flying | Tackle · Headbutt · **Peck** · Wing Attack |
+| 2 | Fearow | 30 | Normal/Flying | Tackle · Headbutt · **Peck** · Wing Attack |
+| 3 | Pidgeotto | 30 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
 ### Bird Keeper #12 — Unused
 _Lv 39 · 4 Pokémon_
@@ -2199,36 +2199,36 @@ _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 28 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Wing Attack |
-| 2 | Doduo | 28 | Normal/Flying | Peck · Growl · Tackle |
-| 3 | Pidgeotto | 28 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
+| 1 | Pidgey | 28 | Normal/Flying | Tackle · Quick Attack · **Sand-Attack** · Wing Attack |
+| 2 | Doduo | 28 | Normal/Flying | Peck · **Pay Day** · Tackle · **Tri Attack** |
+| 3 | Pidgeotto | 28 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
 ### Bird Keeper #15 — Route 14
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 2 | Spearow | 26 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 3 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · Whirlwind |
-| 4 | Fearow | 26 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
+| 1 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 2 | Spearow | 26 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 3 | Pidgey | 26 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
+| 4 | Fearow | 26 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
 
 ### Bird Keeper #16 — Route 14
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Pidgeotto | 29 | Normal/Flying | Tackle · Quick Attack · Whirlwind · Headbutt |
-| 2 | Fearow | 29 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
+| 1 | Pidgeotto | 29 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
+| 2 | Fearow | 29 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
 
 ### Bird Keeper #17 — Route 14
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Spearow | 28 | Normal/Flying | Growl · Leer · Tackle · Mirror Move |
-| 2 | Doduo | 28 | Normal/Flying | Peck · Growl · Tackle |
-| 3 | Fearow | 28 | Normal/Flying | Leer · Tackle · Headbutt · Mirror Move |
+| 1 | Spearow | 28 | Normal/Flying | **Peck** · **Tri Attack** · Tackle · **Pay Day** |
+| 2 | Doduo | 28 | Normal/Flying | Peck · **Pay Day** · Tackle · **Tri Attack** |
+| 3 | Fearow | 28 | Normal/Flying | **Peck** · Tackle · Headbutt · **Tri Attack** |
 
 
 ---
@@ -2240,7 +2240,7 @@ _Lv 37 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Hitmonlee | 37 | Fighting | Low Kick · Meditate |
+| 1 | Hitmonlee | 37 | Fighting | Low Kick · Meditate · **Stone Edge** · **Aura Sphere** |
 | 2 | Hitmonchan | 37 | Fighting | Agility · Karate Chop · Low Kick · Fire Punch |
 
 ### Blackbelt #2 — Fighting Dojo
@@ -2248,66 +2248,66 @@ _Lv 31 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Mankey | 31 | Fighting | Leer · Low Kick · Slash · Focus Energy |
-| 2 | Mankey | 31 | Fighting | Leer · Low Kick · Slash · Focus Energy |
-| 3 | Primeape | 31 | Fighting | Leer · Slash · Focus Energy · Headbutt |
+| 1 | Mankey | 31 | Fighting | **Tackle** · Low Kick · Slash · **Aura Sphere** |
+| 2 | Mankey | 31 | Fighting | **Tackle** · Low Kick · Slash · **Aura Sphere** |
+| 3 | Primeape | 31 | Fighting | **Low Kick** · Slash · **Karate Chop** · Headbutt |
 
 ### Blackbelt #3 — Fighting Dojo
 _Lv 32 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 32 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
-| 2 | Machoke | 32 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Machop | 32 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
+| 2 | Machoke | 32 | Fighting | Karate Chop · Low Kick · **Aura Sphere** · **Earthquake** |
 
 ### Blackbelt #4 — Fighting Dojo
 _Lv 36 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Primeape | 36 | Fighting | Leer · Slash · Focus Energy · Headbutt |
+| 1 | Primeape | 36 | Fighting | **Low Kick** · Slash · **Karate Chop** · Headbutt |
 
 ### Blackbelt #5 — Fighting Dojo
 _Lv 31 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 31 | Fighting | Karate Chop · Low Kick · Leer |
-| 2 | Mankey | 31 | Fighting | Leer · Low Kick · Slash · Focus Energy |
-| 3 | Primeape | 31 | Fighting | Leer · Slash · Focus Energy · Headbutt |
+| 1 | Machop | 31 | Fighting | Karate Chop · Low Kick · **Aura Sphere** · **Earthquake** |
+| 2 | Mankey | 31 | Fighting | **Tackle** · Low Kick · Slash · **Aura Sphere** |
+| 3 | Primeape | 31 | Fighting | **Low Kick** · Slash · **Karate Chop** · Headbutt |
 
 ### Blackbelt #6 — Viridian Gym
 _Lv 40 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 40 | Fighting | Low Kick · Leer · Focus Energy · Seismic Toss |
-| 2 | Machoke | 40 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
+| 1 | Machop | 40 | Fighting | Low Kick · **Earthquake** · **Karate Chop** · Seismic Toss |
+| 2 | Machoke | 40 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
 
 ### Blackbelt #7 — Viridian Gym
 _Lv 43 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machoke | 43 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
+| 1 | Machoke | 43 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
 
 ### Blackbelt #8 — Viridian Gym
 _Lv 38 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machoke | 38 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
-| 2 | Machop | 38 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
-| 3 | Machoke | 38 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
+| 1 | Machoke | 38 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
+| 2 | Machop | 38 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
+| 3 | Machoke | 38 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
 
 ### Blackbelt #9 — Victory Road 2F
 _Lv 43 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machoke | 43 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
-| 2 | Machop | 43 | Fighting | Low Kick · Leer · Focus Energy · Seismic Toss |
-| 3 | Machoke | 43 | Fighting | Karate Chop · Low Kick · Leer · Focus Energy |
+| 1 | Machoke | 43 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
+| 2 | Machop | 43 | Fighting | Low Kick · **Earthquake** · **Karate Chop** · Seismic Toss |
+| 3 | Machoke | 43 | Fighting | Karate Chop · Low Kick · **Earthquake** · **Aura Sphere** |
 
 
 ---
@@ -2395,80 +2395,80 @@ _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 26 | Poison | Tackle · Disable |
-| 2 | Weezing | 26 | Poison | Tackle · Sludge |
-| 3 | Koffing | 26 | Poison | Tackle · Sludge |
-| 4 | Weezing | 26 | Poison | Tackle · Sludge |
+| 1 | Grimer | 26 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Weezing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 4 | Weezing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Scientist #3 — Silph Co. 2F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Magnemite | 28 | Electric/Steel | Tackle · Sonicboom · Thundershock · Mirror Shot |
-| 2 | Voltorb | 28 | Electric | Screech · Thundershock · Sonicboom · Explosion |
-| 3 | Magneton | 28 | Electric/Steel | Sonicboom · Tackle · Thundershock · Shock Wave |
+| 1 | Magnemite | 28 | Electric/Steel | **Thunder Wave** · Sonicboom · Thundershock · Mirror Shot |
+| 2 | Voltorb | 28 | Electric | **Tackle** · Thundershock · Sonicboom · **Thunder Wave** |
+| 3 | Magneton | 28 | Electric/Steel | Sonicboom · **Thunder Wave** · Thundershock · Shock Wave |
 
 ### Scientist #4 — Silph Co. 3F/Mansion 1F
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Electrode | 29 | Electric | Thundershock · Explosion · Shock Wave · Light Screen |
-| 2 | Weezing | 29 | Poison | Tackle · Sludge |
+| 1 | Electrode | 29 | Electric | Thundershock · **Sonicboom** · Shock Wave · **Thunder Wave** |
+| 2 | Weezing | 29 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Scientist #5 — Silph Co. 4F
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Electrode | 33 | Electric | Thundershock · Explosion · Shock Wave · Light Screen |
+| 1 | Electrode | 33 | Electric | Thundershock · **Sonicboom** · Shock Wave · **Thunder Wave** |
 
 ### Scientist #6 — Silph Co. 5F
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Magneton | 26 | Electric/Steel | Sonicboom · Tackle · Thundershock · Shock Wave |
-| 2 | Koffing | 26 | Poison | Tackle · Sludge |
-| 3 | Weezing | 26 | Poison | Tackle · Sludge |
-| 4 | Magnemite | 26 | Electric/Steel | Tackle · Sonicboom · Thundershock |
+| 1 | Magneton | 26 | Electric/Steel | Sonicboom · **Thunder Wave** · Thundershock · Shock Wave |
+| 2 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Weezing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 4 | Magnemite | 26 | Electric/Steel | Tackle · Sonicboom · Thundershock · **Thunder Wave** |
 
 ### Scientist #7 — Silph Co. 6F
 _Lv 25 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 25 | Electric | Screech · Thundershock · Sonicboom · Explosion |
-| 2 | Koffing | 25 | Poison | Tackle · Sludge |
-| 3 | Magneton | 25 | Electric/Steel | Sonicboom · Tackle · Thundershock · Shock Wave |
-| 4 | Magnemite | 25 | Electric/Steel | Tackle · Sonicboom · Thundershock |
-| 5 | Koffing | 25 | Poison | Tackle · Sludge |
+| 1 | Voltorb | 25 | Electric | **Tackle** · Thundershock · Sonicboom · **Thunder Wave** |
+| 2 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Magneton | 25 | Electric/Steel | Sonicboom · **Thunder Wave** · Thundershock · Shock Wave |
+| 4 | Magnemite | 25 | Electric/Steel | Tackle · Sonicboom · Thundershock · **Thunder Wave** |
+| 5 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Scientist #8 — Silph Co. 7F
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Electrode | 29 | Electric | Thundershock · Explosion · Shock Wave · Light Screen |
-| 2 | Muk | 29 | Poison | Tackle · Disable · Poison Gas |
+| 1 | Electrode | 29 | Electric | Thundershock · **Sonicboom** · Shock Wave · **Thunder Wave** |
+| 2 | Muk | 29 | Poison | Tackle · **Shock Wave** · **Counter** · **Mega Drain** |
 
 ### Scientist #9 — Silph Co. 8F
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 29 | Poison | Tackle · Disable |
-| 2 | Electrode | 29 | Electric | Thundershock · Explosion · Shock Wave · Light Screen |
+| 1 | Grimer | 29 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Electrode | 29 | Electric | Thundershock · **Sonicboom** · Shock Wave · **Thunder Wave** |
 
 ### Scientist #10 — Silph Co. 9F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 28 | Electric | Screech · Thundershock · Sonicboom · Explosion |
-| 2 | Koffing | 28 | Poison | Tackle · Sludge |
-| 3 | Magneton | 28 | Electric/Steel | Sonicboom · Tackle · Thundershock · Shock Wave |
+| 1 | Voltorb | 28 | Electric | **Tackle** · Thundershock · Sonicboom · **Thunder Wave** |
+| 2 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Magneton | 28 | Electric/Steel | Sonicboom · **Thunder Wave** · Thundershock · Shock Wave |
 
 ### Scientist #11 — Silph Co. 10F
 _Lv 29 · 2 Pokémon_
@@ -2476,7 +2476,7 @@ _Lv 29 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Magnemite | 29 | Electric/Steel | Sonicboom · Thundershock · Mirror Shot · Supersonic |
-| 2 | Koffing | 29 | Poison | Tackle · Sludge |
+| 2 | Koffing | 29 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Scientist #12 — Mansion 3F
 _Lv 33 · 3 Pokémon_
@@ -2485,7 +2485,7 @@ _Lv 33 · 3 Pokémon_
 |---|---------|----|-------|-------|
 | 1 | Magnemite | 33 | Electric/Steel | Sonicboom · Thundershock · Mirror Shot · Supersonic |
 | 2 | Magneton | 33 | Electric/Steel | Thundershock · Shock Wave · Supersonic · Mirror Shot |
-| 3 | Voltorb | 33 | Electric | Thundershock · Sonicboom · Explosion · Light Screen |
+| 3 | Voltorb | 33 | Electric | Thundershock · Sonicboom · **Tackle** · **Thunder Wave** |
 
 ### Scientist #13 — Mansion B1F
 _Lv 34 · 2 Pokémon_
@@ -2493,7 +2493,7 @@ _Lv 34 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Magnemite | 34 | Electric/Steel | Sonicboom · Thundershock · Mirror Shot · Supersonic |
-| 2 | Electrode | 34 | Electric | Thundershock · Explosion · Shock Wave · Light Screen |
+| 2 | Electrode | 34 | Electric | Thundershock · **Sonicboom** · Shock Wave · **Thunder Wave** |
 
 
 ---
@@ -2541,25 +2541,25 @@ _Lv 13 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 13 | Normal | Tackle · Tail Whip · Quick Attack |
-| 2 | Zubat | 13 | Poison/Flying | Leech Life · Poison Sting · Supersonic |
+| 1 | Rattata | 13 | Normal | Tackle · **Pay Day** · Quick Attack · **Shock Wave** |
+| 2 | Zubat | 13 | Poison/Flying | Leech Life · Poison Sting · Supersonic · **Mega Drain** |
 
 ### Rocket #2 — Mt. Moon B2F
 _Lv 11 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Sandshrew | 11 | Ground | Tackle · Sand-Attack |
-| 2 | Rattata | 11 | Normal | Tackle · Tail Whip · Quick Attack |
-| 3 | Zubat | 11 | Poison/Flying | Leech Life · Poison Sting · Supersonic |
+| 1 | Sandshrew | 11 | Ground | Tackle · Sand-Attack · **Cut** · **Swift** |
+| 2 | Rattata | 11 | Normal | Tackle · **Pay Day** · Quick Attack · **Shock Wave** |
+| 3 | Zubat | 11 | Poison/Flying | Leech Life · Poison Sting · Supersonic · **Mega Drain** |
 
 ### Rocket #3 — Mt. Moon B2F
 _Lv 12 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Zubat | 12 | Poison/Flying | Leech Life · Poison Sting · Supersonic |
-| 2 | Ekans | 12 | Poison | Tackle · Leer · Poison Sting |
+| 1 | Zubat | 12 | Poison/Flying | Leech Life · Poison Sting · Supersonic · **Mega Drain** |
+| 2 | Ekans | 12 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
 
 ### Rocket #4 — Unused
 _Lv 16 · 1 Pokémon_
@@ -2573,15 +2573,15 @@ _Lv 17 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 17 | Fighting | Karate Chop |
-| 2 | Drowzee | 17 | Psychic | Tackle · Hypnosis · Disable · Confusion |
+| 1 | Machop | 17 | Fighting | Karate Chop · **Rock Slide** · **Counter** · **Seismic Toss** |
+| 2 | Drowzee | 17 | Psychic | Tackle · Hypnosis · **Tri Attack** · Confusion |
 
 ### Rocket #6 — Route 24
 _Lv 15 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ekans | 15 | Poison | Tackle · Leer · Poison Sting |
+| 1 | Ekans | 15 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
 | 2 | Zubat | 15 | Poison/Flying | Leech Life · Poison Sting · Supersonic · Bite |
 
 ### Rocket #7 — Game Corner
@@ -2589,7 +2589,7 @@ _Lv 20 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Raticate | 20 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
+| 1 | Raticate | 20 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
 | 2 | Zubat | 20 | Poison/Flying | Leech Life · Poison Sting · Supersonic · Bite |
 
 ### Rocket #8 — Rocket Hideout B1F
@@ -2597,43 +2597,43 @@ _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Drowzee | 21 | Psychic | Tackle · Hypnosis · Disable · Confusion |
-| 2 | Machop | 21 | Fighting | Karate Chop · Low Kick |
+| 1 | Drowzee | 21 | Psychic | Tackle · Hypnosis · **Tri Attack** · Confusion |
+| 2 | Machop | 21 | Fighting | Karate Chop · Low Kick · **Rock Slide** · **Counter** |
 
 ### Rocket #9 — Rocket Hideout B1F
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Raticate | 21 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
-| 2 | Raticate | 21 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
+| 1 | Raticate | 21 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
+| 2 | Raticate | 21 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
 
 ### Rocket #10 — Rocket Hideout B1F
 _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 20 | Poison | Tackle · Disable |
-| 2 | Koffing | 20 | Poison | Tackle · Sludge |
-| 3 | Koffing | 20 | Poison | Tackle · Sludge |
+| 1 | Grimer | 20 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Koffing | 20 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Koffing | 20 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Rocket #11 — Rocket Hideout B1F
 _Lv 19 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 19 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Raticate | 19 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
-| 3 | Raticate | 19 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
-| 4 | Rattata | 19 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
+| 1 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 2 | Raticate | 19 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
+| 3 | Raticate | 19 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
+| 4 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
 
 ### Rocket #12 — Rocket Hideout B1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Grimer | 22 | Poison | Tackle · Disable |
-| 2 | Koffing | 22 | Poison | Tackle · Sludge |
+| 1 | Grimer | 22 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 2 | Koffing | 22 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Rocket #13 — Rocket Hideout B2F
 _Lv 17 · 5 Pokémon_
@@ -2641,27 +2641,27 @@ _Lv 17 · 5 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Zubat | 17 | Poison/Flying | Leech Life · Poison Sting · Supersonic · Bite |
-| 2 | Koffing | 17 | Poison | Tackle · Sludge |
-| 3 | Grimer | 17 | Poison | Tackle · Disable |
+| 2 | Koffing | 17 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 3 | Grimer | 17 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
 | 4 | Zubat | 17 | Poison/Flying | Leech Life · Poison Sting · Supersonic · Bite |
-| 5 | Raticate | 17 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
+| 5 | Raticate | 17 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
 
 ### Rocket #14 — Rocket Hideout B3F
 _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 20 | Normal | Tackle · Tail Whip · Quick Attack · Bite |
-| 2 | Raticate | 20 | Normal | Tackle · Quick Attack · Tail Whip · Bite |
-| 3 | Drowzee | 20 | Psychic | Tackle · Hypnosis · Disable · Confusion |
+| 1 | Rattata | 20 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
+| 2 | Raticate | 20 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
+| 3 | Drowzee | 20 | Psychic | Tackle · Hypnosis · **Tri Attack** · Confusion |
 
 ### Rocket #15 — Rocket Hideout B3F
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 21 | Fighting | Karate Chop · Low Kick |
-| 2 | Machop | 21 | Fighting | Karate Chop · Low Kick |
+| 1 | Machop | 21 | Fighting | Karate Chop · Low Kick · **Rock Slide** · **Counter** |
+| 2 | Machop | 21 | Fighting | Karate Chop · Low Kick · **Rock Slide** · **Counter** |
 
 ### Rocket #16 — Unused
 _Lv 23 · 3 Pokémon_
@@ -2686,8 +2686,8 @@ _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 21 | Poison | Tackle · Sludge |
-| 2 | Zubat | 21 | Poison/Flying | Poison Sting · Supersonic · Bite · Confuse Ray |
+| 1 | Koffing | 21 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Zubat | 21 | Poison/Flying | Poison Sting · **Leech Life** · Bite · Confuse Ray |
 
 ### Rocket #19 — Unused
 _Lv 25 · 3 Pokémon_
@@ -2729,94 +2729,94 @@ _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Cubone | 29 | Ground | Bone Club · Tail Whip · Headbutt · Leer |
-| 2 | Zubat | 29 | Poison/Flying | Supersonic · Bite · Confuse Ray · Wing Attack |
+| 1 | Cubone | 29 | Ground | Bone Club · **Tackle** · Headbutt · **Bubblebeam** |
+| 2 | Zubat | 29 | Poison/Flying | **Poison Sting** · Bite · Confuse Ray · Wing Attack |
 
 ### Rocket #24 — Silph Co. 2F
 _Lv 25 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Golbat | 25 | Poison/Flying | Poison Sting · Supersonic · Confuse Ray · Cross Poison |
-| 2 | Zubat | 25 | Poison/Flying | Poison Sting · Supersonic · Bite · Confuse Ray |
-| 3 | Zubat | 25 | Poison/Flying | Poison Sting · Supersonic · Bite · Confuse Ray |
-| 4 | Raticate | 25 | Normal | Quick Attack · Tail Whip · Bite · Headbutt |
-| 5 | Zubat | 25 | Poison/Flying | Poison Sting · Supersonic · Bite · Confuse Ray |
+| 1 | Golbat | 25 | Poison/Flying | Poison Sting · **Bite** · **Screech** · Cross Poison |
+| 2 | Zubat | 25 | Poison/Flying | Poison Sting · **Leech Life** · Bite · Confuse Ray |
+| 3 | Zubat | 25 | Poison/Flying | Poison Sting · **Leech Life** · Bite · Confuse Ray |
+| 4 | Raticate | 25 | Normal | Quick Attack · **Tackle** · Bite · Headbutt |
+| 5 | Zubat | 25 | Poison/Flying | Poison Sting · **Leech Life** · Bite · Confuse Ray |
 
 ### Rocket #25 — Silph Co. 3F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Raticate | 28 | Normal | Tail Whip · Bite · Headbutt · Focus Energy |
-| 2 | Hypno | 28 | Psychic | Disable · Hypnosis · Psybeam · Headbutt |
-| 3 | Raticate | 28 | Normal | Tail Whip · Bite · Headbutt · Focus Energy |
+| 1 | Raticate | 28 | Normal | **Quick Attack** · Bite · Headbutt · **Tackle** |
+| 2 | Hypno | 28 | Psychic | **Confusion** · Hypnosis · Psybeam · Headbutt |
+| 3 | Raticate | 28 | Normal | **Quick Attack** · Bite · Headbutt · **Tackle** |
 
 ### Rocket #26 — Silph Co. 4F
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 29 | Fighting | Karate Chop · Low Kick · Leer |
-| 2 | Drowzee | 29 | Psychic | Disable · Confusion · Headbutt · Poison Gas |
+| 1 | Machop | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
+| 2 | Drowzee | 29 | Psychic | **Tackle** · Confusion · Headbutt · **Hypnosis** |
 
 ### Rocket #27 — Silph Co. 4F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ekans | 28 | Poison | Leer · Poison Sting · Bite · Glare |
-| 2 | Zubat | 28 | Poison/Flying | Supersonic · Bite · Confuse Ray · Wing Attack |
-| 3 | Cubone | 28 | Ground | Bone Club · Tail Whip · Headbutt · Leer |
+| 1 | Ekans | 28 | Poison | **Tackle** · Poison Sting · Bite · Glare |
+| 2 | Zubat | 28 | Poison/Flying | **Poison Sting** · Bite · Confuse Ray · Wing Attack |
+| 3 | Cubone | 28 | Ground | Bone Club · **Tackle** · Headbutt · **Bubblebeam** |
 
 ### Rocket #28 — Silph Co. 5F
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Arbok | 33 | Poison | Leer · Bite · Cross Poison · Glare |
+| 1 | Arbok | 33 | Poison | **Poison Sting** · Bite · Cross Poison · Glare |
 
 ### Rocket #29 — Silph Co. 5F
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Hypno | 33 | Psychic | Hypnosis · Psybeam · Headbutt · Poison Gas |
+| 1 | Hypno | 33 | Psychic | Hypnosis · Psybeam · Headbutt · **Confusion** |
 
 ### Rocket #30 — Silph Co. 6F
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machop | 29 | Fighting | Karate Chop · Low Kick · Leer |
-| 2 | Machoke | 29 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Machop | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
+| 2 | Machoke | 29 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Rocket #31 — Silph Co. 6F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Zubat | 28 | Poison/Flying | Supersonic · Bite · Confuse Ray · Wing Attack |
-| 2 | Zubat | 28 | Poison/Flying | Supersonic · Bite · Confuse Ray · Wing Attack |
-| 3 | Golbat | 28 | Poison/Flying | Poison Sting · Supersonic · Confuse Ray · Cross Poison |
+| 1 | Zubat | 28 | Poison/Flying | **Poison Sting** · Bite · Confuse Ray · Wing Attack |
+| 2 | Zubat | 28 | Poison/Flying | **Poison Sting** · Bite · Confuse Ray · Wing Attack |
+| 3 | Golbat | 28 | Poison/Flying | Poison Sting · **Bite** · **Screech** · Cross Poison |
 
 ### Rocket #32 — Silph Co. 7F
 _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Raticate | 26 | Normal | Quick Attack · Tail Whip · Bite · Headbutt |
-| 2 | Arbok | 26 | Poison | Tackle · Leer · Bite · Cross Poison |
-| 3 | Koffing | 26 | Poison | Tackle · Sludge |
-| 4 | Golbat | 26 | Poison/Flying | Poison Sting · Supersonic · Confuse Ray · Cross Poison |
+| 1 | Raticate | 26 | Normal | Quick Attack · **Tackle** · Bite · Headbutt |
+| 2 | Arbok | 26 | Poison | Tackle · **Poison Sting** · Bite · Cross Poison |
+| 3 | Koffing | 26 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 4 | Golbat | 26 | Poison/Flying | Poison Sting · **Bite** · **Screech** · Cross Poison |
 
 ### Rocket #33 — Silph Co. 7F
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Cubone | 29 | Ground | Bone Club · Tail Whip · Headbutt · Leer |
-| 2 | Cubone | 29 | Ground | Bone Club · Tail Whip · Headbutt · Leer |
+| 1 | Cubone | 29 | Ground | Bone Club · **Tackle** · Headbutt · **Bubblebeam** |
+| 2 | Cubone | 29 | Ground | Bone Club · **Tackle** · Headbutt · **Bubblebeam** |
 
 ### Rocket #34 — Silph Co. 7F
 _Lv 29 · 2 Pokémon_
@@ -2831,55 +2831,55 @@ _Lv 26 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Raticate | 26 | Normal | Quick Attack · Tail Whip · Bite · Headbutt |
-| 2 | Zubat | 26 | Poison/Flying | Poison Sting · Supersonic · Bite · Confuse Ray |
-| 3 | Golbat | 26 | Poison/Flying | Poison Sting · Supersonic · Confuse Ray · Cross Poison |
-| 4 | Rattata | 26 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
+| 1 | Raticate | 26 | Normal | Quick Attack · **Tackle** · Bite · Headbutt |
+| 2 | Zubat | 26 | Poison/Flying | Poison Sting · **Leech Life** · Bite · Confuse Ray |
+| 3 | Golbat | 26 | Poison/Flying | Poison Sting · **Bite** · **Screech** · Cross Poison |
+| 4 | Rattata | 26 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
 
 ### Rocket #36 — Silph Co. 8F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weezing | 28 | Poison | Tackle · Sludge |
-| 2 | Golbat | 28 | Poison/Flying | Poison Sting · Supersonic · Confuse Ray · Cross Poison |
-| 3 | Koffing | 28 | Poison | Tackle · Sludge |
+| 1 | Weezing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Golbat | 28 | Poison/Flying | Poison Sting · **Bite** · **Screech** · Cross Poison |
+| 3 | Koffing | 28 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Rocket #37 — Silph Co. 9F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Drowzee | 28 | Psychic | Hypnosis · Disable · Confusion · Headbutt |
-| 2 | Grimer | 28 | Poison | Tackle · Disable |
-| 3 | Machop | 28 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Drowzee | 28 | Psychic | Hypnosis · **Tackle** · Confusion · Headbutt |
+| 2 | Grimer | 28 | Poison | Tackle · **Counter** · **Mega Drain** · **Shock Wave** |
+| 3 | Machop | 28 | Fighting | Karate Chop · Low Kick · **Counter** · **Rock Slide** |
 
 ### Rocket #38 — Silph Co. 9F
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Golbat | 28 | Poison/Flying | Poison Sting · Supersonic · Confuse Ray · Cross Poison |
-| 2 | Drowzee | 28 | Psychic | Hypnosis · Disable · Confusion · Headbutt |
-| 3 | Hypno | 28 | Psychic | Disable · Hypnosis · Psybeam · Headbutt |
+| 1 | Golbat | 28 | Poison/Flying | Poison Sting · **Bite** · **Screech** · Cross Poison |
+| 2 | Drowzee | 28 | Psychic | Hypnosis · **Tackle** · Confusion · Headbutt |
+| 3 | Hypno | 28 | Psychic | **Confusion** · Hypnosis · Psybeam · Headbutt |
 
 ### Rocket #39 — Silph Co. 10F
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Machoke | 33 | Fighting | Karate Chop · Low Kick · Leer |
+| 1 | Machoke | 33 | Fighting | Karate Chop · Low Kick · **Aura Sphere** · **Earthquake** |
 
 ### Rocket #40 — Silph Co. 11F
 _Lv 25 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rattata | 25 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
-| 2 | Rattata | 25 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
-| 3 | Zubat | 25 | Poison/Flying | Poison Sting · Supersonic · Bite · Confuse Ray |
-| 4 | Rattata | 25 | Normal | Tail Whip · Quick Attack · Bite · Focus Energy |
-| 5 | Ekans | 25 | Poison | Leer · Poison Sting · Bite · Glare |
+| 1 | Rattata | 25 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
+| 2 | Rattata | 25 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
+| 3 | Zubat | 25 | Poison/Flying | Poison Sting · **Leech Life** · Bite · Confuse Ray |
+| 4 | Rattata | 25 | Normal | **Tackle** · Quick Attack · Bite · **Tri Attack** |
+| 5 | Ekans | 25 | Poison | **Tackle** · Poison Sting · Bite · Glare |
 
 ### Rocket #41 — Unused
 _Lv 32 · 3 Pokémon_
@@ -2895,36 +2895,36 @@ _Lv 14 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ekans | 14 | Poison | Tackle · Leer · Poison Sting |
-| 2 | Meowth | 14 | Normal | Tackle · Growl · Bite |
-| 3 | Koffing | 14 | Poison | Tackle · Sludge |
+| 1 | Ekans | 14 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
+| 2 | Meowth | 14 | Normal | Tackle · **Shock Wave** · Bite · **Pay Day** |
+| 3 | Koffing | 14 | Poison | Tackle · **Double Team** · **Shock Wave** · **Counter** |
 
 ### Rocket #43 — Rocket Hideout B4F
 _Lv 25 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Koffing | 25 | Poison | Tackle · Sludge |
-| 2 | Meowth | 25 | Normal | Growl · Bite · Pay Day · Screech |
-| 3 | Ekans | 25 | Poison | Leer · Poison Sting · Bite · Glare |
+| 1 | Koffing | 25 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
+| 2 | Meowth | 25 | Normal | **Tackle** · Bite · Pay Day · Screech |
+| 3 | Ekans | 25 | Poison | **Tackle** · Poison Sting · Bite · Glare |
 
 ### Rocket #44 — Pokémon Tower 7F
 _Lv 27 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Meowth | 27 | Normal | Growl · Bite · Pay Day · Screech |
-| 2 | Arbok | 27 | Poison | Leer · Bite · Cross Poison · Glare |
-| 3 | Weezing | 27 | Poison | Tackle · Sludge |
+| 1 | Meowth | 27 | Normal | **Tackle** · Bite · Pay Day · Screech |
+| 2 | Arbok | 27 | Poison | **Poison Sting** · Bite · Cross Poison · Glare |
+| 3 | Weezing | 27 | Poison | Tackle · Sludge · **Shock Wave** · **Counter** |
 
 ### Rocket #45 — Silph Co. 11F
 _Lv 31 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weezing | 31 | Poison | Tackle · Sludge |
-| 2 | Arbok | 31 | Poison | Leer · Bite · Cross Poison · Glare |
-| 3 | Meowth | 31 | Normal | Growl · Bite · Pay Day · Screech |
+| 1 | Weezing | 31 | Poison | Tackle · Sludge · **Sludge Bomb** · **Thunderbolt** |
+| 2 | Arbok | 31 | Poison | **Poison Sting** · Bite · Cross Poison · Glare |
+| 3 | Meowth | 31 | Normal | **Tackle** · Bite · Pay Day · Screech |
 
 ### Rocket #46 — Unused
 _Lv 16 · 1 Pokémon_
@@ -2964,26 +2964,26 @@ _Lv 39 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidorino | 39 | Poison | Low Kick · Poison Sting · Cross Poison · Focus Energy |
-| 2 | Nidoking | 39 | Poison/Ground | Low Kick · Cross Poison · Bulldoze · Poison Jab |
+| 1 | Nidorino | 39 | Poison | Low Kick · Poison Sting · Cross Poison · **Headbutt** |
+| 2 | Nidoking | 39 | Poison/Ground | **Headbutt** · Cross Poison · Bulldoze · Poison Jab |
 
 ### Cooltrainer♂ #2 — Victory Road 3F
 _Lv 43 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Exeggutor | 43 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
-| 2 | Cloyster | 43 | Water/Ice | Razor Shell · Supersonic · Withdraw · Ice Fang |
-| 3 | Arcanine | 43 | Fire | Leer · Roar · Fire Fang · Fire Punch |
+| 1 | Exeggutor | 43 | Grass/Psychic | Mega Drain · **Hypnosis** · Psybeam · Energy Ball |
+| 2 | Cloyster | 43 | Water/Ice | Razor Shell · Supersonic · **Aurora Beam** · Ice Fang |
+| 3 | Arcanine | 43 | Fire | **Crunch** · **Ember** · Fire Fang · Fire Punch |
 
 ### Cooltrainer♂ #3 — Victory Road 3F
 _Lv 43 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Kingler | 43 | Water | Headbutt · Leer · Razor Shell · Crabhammer |
-| 2 | Tentacruel | 43 | Water/Poison | Bubblebeam · Sludge · Barrier · Screech |
-| 3 | Blastoise | 43 | Water | Bubblebeam · Bite · Withdraw · Double-Edge |
+| 1 | Kingler | 43 | Water | Headbutt · **Water Gun** · Razor Shell · **Swords Dance** |
+| 2 | Tentacruel | 43 | Water/Poison | Bubblebeam · Sludge · **Acid** · **Supersonic** |
+| 3 | Blastoise | 43 | Water | Bubblebeam · Bite · **Water Gun** · **Tackle** |
 
 ### Cooltrainer♂ #4 — Unused
 _Lv 45 · 2 Pokémon_
@@ -2998,10 +2998,10 @@ _Lv 42 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Ivysaur | 42 | Grass/Poison | Poisonpowder · Razor Leaf · Sludge · Growth |
-| 2 | Wartortle | 42 | Water | Bubblebeam · Bite · Withdraw · Double-Edge |
-| 3 | Charmeleon | 42 | Fire | Leer · Headbutt · Slash · Flamethrower |
-| 4 | Charizard | 42 | Fire/Flying | Leer · Headbutt · Air Cutter · Slash |
+| 1 | Ivysaur | 42 | Grass/Poison | **Vine Whip** · Razor Leaf · Sludge · Growth |
+| 2 | Wartortle | 42 | Water | Bubblebeam · Bite · **Water Gun** · **Tackle** |
+| 3 | Charmeleon | 42 | Fire | **Ember** · Headbutt · Slash · Flamethrower |
+| 4 | Charizard | 42 | Fire/Flying | **Ember** · Headbutt · Air Cutter · Slash |
 
 ### Cooltrainer♂ #6 — Unused
 _Lv 44 · 3 Pokémon_
@@ -3032,15 +3032,15 @@ _Lv 39 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Sandslash | 39 | Ground | Bulldoze · Slash · Poison Sting · Swift |
-| 2 | Dugtrio | 39 | Ground | Dig · Growl · Sand-Attack · Slash |
+| 1 | Sandslash | 39 | Ground | Bulldoze · Slash · **Sand-Attack** · Swift |
+| 2 | Dugtrio | 39 | Ground | **Earthquake** · **Tackle** · Sand-Attack · Slash |
 
 ### Cooltrainer♂ #10 — Viridian Gym
 _Lv 43 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Rhyhorn | 43 | Ground/Rock | Headbutt · Bone Club · Tail Whip |
+| 1 | Rhyhorn | 43 | Ground/Rock | Headbutt · Bone Club · **Stone Edge** · **Earthquake** |
 
 
 ---
@@ -3052,27 +3052,27 @@ _Lv 24 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Weepinbell | 24 | Grass/Poison | Growth · Poisonpowder · Sleep Powder · Stun Spore |
-| 2 | Gloom | 24 | Grass/Poison | Mega Drain · Poisonpowder · Stun Spore · Sleep Powder |
-| 3 | Ivysaur | 24 | Grass/Poison | Growl · Leech Seed · Vine Whip · Poisonpowder |
+| 1 | Weepinbell | 24 | Grass/Poison | **Vine Whip** · **Tackle** · Sleep Powder · **Mega Drain** |
+| 2 | Gloom | 24 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
+| 3 | Ivysaur | 24 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 
 ### Cooltrainer♀ #2 — Victory Road 3F
 _Lv 43 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Bellsprout | 43 | Grass/Poison | Stun Spore · Acid · Razor Leaf · Headbutt |
-| 2 | Weepinbell | 43 | Grass/Poison | Stun Spore · Acid · Cross Poison · Razor Leaf |
-| 3 | Victreebel | 43 | Grass/Poison | Tackle · Poisonpowder · Cross Poison · Energy Ball |
+| 1 | Bellsprout | 43 | Grass/Poison | **Vine Whip** · **Sleep Powder** · Razor Leaf · Headbutt |
+| 2 | Weepinbell | 43 | Grass/Poison | **Vine Whip** · **Sleep Powder** · Cross Poison · Razor Leaf |
+| 3 | Victreebel | 43 | Grass/Poison | **Razor Leaf** · **Sleep Powder** · Cross Poison · Energy Ball |
 
 ### Cooltrainer♀ #3 — Victory Road 3F
 _Lv 43 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Parasect | 43 | Bug/Grass | Stun Spore · Razor Leaf · Spore · Slash |
-| 2 | Dewgong | 43 | Water/Ice | Growl · Water Gun · Bubblebeam · Icy Wind |
-| 3 | Chansey | 43 | Normal | Tri Attack · Sing · Growl · Minimize |
+| 1 | Parasect | 43 | Bug/Grass | **Leech Life** · Razor Leaf · Spore · Slash |
+| 2 | Dewgong | 43 | Water/Ice | **Headbutt** · **Aurora Beam** · Bubblebeam · Icy Wind |
+| 3 | Chansey | 43 | Normal | Tri Attack · Sing · **Hyper Voice** · **Tackle** |
 
 ### Cooltrainer♀ #4 — Unused
 _Lv 46 · 2 Pokémon_
@@ -3087,8 +3087,8 @@ _Lv 44 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Persian | 44 | Normal | Pay Day · Headbutt · Slash · Strength |
-| 2 | Ninetales | 44 | Fire | Roar · Tail Whip · Flame Burst · Flamethrower |
+| 1 | Persian | 44 | Normal | **Bite** · Headbutt · **Screech** · Strength |
+| 2 | Ninetales | 44 | Fire | **Quick Attack** · **Ember** · Flame Burst · Flamethrower |
 
 ### Cooltrainer♀ #6 — Unused
 _Lv 45 · 2 Pokémon_
@@ -3261,24 +3261,24 @@ _Lv 18 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 18 | Fire | Bite · Roar · Ember |
-| 2 | Growlithe | 18 | Fire | Bite · Roar · Ember |
+| 1 | Growlithe | 18 | Fire | Bite · **Counter** · Ember · **Swift** |
+| 2 | Growlithe | 18 | Fire | Bite · **Counter** · Ember · **Swift** |
 
 ### Gentleman #2 — SS Anne 1F Rooms
 _Lv 19 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Nidoran♂ | 19 | Poison | Leer · Headbutt · Low Kick · Poison Sting |
-| 2 | Nidoran♀ | 19 | Poison | Tackle · Growl · Low Kick · Poison Sting |
+| 1 | Nidoran♂ | 19 | Poison | **Tackle** · Headbutt · Low Kick · Poison Sting |
+| 2 | Nidoran♀ | 19 | Poison | Tackle · **Shock Wave** · Low Kick · Poison Sting |
 
 ### Gentleman #3 — SS Anne 2F Rooms/Vermilion Gym
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Voltorb | 22 | Electric | Screech · Thundershock · Sonicboom · Explosion |
-| 2 | Magnemite | 22 | Electric/Steel | Tackle · Sonicboom |
+| 1 | Voltorb | 22 | Electric | **Tackle** · Thundershock · Sonicboom · **Thunder Wave** |
+| 2 | Magnemite | 22 | Electric/Steel | Tackle · Sonicboom · **Shock Wave** · **Thunder Wave** |
 
 ### Gentleman #4 — Unused
 _Lv 48 · 1 Pokémon_
@@ -3292,8 +3292,8 @@ _Lv 17 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Growlithe | 17 | Fire | Bite · Roar |
-| 2 | Ponyta | 17 | Fire | Ember |
+| 1 | Growlithe | 17 | Fire | Bite · Roar · **Swift** · **Counter** |
+| 2 | Ponyta | 17 | Fire | Ember · **Swift** · **Counter** · **Double Team** |
 
 
 ---
@@ -3509,14 +3509,14 @@ _Lv 23 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #6 — Pokémon Tower 3F
 _Lv 24 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #7 — Unused
 _Lv 24 · 1 Pokémon_
@@ -3530,22 +3530,22 @@ _Lv 22 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #9 — Pokémon Tower 4F
 _Lv 24 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #10 — Pokémon Tower 4F
 _Lv 23 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
-| 2 | Gastly | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
+| 2 | Gastly | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #11 — Unused
 _Lv 24 · 1 Pokémon_
@@ -3559,7 +3559,7 @@ _Lv 22 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #13 — Unused
 _Lv 24 · 1 Pokémon_
@@ -3573,7 +3573,7 @@ _Lv 23 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Haunter | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Haunter | 23 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #15 — Unused
 _Lv 24 · 1 Pokémon_
@@ -3587,52 +3587,52 @@ _Lv 22 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #17 — Pokémon Tower 5F
 _Lv 24 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #18 — Pokémon Tower 5F
 _Lv 22 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Haunter | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Haunter | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #19 — Pokémon Tower 6F
 _Lv 22 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
-| 2 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
-| 3 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
+| 2 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
+| 3 | Gastly | 22 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #20 — Pokémon Tower 6F
 _Lv 24 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #21 — Pokémon Tower 6F
 _Lv 24 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray |
+| 1 | Gastly | 24 | Ghost/Poison | Lick · Night Shade · Confuse Ray · **Mega Drain** |
 
 ### Channeler #22 — Saffron Gym
 _Lv 34 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 34 | Ghost/Poison | Lick · Night Shade · Confuse Ray · Hypnosis |
-| 2 | Haunter | 34 | Ghost/Poison | Night Shade · Confuse Ray · Hypnosis · Sludge |
+| 1 | Gastly | 34 | Ghost/Poison | Lick · Night Shade · **Sludge Bomb** · Hypnosis |
+| 2 | Haunter | 34 | Ghost/Poison | Night Shade · **Lick** · Hypnosis · Sludge |
 
 ### Channeler #23 — Saffron Gym
 _Lv 38 · 1 Pokémon_
@@ -3646,9 +3646,9 @@ _Lv 33 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Gastly | 33 | Ghost/Poison | Lick · Night Shade · Confuse Ray · Hypnosis |
-| 2 | Gastly | 33 | Ghost/Poison | Lick · Night Shade · Confuse Ray · Hypnosis |
-| 3 | Haunter | 33 | Ghost/Poison | Night Shade · Confuse Ray · Hypnosis · Sludge |
+| 1 | Gastly | 33 | Ghost/Poison | Lick · Night Shade · **Sludge Bomb** · Hypnosis |
+| 2 | Gastly | 33 | Ghost/Poison | Lick · Night Shade · **Sludge Bomb** · Hypnosis |
+| 3 | Haunter | 33 | Ghost/Poison | Night Shade · **Lick** · Hypnosis · Sludge |
 
 
 ---

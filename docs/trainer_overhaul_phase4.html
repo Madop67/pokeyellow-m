@@ -1,0 +1,582 @@
+<title>Trainer Overhaul · Phase 4 — Chromatic Yellow</title>
+<style>
+  :root{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+      --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+      --line:#2c281f; --line-strong:#3a3527;
+      --accent:#eab53f; --accent-ink:#f0c463;
+      --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+      --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+  }
+  :root[data-theme="dark"]{
+    --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+    --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+    --line:#2c281f; --line-strong:#3a3527;
+    --accent:#eab53f; --accent-ink:#f0c463;
+    --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+    --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+  a{color:var(--accent-ink)}
+
+  /* ---- header ---- */
+  header.mast{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-ink);margin:0 0 14px;font-weight:600}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.04;margin:0;letter-spacing:-.02em;
+    text-wrap:balance;font-weight:800}
+  h1 .sub{display:block;font-size:clamp(15px,2.4vw,19px);font-weight:500;color:var(--muted);
+    letter-spacing:0;margin-top:14px;max-width:60ch}
+  .metaline{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:6px 18px}
+  .metaline b{color:var(--muted);font-weight:600}
+
+  /* ---- sections ---- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 6px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+  h2 .n{color:var(--accent);font-weight:700}
+  .lead{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+  p{margin:0 0 14px;max-width:66ch}
+  h3{font-size:16px;margin:26px 0 10px;font-weight:700}
+  strong{font-weight:700}
+  .mono{font-family:var(--mono)}
+
+  /* ---- goals grid ---- */
+  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:6px 0 0}
+  .goal{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px}
+  .goal .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:6px}
+  .goal p{font-size:14px;margin:0;color:var(--ink)}
+
+  /* ---- rule list ---- */
+  ol.rules{counter-reset:r;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  ol.rules li{counter-increment:r;position:relative;padding:14px 16px 14px 52px;
+    background:var(--surface);border:1px solid var(--line);border-radius:9px}
+  ol.rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:16px;top:13px;
+    font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+  ol.rules li b{display:block;margin-bottom:2px}
+  ol.rules li span{font-size:14px;color:var(--muted)}
+
+  /* ---- code ---- */
+  .code{background:var(--surface-2);border:1px solid var(--line-strong);border-radius:9px;
+    overflow-x:auto;margin:0 0 16px}
+  .code .cap{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint);padding:9px 14px;border-bottom:1px solid var(--line)}
+  pre{margin:0;padding:14px;font-family:var(--mono);font-size:12.5px;line-height:1.55;white-space:pre}
+  .code .del{color:var(--boss)}
+  .code .add{color:var(--good)}
+  .code .cm{color:var(--faint)}
+
+  /* ---- generic table ---- */
+  .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:4px 0 8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;background:var(--surface-2)}
+  tr:last-child td{border-bottom:none}
+  td.lv{font-family:var(--mono);color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---- boss cards ---- */
+  .boss{background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;
+    padding:20px 20px 8px;margin:16px 0}
+  .boss.e4{border-left:3px solid var(--boss)}
+  .boss-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;
+    padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+  .boss-head .name{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .boss-head .role{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint)}
+  .boss-head .arrow{color:var(--faint)}
+  .themebadge{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+  .roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:12px 0}
+  .mon{display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid var(--line);
+    border-radius:8px;background:var(--surface-2);font-size:14px}
+  .mon .lvl{font-family:var(--mono);font-size:12px;color:var(--accent-ink);
+    font-variant-numeric:tabular-nums;min-width:22px}
+  .mon .nm{font-weight:600;flex:1}
+  .mon.ace{background:var(--ace-bg);border-color:var(--accent)}
+  .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+    padding:2px 6px;border-radius:5px;font-weight:700;white-space:nowrap}
+  .tag.kept{background:var(--good-bg);color:var(--good)}
+  .tag.new{background:var(--new-bg);color:var(--new)}
+  .tag.ace{background:var(--accent);color:#26200a}
+  :root[data-theme="dark"] .tag.ace{color:#181405}
+  @media (prefers-color-scheme:dark){.tag.ace{color:#181405}}
+
+  .aceline{font-size:13px;color:var(--muted);padding:8px 2px 12px;border-top:1px dashed var(--line)}
+  .aceline b{color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;margin-right:8px}
+  .aceline .mv{font-family:var(--mono);color:var(--accent-ink);font-size:12.5px}
+
+  /* ---- type chips ---- */
+  .ty{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;font-weight:700;
+    padding:2px 5px;border-radius:4px;text-transform:uppercase;line-height:1.4;white-space:nowrap}
+  .ty.ROC{background:#c9b98e;color:#3a2f10}.ty.GRD{background:#dcc79a;color:#4a370c}
+  .ty.WTR{background:#a9cdea;color:#123a5c}.ty.ICE{background:#b6e0e4;color:#0f4650}
+  .ty.ELE{background:#f2d98a;color:#5a4400}.ty.STL{background:#c3c9d1;color:#2c3742}
+  .ty.GRS{background:#b3d8a3;color:#1e4415}.ty.FAI{background:#efc2d6;color:#5e1c3c}
+  .ty.POI{background:#cdaedd;color:#3d1554}.ty.SND{background:#e6cfa0;color:#4d3a0d}
+  .ty.PSY{background:#f2b6c1;color:#5c1526}.ty.FIR{background:#f3b892;color:#6a2a06}
+  .ty.FIG{background:#d9a58f;color:#54200e}.ty.GHO{background:#b3a4d0;color:#2c1c50}
+  .ty.DRK{background:#a79c93;color:#241c14}.ty.NOR{background:#d5cfc0;color:#3a352a}
+  .ty.FLY{background:#bcc9ea;color:#233258}.ty.BUG{background:#c3d093;color:#33420c}
+  .ty.DRG{background:#a9b6e6;color:#1f2a63}.ty.LGT{background:#f0e6a8;color:#5a5210}
+  @media (prefers-color-scheme:dark){
+    .ty{filter:saturate(.82) brightness(.92)}
+  }
+  :root[data-theme="dark"] .ty{filter:saturate(.82) brightness(.92)}
+  :root[data-theme="light"] .ty{filter:none}
+
+  /* ---- phases ---- */
+  .phase{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .phase:last-child{border-bottom:none}
+  .phase .pn{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700;
+    min-width:60px;padding-top:2px}
+  .phase .pb b{display:block;margin-bottom:2px}
+  .phase .pb span{font-size:14px;color:var(--muted)}
+  .phase .pb code{font-family:var(--mono);font-size:12px;background:var(--surface-2);
+    padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+
+  .callout{background:var(--surface-2);border:1px solid var(--line-strong);border-left:3px solid var(--accent);
+    border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14px}
+  .callout b{color:var(--accent-ink)}
+  .decision{border-left-color:var(--boss)}
+  .decision b{color:var(--boss)}
+
+  .statusbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .pill{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:4px 10px;
+    border-radius:20px;border:1px solid var(--line-strong);font-weight:600}
+  .pill.done{background:var(--good-bg);color:var(--good);border-color:var(--good)}
+  .pill.todo{background:var(--surface-2);color:var(--muted)}
+  .pill.defer{background:var(--surface-2);color:var(--faint)}
+  .log{display:flex;flex-direction:column;gap:0}
+  .log .row{display:flex;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .log .row:last-child{border-bottom:none}
+  .log .when{font-family:var(--mono);font-size:12px;color:var(--faint);min-width:96px;padding-top:2px;
+    font-variant-numeric:tabular-nums}
+  .log .what b{display:block;margin-bottom:4px}
+  .log .what span{font-size:14px;color:var(--muted)}
+  .log .what code{font-family:var(--mono);font-size:12px;background:var(--surface-2);
+    padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+  footer{padding:40px 0 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  @media (max-width:560px){.wrap{padding:0 16px 80px}h1{font-size:28px}}
+</style>
+
+<style>
+  .region{background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;
+    padding:18px 20px 16px;margin:14px 0}
+  .region-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
+    padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+  .region-head .name{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .region-head .lv{font-family:var(--mono);font-size:12px;color:var(--accent-ink);margin-left:auto;
+    font-variant-numeric:tabular-nums}
+  .region-head .where{flex-basis:100%;font-size:13.5px;color:var(--muted);margin-top:2px;max-width:70ch}
+  .rstats{display:flex;flex-wrap:wrap;gap:6px}
+  .stat{font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:20px;
+    background:var(--surface-2);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  .stat b{color:var(--ink);font-weight:700}
+  .ba{margin-top:13px;display:flex;flex-direction:column;gap:9px}
+  .ba .row{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .ba .who{font-size:13.5px;font-weight:700;margin-bottom:7px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline}
+  .ba .who .cls{font-family:var(--mono);font-size:10.5px;color:var(--faint);font-weight:600;
+    text-transform:uppercase;letter-spacing:.05em}
+  .ba .who .lvl{font-family:var(--mono);font-size:11px;color:var(--accent-ink)}
+  .ba .line{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:baseline;padding:2px 0}
+  .ba .k{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding-top:1px}
+  .ba .k.b{color:var(--boss)}.ba .k.a{color:var(--good)}
+  .ba .mv{font-family:var(--mono);font-size:12.5px;line-height:1.5}
+  .ba .mv.before{color:var(--muted)}.ba .mv.after{color:var(--ink)}
+  .ba .mv .up{color:var(--good);font-weight:700}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Pokémon Chromatic Yellow · Design Spec · Phase 4</p>
+  <h1>Regular-Trainer Moveset Overhaul
+    <span class="sub">Every non-boss trainer in Kanto given a competitive, level-appropriate four-move set drawn from each Pokémon's own learnset and TM pool — walked route by route, gym junior to Victory Road.</span>
+  </h1>
+  <div class="metaline">
+    <span><b>Touches:</b> data/trainers/special_moves.asm · tools/gen_regular_movesets.py · engine/battle/* · main.asm</span>
+    <span><b>Build:</b> plain <span class="mono">make -j</span></span>
+    <span><b>Scope:</b> 309 parties · 673 movesets tuned</span>
+  </div>
+  <div class="statusbar">
+    <span class="pill done">Generator · shipped</span>
+    <span class="pill done">Bank relocation · shipped</span>
+    <span class="pill done">Build · passing</span>
+    <span class="pill done">Docs regenerated</span>
+  </div>
+</header>
+
+<!-- OBJECTIVE -->
+<section>
+  <h2><span class="n">00</span> Objective</h2>
+  <p class="lead">Phases 1–3 rebuilt the thirteen bosses. Phase 4 finishes the job on the other ~380 fights: no more one-move Magikarps or double-Tackle filler — every regular trainer fields a deliberate set, while staying a clear tier below the gym leaders.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">Four moves</div><p>Every Pokémon whose legal pool holds four moves gets four. Empty slots and dead weight are filled from its own learnset.</p></div>
+    <div class="goal"><div class="k">Boss-lite</div><p>STAB + coverage + up to one stat/status move — the boss doctrine, relaxed. No items, no roster changes.</p></div>
+    <div class="goal"><div class="k">Level-appropriate</div><p>A power ceiling scales with level, and the mon's <em>natural</em> level-up moves are strongly preferred over TMs, so early routes stay early.</p></div>
+    <div class="goal"><div class="k">Reproducible</div><p>All ~900 sets are generated from the data by a script and emitted as compact overrides — not hand-typed.</p></div>
+  </div>
+</section>
+
+<!-- DOCTRINE -->
+<section>
+  <h2><span class="n">01</span> The moveset doctrine</h2>
+  <p class="lead">"Boss-lite": competitive, but honest to the species. Applied per Pokémon over its legal pool — level-1 moves ∪ level-up moves ≤ its level ∪ TM/HM compatibility.</p>
+  <ol class="rules">
+    <li><b>STAB first, from the mon's own pool</b><span>The best same-type attack in the mon's stronger category (physical if Atk ≥ Sp. Atk, else special). Natural level-up moves win ties over TMs so sets stay thematic.</span></li>
+    <li><b>Then coverage</b><span>The best off-type damaging move that widens what the mon threatens — a Rock Slide on a Machop, a Bubblebeam on a Goldeen.</span></li>
+    <li><b>One utility slot, if it earns it</b><span>A single meaningful stat/status move — Swords Dance, Agility, Screech, Sand-Attack, a sleep or paralysis move — but only when two damaging moves are already locked in. Weak −1 debuffs (Leer, Growl, Tail Whip) are dropped for damage.</span></li>
+    <li><b>Fill to four, level-appropriately</b><span>Remaining slots take the next-best capped move — even a modest one — before ever reaching past the level cap. A Lv 24 Sandshrew keeps Bulldoze; it does not get handed Fissure.</span></li>
+  </ol>
+  <div class="callout"><b>The power cap.</b> Selectable move power is bounded by level — 60 through Lv 15, rising to 110 by Lv 46 — so the strongest 120-power moves only appear on the late-game trainers who have earned them. STAB is guaranteed even when a mon's only same-type option sits above the cap.</div>
+  <div class="callout decision"><b>What regular trainers still don't get.</b> Items, guaranteed six-mon teams, reassigned dual types, and fully hand-curated sets remain boss-only. Regular trainers keep their vanilla rosters and levels — only the four move slots change.</div>
+</section>
+
+<!-- MECHANISM -->
+<section>
+  <h2><span class="n">02</span> How it's built</h2>
+  <p class="lead">Two moving parts: a generator that writes the data, and a bank move that makes room for it.</p>
+
+  <h3>The generator</h3>
+  <p><code class="mono">tools/gen_regular_movesets.py</code> reuses the parsers behind the reference docs (move power/type/category, learnsets, TM pools). For each eligible Pokémon it runs the doctrine above, then writes <code class="mono">data/trainers/special_moves.asm</code> <strong>surgically</strong> — emitting only the slots that differ from the engine's default <code class="mono">WriteMonMoves</code> output, and keeping surviving default moves in place. The thirteen boss blocks and the two hand-authored vanilla-quirk blocks (Bug Catcher #15, Youngster #14) are preserved verbatim. Result: <strong>309 trainer blocks, 1,557 override lines</strong>.</p>
+
+  <h3>The bank relocation</h3>
+  <p>A full moveset for every trainer blew the <span class="mono">SpecialTrainerMoves</span> table from a few hundred bytes to ~5.7&nbsp;KB — far past the ~300 bytes free in the "Battle Engine 6" bank it lived in. The table is read <em>same-bank</em> by <span class="mono">ReadTrainer</span>, and a routine executing in the <span class="mono">$4000–$7FFF</span> window can't swap its own bank out, so the read had to move too.</p>
+  <div class="code">
+    <div class="cap">engine/battle/read_trainer_party.asm — tail replaced with a far call</div>
+<pre><span class="cm">.AddAdditionalMoveData</span>
+<span class="del">-	ld a, [wTrainerClass]        ; ~90 bytes of table-walk,</span>
+<span class="del">-	...                         ; PP recompute, and prize-money</span>
+<span class="del">-	jr nz, .LastLoop            ; math inlined here</span>
+<span class="add">+	callfar ApplySpecialTrainerMoves</span>
+	ret</pre>
+  </div>
+  <p>That self-contained tail — apply overrides, recompute PP, compute prize money — moved into <code class="mono">ApplySpecialTrainerMoves</code> in <code class="mono">engine/battle/apply_special_moves.asm</code>, co-located with the table in a new floating bank so the same-bank read still holds:</p>
+  <div class="code">
+    <div class="cap">main.asm — new floating section</div>
+<pre><span class="cm">; The table floats freely; it's reached via BANK(ApplySpecialTrainerMoves).</span>
+SECTION <span class="add">"Trainer Special Moves"</span>, ROMX
+INCLUDE "engine/battle/apply_special_moves.asm"
+    <span class="cm">; ... which ends with INCLUDE "data/trainers/special_moves.asm"</span></pre>
+  </div>
+  <div class="callout"><b>Net effect.</b> "Battle Engine 6" recovered ~1.5&nbsp;KB of slack; the movesets got a fresh 16&nbsp;KB bank (~5.7&nbsp;KB used). The Phase-3 PP-recompute travels with the apply loop, so overrides written into empty slots stay usable instead of stuck at 0&nbsp;PP.</div>
+</section>
+
+<!-- BY LOCATION -->
+<section>
+  <h2><span class="n">03</span> The overhaul, by location</h2>
+  <p class="lead">Sorted the way a player meets them — not by class. Ten regions, in progression order; counts are exact, and each card shows two real before → after sets pulled straight from the shipped data.</p>
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Pewter &amp; the Northwest</span>
+      <span class="lv">Lv 6–31</span>
+      <span class="where">The opening gauntlet — bug catchers in Viridian Forest, then the Route 3 → Mt. Moon → Route 4 climb toward Cerulean. Where a one-move Magnemite used to flail, it now carries a full kit.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>27</b> trainers</span>
+      <span class="stat"><b>61</b> Pokémon</span>
+      <span class="stat"><b>40</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Magnemite</span><span class="lvl">Lv 11</span><span class="cls">Super Nerd · Mt. Moon 1F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Shock Wave</span> · <span class='up'>Swift</span> · <span class='up'>Thunder Wave</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Onix</span><span class="lvl">Lv 10</span><span class="cls">Hiker · Mt. Moon 1F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Screech</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · Screech · <span class='up'>Counter</span> · <span class='up'>Double Team</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Cerulean &amp; Nugget Bridge</span>
+      <span class="lv">Lv 13–19</span>
+      <span class="where">Nugget Bridge and the Cerulean Gym juniors. Short teams, but every mon now presses with real coverage instead of Tail Whip.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>18</b> trainers</span>
+      <span class="stat"><b>36</b> Pokémon</span>
+      <span class="stat"><b>30</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Goldeen</span><span class="lvl">Lv 19</span><span class="cls">Jr. Trainer♀ · Cerulean Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Peck · Tail Whip · Supersonic</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Peck · <span class='up'>Swift</span> · Supersonic · <span class='up'>Bubblebeam</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Onix</span><span class="lvl">Lv 17</span><span class="cls">Hiker · Route 25</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Screech · Headbutt</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · Screech · Headbutt · <span class='up'>Rock Slide</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Vermilion &amp; the S.S. Anne</span>
+      <span class="lv">Lv 16–24</span>
+      <span class="where">The luxury liner and Vermilion City. Butterfree trades its redundant powder stack for offense; the gym&#x27;s sailors punch with coverage.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>34</b> trainers</span>
+      <span class="stat"><b>67</b> Pokémon</span>
+      <span class="stat"><b>57</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Butterfree</span><span class="lvl">Lv 20</span><span class="cls">Bug Catcher · Route 6</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Poisonpowder · Stun Spore · Sleep Powder · Supersonic</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'><span class='up'>Infestation</span> · <span class='up'>Confusion</span> · Sleep Powder · <span class='up'>Mega Drain</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Machop</span><span class="lvl">Lv 20</span><span class="cls">Sailor · S.S. Anne B1F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Karate Chop · Low Kick</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Karate Chop · Low Kick · <span class='up'>Rock Slide</span> · <span class='up'>Counter</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Rock Tunnel &amp; the East Coast</span>
+      <span class="lv">Lv 18–30</span>
+      <span class="where">Route 9/10 and the pitch-black Rock Tunnel. A two-move Beedrill picks up a Swords Dance win condition.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>29</b> trainers</span>
+      <span class="stat"><b>69</b> Pokémon</span>
+      <span class="stat"><b>60</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Beedrill</span><span class="lvl">Lv 19</span><span class="cls">Bug Catcher · Route 9</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Focus Energy</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Swords Dance</span> · <span class='up'>Cut</span> · <span class='up'>Mega Drain</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Lickitung</span><span class="lvl">Lv 30</span><span class="cls">Poké Maniac · Route 10</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Supersonic · Headbutt · Disable · Defense Curl</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Supersonic · Headbutt · <span class='up'>Bubblebeam</span> · <span class='up'>Tackle</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Lavender, Pokémon Tower &amp; Route 8</span>
+      <span class="lv">Lv 19–27</span>
+      <span class="where">The Rocket-occupied tower and the Saffron approach. Ghosts keep their status game but gain a way to actually deal damage.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>23</b> trainers</span>
+      <span class="stat"><b>44</b> Pokémon</span>
+      <span class="stat"><b>44</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Poliwag</span><span class="lvl">Lv 22</span><span class="cls">Gambler · Route 8</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Water Gun · Hypnosis</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Water Gun · Hypnosis · <span class='up'>Counter</span> · <span class='up'>Bubblebeam</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Gastly</span><span class="lvl">Lv 22</span><span class="cls">Channeler · Pokémon Tower 6F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Lick · Night Shade · Confuse Ray</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Lick · Night Shade · Confuse Ray · <span class='up'>Mega Drain</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Celadon &amp; Team Rocket</span>
+      <span class="lv">Lv 17–34</span>
+      <span class="where">Celadon Gym, the Game Corner hideout, and Cycling Road bikers. The signature poison mons finally hit hard and wide.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>37</b> trainers</span>
+      <span class="stat"><b>90</b> Pokémon</span>
+      <span class="stat"><b>87</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Grimer</span><span class="lvl">Lv 29</span><span class="cls">Biker · Route 16</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Disable</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Counter</span> · <span class='up'>Mega Drain</span> · <span class='up'>Shock Wave</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Muk</span><span class="lvl">Lv 33</span><span class="cls">Biker · Route 17</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Disable · Poison Gas · Minimize</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Sludge Bomb</span> · <span class='up'>Strength</span> · <span class='up'>Hyper Voice</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Southern Routes &amp; Fuchsia</span>
+      <span class="lv">Lv 21–38</span>
+      <span class="where">The long southern belt (Routes 12–15), the Fuchsia Gym, and the Fighting Dojo. The single biggest block of trainers in the game.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>48</b> trainers</span>
+      <span class="stat"><b>128</b> Pokémon</span>
+      <span class="stat"><b>122</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Hitmonlee</span><span class="lvl">Lv 37</span><span class="cls">Blackbelt · Fighting Dojo</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Low Kick · Meditate</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Low Kick · Meditate · <span class='up'>Stone Edge</span> · <span class='up'>Aura Sphere</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Hypno</span><span class="lvl">Lv 38</span><span class="cls">Juggler · Fuchsia Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Psybeam · Headbutt · Poison Gas · Psychic</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Psybeam · Headbutt · <span class='up'>Hypnosis</span> · Psychic</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Saffron &amp; Silph Co.</span>
+      <span class="lv">Lv 25–38</span>
+      <span class="where">Eleven floors of Silph Co. Rockets and the Saffron Gym psychics. Slowbro swaps Growl/Withdraw for a paralysis package.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>37</b> trainers</span>
+      <span class="stat"><b>98</b> Pokémon</span>
+      <span class="stat"><b>94</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Slowbro</span><span class="lvl">Lv 38</span><span class="cls">Psychic · Saffron Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Bubblebeam · Growl · Psybeam · Withdraw</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Bubblebeam · <span class='up'>Confusion</span> · Psybeam · <span class='up'>Thunder Wave</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Mr. Mime</span><span class="lvl">Lv 34</span><span class="cls">Rocket · Silph Co. 7F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Psybeam · Light Screen · Drain Kiss · Tackle</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Psybeam · <span class='up'>Confusion</span> · Drain Kiss · <span class='up'>Thunder Wave</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">The Sea &amp; Cinnabar</span>
+      <span class="lv">Lv 27–41</span>
+      <span class="where">Southern sea routes, the Pokémon Mansion, and the Cinnabar Gym. Fire mons drop Growl/Tail Whip for a real STAB spread.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>41</b> trainers</span>
+      <span class="stat"><b>106</b> Pokémon</span>
+      <span class="stat"><b>94</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Rapidash</span><span class="lvl">Lv 41</span><span class="cls">Super Nerd · Cinnabar Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Headbutt · Growl · Tail Whip · Flame Burst</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Headbutt · <span class='up'>Ember</span> · <span class='up'>Flamethrower</span> · Flame Burst</div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Tentacruel</span><span class="lvl">Lv 27</span><span class="cls">Swimmer · Route 19</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Supersonic · Poison Sting · Bubblebeam</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'><span class='up'>Acid</span> · Supersonic · Poison Sting · Bubblebeam</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">The Endgame</span>
+      <span class="lv">Lv 38–48</span>
+      <span class="where">Viridian Gym&#x27;s ground specialists, the Route 22 rematch turf, and Victory Road. The toughest regular trainers, one step below the Elite Four.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>19</b> trainers</span>
+      <span class="stat"><b>45</b> Pokémon</span>
+      <span class="stat"><b>45</b> movesets tuned</span>
+    </div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Rhyhorn</span><span class="lvl">Lv 43</span><span class="cls">Tamer · Viridian Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Headbutt · Bone Club · Tail Whip</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Headbutt · Bone Club · <span class='up'>Stone Edge</span> · <span class='up'>Earthquake</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Persian</span><span class="lvl">Lv 44</span><span class="cls">Tamer · Victory Road 2F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Pay Day · Headbutt · Slash · Strength</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'><span class='up'>Bite</span> · Headbutt · <span class='up'>Screech</span> · Strength</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout"><b>Reading the tables.</b> <span class="up" style="font-family:var(--mono)">Highlighted</span> moves are the slots the doctrine changed; plain moves were already the engine default and were left in place. Some fills are modest — a Counter or a Tackle — because a few mons simply have thin natural pools; the doctrine never reaches past the level cap to pad them. The complete, per-mon result for all 396 battles lives in <code class="mono">docs/trainer_reference.md</code>.</p></div>
+</section>
+
+<!-- SCOPE -->
+<section>
+  <h2><span class="n">04</span> Scope &amp; exemptions</h2>
+  <div class="tbl"><table>
+    <tr><th>Bucket</th><th>Count</th><th>Treatment</th></tr>
+    <tr><td>Regular-trainer Pokémon</td><td class="tnum">744</td><td>Doctrine applied; 673 slots retuned across 309 parties.</td></tr>
+    <tr><td>Tiny-pool exemptions</td><td class="tnum">35</td><td>Caterpie, Metapod, Weedle, Kakuna, Magikarp — fewer than four legal moves <em>exist</em>. Left on the engine default.</td></tr>
+    <tr><td>"Unused" parties</td><td class="tnum">53 / 119</td><td>Unreachable in normal play — skipped to conserve bank space.</td></tr>
+    <tr><td>Boss &amp; rival battles</td><td class="tnum">17</td><td>Owned by Phases 1–3; untouched here.</td></tr>
+    <tr><td>Vanilla-quirk blocks</td><td class="tnum">2</td><td>Bug Catcher #15 (double-Tackle Metapod), Youngster #14 (Fissure) — preserved verbatim.</td></tr>
+  </table></div>
+</section>
+
+<!-- LOG -->
+<section>
+  <h2><span class="n">05</span> Implementation log</h2>
+  <p class="lead">What actually shipped, in order.</p>
+  <div class="log">
+    <div class="row"><div class="when">Generator</div><div class="what"><b>Doctrine engine written</b><span><code>tools/gen_regular_movesets.py</code> — natural-pool-preferred, level-capped selection with surgical override emission. 0 illegal moves across 2,828 picks; 0 over-cap after the fill fix.</span></div></div>
+    <div class="row"><div class="when">Data</div><div class="what"><b>special_moves.asm regenerated</b><span>309 blocks · 1,557 override lines. Boss and vanilla-quirk blocks preserved. Every eligible mon now reaches four moves; exempt and Unused parties untouched (verified).</span></div></div>
+    <div class="row"><div class="when">Engine</div><div class="what"><b>Bank relocation</b><span>Extracted <code>ApplySpecialTrainerMoves</code> into <code>engine/battle/apply_special_moves.asm</code>; new <code>"Trainer Special Moves"</code> section in <code>main.asm</code>; <code>ReadTrainer</code> tail replaced with <code>callfar</code>.</span></div></div>
+    <div class="row"><div class="when">Build</div><div class="what"><b>Clean <code>make -j</code></b><span>No section overflow. New bank ~5.7&nbsp;KB; "Battle Engine 6" back to ~1.5&nbsp;KB slack. Table + apply routine co-located and same-bank (map-verified).</span></div></div>
+    <div class="row"><div class="when">Docs</div><div class="what"><b>Reference regenerated</b><span><code>docs/trainer_reference.md</code> rerun — regular trainers now show their tuned sets in bold. This spec registered in <code>CLAUDE.md</code>.</span></div></div>
+  </div>
+  <div class="callout"><b>Not yet done.</b> Playtesting in an emulator. The data and build are verified statically; the real test is fighting a rebuilt route trainer to confirm the new moves are used and carry PP.</div>
+</section>
+
+<footer>
+  Pokémon Chromatic Yellow — Phase 4 design spec · companion to <span class="mono">trainer_overhaul_plan.html</span> ·
+  generated data in <span class="mono">docs/trainer_reference.md</span>
+</footer>
+
+</div>
