@@ -441,6 +441,11 @@ INCLUDE "engine/movie/intro_yellow.asm"
 INCLUDE "engine/gfx/animated_objects.asm"
 
 
+SECTION "Texas Holdem", ROMX
+
+INCLUDE "engine/minigame/holdem.asm"
+
+
 SECTION "Overworld Pikachu", ROMX
 
 INCLUDE "data/maps/songs.asm"

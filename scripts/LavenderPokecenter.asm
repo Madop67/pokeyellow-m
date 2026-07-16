@@ -9,6 +9,7 @@ LavenderPokecenter_TextPointers:
 	dw_const LavenderPokecenterLittleGirlText,       TEXT_LAVENDERPOKECENTER_LITTLE_GIRL
 	dw_const LavenderPokecenterLinkReceptionistText, TEXT_LAVENDERPOKECENTER_LINK_RECEPTIONIST
 	dw_const LavenderPokecenterChanseyText,          TEXT_LAVENDERPOKECENTER_CHANSEY
+	dw_const LavenderPokecenterHoldemDealerText, TEXT_LAVENDERPOKECENTER_HOLDEM_DEALER
 
 LavenderPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
@@ -27,4 +28,9 @@ LavenderPokecenterLittleGirlText:
 LavenderPokecenterChanseyText:
 	text_asm
 	callfar PokecenterChanseyText
+	jp TextScriptEnd
+
+LavenderPokecenterHoldemDealerText:
+	text_asm
+	callfar HoldemDealer
 	jp TextScriptEnd

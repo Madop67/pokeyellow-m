@@ -9,6 +9,7 @@ CinnabarPokecenter_TextPointers:
 	dw_const CinnabarPokecenterGentlemanText,        TEXT_CINNABARPOKECENTER_GENTLEMAN
 	dw_const CinnabarPokecenterLinkReceptionistText, TEXT_CINNABARPOKECENTER_LINK_RECEPTIONIST
 	dw_const CinnabarPokecenterChanseyText,          TEXT_CINNABARPOKECENTER_CHANSEY
+	dw_const CinnabarPokecenterHoldemDealerText, TEXT_CINNABARPOKECENTER_HOLDEM_DEALER
 
 CinnabarPokecenterNurseText:
 	script_pokecenter_nurse
@@ -27,4 +28,9 @@ CinnabarPokecenterLinkReceptionistText:
 CinnabarPokecenterChanseyText:
 	text_asm
 	callfar PokecenterChanseyText
+	jp TextScriptEnd
+
+CinnabarPokecenterHoldemDealerText:
+	text_asm
+	callfar HoldemDealer
 	jp TextScriptEnd

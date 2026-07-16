@@ -315,8 +315,9 @@ GameCornerGymGuideTheyOfferRarePokemonText:
 	text_end
 
 GameCornerGamblerText:
-	text_far _GameCornerGamblerText
-	text_end
+	text_asm
+	callfar HoldemTable
+	jp TextScriptEnd
 
 GameCornerMiddleAgedMan2Text:
 	text_asm

@@ -9,6 +9,7 @@ RockTunnelPokecenter_TextPointers:
 	dw_const RockTunnelPokecenterFisherText,           TEXT_ROCKTUNNELPOKECENTER_FISHER
 	dw_const RockTunnelPokecenterLinkReceptionistText, TEXT_ROCKTUNNELPOKECENTER_LINK_RECEPTIONIST
 	dw_const RockTunnelPokecenterChanseyText,          TEXT_ROCKTUNNELPOKECENTER_CHANSEY
+	dw_const RockTunnelPokecenterHoldemDealerText, TEXT_ROCKTUNNELPOKECENTER_HOLDEM_DEALER
 
 RockTunnelPokecenterNurseText:
 	script_pokecenter_nurse
@@ -27,4 +28,9 @@ RockTunnelPokecenterLinkReceptionistText:
 RockTunnelPokecenterChanseyText:
 	text_asm
 	callfar PokecenterChanseyText
+	jp TextScriptEnd
+
+RockTunnelPokecenterHoldemDealerText:
+	text_asm
+	callfar HoldemDealer
 	jp TextScriptEnd

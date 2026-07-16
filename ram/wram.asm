@@ -272,6 +272,51 @@ wOverworldMap:: ds 1300
 wOverworldMapEnd::
 
 NEXTU
+; Texas Hold'em minigame state. Overlaid on the overworld map buffer (which is
+; exclusive with the modal poker takeover) exactly like the surfing minigame;
+; the map is rebuilt via ReloadMapAfterSurfingMinigame on exit.
+DEF HOLDEM_MAX_SEATS EQU 4
+wHoldemState::
+wHoldemDeck:: ds 52            ; card bytes: rank | (suit << 4); $ff = none
+wHoldemDeckPtr:: dw           ; next card to deal
+wHoldemBoard:: ds 5           ; community cards ($ff = undealt)
+wHoldemBoardCount:: db
+wHoldemPot:: ds 4             ; BCD
+wHoldemSeatCount:: db         ; 2 (heads-up) or 4 (table)
+wHoldemCurrencyMode:: db      ; 0 = coins, 1 = money
+wHoldemStakesMode:: db        ; 0 = normal (5/10, 100 buy-in), 1 = 10x
+wHoldemChipWidth:: db         ; currency width for display/cashout (2 or 3)
+wHoldemDealerBtn:: db         ; seat index holding the button
+wHoldemCurrentSeat:: db
+wHoldemBetToCall:: ds 4       ; BCD: amount to match this street
+wHoldemRaiseIncr:: ds 4       ; BCD: fixed raise size this street
+wHoldemRaiseCount:: db        ; raises so far this street (cap HOLDEM_MAX_RAISES)
+wHoldemStreet:: db            ; 0 preflop, 1 flop, 2 turn, 3 river
+wHoldemActedMask:: db         ; seats that have acted since last aggression
+wHoldemNumActive:: db         ; seats not folded
+wHoldemLastAggressor:: db     ; seat idx of last bettor/raiser
+wHoldemResult:: db            ; scratch return value
+wHoldemScanSeat:: db          ; seat-index temp used by scans/drawing/eval
+; per-seat arrays, index 0..HOLDEM_MAX_SEATS-1 (seat 0 = human)
+wHoldemHole:: ds HOLDEM_MAX_SEATS * 2
+wHoldemStack:: ds HOLDEM_MAX_SEATS * 4   ; BCD
+wHoldemStreetBet:: ds HOLDEM_MAX_SEATS * 4 ; BCD
+wHoldemSeatFlags:: ds HOLDEM_MAX_SEATS   ; bit0 folded, bit1 all-in, bit2 AI
+wHoldemHandScore:: ds HOLDEM_MAX_SEATS * 3 ; packed 3-byte hand score
+; BCD scratch amounts used during betting
+wHoldemTmpA:: ds 4
+wHoldemTmpB:: ds 4
+; evaluator scratch
+wHoldemRankCount:: ds 13
+wHoldemSuitCount:: ds 4
+wHoldemFlushPresent:: ds 13
+wHoldemEvalCards:: ds 7
+wHoldemEvalN:: db             ; number of cards in wHoldemEvalCards
+; wHoldemScratch[0..5] = packed-score nibbles; [6..15] = evaluator temporaries
+wHoldemScratch:: ds 16
+wHoldemStateEnd::
+
+NEXTU
 wTempPic:: ds PIC_SIZE tiles
 
 NEXTU

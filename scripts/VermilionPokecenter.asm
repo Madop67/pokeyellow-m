@@ -9,6 +9,7 @@ VermilionPokecenter_TextPointers:
 	dw_const VermilionPokecenterSailorText,           TEXT_VERMILIONPOKECENTER_SAILOR
 	dw_const VermilionPokecenterLinkReceptionistText, TEXT_VERMILIONPOKECENTER_LINK_RECEPTIONIST
 	dw_const VermilionPokecenterChanseyText,          TEXT_VERMILIONPOKECENTER_CHANSEY
+	dw_const VermilionPokecenterHoldemDealerText, TEXT_VERMILIONPOKECENTER_HOLDEM_DEALER
 
 VermilionPokecenterNurseText:
 	script_pokecenter_nurse
@@ -27,4 +28,9 @@ VermilionPokecenterLinkReceptionistText:
 VermilionPokecenterChanseyText:
 	text_asm
 	callfar PokecenterChanseyText
+	jp TextScriptEnd
+
+VermilionPokecenterHoldemDealerText:
+	text_asm
+	callfar HoldemDealer
 	jp TextScriptEnd

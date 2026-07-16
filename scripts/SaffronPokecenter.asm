@@ -9,6 +9,7 @@ SaffronPokecenter_TextPointers:
 	dw_const SaffronPokecenterGentlemanText,        TEXT_SAFFRONPOKECENTER_GENTLEMAN
 	dw_const SaffronPokecenterLinkReceptionistText, TEXT_SAFFRONPOKECENTER_LINK_RECEPTIONIST
 	dw_const SaffronPokecenterChanseyText,          TEXT_SAFFRONPOKECENTER_CHANSEY
+	dw_const SaffronPokecenterHoldemDealerText, TEXT_SAFFRONPOKECENTER_HOLDEM_DEALER
 
 SaffronPokecenterNurseText:
 	script_pokecenter_nurse
@@ -27,4 +28,9 @@ SaffronPokecenterLinkReceptionistText:
 SaffronPokecenterChanseyText:
 	text_asm
 	callfar PokecenterChanseyText
+	jp TextScriptEnd
+
+SaffronPokecenterHoldemDealerText:
+	text_asm
+	callfar HoldemDealer
 	jp TextScriptEnd

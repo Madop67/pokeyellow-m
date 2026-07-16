@@ -13,6 +13,7 @@ PewterPokecenter_TextPointers:
 	dw_const PewterPokecenterLinkReceptionistText, TEXT_PEWTERPOKECENTER_LINK_RECEPTIONIST
 	dw_const PewterPokecenterCooltrainerFText,     TEXT_PEWTERPOKECENTER_COOLTRAINER_F
 	dw_const PewterPokecenterChanseyText,          TEXT_PEWTERPOKECENTER_CHANSEY
+	dw_const PewterPokecenterHoldemDealerText, TEXT_PEWTERPOKECENTER_HOLDEM_DEALER
 
 PewterPokecenterNurseText:
 	script_pokecenter_nurse
@@ -37,4 +38,9 @@ PewterPokecenterCooltrainerFText:
 PewterPokecenterChanseyText:
 	text_asm
 	callfar PokecenterChanseyText
+	jp TextScriptEnd
+
+PewterPokecenterHoldemDealerText:
+	text_asm
+	callfar HoldemDealer
 	jp TextScriptEnd
