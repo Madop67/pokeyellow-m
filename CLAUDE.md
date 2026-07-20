@@ -51,6 +51,21 @@ to the ROM, keep a copy of the previous `.gbc` and diff against that, not agains
 `roms.sha1`. (Note: CI's `checkdiff.sh` step and the `pret`-only `compare` step in
 `.github/workflows/main.yml` assume vanilla and will likewise not pass unmodified here.)
 
+**Verify BOTH the regular build and the VC patch build compile.** After any change, run
+both `make -j$(nproc)` (the normal `.gbc`) *and* `make yellow_vc` (the Virtual Console
+patch). The VC path can break independently of the regular build: it also assembles the
+`vc/` sources and then runs `tools/make_patch`, which reads the vanilla symbols exported by
+`vc/pokeyellow.constants.asm` and referenced in `vc/pokeyellow.patch.template`. When the
+fork renames or deletes a symbol those files still reference (e.g. the move overhaul removed
+the `MEGA_PUNCH`/`GUILLOTINE`/`MEGA_KICK`/`SELFDESTRUCT` move constants), `rgbasm` only emits
+an `-Wexport-undefined` *warning* and the regular build still succeeds — but `make_patch`
+treats the unresolved symbol as **fatal** (`make_patch: Error: Unknown symbol: ...`), so
+`yellow_vc` fails while `make` passes. Fix it in `vc/pokeyellow.constants.asm` (alias the
+missing symbol to a surviving constant — those move conditions compare against
+`wAnimationID`, so the `ANIM_*` value is the correct target) rather than reverting the fork
+change. Because the VC build must run `make_patch`, don't call `yellow_vc` clean until that
+step completes and `pokeyellow.patch` is (re)written.
+
 There's no linter; `RGBASMFLAGS`/`RGBLINKFLAGS`/`RGBFIXFLAGS` all build with
 `-Weverything`, so warnings surface directly from `make`.
 
