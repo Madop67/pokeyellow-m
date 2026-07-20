@@ -377,16 +377,16 @@ MainInBattleLoop:
 	callfar SwitchEnemyMon
 .noLinkBattle
 	ld a, [wPlayerSelectedMove]
-	cp QUICK_ATTACK
-	jr nz, .playerDidNotUseQuickAttack
+	call IsPriorityMove
+	jr nc, .playerDidNotUsePriorityMove
 	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .compareSpeed  ; if both used Quick Attack
-	jp .playerMovesFirst ; if player used Quick Attack and enemy didn't
-.playerDidNotUseQuickAttack
+	call IsPriorityMove
+	jr c, .compareSpeed  ; if both used a priority move
+	jp .playerMovesFirst ; if player used a priority move and enemy didn't
+.playerDidNotUsePriorityMove
 	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
+	call IsPriorityMove
+	jr c, .enemyMovesFirst ; if enemy used a priority move and player didn't
 	ld a, [wPlayerSelectedMove]
 	cp COUNTER
 	jr nz, .playerDidNotUseCounter
@@ -475,6 +475,23 @@ MainInBattleLoop:
 	call DrawHUDsAndHPBars
 	call CheckNumAttacksLeft
 	jp MainInBattleLoop
+
+IsPriorityMove:
+; Return carry set if the move id in a is a priority move (moves first when the
+; user isn't outsped by another priority move). Quick Attack, plus the move
+; overhaul's Aqua Jet and Ice Shard, which share the same "always strikes first"
+; identity but aren't tied to a move-effect flag in this engine.
+	cp QUICK_ATTACK
+	jr z, .yes
+	cp AQUA_JET
+	jr z, .yes
+	cp ICE_SHARD
+	jr z, .yes
+	and a ; clear carry: not a priority move
+	ret
+.yes
+	scf
+	ret
 
 HandlePoisonBurnLeechSeed:
 	ld hl, wBattleMonHP

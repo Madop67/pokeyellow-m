@@ -1,0 +1,493 @@
+<title>Boss Battle Field Guide — Chromatic Yellow</title>
+<style>
+  :root{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+      --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+      --line:#2c281f; --line-strong:#3a3527;
+      --accent:#eab53f; --accent-ink:#f0c463;
+      --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+      --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+  }
+  :root[data-theme="dark"]{
+    --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+    --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+    --line:#2c281f; --line-strong:#3a3527;
+    --accent:#eab53f; --accent-ink:#f0c463;
+    --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+    --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+  a{color:var(--accent-ink)}
+
+  /* ---- header ---- */
+  header.mast{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-ink);margin:0 0 14px;font-weight:600}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.04;margin:0;letter-spacing:-.02em;
+    text-wrap:balance;font-weight:800}
+  h1 .sub{display:block;font-size:clamp(15px,2.4vw,19px);font-weight:500;color:var(--muted);
+    letter-spacing:0;margin-top:14px;max-width:60ch}
+  .metaline{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:6px 18px}
+  .metaline b{color:var(--muted);font-weight:600}
+
+  /* ---- sections ---- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 6px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+  h2 .n{color:var(--accent);font-weight:700}
+  .lead{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+  p{margin:0 0 14px;max-width:66ch}
+  h3{font-size:16px;margin:26px 0 10px;font-weight:700}
+  strong{font-weight:700}
+  .mono{font-family:var(--mono)}
+
+  /* ---- goals grid ---- */
+  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:6px 0 0}
+  .goal{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px}
+  .goal .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:6px}
+  .goal p{font-size:14px;margin:0;color:var(--ink)}
+
+  /* ---- rule list ---- */
+  ol.rules{counter-reset:r;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  ol.rules li{counter-increment:r;position:relative;padding:14px 16px 14px 52px;
+    background:var(--surface);border:1px solid var(--line);border-radius:9px}
+  ol.rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:16px;top:13px;
+    font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+  ol.rules li b{display:block;margin-bottom:2px}
+  ol.rules li span{font-size:14px;color:var(--muted)}
+
+  /* ---- generic table ---- */
+  .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:4px 0 8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;background:var(--surface-2)}
+  tr:last-child td{border-bottom:none}
+  td.lv{font-family:var(--mono);color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---- boss cards ---- */
+  .boss{background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;
+    padding:20px 20px 8px;margin:16px 0}
+  .boss.e4{border-left:3px solid var(--boss)}
+  .boss-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;
+    padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+  .boss-head .name{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .boss-head .role{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--faint)}
+  .boss-head .arrow{color:var(--faint)}
+  .themebadge{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
+  .roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:12px 0}
+  .mon{display:flex;align-items:center;gap:9px;padding:8px 10px;border:1px solid var(--line);
+    border-radius:8px;background:var(--surface-2);font-size:14px}
+  .mon .lvl{font-family:var(--mono);font-size:12px;color:var(--accent-ink);
+    font-variant-numeric:tabular-nums;min-width:22px}
+  .mon .nm{font-weight:600;flex:1}
+  .mon.ace{background:var(--ace-bg);border-color:var(--accent)}
+  .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+    padding:2px 6px;border-radius:5px;font-weight:700;white-space:nowrap}
+  .tag.ace{background:var(--accent);color:#26200a}
+  :root[data-theme="dark"] .tag.ace{color:#181405}
+  @media (prefers-color-scheme:dark){.tag.ace{color:#181405}}
+
+  .aceline{font-size:13px;color:var(--muted);padding:8px 2px 12px;border-top:1px dashed var(--line)}
+  .aceline b{color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;margin-right:8px}
+  .aceline .mv{font-family:var(--mono);color:var(--accent-ink);font-size:12.5px}
+  .teratag{font-family:var(--mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;
+    padding:2px 7px;border-radius:20px;font-weight:700;white-space:nowrap;
+    border:1px solid var(--accent);color:var(--accent-ink);background:var(--ace-bg)}
+  .watch{font-size:13.5px;color:var(--muted);margin:0 0 4px}
+  .watch b{color:var(--boss);font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;margin-right:8px}
+
+  /* ---- type chips ---- */
+  .ty{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;font-weight:700;
+    padding:2px 5px;border-radius:4px;text-transform:uppercase;line-height:1.4;white-space:nowrap}
+  .ty.ROC{background:#c9b98e;color:#3a2f10}.ty.GRD{background:#dcc79a;color:#4a370c}
+  .ty.WTR{background:#a9cdea;color:#123a5c}.ty.ICE{background:#b6e0e4;color:#0f4650}
+  .ty.ELE{background:#f2d98a;color:#5a4400}.ty.STL{background:#c3c9d1;color:#2c3742}
+  .ty.GRS{background:#b3d8a3;color:#1e4415}.ty.FAI{background:#efc2d6;color:#5e1c3c}
+  .ty.POI{background:#cdaedd;color:#3d1554}.ty.SND{background:#e6cfa0;color:#4d3a0d}
+  .ty.PSY{background:#f2b6c1;color:#5c1526}.ty.FIR{background:#f3b892;color:#6a2a06}
+  .ty.FIG{background:#d9a58f;color:#54200e}.ty.GHO{background:#b3a4d0;color:#2c1c50}
+  .ty.DRK{background:#a79c93;color:#241c14}.ty.NOR{background:#d5cfc0;color:#3a352a}
+  .ty.FLY{background:#bcc9ea;color:#233258}.ty.BUG{background:#c3d093;color:#33420c}
+  .ty.DRG{background:#a9b6e6;color:#1f2a63}.ty.LGT{background:#f0e6a8;color:#5a5210}
+  .ty.STE{background:#d8c7ec;color:#3a2360}
+  @media (prefers-color-scheme:dark){
+    .ty{filter:saturate(.82) brightness(.92)}
+  }
+  :root[data-theme="dark"] .ty{filter:saturate(.82) brightness(.92)}
+  :root[data-theme="light"] .ty{filter:none}
+
+  .callout{background:var(--surface-2);border:1px solid var(--line-strong);border-left:3px solid var(--accent);
+    border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14px}
+  .callout b{color:var(--accent-ink)}
+  footer{padding:40px 0 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  @media (max-width:560px){.wrap{padding:0 16px 80px}h1{font-size:28px}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Pokémon Chromatic Yellow · Trainer's Field Guide</p>
+  <h1>Boss Battles: What You're Walking Into
+    <span class="sub">Every Gym Leader, the Elite Four, and the Champion now field full six-Pokémon teams with a dual-type identity, smarter battle sense, and an ace that Terastallizes the moment it hits the field. This is a spoiler-friendly guide to what's waiting for you.</span>
+  </h1>
+  <div class="metaline">
+    <span><b>Bosses covered:</b> 8 Gym Leaders · Elite Four · Champion</span>
+    <span><b>Spoilers:</b> full rosters &amp; movesets</span>
+  </div>
+</header>
+
+<!-- WHAT CHANGED -->
+<section>
+  <h2><span class="n">01</span> These aren't the fights you remember</h2>
+  <p class="lead">Kanto's bosses have been rebuilt from the ground up. If your plan is "bring the one type that beats theirs," you're going to get surprised.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">Full teams</div><p>Every Gym Leader now brings <strong>six Pokémon</strong>, not two or three. The early gyms still sit at low levels — but there are a lot more of them.</p></div>
+    <div class="goal"><div class="k">Two-type identity</div><p>Each boss carries a <strong>second theme</strong> woven through their roster and moves, so a single hard counter no longer sweeps the whole team.</p></div>
+    <div class="goal"><div class="k">Real movesets</div><p>Bosses run four <strong>competitive moves</strong> — STAB, coverage for your usual answers, and a setup or status move — instead of random level-up filler.</p></div>
+    <div class="goal"><div class="k">Terastallizing aces</div><p>The last Pokémon a boss sends out <strong>Terastallizes on entry</strong>, changing its type and powering up its attacks. Plan your endgame around it.</p></div>
+  </div>
+  <p style="margin-top:18px">The short version: bosses are now designed <em>teams</em> that answer the obvious counter. Coverage moves punish your safe switch-ins, the whole squad shares a defensive theme, and the ace flips the board right at the end. Come with a balanced party and a way to deal chip damage, not a single silver bullet.</p>
+</section>
+
+<!-- HOW THEY PLAY -->
+<section>
+  <h2><span class="n">02</span> How the boss AI plays against you</h2>
+  <p class="lead">Boss trainers make deliberate decisions. Knowing their habits is half the battle.</p>
+  <ol class="rules">
+    <li><b>They target the matchup, not at random</b><span>A boss reads how your active Pokémon lines up and picks the move that actually threatens it. Don't count on them wasting a turn on a resisted attack.</span></li>
+    <li><b>They open with a signature stat boost</b><span>On a fresh Pokémon's first turn, most bosses reach for their trademark X-item — X&nbsp;Special, X&nbsp;Defend, X&nbsp;Speed, and so on (see the table below). If you let them set up for free, the next hit lands a lot harder.</span></li>
+    <li><b>They cure status — but never heal HP</b><span>A boss will use a Full Heal to shake off sleep or freeze, so those aren't a permanent lock. What they <em>won't</em> do is restore HP: there's no Full Restore stalling. Chip damage sticks, so racing them down is a real strategy.</span></li>
+    <li><b>They'll switch out of a bad matchup</b><span>If your Pokémon threatens theirs super-effectively and they have a safer answer on the bench, they'll pivot to it — once per Pokémon. Leading with a hard counter may just chase them into their check, so bait the switch before you commit.</span></li>
+    <li><b>The ace Terastallizes on send-out</b><span>The final Pokémon changes type the instant it appears. A weakness you were counting on may vanish; a new super-effective angle may open up. Save the right answer for it.</span></li>
+  </ol>
+  <h3>Each boss's opening gambit</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Boss</th><th>Opens with</th><th>What it means for you</th></tr></thead>
+      <tbody>
+        <tr><td>Brock · Bruno</td><td class="mono">X Defend</td><td>They dig in — physical attackers hit a wall. Go special or set up alongside them.</td></tr>
+        <tr><td>Lt. Surge</td><td class="mono">X Speed</td><td>They outrun you fast. Don't rely on winning the speed tie; priority or bulk helps.</td></tr>
+        <tr><td>Koga</td><td class="mono">X Accuracy</td><td>Their status and Sound moves stop missing — expect the Sleep/confusion to land.</td></tr>
+        <tr><td>Giovanni</td><td class="mono">Guard Spec.</td><td>Your status moves bounce early — para/sleep won't stick on the opener.</td></tr>
+        <tr><td>Agatha</td><td class="mono">Dire Hit</td><td>Crit pressure. Any hit can spike; don't rely on a thin HP cushion.</td></tr>
+        <tr><td>Misty · Erika · Blaine · Sabrina · Lorelei · Lance · Champion</td><td class="mono">X Special</td><td>Their special attacks ramp each turn. End the fight or force switches before they snowball.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TERA -->
+<section>
+  <h2><span class="n">03</span> Ace Terastallization — the twist at the end</h2>
+  <p class="lead">Every boss's last Pokémon becomes a pure Tera-Type the moment it's sent out, for the rest of the battle.</p>
+  <p>Terastallizing does two things at once: it changes the ace's <strong>defensive typing</strong> (its old weaknesses may disappear) and it supercharges attacks of the Tera-Type — moves matching it hit for <strong>2×</strong> STAB when the type was already one of the Pokémon's own. Most aces Tera into a type they already had, turning their signature attack into a wrecking ball. A few use it to <em>shed</em> a crippling weakness — watch those closely.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Boss</th><th>Ace</th><th>Tera Type</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td>Brock</td><td>Onix</td><td><span class="ty ROC">Rock</span></td><td>Doubles down — Rock Slide becomes a 2× freight train.</td></tr>
+        <tr><td>Misty</td><td>Starmie</td><td><span class="ty LGT">Light</span></td><td>Photon Beam (Light) hits 2×; its Light typing shrugs off your usual Water answers.</td></tr>
+        <tr><td>Lt. Surge</td><td>Raichu</td><td><span class="ty ELE">Electric</span></td><td>Thunderbolt at 2× — get your Ground-type in before it fires.</td></tr>
+        <tr><td>Erika</td><td>Gloom</td><td><span class="ty GRS">Grass</span></td><td>Energy Ball spikes; pairs with Swords Dance for a real sweep threat.</td></tr>
+        <tr><td>Koga</td><td>Venomoth</td><td><span class="ty SND">Sound</span></td><td>Sound attacks blast through the resistances you'd normally lean on.</td></tr>
+        <tr><td>Sabrina</td><td>Alakazam</td><td><span class="ty PSY">Psychic</span></td><td>Psychic at 2× off a huge Special stat — bring a Dark or Steel wall.</td></tr>
+        <tr><td>Blaine</td><td>Arcanine</td><td><span class="ty FIR">Fire</span></td><td>Flamethrower turns nuclear; keep something wet and healthy in reserve.</td></tr>
+        <tr><td>Giovanni</td><td>Rhydon</td><td><span class="ty GRD">Ground</span></td><td>Earthquake at 2×; Rhydon still fears Water/Grass, so save that answer.</td></tr>
+        <tr><td>Lorelei</td><td>Lapras</td><td><span class="ty ICE">Ice</span></td><td>Ice Beam 2× — Electric and Grass switch-ins get frozen solid.</td></tr>
+        <tr><td>Bruno</td><td>Machamp</td><td><span class="ty FIG">Fighting</span></td><td>Hi Jump Kick at 2× <em>and</em> Focus Energy crits — Psychic/Fairy is your out.</td></tr>
+        <tr><td>Agatha</td><td>Gengar</td><td><span class="ty FAI">Fairy</span></td><td>Flips to Fairy: your Dark and Ghost coverage suddenly stops working on it.</td></tr>
+        <tr><td>Lance</td><td>Dragonite</td><td><span class="ty STE">Stellar</span></td><td>Sheds the 4× Ice weakness — your Ice Beam plan just fell apart. Hit it hard other ways.</td></tr>
+        <tr><td>Champion</td><td>Eeveelution</td><td><span class="ty ELE">Ele</span>/<span class="ty FIR">Fir</span>/<span class="ty WTR">Wtr</span></td><td>Whichever eeveelution his Eevee became, it Teras into its own type.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="callout"><b>Two aces are traps for the obvious plan.</b> Agatha's <strong>Gengar</strong> Teras to Fairy, so the Dark/Ghost hits you brought for it whiff — bring Poison or Steel too. And Lance's <strong>Dragonite</strong> Teras to Stellar, erasing the double Ice weakness the whole team otherwise shares; you'll need Rock, Fairy, or raw power to close instead.</p>
+</section>
+
+<!-- GYM LEADERS -->
+<section>
+  <h2><span class="n">04</span> The eight Gym Leaders</h2>
+  <p class="lead">Each card lists the full team in send-out order, the <span class="tag ace" style="font-size:9px">ace</span> that Terastallizes, and what to watch for.</p>
+
+  <!-- BROCK -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Brock</span><span class="role">Gym 1 · Pewter</span>
+      <span class="arrow">·</span><span class="ty ROC">Rock</span><span class="ty GRD">Ground</span>
+      <span class="themebadge">caves &amp; mountains · Lv 10–14</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">10</span><span class="ty GRD">Grd</span><span class="nm">Diglett</span></div>
+      <div class="mon"><span class="lvl">10</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Geodude</span></div>
+      <div class="mon"><span class="lvl">11</span><span class="ty GRD">Grd</span><span class="nm">Sandshrew</span></div>
+      <div class="mon"><span class="lvl">11</span><span class="ty GRD">Grd</span><span class="nm">Cubone</span></div>
+      <div class="mon"><span class="lvl">12</span><span class="ty GRD">Grd</span><span class="ty ROC">Roc</span><span class="nm">Rhyhorn</span></div>
+      <div class="mon ace"><span class="lvl">14</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Onix</span><span class="tag ace">ace</span> <span class="teratag">Tera Rock</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Water and Grass still win the day — but the whole team hits back with Ground, and Onix packs Earthquake + Iron Tail, so a frail lead can get chunked. Bring bulk, not just a type advantage.</p>
+    <div class="aceline"><b>Onix</b><span class="mv">Rock Slide · Earthquake · Iron Tail · Screech ↓Def</span></div>
+  </div>
+
+  <!-- MISTY -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Misty</span><span class="role">Gym 2 · Cerulean</span>
+      <span class="arrow">·</span><span class="ty WTR">Water</span><span class="ty ICE">Ice</span>
+      <span class="themebadge">cool, elegant water · Lv 18–21</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">18</span><span class="ty WTR">Wtr</span><span class="nm">Psyduck</span></div>
+      <div class="mon"><span class="lvl">18</span><span class="ty WTR">Wtr</span><span class="nm">Seel</span></div>
+      <div class="mon"><span class="lvl">18</span><span class="ty WTR">Wtr</span><span class="nm">Shellder</span></div>
+      <div class="mon"><span class="lvl">19</span><span class="ty WTR">Wtr</span><span class="ty LGT">Lgt</span><span class="nm">Staryu</span></div>
+      <div class="mon"><span class="lvl">19</span><span class="ty WTR">Wtr</span><span class="nm">Horsea</span></div>
+      <div class="mon ace"><span class="lvl">21</span><span class="ty WTR">Wtr</span><span class="ty LGT">Lgt</span><span class="nm">Starmie</span><span class="tag ace">ace</span> <span class="teratag">Tera Light</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>The classic Grass switch-in is risky — nearly everyone carries Ice Beam. The Star line runs Thunderbolt to zap your own Water answers. An Electric-type with bulk, or a Grass-type that can take one Ice Beam, is ideal.</p>
+    <div class="aceline"><b>Starmie</b><span class="mv">Bubblebeam · Photon Beam · Thunderbolt · Reflect ↑Def</span></div>
+  </div>
+
+  <!-- SURGE -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Lt. Surge</span><span class="role">Gym 3 · Vermilion</span>
+      <span class="arrow">·</span><span class="ty ELE">Electric</span><span class="ty STL">Steel</span>
+      <span class="themebadge">military machines · Lv 24–28</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">24</span><span class="ty ELE">Ele</span><span class="nm">Voltorb</span></div>
+      <div class="mon"><span class="lvl">24</span><span class="ty ELE">Ele</span><span class="ty STL">Stl</span><span class="nm">Magnemite</span></div>
+      <div class="mon"><span class="lvl">25</span><span class="ty ELE">Ele</span><span class="nm">Electrode</span></div>
+      <div class="mon"><span class="lvl">25</span><span class="ty ELE">Ele</span><span class="nm">Electabuzz</span></div>
+      <div class="mon"><span class="lvl">26</span><span class="ty ELE">Ele</span><span class="ty STL">Stl</span><span class="nm">Magneton</span></div>
+      <div class="mon ace"><span class="lvl">28</span><span class="ty ELE">Ele</span><span class="nm">Raichu</span><span class="tag ace">ace</span> <span class="teratag">Tera Electric</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Ground still shuts down the pure Electrics — but Magnemite and Magneton are part Steel, resisting a lot of what you'd throw and answering back with Flash Cannon. Voltorb and Electrode will Explode on you. A sturdy Ground-type that isn't weak to Steel is the safest lead.</p>
+    <div class="aceline"><b>Raichu</b><span class="mv">Thunderbolt · Iron Tail · Thunder Wave par · Growl ↓Atk</span></div>
+  </div>
+
+  <!-- ERIKA -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Erika</span><span class="role">Gym 4 · Celadon</span>
+      <span class="arrow">·</span><span class="ty GRS">Grass</span><span class="ty FAI">Fairy</span>
+      <span class="themebadge">flower-fairy garden · Lv 29–34</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">29</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Bellsprout</span></div>
+      <div class="mon"><span class="lvl">30</span><span class="ty GRS">Grs</span><span class="nm">Tangela</span></div>
+      <div class="mon"><span class="lvl">31</span><span class="ty FAI">Fai</span><span class="nm">Clefairy</span></div>
+      <div class="mon"><span class="lvl">32</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Weepinbell</span></div>
+      <div class="mon"><span class="lvl">32</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Victreebel</span></div>
+      <div class="mon ace"><span class="lvl">34</span><span class="ty GRS">Grs</span><span class="ty POI">Poi</span><span class="nm">Gloom</span><span class="tag ace">ace</span> <span class="teratag">Tera Grass</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Fire or Psychic beats most of the roster, but nearly everyone has <strong>Sleep Powder</strong> — lead with something you don't mind losing a turn on, or carry an Awakening. Clefairy is the curveball: a Fairy that fires Thunderbolt and Ice Beam to punish your Poison/Fighting answers.</p>
+    <div class="aceline"><b>Gloom</b><span class="mv">Energy Ball · Sludge Bomb · Sleep Powder slp · Swords Dance ↑Atk</span></div>
+  </div>
+
+  <!-- KOGA -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Koga</span><span class="role">Gym 5 · Fuchsia</span>
+      <span class="arrow">·</span><span class="ty POI">Poison</span><span class="ty SND">Sound</span>
+      <span class="themebadge">sonic ninja · Lv 44–50</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">44</span><span class="ty BUG">Bug</span><span class="ty POI">Poi</span><span class="nm">Venonat</span></div>
+      <div class="mon"><span class="lvl">45</span><span class="ty POI">Poi</span><span class="ty FLY">Fly</span><span class="nm">Golbat</span></div>
+      <div class="mon"><span class="lvl">46</span><span class="ty POI">Poi</span><span class="nm">Weezing</span></div>
+      <div class="mon"><span class="lvl">47</span><span class="ty POI">Poi</span><span class="nm">Muk</span></div>
+      <div class="mon"><span class="lvl">48</span><span class="ty POI">Poi</span><span class="nm">Arbok</span></div>
+      <div class="mon ace"><span class="lvl">50</span><span class="ty BUG">Bug</span><span class="ty POI">Poi</span><span class="nm">Venomoth</span><span class="tag ace">ace</span> <span class="teratag">Tera Sound</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Ground and Psychic carve through the Poisons, but the team is built to disorient: Supersonic, Confuse Ray, and Sleep Powder are everywhere, and his X Accuracy opener means they land. Bring status protection and clean, high-power hits so a confused turn doesn't cost you the match.</p>
+    <div class="aceline"><b>Venomoth</b><span class="mv">Bug Buzz · Sludge Bomb · Psychic · Sleep Powder slp</span></div>
+  </div>
+
+  <!-- SABRINA -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Sabrina</span><span class="role">Gym 6 · Saffron</span>
+      <span class="arrow">·</span><span class="ty PSY">Psychic</span><span class="ty FAI">Fairy</span>
+      <span class="themebadge">mystic / mind · Lv 48–52</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">48</span><span class="ty WTR">Wtr</span><span class="ty PSY">Psy</span><span class="nm">Slowbro</span></div>
+      <div class="mon"><span class="lvl">49</span><span class="ty PSY">Psy</span><span class="nm">Hypno</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty PSY">Psy</span><span class="nm">Kadabra</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty ICE">Ice</span><span class="ty PSY">Psy</span><span class="nm">Jynx</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty PSY">Psy</span><span class="ty FAI">Fai</span><span class="nm">Mr. Mime</span></div>
+      <div class="mon ace"><span class="lvl">52</span><span class="ty PSY">Psy</span><span class="nm">Alakazam</span><span class="tag ace">ace</span> <span class="teratag">Tera Psychic</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Dark and Steel are your friends, but the psychics run <strong>Shadow Ball</strong> to punish Ghost/Dark switch-ins and <strong>Dazzle Gleam</strong> (Fairy) to hit Dark back. Hypno and Jynx bring sleep. A bulky Steel-type that resists both coverage moves is the dream answer to Alakazam.</p>
+    <div class="aceline"><b>Alakazam</b><span class="mv">Psychic · Dazzle Gleam · Shadow Ball · Reflect ↑Def</span></div>
+  </div>
+
+  <!-- BLAINE -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Blaine</span><span class="role">Gym 7 · Cinnabar</span>
+      <span class="arrow">·</span><span class="ty FIR">Fire</span><span class="ty ROC">Rock</span>
+      <span class="themebadge">Cinnabar volcano · Lv 46–54</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">46</span><span class="ty FIR">Fir</span><span class="nm">Ponyta</span></div>
+      <div class="mon"><span class="lvl">48</span><span class="ty FIR">Fir</span><span class="nm">Ninetales</span></div>
+      <div class="mon"><span class="lvl">49</span><span class="ty FIR">Fir</span><span class="nm">Magmar</span></div>
+      <div class="mon"><span class="lvl">50</span><span class="ty FIR">Fir</span><span class="nm">Rapidash</span></div>
+      <div class="mon"><span class="lvl">51</span><span class="ty GRD">Grd</span><span class="ty ROC">Roc</span><span class="nm">Rhydon</span></div>
+      <div class="mon ace"><span class="lvl">54</span><span class="ty FIR">Fir</span><span class="nm">Arcanine</span><span class="tag ace">ace</span> <span class="teratag">Tera Fire</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Water is the instinct — and it's a trap. <strong>Rhydon</strong> sits in the lineup specifically to eat your Water lead and answer with Rock/Ground. Have a second win condition (Grass, Fighting, a fast special hitter) so his Rock body doesn't stonewall you, and keep your Water-type healthy for the Tera-Fire Arcanine.</p>
+    <div class="aceline"><b>Arcanine</b><span class="mv">Flamethrower · Crunch · Dragon Pulse · Reflect ↑Def</span></div>
+  </div>
+
+  <!-- GIOVANNI -->
+  <div class="boss">
+    <div class="boss-head"><span class="name">Giovanni</span><span class="role">Gym 8 · Viridian</span>
+      <span class="arrow">·</span><span class="ty GRD">Ground</span><span class="ty DRK">Dark</span>
+      <span class="themebadge">Rocket boss · Lv 50–55</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">50</span><span class="ty GRD">Grd</span><span class="nm">Dugtrio</span></div>
+      <div class="mon"><span class="lvl">52</span><span class="ty GRD">Grd</span><span class="nm">Marowak</span></div>
+      <div class="mon"><span class="lvl">53</span><span class="ty NOR">Nor</span><span class="nm">Persian</span></div>
+      <div class="mon"><span class="lvl">53</span><span class="ty POI">Poi</span><span class="ty GRD">Grd</span><span class="nm">Nidoqueen</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty POI">Poi</span><span class="ty GRD">Grd</span><span class="nm">Nidoking</span></div>
+      <div class="mon ace"><span class="lvl">55</span><span class="ty GRD">Grd</span><span class="ty ROC">Roc</span><span class="nm">Rhydon</span><span class="tag ace">ace</span> <span class="teratag">Tera Ground</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Water and Grass answer the Ground core, but the Nido pair carry <strong>Ice Beam and Thunderbolt</strong> to blow those exact switch-ins away, and his Guard Spec. opener stops you from paralyzing or sleeping the lead. Earthquake is on almost everything — keep a Flying-type or Levitate answer, and save your best Water/Grass hit for the Tera-Ground Rhydon.</p>
+    <div class="aceline"><b>Rhydon</b><span class="mv">Earthquake · Rock Slide · Fire Blast · Leer ↓Def</span></div>
+  </div>
+</section>
+
+<!-- ELITE FOUR -->
+<section>
+  <h2><span class="n">05</span> The Elite Four &amp; the Champion</h2>
+  <p class="lead">No Pokémon Center between rooms. Every team is six deep, and the difficulty ramps hard — bring a full party and plenty of healing.</p>
+
+  <!-- LORELEI -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Lorelei</span><span class="role">Elite Four · I</span>
+      <span class="arrow">·</span><span class="ty ICE">Ice</span><span class="ty WTR">Water</span>
+      <span class="themebadge">refined dual identity · Lv 53–56</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">53</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Cloyster</span></div>
+      <div class="mon"><span class="lvl">54</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Dewgong</span></div>
+      <div class="mon"><span class="lvl">54</span><span class="ty WTR">Wtr</span><span class="ty PSY">Psy</span><span class="nm">Slowbro</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty WTR">Wtr</span><span class="ty LGT">Lgt</span><span class="nm">Starmie</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty ICE">Ice</span><span class="ty PSY">Psy</span><span class="nm">Jynx</span></div>
+      <div class="mon ace"><span class="lvl">56</span><span class="ty WTR">Wtr</span><span class="ty ICE">Ice</span><span class="nm">Lapras</span><span class="tag ace">ace</span> <span class="teratag">Tera Ice</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Electric and Grass punish the Water bodies — but Starmie and Lapras run <strong>Thunderbolt</strong> to fry your Electric answer, and everyone has Ice coverage to freeze the Grass one. Sing and Lovely Kiss threaten sleep. A Water-resist that isn't weak to Ice (a bulky Water/Steel or a Water-type of your own) rides out the whole room.</p>
+    <div class="aceline"><b>Lapras</b><span class="mv">Ice Beam · Surf · Thunderbolt · Sing slp</span></div>
+  </div>
+
+  <!-- BRUNO -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Bruno</span><span class="role">Elite Four · II</span>
+      <span class="arrow">·</span><span class="ty FIG">Fighting</span><span class="ty ROC">Rock</span>
+      <span class="themebadge">mountain martial artist · Lv 53–58</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">53</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Onix</span></div>
+      <div class="mon"><span class="lvl">54</span><span class="ty ROC">Roc</span><span class="ty GRD">Grd</span><span class="nm">Golem</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty FIG">Fig</span><span class="nm">Hitmonlee</span></div>
+      <div class="mon"><span class="lvl">55</span><span class="ty FIG">Fig</span><span class="nm">Hitmonchan</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty WTR">Wtr</span><span class="ty FIG">Fig</span><span class="nm">Poliwrath</span></div>
+      <div class="mon ace"><span class="lvl">58</span><span class="ty FIG">Fig</span><span class="nm">Machamp</span><span class="tag ace">ace</span> <span class="teratag">Tera Fighting</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Psychic and Fairy wall Fighting — but the Rock backbone (Onix, Golem) fires Stone Edge to snipe them, Poliwrath adds Water/Ice coverage, and Machamp's X Defend + Focus Energy make it a critting brick. A Flying or Grass answer handles the Rock/Fighting bodies; save a Psychic/Fairy hit that survives Stone Edge for the ace.</p>
+    <div class="aceline"><b>Machamp</b><span class="mv">Hi Jump Kick · Earthquake · Rock Slide · Focus Energy ↑crit</span></div>
+  </div>
+
+  <!-- AGATHA -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Agatha</span><span class="role">Elite Four · III</span>
+      <span class="arrow">·</span><span class="ty GHO">Ghost</span><span class="ty DRK">Dark</span>
+      <span class="themebadge">menacing sorceress · Lv 55–60</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">55</span><span class="ty GHO">Gho</span><span class="ty POI">Poi</span><span class="nm">Haunter</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty POI">Poi</span><span class="ty FLY">Fly</span><span class="nm">Golbat</span></div>
+      <div class="mon"><span class="lvl">56</span><span class="ty POI">Poi</span><span class="nm">Weezing</span></div>
+      <div class="mon"><span class="lvl">57</span><span class="ty POI">Poi</span><span class="nm">Muk</span></div>
+      <div class="mon"><span class="lvl">58</span><span class="ty POI">Poi</span><span class="nm">Arbok</span></div>
+      <div class="mon ace"><span class="lvl">60</span><span class="ty GHO">Gho</span><span class="ty POI">Poi</span><span class="nm">Gengar</span><span class="tag ace">ace</span> <span class="teratag">Tera Fairy</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>Her Dire Hit opener means early crits, and Hypnosis + Dark Pulse pressure your switches. The big trick: <strong>Gengar Teras to Fairy</strong>, so the Dark and Ghost hits you saved for it stop working — bring a Poison or Steel-type to close, and a Ground-type for the gas-Poisons before it.</p>
+    <div class="aceline"><b>Gengar</b><span class="mv">Shadow Ball · Sludge Bomb · Dark Pulse · Hypnosis slp</span></div>
+  </div>
+
+  <!-- LANCE -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Lance</span><span class="role">Elite Four · IV</span>
+      <span class="arrow">·</span><span class="ty DRG">Dragon</span><span class="ty FLY">Flying</span>
+      <span class="themebadge">dragon master · Lv 56–62</span></div>
+    <div class="roster">
+      <div class="mon"><span class="lvl">56</span><span class="ty DRG">Drg</span><span class="nm">Dragonair</span></div>
+      <div class="mon"><span class="lvl">57</span><span class="ty NOR">Nor</span><span class="ty FLY">Fly</span><span class="nm">Pidgeot</span></div>
+      <div class="mon"><span class="lvl">58</span><span class="ty WTR">Wtr</span><span class="ty FLY">Fly</span><span class="nm">Gyarados</span></div>
+      <div class="mon"><span class="lvl">58</span><span class="ty FIR">Fir</span><span class="ty FLY">Fly</span><span class="nm">Charizard</span></div>
+      <div class="mon"><span class="lvl">60</span><span class="ty ROC">Roc</span><span class="ty FLY">Fly</span><span class="nm">Aerodactyl</span></div>
+      <div class="mon ace"><span class="lvl">62</span><span class="ty DRG">Drg</span><span class="ty FLY">Fly</span><span class="nm">Dragonite</span><span class="tag ace">ace</span> <span class="teratag">Tera Stellar</span></div>
+    </div>
+    <p class="watch"><b>Watch</b>The team is stacked with Flying-types, so Electric and Ice tear through the first five — but they hit back with Air Slash, Crunch, and Thunder Wave. The catch: <strong>Dragonite Teras to Stellar and loses its 4× Ice weakness</strong>, so the Ice Beam that swept the room does little to the ace. Keep a Rock or Fairy-type — or just a very strong neutral hitter — in reserve to finish it.</p>
+    <div class="aceline"><b>Dragonite</b><span class="mv">Outrage · Air Slash · Ice Beam · Thunder Wave par</span></div>
+  </div>
+
+  <!-- CHAMPION -->
+  <div class="boss e4">
+    <div class="boss-head"><span class="name">Your Rival</span><span class="role">Champion</span>
+      <span class="arrow">·</span><span class="ty NOR">Mixed</span>
+      <span class="themebadge">a balanced ace team · Lv 59–65</span></div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">The final fight. Three of his six are fixed; the last three — and his ace — depend on <strong>what his Eevee became</strong>, which was decided by how your earlier battles against him played out. Whichever of the three teams you face, the shared core is the same:</p>
+    <div class="roster">
+      <div class="mon"><span class="lvl">59</span><span class="ty PSY">Psy</span><span class="nm">Alakazam</span></div>
+      <div class="mon"><span class="lvl">61</span><span class="ty GRD">Grd</span><span class="nm">Sandslash</span></div>
+      <div class="mon"><span class="lvl">61</span><span class="ty GRS">Grs</span><span class="ty PSY">Psy</span><span class="nm">Exeggutor</span></div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>His branch</th><th>Fills out with</th><th>Ace (Lv 65)</th></tr></thead>
+        <tbody>
+          <tr><td>Jolteon line</td><td>Cloyster 61 · Ninetales 63</td><td><span class="ty ELE">Ele</span> Jolteon · <span class="teratag" style="font-size:9px">Tera Electric</span></td></tr>
+          <tr><td>Flareon line</td><td>Magneton 61 · Cloyster 63</td><td><span class="ty FIR">Fir</span> Flareon · <span class="teratag" style="font-size:9px">Tera Fire</span></td></tr>
+          <tr><td>Vaporeon line</td><td>Ninetales 61 · Magneton 63</td><td><span class="ty WTR">Wtr</span> Vaporeon · <span class="teratag" style="font-size:9px">Tera Water</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="watch"><b>Watch</b>No type theme to exploit — this is a well-rounded team that covers its own weaknesses, opens with X Special, and Teras its Eeveelution ace into its own type for a 2× STAB threat. Alakazam and Exeggutor punish sloppy switches with Psychic; Sandslash sets up with Swords Dance. Bring answers to Psychic and to whichever Eeveelution he's carrying, and enough healing to grind through all six.</p>
+    <div class="aceline"><b>Jolteon (sample)</b><span class="mv">Thunderbolt · Low Kick · Thunder Wave par · Agility ↑Spe</span></div>
+  </div>
+</section>
+
+<!-- PREP -->
+<section style="border-bottom:none">
+  <h2><span class="n">06</span> How to prepare</h2>
+  <p class="lead">A few habits that carry you through every boss on this list.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">Balance &gt; counter</div><p>One hard counter gets switched around or Tera'd out of. Build a party that covers several angles.</p></div>
+    <div class="goal"><div class="k">Race, don't stall</div><p>Bosses never heal HP. Consistent chip damage always adds up — a stall war is one you can win.</p></div>
+    <div class="goal"><div class="k">Answer the ace last</div><p>Keep the Pokémon that beats the Tera'd ace in reserve; don't spend it clearing the early team.</p></div>
+    <div class="goal"><div class="k">Pack status insurance</div><p>Sleep, confusion, and crits show up on nearly every team. Full Heals and a bit of bulk smooth the variance.</p></div>
+  </div>
+</section>
+
+<footer>Chromatic Yellow · boss battle field guide · rosters &amp; movesets current as of the latest build — details may shift with tuning</footer>
+
+</div>

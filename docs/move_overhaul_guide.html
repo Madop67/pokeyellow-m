@@ -1,0 +1,291 @@
+<title>The New Move List — Chromatic Yellow</title>
+<style>
+  :root{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+    --phys:#b23a2e; --spec:#3660b0;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+      --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+      --line:#2c281f; --line-strong:#3a3527;
+      --accent:#eab53f; --accent-ink:#f0c463;
+      --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+      --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+      --phys:#e0685a; --spec:#7ea2e6;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+    --phys:#b23a2e; --spec:#3660b0;
+  }
+  :root[data-theme="dark"]{
+    --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+    --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+    --line:#2c281f; --line-strong:#3a3527;
+    --accent:#eab53f; --accent-ink:#f0c463;
+    --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+    --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+    --phys:#e0685a; --spec:#7ea2e6;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px 120px}
+  a{color:var(--accent-ink)}
+
+  /* ---- header ---- */
+  header.mast{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-ink);margin:0 0 14px;font-weight:600}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.04;margin:0;letter-spacing:-.02em;
+    text-wrap:balance;font-weight:800}
+  h1 .sub{display:block;font-size:clamp(15px,2.4vw,19px);font-weight:500;color:var(--muted);
+    letter-spacing:0;margin-top:14px;max-width:62ch}
+  .metaline{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:6px 18px}
+  .metaline b{color:var(--muted);font-weight:600}
+
+  /* ---- sections ---- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 6px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+  h2 .n{color:var(--accent);font-weight:700}
+  .lead{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+  p{margin:0 0 14px;max-width:66ch}
+  h3{font-size:16px;margin:26px 0 10px;font-weight:700;display:flex;align-items:center;gap:10px}
+  h3 .cat{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+    padding:3px 8px;border-radius:5px;font-weight:700}
+  h3 .cat.p{background:var(--phys);color:#fff}
+  h3 .cat.s{background:var(--spec);color:#fff}
+  strong{font-weight:700}
+  .mono{font-family:var(--mono)}
+
+  /* ---- goals grid ---- */
+  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:6px 0 0}
+  .goal{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px}
+  .goal .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:6px}
+  .goal p{font-size:14px;margin:0;color:var(--ink)}
+
+  /* ---- generic table ---- */
+  .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:4px 0 8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;background:var(--surface-2)}
+  tr:last-child td{border-bottom:none}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---- grid table (band matrix) ---- */
+  .grid table{font-size:13px}
+  .grid th,.grid td{padding:7px 10px;white-space:nowrap}
+  .grid td.mv{font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--ink)}
+  .grid th .bp{display:block;font-size:9.5px;color:var(--faint);font-weight:600;margin-top:2px}
+  .grid td:first-child{position:sticky;left:0;background:var(--surface);z-index:1}
+  .grid th:first-child{position:sticky;left:0;z-index:2}
+  .grid tr:nth-child(even) td{background:var(--surface-2)}
+  .grid tr:nth-child(even) td:first-child{background:var(--surface-2)}
+
+  /* ---- type chips ---- */
+  .ty{font-family:var(--mono);font-size:9.5px;letter-spacing:.03em;font-weight:700;
+    padding:2px 6px;border-radius:4px;text-transform:uppercase;line-height:1.4;white-space:nowrap;
+    display:inline-block;min-width:34px;text-align:center}
+  .ty.ROC{background:#c9b98e;color:#3a2f10}.ty.GRD{background:#dcc79a;color:#4a370c}
+  .ty.WTR{background:#a9cdea;color:#123a5c}.ty.ICE{background:#b6e0e4;color:#0f4650}
+  .ty.ELE{background:#f2d98a;color:#5a4400}.ty.STL{background:#c3c9d1;color:#2c3742}
+  .ty.GRS{background:#b3d8a3;color:#1e4415}.ty.FAI{background:#efc2d6;color:#5e1c3c}
+  .ty.POI{background:#cdaedd;color:#3d1554}.ty.SND{background:#e6cfa0;color:#4d3a0d}
+  .ty.PSY{background:#f2b6c1;color:#5c1526}.ty.FIR{background:#f3b892;color:#6a2a06}
+  .ty.FIG{background:#d9a58f;color:#54200e}.ty.GHO{background:#b3a4d0;color:#2c1c50}
+  .ty.DRK{background:#a79c93;color:#241c14}.ty.NOR{background:#d5cfc0;color:#3a352a}
+  .ty.FLY{background:#bcc9ea;color:#233258}.ty.BUG{background:#c3d093;color:#33420c}
+  .ty.DRG{background:#a9b6e6;color:#1f2a63}.ty.LGT{background:#f0e6a8;color:#5a5210}
+  @media (prefers-color-scheme:dark){.ty{filter:saturate(.82) brightness(.92)}}
+  :root[data-theme="dark"] .ty{filter:saturate(.82) brightness(.92)}
+  :root[data-theme="light"] .ty{filter:none}
+
+  /* ---- band legend ---- */
+  .bands{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:8px 0 4px}
+  .band{border:1px solid var(--line);border-radius:9px;padding:12px 14px;background:var(--surface)}
+  .band .bn{font-weight:800;font-size:15px;margin-bottom:2px}
+  .band .st{font-family:var(--mono);font-size:12px;color:var(--accent-ink);margin-bottom:6px}
+  .band p{font-size:13px;color:var(--muted);margin:0;max-width:none}
+
+  .callout{background:var(--surface-2);border:1px solid var(--line-strong);border-left:3px solid var(--accent);
+    border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14px}
+  .callout b{color:var(--accent-ink)}
+  .callout p{max-width:none}
+  .callout p+p{margin-top:8px}
+  ul.tight{margin:6px 0 14px;padding-left:20px}
+  ul.tight li{margin:5px 0;font-size:14.5px}
+  ul.tight li b{font-weight:700}
+  footer{padding:40px 0 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  @media (max-width:560px){.wrap{padding:0 16px 80px}h1{font-size:28px}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Pokémon Chromatic Yellow · Player's Guide</p>
+  <h1>The Move List, Rebuilt
+    <span class="sub">Kanto's attacks have been torn down and rebuilt from scratch — 225 moves, with every attacking type given a clean, predictable ladder of options. No more scraping by on off-type filler: whatever you're raising, it can hit hard, in its own type, at every stage of the game.</span>
+  </h1>
+  <div class="metaline">
+    <span><b>Total moves:</b> 225</span>
+    <span><b>Attacking types:</b> 20</span>
+    <span><b>Status moves:</b> all 55 kept</span>
+  </div>
+</header>
+
+<!-- WHAT CHANGED -->
+<section>
+  <h2><span class="n">01</span> What changed, and why you'll feel it</h2>
+  <p class="lead">In vanilla Yellow, half your team ended up spamming Normal-type Body Slam because their own type had nothing worth learning. That problem is gone.</p>
+  <p>The move list was redesigned as a <strong>grid</strong>: every one of the 20 attacking types now has exactly one move in each of eight slots — a weak, moderate, strong, and strongest option, in both a physical and a special flavor. That's a guaranteed 160-move backbone, so no matter what you're training, there's always sensible same-type damage available for its attacking stat, tuned to its level.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">A full ladder per type</div><p>Every attacking type climbs from a weak early move to a strongest late-game nuke — physical <em>and</em> special. Your STAB scales with you.</p></div>
+    <div class="goal"><div class="k">The new types can fight</div><p>Steel, Dark, Fairy, Sound, and Light aren't just labels — each got a complete attacking line, so you can build a real Fairy or Sound attacker.</p></div>
+    <div class="goal"><div class="k">No more two-turn dead time</div><p>Fly, Dig, Solarbeam, and Shadow Force strike in one turn, and Hyper Beam skips its recharge. Big moves are just big now.</p></div>
+    <div class="goal"><div class="k">All your status moves stayed</div><p>Every classic status move — Swords Dance, Thunder Wave, Recover, Toxic, Sleep Powder — is untouched (some retyped to fit the new chart).</p></div>
+  </div>
+</section>
+
+<!-- THE LADDER -->
+<section>
+  <h2><span class="n">02</span> How the power ladder works</h2>
+  <p class="lead">Each attacking type's four damage steps follow the same rules, so once you learn one type's ladder you know them all.</p>
+  <div class="bands">
+    <div class="band"><div class="bn">Weak</div><div class="st">40–50 BP · 100%</div><p>Your first STAB. Reliable, high PP, no strings — the move you lean on early and for finishing chip damage.</p></div>
+    <div class="band"><div class="bn">Moderate</div><div class="st">60–65 BP · 100%</div><p>The mid-game workhorse. Many carry a handy <strong>10% secondary</strong> — a flinch, a stat drop, a status chance.</p></div>
+    <div class="band"><div class="bn">Strong</div><div class="st">90 BP · 100%</div><p>Dependable heavy hitters that never miss. A few — the elemental punches, Ice Beam — keep a small 10% status rider.</p></div>
+    <div class="band"><div class="bn">Strongest</div><div class="st">120 BP · 85%</div><p>Your nukes. They can miss, and some carry recoil, but when they land they end things.</p></div>
+  </div>
+  <p style="margin-top:16px">The split between <strong style="color:var(--phys)">Physical</strong> and <strong style="color:var(--spec)">Special</strong> lines matters: pick the ladder that runs off your Pokémon's better attacking stat. A Machop wants the physical column; an Alakazam wants the special one. Every type gives you both.</p>
+  <div class="callout"><b>A note on accuracy.</b> Everything up through the Strong band lands 100% of the time — the fork also fixed the old Gen 1 glitch where "100%" moves could still randomly miss. Only the Strongest-band nukes trade accuracy (85%) for their raw power.</div>
+</section>
+
+<!-- PHYSICAL GRID -->
+<section>
+  <h2><span class="n">03</span> The complete arsenal</h2>
+  <p class="lead">Every attacking move in the game, by type and power. Find your Pokémon's type, then read across to see exactly what it can hit for at each stage.</p>
+
+  <h3><span class="cat p">Physical</span> Contact &amp; muscle — runs off Attack</h3>
+  <div class="tbl grid">
+    <table>
+      <thead><tr>
+        <th>Type</th>
+        <th>Weak<span class="bp">~40 BP</span></th>
+        <th>Moderate<span class="bp">~60 BP</span></th>
+        <th>Strong<span class="bp">90 BP</span></th>
+        <th>Strongest<span class="bp">120 BP</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td><span class="ty NOR">Nor</span></td><td class="mv">Tackle</td><td class="mv">Headbutt</td><td class="mv">Strength</td><td class="mv">Double-Edge</td></tr>
+        <tr><td><span class="ty FIG">Fig</span></td><td class="mv">Karate Chop</td><td class="mv">Low Kick</td><td class="mv">Hi Jump Kick</td><td class="mv">Submission</td></tr>
+        <tr><td><span class="ty FLY">Fly</span></td><td class="mv">Peck</td><td class="mv">Wing Attack</td><td class="mv">Drill Peck</td><td class="mv">Fly</td></tr>
+        <tr><td><span class="ty POI">Poi</span></td><td class="mv">Poison Sting</td><td class="mv">Cross Poison</td><td class="mv">Poison Jab</td><td class="mv">Gunk Shot</td></tr>
+        <tr><td><span class="ty GRD">Grd</span></td><td class="mv">Bone Club</td><td class="mv">Bulldoze</td><td class="mv">Earthquake</td><td class="mv">Dig</td></tr>
+        <tr><td><span class="ty ROC">Roc</span></td><td class="mv">Rock Throw</td><td class="mv">Rock Slide</td><td class="mv">Stone Edge</td><td class="mv">Head Smash</td></tr>
+        <tr><td><span class="ty BUG">Bug</span></td><td class="mv">Fury Cutter</td><td class="mv">Leech Life</td><td class="mv">X-Scissor</td><td class="mv">Megahorn</td></tr>
+        <tr><td><span class="ty GHO">Gho</span></td><td class="mv">Astonish</td><td class="mv">Lick</td><td class="mv">Shadow Claw</td><td class="mv">Shadow Force</td></tr>
+        <tr><td><span class="ty STL">Stl</span></td><td class="mv">Metal Claw</td><td class="mv">Iron Head</td><td class="mv">Meteor Mash</td><td class="mv">Iron Tail</td></tr>
+        <tr><td><span class="ty FIR">Fir</span></td><td class="mv">Flame Charge</td><td class="mv">Fire Fang</td><td class="mv">Fire Punch</td><td class="mv">Flare Blitz</td></tr>
+        <tr><td><span class="ty WTR">Wtr</span></td><td class="mv">Aqua Jet</td><td class="mv">Razor Shell</td><td class="mv">Waterfall</td><td class="mv">Crabhammer</td></tr>
+        <tr><td><span class="ty GRS">Grs</span></td><td class="mv">Vine Whip</td><td class="mv">Razor Leaf</td><td class="mv">Leaf Blade</td><td class="mv">Wood Hammer</td></tr>
+        <tr><td><span class="ty ELE">Ele</span></td><td class="mv">Nuzzle</td><td class="mv">Spark</td><td class="mv">Thunderpunch</td><td class="mv">Wild Charge</td></tr>
+        <tr><td><span class="ty PSY">Psy</span></td><td class="mv">Mind Spike</td><td class="mv">Psycho Cut</td><td class="mv">Zen Headbutt</td><td class="mv">Mind Crush</td></tr>
+        <tr><td><span class="ty ICE">Ice</span></td><td class="mv">Ice Shard</td><td class="mv">Ice Fang</td><td class="mv">Ice Punch</td><td class="mv">Icicle Crash</td></tr>
+        <tr><td><span class="ty DRG">Drg</span></td><td class="mv">Dragon Tail</td><td class="mv">Dragon Claw</td><td class="mv">Dragon Rush</td><td class="mv">Outrage</td></tr>
+        <tr><td><span class="ty DRK">Drk</span></td><td class="mv">Pursuit</td><td class="mv">Bite</td><td class="mv">Crunch</td><td class="mv">Night Slash</td></tr>
+        <tr><td><span class="ty FAI">Fai</span></td><td class="mv">Pixie Strike</td><td class="mv">Spirit Break</td><td class="mv">Play Rough</td><td class="mv">Star Smash</td></tr>
+        <tr><td><span class="ty SND">Snd</span></td><td class="mv">Echo Jab</td><td class="mv">Sonic Slam</td><td class="mv">Echo Crash</td><td class="mv">Sonic Smash</td></tr>
+        <tr><td><span class="ty LGT">Lgt</span></td><td class="mv">Glow Punch</td><td class="mv">Flash Kick</td><td class="mv">Prism Blade</td><td class="mv">Nova Strike</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><span class="cat s">Special</span> Beams &amp; blasts — runs off Special Attack</h3>
+  <div class="tbl grid">
+    <table>
+      <thead><tr>
+        <th>Type</th>
+        <th>Weak<span class="bp">~40 BP</span></th>
+        <th>Moderate<span class="bp">~60 BP</span></th>
+        <th>Strong<span class="bp">90 BP</span></th>
+        <th>Strongest<span class="bp">120 BP</span></th>
+      </tr></thead>
+      <tbody>
+        <tr><td><span class="ty NOR">Nor</span></td><td class="mv">Razor Wind</td><td class="mv">Tri Attack</td><td class="mv">Spiral Beam</td><td class="mv">Hyper Beam</td></tr>
+        <tr><td><span class="ty FIG">Fig</span></td><td class="mv">Vacuum Wave</td><td class="mv">Force Palm</td><td class="mv">Aura Sphere</td><td class="mv">Focus Blast</td></tr>
+        <tr><td><span class="ty FLY">Fly</span></td><td class="mv">Gust</td><td class="mv">Air Cutter</td><td class="mv">Air Slash</td><td class="mv">Hurricane</td></tr>
+        <tr><td><span class="ty POI">Poi</span></td><td class="mv">Acid</td><td class="mv">Sludge</td><td class="mv">Sludge Bomb</td><td class="mv">Sludge Wave</td></tr>
+        <tr><td><span class="ty GRD">Grd</span></td><td class="mv">Mud-Slap</td><td class="mv">Mud Bomb</td><td class="mv">Earth Power</td><td class="mv">Fissure</td></tr>
+        <tr><td><span class="ty ROC">Roc</span></td><td class="mv">Rock Blast</td><td class="mv">Ancientpower</td><td class="mv">Power Gem</td><td class="mv">Meteor Beam</td></tr>
+        <tr><td><span class="ty BUG">Bug</span></td><td class="mv">Infestation</td><td class="mv">Silver Wind</td><td class="mv">Bug Buzz</td><td class="mv">Locust Storm</td></tr>
+        <tr><td><span class="ty GHO">Gho</span></td><td class="mv">Ominous Wind</td><td class="mv">Hex</td><td class="mv">Shadow Ball</td><td class="mv">Spirit Blast</td></tr>
+        <tr><td><span class="ty STL">Stl</span></td><td class="mv">Metal Shard</td><td class="mv">Mirror Shot</td><td class="mv">Flash Cannon</td><td class="mv">Steel Beam</td></tr>
+        <tr><td><span class="ty FIR">Fir</span></td><td class="mv">Ember</td><td class="mv">Flame Burst</td><td class="mv">Flamethrower</td><td class="mv">Fire Blast</td></tr>
+        <tr><td><span class="ty WTR">Wtr</span></td><td class="mv">Water Gun</td><td class="mv">Bubblebeam</td><td class="mv">Surf</td><td class="mv">Hydro Pump</td></tr>
+        <tr><td><span class="ty GRS">Grs</span></td><td class="mv">Leafage</td><td class="mv">Mega Drain</td><td class="mv">Energy Ball</td><td class="mv">Solarbeam</td></tr>
+        <tr><td><span class="ty ELE">Ele</span></td><td class="mv">Thundershock</td><td class="mv">Shock Wave</td><td class="mv">Thunderbolt</td><td class="mv">Thunder</td></tr>
+        <tr><td><span class="ty PSY">Psy</span></td><td class="mv">Confusion</td><td class="mv">Psybeam</td><td class="mv">Psychic</td><td class="mv">Psycho Boost</td></tr>
+        <tr><td><span class="ty ICE">Ice</span></td><td class="mv">Powder Snow</td><td class="mv">Icy Wind</td><td class="mv">Ice Beam</td><td class="mv">Blizzard</td></tr>
+        <tr><td><span class="ty DRG">Drg</span></td><td class="mv">Twister</td><td class="mv">Dragonbreath</td><td class="mv">Dragon Pulse</td><td class="mv">Draco Meteor</td></tr>
+        <tr><td><span class="ty DRK">Drk</span></td><td class="mv">Snarl</td><td class="mv">Night Ray</td><td class="mv">Dark Pulse</td><td class="mv">Dark Storm</td></tr>
+        <tr><td><span class="ty FAI">Fai</span></td><td class="mv">Fairy Wind</td><td class="mv">Drain Kiss</td><td class="mv">Dazzle Gleam</td><td class="mv">Moonblast</td></tr>
+        <tr><td><span class="ty SND">Snd</span></td><td class="mv">Sonicboom</td><td class="mv">Round</td><td class="mv">Hyper Voice</td><td class="mv">Boomburst</td></tr>
+        <tr><td><span class="ty LGT">Lgt</span></td><td class="mv">Light Ray</td><td class="mv">Aurora Beam</td><td class="mv">Photon Beam</td><td class="mv">Supernova</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:6px">Tables scroll sideways on narrow screens. A handful of moves carry small extras: <span class="mono">Fissure</span> is now just a 120-power Ground special (not a one-hit-KO), the elemental punches and Ice Beam keep a 10% status chance, and recoil moves like Double-Edge, Flare Blitz, and Wild Charge trade a little of your own HP for their power.</p>
+</section>
+
+<!-- OUTSIDE THE GRID -->
+<section>
+  <h2><span class="n">04</span> The moves that break the pattern</h2>
+  <p class="lead">A few favorites sit outside the ladder because their quirks are the whole point — they were kept exactly for that.</p>
+  <ul class="tight">
+    <li><b>Quick Attack, Aqua Jet &amp; Ice Shard</b> — priority strikes that go before the opponent (fastest wins if both sides use one), perfect for finishing off a weakened foe.</li>
+    <li><b>Explosion</b> — go out with a bang: enormous damage, but the user faints.</li>
+    <li><b>Counter</b> — throws a physical hit back at double strength. It now answers <em>any</em> physical move, not just Normal/Fighting.</li>
+    <li><b>Seismic Toss &amp; Night Shade</b> — deal damage equal to the user's level, ignoring stats and type matchups. Steady, unresisted chip.</li>
+    <li><b>Swift</b> — never misses, ever, no matter how much the target boosts evasion.</li>
+    <li><b>Pay Day</b> — throws coins for extra money after the battle.</li>
+    <li><b>Slash, Razor Leaf, Karate Chop, Crabhammer, Stone Edge, Night Slash</b> — the high-crit club: these land critical hits far more often than normal.</li>
+  </ul>
+  <div class="callout">
+    <p><b>The type chart shifted underneath the moves, too.</b> Several familiar attacks were retyped to match the fork's expanded chart, so double-check what your old staples actually do now:</p>
+    <p><span class="mono">Karate Chop</span> is Fighting · <span class="mono">Bite</span> &amp; <span class="mono">Crunch</span> are Dark · <span class="mono">Gust</span> is Flying · <span class="mono">Growl</span> &amp; <span class="mono">Screech</span> are Sound · <span class="mono">Flash</span> is Light · <span class="mono">Sand-Attack</span> is Ground. Their effects are the same — only the type moved.</p>
+  </div>
+</section>
+
+<!-- BUILDING -->
+<section style="border-bottom:none">
+  <h2><span class="n">05</span> Building a team with the new list</h2>
+  <p class="lead">A few habits that make the most of the rebuilt movepool.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">Match the stat</div><p>Check whether your Pokémon leans Attack or Special Attack, then pick that type's column. Running Special moves off a physical body wastes the new ladder.</p></div>
+    <div class="goal"><div class="k">STAB first, coverage second</div><p>Slot your best same-type move, then use a second type to cover what walls it — the grid guarantees you a clean option in almost any type.</p></div>
+    <div class="goal"><div class="k">Keep one status move</div><p>Swords Dance, Thunder Wave, Recover, and the powders all survived intact. A single setup or control move turns a good sweeper into a great one.</p></div>
+    <div class="goal"><div class="k">Mind the recoil &amp; accuracy</div><p>The 120-power nukes can miss (85%) and some cost you HP. Carry a reliable Strong-band move for when you can't afford the gamble.</p></div>
+  </div>
+</section>
+
+<footer>Chromatic Yellow · move list field guide · 225 moves · stats current as of the latest build — see docs/pokemon_reference.md for full per-move detail</footer>
+
+</div>

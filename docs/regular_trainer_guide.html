@@ -1,0 +1,469 @@
+<title>Route Trainer Field Guide — Chromatic Yellow</title>
+<style>
+  :root{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+      --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+      --line:#2c281f; --line-strong:#3a3527;
+      --accent:#eab53f; --accent-ink:#f0c463;
+      --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+      --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f2e8; --surface:#fffdf6; --surface-2:#fbf7ec;
+    --ink:#221f18; --muted:#6c6458; --faint:#948b7a;
+    --line:#e6ddca; --line-strong:#d8cdb2;
+    --accent:#cf8f10; --accent-ink:#8a5c00;
+    --boss:#b23a2e; --good:#3f7d4e; --good-bg:#e7f0e4;
+    --new:#b5741a; --new-bg:#f6ecd7; --ace-bg:#fbf0cf;
+  }
+  :root[data-theme="dark"]{
+    --bg:#12110d; --surface:#1b1913; --surface-2:#211e16;
+    --ink:#ece6d7; --muted:#a39a86; --faint:#7d745f;
+    --line:#2c281f; --line-strong:#3a3527;
+    --accent:#eab53f; --accent-ink:#f0c463;
+    --boss:#e0685a; --good:#6cbd80; --good-bg:#1c2a1d;
+    --new:#e0a24a; --new-bg:#2a2417; --ace-bg:#2c2610;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+  a{color:var(--accent-ink)}
+
+  /* ---- header ---- */
+  header.mast{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-ink);margin:0 0 14px;font-weight:600}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.04;margin:0;letter-spacing:-.02em;
+    text-wrap:balance;font-weight:800}
+  h1 .sub{display:block;font-size:clamp(15px,2.4vw,19px);font-weight:500;color:var(--muted);
+    letter-spacing:0;margin-top:14px;max-width:62ch}
+  .metaline{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:22px;
+    display:flex;flex-wrap:wrap;gap:6px 18px}
+  .metaline b{color:var(--muted);font-weight:600}
+
+  /* ---- sections ---- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 6px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+  h2 .n{color:var(--accent);font-weight:700}
+  .lead{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+  p{margin:0 0 14px;max-width:66ch}
+  h3{font-size:16px;margin:26px 0 10px;font-weight:700}
+  strong{font-weight:700}
+  .mono{font-family:var(--mono)}
+
+  /* ---- goals grid ---- */
+  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:6px 0 0}
+  .goal{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:14px 15px}
+  .goal .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent-ink);margin-bottom:6px}
+  .goal p{font-size:14px;margin:0;color:var(--ink)}
+
+  /* ---- rule list ---- */
+  ol.rules{counter-reset:r;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  ol.rules li{counter-increment:r;position:relative;padding:14px 16px 14px 52px;
+    background:var(--surface);border:1px solid var(--line);border-radius:9px}
+  ol.rules li::before{content:counter(r,decimal-leading-zero);position:absolute;left:16px;top:13px;
+    font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+  ol.rules li b{display:block;margin-bottom:2px}
+  ol.rules li span{font-size:14px;color:var(--muted)}
+
+  /* ---- generic table ---- */
+  .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:9px;margin:4px 0 8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;background:var(--surface-2)}
+  tr:last-child td{border-bottom:none}
+  td.lv{font-family:var(--mono);color:var(--accent-ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tnum{font-variant-numeric:tabular-nums}
+  .tier{font-family:var(--mono);font-size:10px;letter-spacing:.04em;text-transform:uppercase;
+    padding:2px 7px;border-radius:20px;font-weight:700;white-space:nowrap;border:1px solid var(--line-strong)}
+  .tier.t1{background:var(--surface-2);color:var(--muted)}
+  .tier.t2{background:var(--new-bg);color:var(--new)}
+  .tier.t3{background:var(--good-bg);color:var(--good)}
+  .tier.t4{background:var(--ace-bg);color:var(--accent-ink);border-color:var(--accent)}
+
+  /* ---- region cards ---- */
+  .region{background:var(--surface);border:1px solid var(--line-strong);border-radius:12px;
+    padding:18px 20px 16px;margin:14px 0}
+  .region-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
+    padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+  .region-head .name{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .region-head .lv{font-family:var(--mono);font-size:12px;color:var(--accent-ink);margin-left:auto;
+    font-variant-numeric:tabular-nums}
+  .region-head .where{flex-basis:100%;font-size:13.5px;color:var(--muted);margin-top:2px;max-width:74ch}
+  .rstats{display:flex;flex-wrap:wrap;gap:6px}
+  .stat{font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:20px;
+    background:var(--surface-2);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  .stat b{color:var(--ink);font-weight:700}
+  .watch{font-size:13.5px;color:var(--muted);margin:12px 0 2px;padding:10px 12px;
+    background:var(--surface-2);border:1px solid var(--line);border-left:3px solid var(--boss);border-radius:8px}
+  .watch b{color:var(--boss);font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;margin-right:8px}
+  .ba{margin-top:13px;display:flex;flex-direction:column;gap:9px}
+  .ba .row{background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .ba .who{font-size:13.5px;font-weight:700;margin-bottom:7px;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline}
+  .ba .who .cls{font-family:var(--mono);font-size:10.5px;color:var(--faint);font-weight:600;
+    text-transform:uppercase;letter-spacing:.05em}
+  .ba .who .lvl{font-family:var(--mono);font-size:11px;color:var(--accent-ink)}
+  .ba .line{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:baseline;padding:2px 0}
+  .ba .k{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding-top:1px}
+  .ba .k.b{color:var(--boss)}.ba .k.a{color:var(--good)}
+  .ba .mv{font-family:var(--mono);font-size:12.5px;line-height:1.5}
+  .ba .mv.before{color:var(--muted)}.ba .mv.after{color:var(--ink)}
+  .ba .mv .up{color:var(--good);font-weight:700}
+
+  .callout{background:var(--surface-2);border:1px solid var(--line-strong);border-left:3px solid var(--accent);
+    border-radius:8px;padding:14px 16px;margin:16px 0;font-size:14px}
+  .callout b{color:var(--accent-ink)}
+  footer{padding:40px 0 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+  @media (max-width:560px){.wrap{padding:0 16px 80px}h1{font-size:28px}}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Pokémon Chromatic Yellow · Trainer's Field Guide</p>
+  <h1>Route Trainers: No More Free Wins
+    <span class="sub">The bosses were only half the story. Every ordinary trainer in Kanto — bug catchers, hikers, swimmers, the lot — now fields a real four-move set and picks their attacks with actual battle sense. The one-move Magikarp is dead. Here's what changed, and what to watch for from Viridian Forest to Victory Road.</span>
+  </h1>
+  <div class="metaline">
+    <span><b>Covers:</b> ~300 regular-trainer battles · 24 trainer classes</span>
+    <span><b>Companion to:</b> <span class="mono">boss_battle_guide.html</span></span>
+  </div>
+</header>
+
+<!-- WHAT CHANGED -->
+<section>
+  <h2><span class="n">01</span> The filler is gone</h2>
+  <p class="lead">In the original game, the trainer between you and the next town was mostly a speed bump — a Pokémon with one move, or two, or four moves that made no sense together. Not anymore.</p>
+  <div class="goals">
+    <div class="goal"><div class="k">Four real moves</div><p>Every Pokémon whose learnset can support it now carries <strong>four deliberate moves</strong> — a STAB attack, coverage, and often a stat or status trick — drawn from what that species can actually learn.</p></div>
+    <div class="goal"><div class="k">Smarter targeting</div><p>Even the lowliest bug catcher now <strong>reads the type matchup</strong> and reaches for the move that hurts you, instead of firing at random.</p></div>
+    <div class="goal"><div class="k">Level-appropriate</div><p>The power is capped by level, so early routes stay early. A Route 3 mon won't suddenly hit you with a 120-power nuke — that's saved for the endgame.</p></div>
+    <div class="goal"><div class="k">Still below the bosses</div><p>Regular trainers keep their <strong>original teams, levels, and no items</strong>. They're sharper, not scaled up — a clear tier under the Gym Leaders.</p></div>
+  </div>
+  <p style="margin-top:18px">The short version: you can no longer autopilot through routes by spamming your strongest attack. A team of "weak" trainers can now chip you down between Pokémon Centers, land a paralysis you didn't expect, or set up a sweep if you ignore them. Heal more often, and stop underestimating the small fights.</p>
+</section>
+
+<!-- AI -->
+<section>
+  <h2><span class="n">02</span> How the new trainer AI thinks</h2>
+  <p class="lead">The upgrade isn't just better movesets — it's better decisions. Every trainer now runs at least a baseline "battle brain," and some classes run a lot more than that.</p>
+  <ol class="rules">
+    <li><b>They don't waste a status move that can't work</b><span>A trainer won't try to poison your Poison- or Steel-type, paralyze your Electric-type, put a Ground-type to sleep with an Electric move, or Leech Seed your Grass-type. If a status can't land, they reach for something that can.</span></li>
+    <li><b>They lean into super-effective hits</b><span>Every trainer now weighs the type matchup: they favor moves that are super-effective against your active Pokémon (and favor them <em>more</em> against a double weakness), and they steer away from resisted attacks. Moves you're outright immune to are dropped entirely.</span></li>
+    <li><b>Some classes love to set up</b><span>A handful of "brainy" classes — Poké Maniacs, Super Nerds, Psychics, Scientists, Gentlemen — are nudged toward stat-boosts and tricky status moves. Expect a Meditate, an Agility, a Sand-Attack before the real damage starts.</span></li>
+    <li><b>A few will actually act on the battlefield</b><span>Jugglers <strong>switch Pokémon</strong> to dodge a bad matchup. Black Belts pop an <strong>X Attack</strong> to hit harder. These aren't bosses, but they'll spend a turn to gain an edge — don't assume a route trainer will just stand there and trade.</span></li>
+    <li><b>Cool Trainers fight like mini-bosses</b><span>The Cool Trainers guarding Victory Road get the <strong>full boss AI package</strong>: best-damage move selection, an opening X-item, status cures, and a switch out of bad matchups. Treat them with the same respect you'd give a Gym junior — because mechanically, that's what they are.</span></li>
+  </ol>
+
+  <h3>Battle-smarts by trainer class</h3>
+  <p>Every class listed runs the type-aware fundamentals from rules 1&amp;2. The badge shows how much <em>extra</em> brain each one brings on top.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Trainer class</th><th>Extra AI</th><th>What it means in the fight</th></tr></thead>
+      <tbody>
+        <tr><td>Youngster · Lass · Bug Catcher · Hiker · Biker · Fisher · Swimmer · Cue Ball · Gambler · Beauty · Rocker · Tamer · Bird Keeper · Sailor · Jr. Trainer ♂/♀ · Burglar · Engineer · Rocket · Channeler</td><td><span class="tier t1">Fundamentals</span></td><td>Type-aware move choice, no wasted status. They just play their moveset honestly and well.</td></tr>
+        <tr><td>Poké Maniac · Super Nerd · Psychic · Scientist · Gentleman · Chief</td><td><span class="tier t2">+ Setup</span></td><td>Also biased toward stat-boost and status moves — they'll try to buff or cripple you first.</td></tr>
+        <tr><td>Juggler</td><td><span class="tier t3">+ Switches</span></td><td>Will pivot to a better Pokémon (up to 3×) if the matchup turns against them.</td></tr>
+        <tr><td>Black Belt</td><td><span class="tier t3">+ X Attack</span></td><td>Buffs its own Attack (up to twice) — its Fighting hits ramp fast if you stall.</td></tr>
+        <tr><td>Cool Trainer ♂/♀</td><td><span class="tier t4">Boss-tier</span></td><td>Full boss brain: expected-damage targeting, opening X-item, status cures, matchup switching.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout"><b>What they still don't do.</b> Regular trainers never restore HP — there's no Full Restore stalling out here, so chip damage always sticks. And apart from the Cool Trainers, they don't get the bosses' full six-mon teams, dual-type rosters, or Terastallizing aces. For all of that, see the <span class="mono">Boss Battle Field Guide</span>.</div>
+</section>
+
+<!-- RUN-THROUGH -->
+<section>
+  <h2><span class="n">03</span> The run-through, route by route</h2>
+  <p class="lead">Ten stretches of Kanto in the order you'll walk them. Each card shows how many trainers wait there, who to actually respect, and a couple of real "before → after" upgrades so you can see the difference for yourself.</p>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Pewter &amp; the Northwest</span>
+      <span class="lv">Lv 6–31</span>
+      <span class="where">Viridian Forest bug catchers, then the Route 3 → Mt. Moon → Route 4 climb toward Cerulean. Your first taste of trainers who fight back.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>27</b> trainers</span>
+      <span class="stat"><b>61</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Mt. Moon's Super Nerds — their Magnemite line now carries Thunder Wave to paralyze before it chips you. Don't let a "harmless" Magnemite set the tempo.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Magnemite</span><span class="lvl">Lv 11</span><span class="cls">Super Nerd · Mt. Moon 1F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Shock Wave</span> · <span class='up'>Swift</span> · <span class='up'>Thunder Wave</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Onix</span><span class="lvl">Lv 10</span><span class="cls">Hiker · Mt. Moon 1F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Screech</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · Screech · <span class='up'>Counter</span> · <span class='up'>Double Team</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Cerulean &amp; Nugget Bridge</span>
+      <span class="lv">Lv 13–19</span>
+      <span class="where">The Nugget Bridge gauntlet and the Cerulean Gym juniors. Short teams — but every mon now presses with coverage instead of Tail Whip.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>18</b> trainers</span>
+      <span class="stat"><b>36</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> the Jr. Trainers' Water mons picking up Bubblebeam — the free switch-ins you relied on at Nugget Bridge now take real chip. Keep something healthy for the Rocket at the end.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Goldeen</span><span class="lvl">Lv 19</span><span class="cls">Jr. Trainer ♀ · Cerulean Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Peck · Tail Whip · Supersonic</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Peck · <span class='up'>Swift</span> · Supersonic · <span class='up'>Bubblebeam</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Onix</span><span class="lvl">Lv 17</span><span class="cls">Hiker · Route 25</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Screech · Headbutt</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · Screech · Headbutt · <span class='up'>Rock Slide</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Vermilion &amp; the S.S. Anne</span>
+      <span class="lv">Lv 16–24</span>
+      <span class="where">The luxury liner and Vermilion City. Butterfree trades its redundant powder stack for offense; the gym's Sailors punch with coverage.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>34</b> trainers</span>
+      <span class="stat"><b>67</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Sailors' Machop line — Karate Chop plus Rock Slide and Counter means your Flying and Psychic switch-ins aren't automatically safe. Counter punishes a greedy physical hit.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Butterfree</span><span class="lvl">Lv 20</span><span class="cls">Bug Catcher · Route 6</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Poisonpowder · Stun Spore · Sleep Powder · Supersonic</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'><span class='up'>Infestation</span> · <span class='up'>Confusion</span> · Sleep Powder · <span class='up'>Mega Drain</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Machop</span><span class="lvl">Lv 20</span><span class="cls">Sailor · S.S. Anne B1F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Karate Chop · Low Kick</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Karate Chop · Low Kick · <span class='up'>Rock Slide</span> · <span class='up'>Counter</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Rock Tunnel &amp; the East Coast</span>
+      <span class="lv">Lv 18–30</span>
+      <span class="where">Routes 9 and 10 and the pitch-black Rock Tunnel — fought without a Flash-lit map if you skipped it. A two-move Beedrill now has a win condition.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>29</b> trainers</span>
+      <span class="stat"><b>69</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Bug Catchers running Swords Dance on Beedrill — leave it in the dark for two turns and it doubles its Attack. In a tunnel with no healing nearby, that snowballs. Kill it fast.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Beedrill</span><span class="lvl">Lv 19</span><span class="cls">Bug Catcher · Route 9</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Focus Energy</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Swords Dance</span> · <span class='up'>Cut</span> · <span class='up'>Mega Drain</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Lickitung</span><span class="lvl">Lv 30</span><span class="cls">Poké Maniac · Route 10</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Supersonic · Headbutt · Disable · Defense Curl</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Supersonic · Headbutt · <span class='up'>Bubblebeam</span> · <span class='up'>Tackle</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Lavender, Pokémon Tower &amp; Route 8</span>
+      <span class="lv">Lv 19–27</span>
+      <span class="where">The Rocket-occupied tower and the Saffron approach. Channelers' ghosts keep their status game but finally gain a way to deal damage.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>23</b> trainers</span>
+      <span class="stat"><b>44</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Channeler Gastly — Night Shade and Confuse Ray were always annoying, but now Mega Drain means it can chip and heal while you fumble through confusion. Bring a status-immune answer.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Poliwag</span><span class="lvl">Lv 22</span><span class="cls">Gambler · Route 8</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Water Gun · Hypnosis</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Water Gun · Hypnosis · <span class='up'>Counter</span> · <span class='up'>Bubblebeam</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Gastly</span><span class="lvl">Lv 22</span><span class="cls">Channeler · Pokémon Tower 6F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Lick · Night Shade · Confuse Ray</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Lick · Night Shade · Confuse Ray · <span class='up'>Mega Drain</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Celadon &amp; Team Rocket</span>
+      <span class="lv">Lv 17–34</span>
+      <span class="where">Celadon Gym, the Game Corner hideout, and the Cycling Road bikers. The signature poison mons finally hit hard and wide.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>37</b> trainers</span>
+      <span class="stat"><b>90</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Cycling Road Bikers' Muk — Sludge Bomb is now a genuine threat with real power behind it, backed by Strength and Hyper Voice for coverage. The days of walling Grimer with any Ground-type are over.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Grimer</span><span class="lvl">Lv 29</span><span class="cls">Biker · Route 16</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Disable</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Counter</span> · <span class='up'>Mega Drain</span> · <span class='up'>Shock Wave</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Muk</span><span class="lvl">Lv 33</span><span class="cls">Biker · Route 17</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Disable · Poison Gas · Minimize</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Tackle · <span class='up'>Sludge Bomb</span> · <span class='up'>Strength</span> · <span class='up'>Hyper Voice</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Southern Routes &amp; Fuchsia</span>
+      <span class="lv">Lv 21–38</span>
+      <span class="where">The long southern belt (Routes 12–15), the Fuchsia Gym, and the Fighting Dojo — the single biggest block of trainers in the game.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>48</b> trainers</span>
+      <span class="stat"><b>128</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> the Fighting Dojo's Black Belts — they now open with X Attack <em>and</em> carry coverage like Stone Edge and Aura Sphere on their Hitmons. Give them two free turns and even your Psychic answer gets blown through. Jugglers here will switch on you, too.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Hitmonlee</span><span class="lvl">Lv 37</span><span class="cls">Black Belt · Fighting Dojo</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Low Kick · Meditate</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Low Kick · Meditate · <span class='up'>Stone Edge</span> · <span class='up'>Aura Sphere</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Hypno</span><span class="lvl">Lv 38</span><span class="cls">Juggler · Fuchsia Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Psybeam · Headbutt · Poison Gas · Psychic</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Psybeam · Headbutt · <span class='up'>Hypnosis</span> · Psychic</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">Saffron &amp; Silph Co.</span>
+      <span class="lv">Lv 25–38</span>
+      <span class="where">Eleven floors of Silph Co. Rockets and the Saffron Gym psychics. Slowbro swaps Growl and Withdraw for a paralysis package.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>37</b> trainers</span>
+      <span class="stat"><b>98</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Saffron Gym Psychics — they're a Setup-tier class, so expect Thunder Wave to land before the Psychic damage even starts. Paralysis on your sweeper mid-Silph-Co. is a long walk back to a Center.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Slowbro</span><span class="lvl">Lv 38</span><span class="cls">Psychic · Saffron Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Bubblebeam · Growl · Psybeam · Withdraw</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Bubblebeam · <span class='up'>Confusion</span> · Psybeam · <span class='up'>Thunder Wave</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Mr. Mime</span><span class="lvl">Lv 34</span><span class="cls">Rocket · Silph Co. 7F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Psybeam · Light Screen · Drain Kiss · Tackle</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Psybeam · <span class='up'>Confusion</span> · Drain Kiss · <span class='up'>Thunder Wave</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">The Sea &amp; Cinnabar</span>
+      <span class="lv">Lv 27–41</span>
+      <span class="where">Southern sea routes, the Pokémon Mansion, and the Cinnabar Gym. Fire mons drop Growl and Tail Whip for a real STAB spread.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>41</b> trainers</span>
+      <span class="stat"><b>106</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Swimmers on the sea routes — a swarm of them between islands, each Tentacool/Tentacruel now leading with real STAB. There's no Center out on the water, so heal before you Surf and count your PP.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Rapidash</span><span class="lvl">Lv 41</span><span class="cls">Super Nerd · Cinnabar Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Headbutt · Growl · Tail Whip · Flame Burst</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Headbutt · <span class='up'>Ember</span> · <span class='up'>Flamethrower</span> · Flame Burst</div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Tentacruel</span><span class="lvl">Lv 27</span><span class="cls">Swimmer · Route 19</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Tackle · Supersonic · Poison Sting · Bubblebeam</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'><span class='up'>Acid</span> · Supersonic · Poison Sting · Bubblebeam</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="region">
+    <div class="region-head">
+      <span class="name">The Endgame</span>
+      <span class="lv">Lv 38–48</span>
+      <span class="where">Viridian Gym's ground specialists, the Route 22 rematch turf, and Victory Road. The toughest regular trainers in the game — one step below the Elite Four.</span>
+    </div>
+    <div class="rstats">
+      <span class="stat"><b>19</b> trainers</span>
+      <span class="stat"><b>45</b> Pokémon</span>
+    </div>
+    <div class="watch"><b>Watch for</b> Victory Road's Cool Trainers — these run the <em>full boss AI</em>: they target the best move, buff with an X-item on send-out, cure their own status, and switch out of bad matchups. Fight them like Gym juniors, not route filler. Viridian's Tamers now pack Stone Edge and Earthquake on their Rhyhorn line, too.</div>
+    <div class="ba">
+      <div class="row">
+        <div class="who"><span>Rhyhorn</span><span class="lvl">Lv 43</span><span class="cls">Tamer · Viridian Gym</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Headbutt · Bone Club · Tail Whip</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'>Headbutt · Bone Club · <span class='up'>Stone Edge</span> · <span class='up'>Earthquake</span></div></div>
+      </div>
+      <div class="row">
+        <div class="who"><span>Persian</span><span class="lvl">Lv 44</span><span class="cls">Tamer · Victory Road 2F</span></div>
+        <div class="line"><span class="k b">was</span><div class='mv before'>Pay Day · Headbutt · Slash · Strength</div></div>
+        <div class="line"><span class="k a">now</span><div class='mv after'><span class='up'>Bite</span> · Headbutt · <span class='up'>Screech</span> · Strength</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout"><b>Reading the cards.</b> <span class="up mono" style="color:var(--good);font-weight:700">Highlighted</span> moves are the slots the overhaul changed; plain moves were already there and kept. A few upgrades look modest — a Counter, a Tackle — because some species simply have thin move pools, and the overhaul never hands a low-level mon a move above its level. The complete, per-Pokémon set for every trainer in the game lives in <span class="mono">docs/trainer_reference.md</span>.</div>
+</section>
+
+<!-- TIPS -->
+<section>
+  <h2><span class="n">04</span> Adjusting your habits</h2>
+  <p class="lead">Nothing here is unfair — but the old reflexes will get you chipped down. A few adjustments carry you through Kanto comfortably.</p>
+  <ol class="rules">
+    <li><b>Heal between fights, not between towns</b><span>Route trainers now do real cumulative damage. Topping off at the Center on the way out isn't enough for a long route — carry Potions and use them.</span></li>
+    <li><b>Respect the setup classes</b><span>Against Poké Maniacs, Super Nerds, Psychics, and Black Belts, don't give a free turn. If they're about to boost or paralyze, hit first or switch to something that doesn't care.</span></li>
+    <li><b>Don't over-commit your hard counter</b><span>Jugglers and Cool Trainers switch. Leading with your one perfect answer can just chase them into their check — sometimes it's better to bait the pivot, then bring it in.</span></li>
+    <li><b>Bring coverage, not a single sweeper</b><span>Because every trainer now reads the matchup and answers your type, a one-Pokémon run gets worn down. A balanced party with two or three offensive types is the smooth path.</span></li>
+    <li><b>Mind your PP on the long stretches</b><span>Rock Tunnel, the sea routes, Victory Road — no Centers, lots of trainers, all now demanding real attacks. Ethers and a second attacking move matter more than they used to.</span></li>
+  </ol>
+</section>
+
+<footer>
+  Pokémon Chromatic Yellow — Route Trainer Field Guide · player companion to <span class="mono">trainer_overhaul_phase4.html</span> ·
+  full per-trainer data in <span class="mono">docs/trainer_reference.md</span>
+</footer>
+
+</div>
