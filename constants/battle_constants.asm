@@ -90,6 +90,12 @@ DEF SPDSPCDV_TRAINER EQU $88
 DEF BIT_STAB_DAMAGE EQU 7
 DEF EFFECTIVENESS_MASK EQU %01111111
 
+; wTeraState bit flags
+	const_def
+	const BIT_TERA_PLAYER_DONE    ; 0 ; player already terastallized this battle
+	const BIT_TERA_PLAYER_PENDING ; 1 ; player terastallizes when their move executes
+	const BIT_TERA_ENEMY_DONE     ; 2 ; enemy trainer already terastallized this battle
+
 ; wPlayerBattleStatus1 or wEnemyBattleStatus1 bit flags
 	const_def
 	const STORING_ENERGY           ; 0 ; Bide

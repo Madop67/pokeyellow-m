@@ -34,6 +34,8 @@ rsset MON_TYPE
 DEF MON_TYPE1      rb
 DEF MON_TYPE2      rb
 DEF MON_CATCH_RATE rb
+; the legacy catch-rate byte ("held item in gen 2") is repurposed to store the Tera Type
+DEF MON_TERA_TYPE  EQU MON_CATCH_RATE
 DEF MON_MOVES      rb NUM_MOVES
 DEF MON_OTID       rw
 DEF MON_EXP        rb 3

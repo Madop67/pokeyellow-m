@@ -12,6 +12,7 @@ MACRO box_struct
 \1Type::
 \1Type1::      db
 \1Type2::      db
+\1TeraType::   ; the legacy catch-rate byte ("held item in gen 2") stores the Tera Type
 \1CatchRate::  db
 \1Moves::      ds NUM_MOVES
 \1OTID::       dw

@@ -171,6 +171,20 @@ authoritative, generated summary):
 - **Fixed vanilla bugs/quirks** — the 1/256-miss glitch (100%-accuracy moves can't miss),
   Steel can't be poisoned / Electric can't be paralyzed, Exp. All no longer halves the
   enemy's base stats/catch rate, and `GetName` no longer corrupts names for ids ≥ $C4.
+- **Terastallization** — Gen 9 mechanic: per-mon Tera Type stored in the repurposed
+  legacy catch-rate byte (`MON_TERA_TYPE EQU MON_CATCH_RATE`; default = primary type,
+  set in `_AddPartyMon`/`ItemUseBall`'s box path), changed via SELECT on the status
+  screen (`engine/pokemon/tera_picker.asm`, bank4). Battle logic in
+  `engine/battle/tera.asm` ("Battle Engine 9") + hooks in `core.asm`: START on the
+  move menu toggles a pending flag, applied in `ExecutePlayerMove`; once per battle
+  (state in `wTeraState`/`wPlayerTera*`/`wEnemyTera*`, auto-zeroed in
+  `wMiscBattleData`); STAB reworked in `AdjustDamageForMoveType` (1.5x, or 2x when
+  tera type == original type); boss trainers terastallize their last mon on send-out
+  per `data/battle/tera_bosses.asm`. Tera Orb = item $2C (ex-`ITEM_2C`), given by the
+  Viridian Mart clerk with Oak's parcel. Selectable types exclude BIRD/STELLAR/TYPELESS.
+  A terastallized mon's HUD nameplate shows a 3-letter type tag (first letters of the
+  type name, all 20 unique) drawn by `DrawPlayerTeraMarker`/`DrawEnemyTeraMarker`
+  (tera.asm), hooked into the per-turn HUD redraw in `Draw*HUDAndHPBar`.
 - **Complete move overhaul** — the move list was redone from scratch (225 moves,
   `NUM_ATTACKS` = 225): every attacking type has one move per power band
   (weak/moderate/strong/strongest × physical/special), all 55 vanilla status moves and a
@@ -184,3 +198,15 @@ Because the game data is edited freely here, most changes to `engine/`, `data/`,
 `home/`, or `scripts/` are **intended** to change the resulting ROM. There is no
 byte-exactness constraint to preserve — verify changes by their in-game effect (or by
 diffing against your own previous build), not against `roms.sha1`.
+
+**Cross-build save compatibility**: Gen 1 battery saves persist parsed map state,
+including cached ROM addresses (`wCurMapDataPtr`/`wCurMapTextPtr`/`wCurMapScriptPtr`,
+connection strip pointers, and the tileset pointers set by `LoadTilesetHeader`, e.g.
+`wTilesetCollisionPtr`). Vanilla skips re-parsing the map header when continuing a save
+(`BIT_NO_PREVIOUS_MAP` early-out in `LoadMapHeader`), which broke saves whenever a
+rebuild shifted data (symptom: player can't move at all after continuing — the stale
+collision pointer reads garbage). `LoadMapHeader` (home/overworld.asm) now re-parses
+the header from ROM on continue, temporarily setting `BIT_BATTLE_OVER_OR_BLACKOUT` so
+`InitSprites`/Pikachu-spawn scheduling stay skipped and saved sprite state is kept.
+When testing with PyBoy, a stale `.ram` next to a freshly copied ROM exercises exactly
+this path.

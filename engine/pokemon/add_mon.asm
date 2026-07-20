@@ -168,14 +168,8 @@ _AddPartyMon::
 	ld a, [hli]       ; type 2
 	ld [de], a
 	inc de
-	ld a, [hli]       ; catch rate (held item in gen 2)
-	ld [de], a
-	ld a, [wCurPartySpecies]
-	cp KADABRA
-	jr nz, .notKadabra
-	ld a, TWISTEDSPOON_GSC
-	ld [de], a
-.notKadabra
+	ld a, [wMonHType1]
+	ld [de], a        ; legacy catch-rate slot: default Tera Type = primary type
 	ld hl, wMonHMoves
 	ld a, [hli]
 	inc de

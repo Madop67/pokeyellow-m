@@ -1462,6 +1462,7 @@ EnemySendOutFirstMon:
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry
 	call DrawEnemyHUDAndHPBar
+	callfar CheckEnemyTeraOnSendOut ; boss trainers terastallize their ace
 	ld a, [wCurrentMenuItem]
 	and a
 	ret nz
@@ -1695,6 +1696,7 @@ LoadBattleMonFromParty:
 	ld [hli], a
 	dec b
 	jr nz, .statModLoop
+	callfar ReapplyPlayerTera ; a terastallized mon keeps its tera typing
 	ret
 
 ; copies from enemy party data to current enemy mon data when sending out a new enemy mon
@@ -1907,6 +1909,7 @@ DrawPlayerHUDAndHPBar:
 	jr nz, .doNotPrintLevel
 	call PrintLevel
 .doNotPrintLevel
+	callfar DrawPlayerTeraMarker
 	ld a, [wLoadedMonSpecies]
 	ld [wCurPartySpecies], a
 	hlcoord 10, 9
@@ -1960,6 +1963,7 @@ DrawEnemyHUDAndHPBar:
 	ld [wLoadedMonLevel], a
 	call PrintLevel
 .skipPrintLevel
+	callfar DrawEnemyTeraMarker
 	ld hl, wEnemyMonHP
 	ld a, [hli]
 	ldh [hMultiplicand + 1], a
@@ -2065,6 +2069,8 @@ CenterMonName:
 
 DisplayBattleMenu::
 	call LoadScreenTilesFromBuffer1 ; restore saved screen
+	ld hl, wTeraState
+	res BIT_TERA_PLAYER_PENDING, [hl] ; leaving the move menu cancels tera
 	ld a, [wBattleType]
 	and a
 	jr nz, .nonstandardbattle
@@ -2597,6 +2603,13 @@ MoveSelectionMenu:
 	ei
 	hlcoord 6, 13
 	call .writemoves
+	ld a, [wTeraState]
+	bit BIT_TERA_PLAYER_PENDING, a
+	jr z, .noTeraIndicator
+	hlcoord 0, 16
+	ld de, TeraIndicatorText
+	call PlaceString
+.noTeraIndicator
 	ld b, $5
 	ld a, $c
 	jr .menuset
@@ -2651,10 +2664,11 @@ MoveSelectionMenu:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	jr z, .matchedkeyspicked
-	; Disable left, right, and START buttons in regular battles.
+	; Disable left and right buttons in regular battles.
+	; (START toggles Terastallization, see MoveMenuStartPressed.)
 	ld a, [wStatusFlags7]
 	bit BIT_TEST_BATTLE, a
-	ld b, ~(PAD_LEFT | PAD_RIGHT | PAD_START)
+	ld b, ~(PAD_LEFT | PAD_RIGHT)
 	jr z, .matchedkeyspicked
 	ld b, PAD_CTRL_PAD | PAD_BUTTONS
 .matchedkeyspicked
@@ -2708,9 +2722,9 @@ SelectMenuItem:
 	jp nz, SelectMenuItem_CursorDown
 	bit B_PAD_SELECT, a
 	jp nz, SwapMovesInMenu
-IF DEF(_DEBUG)
 	bit B_PAD_START, a
-	jp nz, Func_3d4f5
+	jp nz, MoveMenuStartPressed
+IF DEF(_DEBUG)
 	bit B_PAD_RIGHT, a
 	jp nz, Func_3d529
 	bit B_PAD_LEFT, a
@@ -2912,6 +2926,19 @@ AnyMoveToSelect:
 NoMovesLeftText:
 	text_far _NoMovesLeftText
 	text_end
+
+MoveMenuStartPressed:
+IF DEF(_DEBUG)
+; the test battle keeps its debug START menu
+	ld a, [wStatusFlags7]
+	bit BIT_TEST_BATTLE, a
+	jp nz, Func_3d4f5
+ENDC
+	callfar TryToggleTeraPending
+	jp MoveSelectionMenu
+
+TeraIndicatorText:
+	db "TERA@"
 
 SwapMovesInMenu:
 IF DEF(_DEBUG)
@@ -3249,6 +3276,7 @@ ExecutePlayerMove:
 	jp nz, ExecutePlayerMoveDone
 	call PrintGhostText
 	jp z, ExecutePlayerMoveDone
+	callfar CheckAndApplyPlayerTera ; resolves even if fully paralyzed/asleep
 	call CheckPlayerStatusConditions
 	jr nz, .playerHasNoSpecialCondition
 	jp hl
@@ -5280,24 +5308,32 @@ AdjustDamageForMoveType:
 	ld a, [wEnemyMoveType]
 	ld [wMoveType], a
 .next
-	ld a, [wMoveType]
-	cp b ; does the move type match type 1 of the attacker?
-	jr z, .sameTypeAttackBonus
-	cp c ; does the move type match type 2 of the attacker?
-	jr z, .sameTypeAttackBonus
-	jr .skipSameTypeAttackBonus
-.sameTypeAttackBonus
-; if the move type matches one of the attacker's types
+; STAB level: +1 if the move matches a current (possibly tera) type,
+; +1 more if the attacker is terastallized and the move also matches one of
+; its original types. Level 1 = 1.5x, level 2 (tera type == original type) = 2x.
+	push de
+	call GetTeraStabLevel ; b, c = attacker's current types; returns level in e
+	ld a, e
+	pop de
+	and a
+	jr z, .skipSameTypeAttackBonus
+	push af
 	ld hl, wDamage + 1
 	ld a, [hld]
 	ld h, [hl]
 	ld l, a    ; hl = damage
+	pop af
+	cp 2
+	jr z, .doubleStab
 	ld b, h
 	ld c, l    ; bc = damage
 	srl b
 	rr c      ; bc = floor(0.5 * damage)
 	add hl, bc ; hl = floor(1.5 * damage)
-; store damage
+	jr .storeStabDamage
+.doubleStab
+	add hl, hl ; hl = 2 * damage (max pre-STAB damage is 999, no overflow)
+.storeStabDamage
 	ld a, h
 	ld [wDamage], a
 	ld a, l
@@ -5363,6 +5399,68 @@ AdjustDamageForMoveType:
 	inc hl
 	jp .loop
 .done
+	ret
+
+; Compute the STAB level for the current attack.
+; in: b, c = the attacker's current (battle) types
+; out: e = 0 (no STAB), 1 (1.5x) or 2 (2x: tera type matches an original type)
+GetTeraStabLevel:
+	ld e, 0
+	ld a, [wMoveType]
+	cp b
+	jr z, .currentTypeMatch
+	cp c
+	jr nz, .checkOriginalTypes
+.currentTypeMatch
+	inc e
+.checkOriginalTypes
+	call GetAttackerTeraOrigTypes
+	ret nc ; the attacker is not terastallized
+	ld a, [hli]
+	ld d, a      ; d = original type 1
+	ld a, [wMoveType]
+	cp d
+	jr z, .originalTypeMatch
+	ld a, [hl]   ; original type 2
+	cp d
+	ret z        ; mono-typed original: nothing new to match
+	ld d, a
+	ld a, [wMoveType]
+	cp d
+	ret nz
+.originalTypeMatch
+	inc e
+	ret
+
+; If the attacking side's active mon is terastallized, return carry set and
+; hl pointing at its saved original types; carry clear otherwise.
+GetAttackerTeraOrigTypes:
+	ldh a, [hWhoseTurn]
+	and a
+	jr nz, .enemyTurn
+	ld a, [wTeraState]
+	bit BIT_TERA_PLAYER_DONE, a
+	ret z ; carry clear
+	ld a, [wPlayerMonNumber]
+	ld hl, wPlayerTeraMonIndex
+	cp [hl]
+	jr nz, .notTerastallized
+	ld hl, wPlayerTeraOrigTypes
+	scf
+	ret
+.enemyTurn
+	ld a, [wTeraState]
+	bit BIT_TERA_ENEMY_DONE, a
+	ret z ; carry clear
+	ld a, [wEnemyMonPartyPos]
+	ld hl, wEnemyTeraMonIndex
+	cp [hl]
+	jr nz, .notTerastallized
+	ld hl, wEnemyTeraOrigTypes
+	scf
+	ret
+.notTerastallized
+	and a ; clear carry
 	ret
 
 ; function to tell how effective the type of an enemy attack is on the player's current pokemon

@@ -31,6 +31,30 @@ EraseType2Text:
 	ld bc, $6
 	jp FillMemory
 
+; Copy the name of type [wNamedObjectIndex] into wStringBuffer
+; (for text_ram in battle messages).
+CopyTypeNameToStringBuffer::
+	ld a, [wNamedObjectIndex]
+	add a
+	ld hl, TypeNames
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld de, wStringBuffer
+	ld bc, NAME_BUFFER_LENGTH ; the "@" terminator is within this range
+	jp CopyData
+
+; [wNamedObjectIndex] = type id
+; hl = dest addr
+PrintTypeName:
+	call GetPredefRegisters
+	ld a, [wNamedObjectIndex]
+	push hl
+	jr PrintType_
+
 PrintMoveType:
 	call GetPredefRegisters
 	push hl

@@ -57,6 +57,11 @@ ViridianMartOaksParcelScript:
 	lb bc, OAKS_PARCEL, 1
 	call GiveItem
 	SetEvent EVENT_GOT_OAKS_PARCEL
+	ld a, TEXT_VIRIDIANMART_CLERK_TERA_ORB
+	ldh [hTextID], a
+	call DisplayTextID
+	lb bc, TERA_ORB, 1
+	call GiveItem
 	ld a, SCRIPT_VIRIDIANMART_SCRIPT2
 	ld [wViridianMartCurScript], a
 	ret
@@ -81,6 +86,7 @@ ViridianMart_TextPointers:
 	const_def 4
 	dw_const ViridianMartClerkYouCameFromPalletTownText, TEXT_VIRIDIANMART_CLERK_YOU_CAME_FROM_PALLET_TOWN
 	dw_const ViridianMartClerkParcelQuestText,           TEXT_VIRIDIANMART_CLERK_PARCEL_QUEST
+	dw_const ViridianMartClerkTeraOrbText,               TEXT_VIRIDIANMART_CLERK_TERA_ORB
 
 ViridianMart_TextPointers2:
 	; This becomes the primary text pointers table when Oak's parcel has been delivered.
@@ -99,6 +105,11 @@ ViridianMartClerkYouCameFromPalletTownText:
 
 ViridianMartClerkParcelQuestText:
 	text_far _ViridianMartClerkParcelQuestText
+	sound_get_key_item
+	text_end
+
+ViridianMartClerkTeraOrbText:
+	text_far _ViridianMartClerkTeraOrbText
 	sound_get_key_item
 	text_end
 

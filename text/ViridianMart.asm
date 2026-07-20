@@ -20,6 +20,19 @@ _ViridianMartClerkParcelQuestText::
 	line "OAK's PARCEL!@"
 	text_end
 
+_ViridianMartClerkTeraOrbText::
+	text "Oh, one more"
+	line "thing! This came"
+	cont "for you, too."
+
+	para "It's a gift from"
+	line "the POKéMON"
+	cont "LEAGUE!"
+
+	para "<PLAYER> got the"
+	line "TERA ORB!@"
+	text_end
+
 _ViridianMartYoungsterText::
 	text "This shop sells a"
 	line "lot of PARLYZ"

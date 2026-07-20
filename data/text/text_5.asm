@@ -203,6 +203,36 @@ _ConvertedTypeText::
 	line "<TARGET>'s!"
 	prompt
 
+_TerastallizedText::
+	text "<USER>"
+	line "terastallized into"
+	cont "the @"
+	text_ram wStringBuffer
+	text " type!"
+	prompt
+
+_EnemyTerastallizedText::
+	text "Enemy @"
+	text_ram wEnemyMonNick
+	text_start
+	line "terastallized into"
+	cont "the @"
+	text_ram wStringBuffer
+	text " type!"
+	prompt
+
+_AlreadyTerastallizedText::
+	text "<USER>"
+	line "can't terastallize"
+	cont "again this battle!"
+	prompt
+
+_NoTeraOrbText::
+	text "A TERA ORB is"
+	line "needed to"
+	cont "terastallize!"
+	prompt
+
 _StatusChangesEliminatedText::
 	text "All STATUS changes"
 	line "are eliminated!"

@@ -701,7 +701,17 @@ wLowHealthAlarmDisabled:: db
 
 wPlayerMonMinimized:: db
 
-	ds 13
+; Terastallization state, implicitly zeroed at battle start because
+; InitBattleVariables clears all of wMiscBattleData.
+wTeraState:: db ; see the BIT_TERA_* constants
+wPlayerTeraMonIndex:: db ; party index of the terastallized mon
+wPlayerTeraType:: db
+wPlayerTeraOrigTypes:: ds 2 ; the mon's types from before it terastallized
+wEnemyTeraMonIndex:: db
+wEnemyTeraType:: db
+wEnemyTeraOrigTypes:: ds 2
+
+	ds 4
 
 UNION
 ; the amount of damage accumulated by the enemy while biding

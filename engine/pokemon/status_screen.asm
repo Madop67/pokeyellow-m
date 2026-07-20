@@ -164,6 +164,13 @@ StatusScreen:
 	call PrintNumber ; ID Number
 	ld d, STATUS_SCREEN_STATS_BOX
 	call PrintStatsBox
+	hlcoord 1, 15
+	ld de, TeraLabelText
+	call PlaceString
+	call ValidateLoadedMonTeraType
+	ld [wNamedObjectIndex], a
+	hlcoord 1, 16
+	predef PrintTypeName
 	call Delay3
 	call GBPalNormal
 	hlcoord 1, 0
@@ -187,7 +194,14 @@ StatusScreen:
 	ld a, [wCurPartySpecies]
 	call PlayCry
 .continue
-	call WaitForTextScrollButtonPress
+	call WaitForStatusScreenInput
+	jr nc, .exitScreen
+; SELECT: open the Tera Type picker, then redraw the whole page
+	call TeraTypePicker
+	pop af
+	ldh [hTileAnimations], a
+	jp StatusScreen
+.exitScreen
 	pop af
 	ldh [hTileAnimations], a
 	ret
@@ -228,6 +242,72 @@ TypesIDNoOTText:
 
 StatusText:
 	db "STATUS/@"
+
+TeraLabelText:
+	db "TERA/@"
+
+; Like WaitForTextScrollButtonPress, but also returns when SELECT is pressed
+; while a party mon is displayed in the overworld, so the Tera Type picker
+; can open. Returns carry set on SELECT, carry clear on A/B.
+WaitForStatusScreenInput:
+	ldh a, [hDownArrowBlinkCount1]
+	push af
+	ldh a, [hDownArrowBlinkCount2]
+	push af
+	xor a
+	ldh [hDownArrowBlinkCount1], a
+	ld a, $6
+	ldh [hDownArrowBlinkCount2], a
+.loop
+	hlcoord 18, 16
+	call HandleDownArrowBlinkTiming
+	call JoypadLowSensitivity
+	predef CableClub_Run
+	ldh a, [hJoy5]
+	and PAD_A | PAD_B
+	jr nz, .aOrB
+	ldh a, [hJoy5]
+	bit B_PAD_SELECT, a
+	jr z, .loop
+; SELECT only opens the picker for a party mon outside battle/link
+	ld a, [wMonDataLocation]
+	and a ; PLAYER_PARTY_DATA?
+	jr nz, .loop
+	ld a, [wIsInBattle]
+	and a
+	jr nz, .loop
+	ld a, [wLinkState]
+	and a
+	jr nz, .loop
+	ld d, 1
+	jr .restore
+.aOrB
+	ld d, 0
+.restore
+	pop af
+	ldh [hDownArrowBlinkCount2], a
+	pop af
+	ldh [hDownArrowBlinkCount1], a
+	ld a, d
+	and a
+	ret z ; A/B: carry clear
+	scf   ; SELECT: carry set
+	ret
+
+; Return the loaded mon's Tera Type in a, falling back to its primary type
+; if the stored value is not a printable type id (saves from before the
+; Terastallization feature hold a raw catch rate in this byte).
+ValidateLoadedMonTeraType::
+	ld a, [wLoadedMonTeraType]
+	cp STEEL + 1
+	ret c              ; physical-group type ids
+	cp FIRE
+	jr c, .invalid     ; the unused $0A-$13 gap
+	cp LIGHT + 1
+	ret c              ; special-group type ids
+.invalid
+	ld a, [wLoadedMonType1]
+	ret
 
 OKText:
 	db "OK@"

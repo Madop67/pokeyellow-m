@@ -1807,7 +1807,23 @@ asm_0dbd:
 	ld [wCurMapTileset], a
 	ldh [hPreviousTileset], a
 	bit BIT_NO_PREVIOUS_MAP, b
-	ret nz
+	jr z, .parseHeader
+; Continuing a saved game. The parsed header in WRAM was restored from SRAM,
+; but the ROM pointers cached in it (map data/text/script, connection strips,
+; and the tileset pointers derived by LoadTilesetHeader) go stale if the ROM
+; layout changed since the save was written — leaving e.g. the tileset
+; collision pointer aimed at garbage, which blocks all movement. Re-parse the
+; header from ROM, borrowing the battle-over flag so the re-parse keeps the
+; saved sprite data, exactly like the post-battle map reload does.
+	ld hl, wStatusFlags4
+	bit BIT_BATTLE_OVER_OR_BLACKOUT, [hl]
+	jr nz, .parseHeader
+	set BIT_BATTLE_OVER_OR_BLACKOUT, [hl]
+	call .parseHeader
+	ld hl, wStatusFlags4
+	res BIT_BATTLE_OVER_OR_BLACKOUT, [hl]
+	ret
+.parseHeader
 	call GetMapHeaderPointer
 	ld de, wCurMapHeader
 	ld c, wCurMapHeaderEnd - wCurMapHeader

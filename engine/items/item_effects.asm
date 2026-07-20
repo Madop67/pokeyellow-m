@@ -60,7 +60,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
 	dw UnusableItem      ; SECRET_KEY
-	dw UnusableItem      ; ITEM_2C
+	dw UnusableItem      ; TERA_ORB
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
@@ -3151,12 +3151,8 @@ SendNewMonToBox:
 	ld [de], a
 	dec b
 	jr nz, .movePPLoop
-	ld a, [wCurPartySpecies]
-	cp KADABRA
-	jr nz, .notKadabra
-	ld a, TWISTEDSPOON_GSC
-	ld [wBoxMon1CatchRate], a
-.notKadabra
+	ld a, [wEnemyMonType1]
+	ld [wBoxMon1TeraType], a ; legacy catch-rate slot: default Tera Type = primary type
 	ret
 
 ; checks if the tile in front of the player is a shore or water tile

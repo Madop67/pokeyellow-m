@@ -31,6 +31,24 @@ Gen 6+ combat mechanics and a completely rebuilt move list.
   out *or* caught, not just the Pokémon that fought. This makes the **Exp. All** item
   redundant, so it is **deprecated**.
 
+### Terastallization
+
+The Gen 9 Terastal phenomenon, adapted for Kanto:
+
+- The Viridian Mart clerk hands over a **Tera Orb** along with Prof. Oak's parcel.
+- Every Pokémon has a **Tera Type** (default: its primary type), stored in the
+  repurposed legacy catch-rate byte, and changeable at any time by pressing
+  **SELECT on the stats screen** — any type except ??? and Stellar.
+- In battle, press **START on the move menu** to prime Terastallization (a "TERA"
+  marker appears); it triggers once per battle when your move executes, turning the
+  Pokémon into a pure Tera-Type for the rest of the battle (backing out or
+  switching doesn't consume it). While a Pokémon is terastallized, a three-letter
+  type tag (e.g. "GHO") shows on its battle nameplate next to the level.
+- STAB follows Gen 9 rules: tera-type moves and original-type moves both get 1.5×;
+  if the Tera Type matches an original type, that type's moves hit at **2×**.
+- **Boss aces terastallize too** — gym leaders, Giovanni, the Elite Four and the
+  rival Terastallize their last Pokémon the moment it's sent out.
+
 ### Complete move overhaul
 
 The move list was redone from scratch (**225 moves**). Every attacking type gets one
@@ -75,6 +93,9 @@ make clean           # remove generated ROMs/objects and intermediates
 `make compare` diffs against vanilla hashes and **will report a mismatch** in this fork —
 that's expected, not a build failure. To see what a change did to the ROM, keep a copy of
 your previous `.gbc` and diff against that.
+
+Saved games carry over between builds: the engine re-derives the map pointers cached in
+the save when you continue, so a save file from an older build of the ROM keeps working.
 
 ## Credits
 
