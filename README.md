@@ -83,12 +83,18 @@ was rebuilt to match.
 
 ## Reference documentation
 
-These are **generated from the game data** — the fastest way to see the fork's current
-balance without decoding the raw tables:
+Browse everything online at the **[Chromatic Yellow wiki](https://chromatic.doorcon.org)**
+— the guides and references below, published in a readable web format.
+
+These references are **generated from the game data** — the fastest way to see the fork's
+current balance without decoding the raw tables:
 
 - **[docs/pokemon_reference.md](docs/pokemon_reference.md)** — all 151 Pokémon (split
   stats, EV yields, catch rate, base exp, growth, evolutions, locations, level-up
   movesets, TM/HM compatibility), plus the full type chart and complete move table.
+- **[docs/move_reference.md](docs/move_reference.md)** — standalone per-move reference:
+  type, category, power, accuracy, PP, TM/HM slot, and a plain-English description of each
+  move's effect.
 - **[docs/trainer_reference.md](docs/trainer_reference.md)** — every trainer battle in
   the game: class, location, party, levels, and the exact moveset each Pokémon uses.
 
