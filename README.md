@@ -69,7 +69,7 @@ experience:
 The move list was redone from scratch (**225 moves**). Every attacking type gets one
 move in each power band (weak / moderate / strong / strongest × physical / special),
 all 55 original status moves survive with their original IDs, and every learnset and TM
-was rebuilt to match. Design rationale in [docs/move_overhaul_plan.md](docs/move_overhaul_plan.md).
+was rebuilt to match.
 
 ### Trainer & AI overhaul
 
