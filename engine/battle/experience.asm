@@ -2,9 +2,12 @@ GainExperience:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
-; every conscious party member gains full experience, whether or not it
-; participated in the battle (modern exp mechanics); exp is not divided,
-; so wPartyGainExpFlags is ignored here
+; Modern exp mechanics: every conscious party member gains full, undivided exp,
+; so wPartyGainExpFlags is ignored. When the player has selected classic exp
+; (BIT_LEGACY_EXP), only mons that fought gain exp and it is divided among them.
+	ld a, [wGameplayOptions]
+	bit BIT_LEGACY_EXP, a
+	call nz, DivideBaseExpAmongParticipants
 	ld hl, wPartyMon1
 	xor a
 	ld [wWhichPokemon], a
@@ -13,6 +16,21 @@ GainExperience:
 	ld a, [hli]
 	or [hl] ; is mon's HP 0?
 	jp z, .nextMon ; if so, go to next mon
+; classic exp: skip mons that did not participate in the battle
+	ld a, [wGameplayOptions]
+	bit BIT_LEGACY_EXP, a
+	jr z, .gainsExp
+	push hl
+	ld hl, wPartyGainExpFlags
+	ld a, [wWhichPokemon]
+	ld c, a
+	ld b, FLAG_TEST
+	predef FlagActionPredef
+	ld a, c
+	and a ; is mon's gain exp flag set?
+	pop hl
+	jp z, .nextMon ; benched mon: no exp
+.gainsExp
 	ld de, (MON_HP_EXP + 1) - (MON_HP + 1)
 	add hl, de
 	ld d, h
@@ -339,6 +357,29 @@ GainExperience:
 	ld [hl], a
 	pop bc
 	predef_jump FlagActionPredef ; set the fought current enemy flag for the mon that is currently out
+
+; classic exp: divide the defeated mon's base exp by the number of party mons
+; that participated (wPartyGainExpFlags), so shared exp is split among them.
+; EV yields still come from EvYields and are left untouched.
+DivideBaseExpAmongParticipants:
+	ld hl, wPartyGainExpFlags
+	ld b, 1
+	call CountSetBits
+	ld a, [wNumSetBits]
+	cp 2
+	ret c ; only one participant: nothing to divide
+	ld b, a
+	xor a
+	ldh [hDividend], a
+	ld a, [wEnemyMonBaseExp]
+	ldh [hDividend + 1], a
+	ld a, b
+	ldh [hDivisor], a
+	ld b, 2
+	call Divide
+	ldh a, [hQuotient + 3]
+	ld [wEnemyMonBaseExp], a
+	ret
 
 ; multiplies exp by 1.5
 BoostExp:

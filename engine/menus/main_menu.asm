@@ -127,6 +127,8 @@ InitOptions:
 	ld [wLetterPrintingDelayFlags], a
 	ld a, TEXT_DELAY_MEDIUM
 	ld [wOptions], a
+	xor a
+	ld [wGameplayOptions], a ; default = current fork behavior
 	ld a, 64 ; audio?
 	ld [wPrinterSettings], a
 	ret

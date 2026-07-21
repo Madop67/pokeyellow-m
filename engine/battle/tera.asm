@@ -13,6 +13,9 @@
 
 ; START pressed on the move menu: toggle the pending flag if allowed.
 TryToggleTeraPending::
+	ld a, [wGameplayOptions]
+	bit BIT_NO_TERA, a
+	ret nz ; Terastallization disabled in Options -> MECHANICS
 	ld a, [wTeraState]
 	bit BIT_TERA_PLAYER_DONE, a
 	jr nz, .alreadyUsed
@@ -101,6 +104,9 @@ ReapplyPlayerTera::
 ; Called at the end of EnemySendOutFirstMon. Boss trainers terastallize
 ; their last party mon the moment it enters the battle.
 CheckEnemyTeraOnSendOut::
+	ld a, [wGameplayOptions]
+	bit BIT_NO_TERA, a
+	ret nz ; Terastallization disabled in Options -> MECHANICS
 	ld a, [wIsInBattle]
 	cp 2
 	ret nz ; trainer battles only

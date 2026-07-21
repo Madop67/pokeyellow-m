@@ -39,8 +39,8 @@ DEF START_MONEY EQU $3000
 
 	ld hl, wObtainedBadges
 	ld [hli], a
-	ASSERT wObtainedBadges + 1 == wUnusedObtainedBadges
-	ld [hl], a
+	ASSERT wObtainedBadges + 1 == wGameplayOptions
+	ld [hl], a ; default gameplay options = 0 (current fork behavior)
 
 	ld hl, wPlayerCoins
 	ld [hli], a

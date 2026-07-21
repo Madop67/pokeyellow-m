@@ -62,6 +62,20 @@ PrintMoveType:
 ; fall through
 
 PrintType_:
+; show NORMAL for Sound/Light when they're disabled (Options -> MECHANICS).
+; Inlined rather than sharing the Battle Core copy of NormalizeExtraType, since
+; this code lives in a different ROM bank.
+	ld b, a
+	ld a, [wGameplayOptions]
+	bit BIT_VANILLA_TYPES, a
+	ld a, b
+	jr z, .gotType
+	cp SOUND
+	jr c, .gotType
+	cp TYPELESS
+	jr nc, .gotType
+	ld a, NORMAL
+.gotType
 	add a
 	ld hl, TypeNames
 	ld e, a

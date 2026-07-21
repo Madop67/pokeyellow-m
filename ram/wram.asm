@@ -2010,7 +2010,9 @@ wOptions:: db
 
 wObtainedBadges:: flag_array NUM_BADGES
 
-wUnusedObtainedBadges:: db
+; extra fork-mechanic toggles set from Options -> MECHANICS.
+; 0 = current fork behavior (see constants/ram_constants.asm).
+wGameplayOptions:: db
 
 wLetterPrintingDelayFlags:: db
 

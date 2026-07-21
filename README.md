@@ -12,7 +12,8 @@ Gen 6+ combat mechanics and a completely rebuilt move list.
 - **Full Gen 6+ type chart**, plus new types: **Steel**, **Dark**, **Fairy**,
   **Stellar** (neutral vs. everything), **Sound**, **Light**, and **???** (typeless,
   used by Struggle). Ghost hits Psychic, Bug/Poison no longer maul each other, Steel
-  resistances apply, etc.
+  resistances apply, etc. (The non-standard **Sound** and **Light** types can be turned
+  off — see [the MECHANICS menu](#make-it-yours--the-mechanics-menu).)
 - **Physical/Special split** — every move carries its own damage category (Gen 4+
   assignments) instead of it being decided by the move's type. Counter now counters any
   physical move.
@@ -29,7 +30,8 @@ Gen 6+ combat mechanics and a completely rebuilt move list.
   paralyzed.
 - **Modern EXP sharing** — the whole party earns experience whenever an enemy is knocked
   out *or* caught, not just the Pokémon that fought. This makes the **Exp. All** item
-  redundant, so it is **deprecated**.
+  redundant, so it is **deprecated**. (Can be switched back to classic Gen 1 EXP — see
+  [the MECHANICS menu](#make-it-yours--the-mechanics-menu).)
 
 ### Terastallization
 
@@ -48,6 +50,19 @@ The Gen 9 Terastal phenomenon, adapted for Kanto:
   if the Tera Type matches an original type, that type's moves hit at **2×**.
 - **Boss aces terastallize too** — gym leaders, Giovanni, the Elite Four and the
   rival Terastallize their last Pokémon the moment it's sent out.
+
+### Make it yours — the MECHANICS menu
+
+Not every change is mandatory. The in-game **Options** screen has a new **MECHANICS**
+entry that opens a sub-menu where three of the fork's headline mechanics can be toggled
+on or off at any time. Choices are saved with your game and default to the full fork
+experience:
+
+| Option | Values | What it does |
+|--------|--------|--------------|
+| **TYPE ADD** | `GEN6/SL` · `GEN 6` | `GEN6/SL` keeps the fork's added **Sound** and **Light** types. `GEN 6` retires them — Sound/Light moves and Pokémon are treated as **Normal** everywhere (matchups, STAB, displays), leaving a standard Gen 6 type chart (Steel/Dark/Fairy). |
+| **EXP RULES** | `MODERN` · `CLASSIC` | `MODERN` gives the whole party full, undivided EXP. `CLASSIC` restores Gen 1 rules — only the Pokémon that fought earn EXP, split among them. (Modern EV yields stay on either way.) |
+| **TERA** | `ON` · `OFF` | Turns Terastallization off entirely — no START prompt, no Tera-type picker on the stats screen, and boss aces won't Terastallize. |
 
 ### Complete move overhaul
 

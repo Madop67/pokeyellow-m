@@ -1714,6 +1714,13 @@ LoadBattleMonFromParty:
 	dec b
 	jr nz, .statModLoop
 	callfar ReapplyPlayerTera ; a terastallized mon keeps its tera typing
+; re-type a Sound/Light mon to Normal when the extra types are disabled
+	ld a, [wBattleMonType1]
+	call NormalizeExtraType
+	ld [wBattleMonType1], a
+	ld a, [wBattleMonType2]
+	call NormalizeExtraType
+	ld [wBattleMonType2], a
 	ret
 
 ; copies from enemy party data to current enemy mon data when sending out a new enemy mon
@@ -5297,6 +5304,25 @@ IncrementMovePP:
 	inc [hl] ; increment PP in the party memory location
 	ret
 
+; Maps the fork's extra types (Sound/Light) back to Normal when the player has
+; disabled them via Options -> MECHANICS (BIT_VANILLA_TYPES), so those types
+; vanish from battle without touching static move/base-stat data or the type
+; chart. A no-op (a preserved) when the option is off. Lives in the Battle Core
+; bank; the display copy is inlined in print_type.asm (a different bank).
+; in/out: a = type id ; clobbers b
+NormalizeExtraType:
+	ld b, a
+	ld a, [wGameplayOptions]
+	bit BIT_VANILLA_TYPES, a
+	ld a, b
+	ret z              ; option off: leave the type as-is
+	cp SOUND
+	ret c              ; below SOUND: unchanged
+	cp TYPELESS
+	ret nc             ; TYPELESS ("???") and above: leave alone
+	ld a, NORMAL       ; SOUND or LIGHT -> NORMAL
+	ret
+
 ; function to adjust the base damage of an attack to account for type effectiveness
 AdjustDamageForMoveType:
 ; values for player turn
@@ -5325,6 +5351,11 @@ AdjustDamageForMoveType:
 	ld a, [wEnemyMoveType]
 	ld [wMoveType], a
 .next
+; re-type Sound/Light moves to Normal when the extra types are disabled;
+; the attacker/defender types in b/c/d/e are already normalized at load
+	ld a, [wMoveType]
+	call NormalizeExtraType
+	ld [wMoveType], a
 ; STAB level: +1 if the move matches a current (possibly tera) type,
 ; +1 more if the attacker is terastallized and the move also matches one of
 ; its original types. Level 1 = 1.5x, level 2 (tera type == original type) = 2x.
@@ -6460,6 +6491,21 @@ GetCurrentMove:
 	ld a, BANK(Moves)
 	call FarCopyData
 
+; re-type a Sound/Light move to Normal when the extra types are disabled, so the
+; displayed TYPE and the AI's type reasoning match the normalized damage
+	ldh a, [hWhoseTurn]
+	and a
+	jr nz, .normalizeEnemyMoveType
+	ld a, [wPlayerMoveType]
+	call NormalizeExtraType
+	ld [wPlayerMoveType], a
+	jr .moveTypeNormalized
+.normalizeEnemyMoveType
+	ld a, [wEnemyMoveType]
+	call NormalizeExtraType
+	ld [wEnemyMoveType], a
+.moveTypeNormalized
+
 	ld a, BANK(MoveNames)
 	ld [wPredefBank], a
 	ld a, MOVE_NAME
@@ -6540,9 +6586,11 @@ LoadEnemyMonData:
 	ld hl, wMonHTypes
 	ld de, wEnemyMonType
 	ld a, [hli]            ; copy type 1
+	call NormalizeExtraType ; Sound/Light -> Normal when extra types disabled
 	ld [de], a
 	inc de
 	ld a, [hli]            ; copy type 2
+	call NormalizeExtraType
 	ld [de], a
 	inc de
 	ld a, [hli]            ; copy catch rate

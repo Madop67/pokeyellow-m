@@ -128,12 +128,11 @@
     <span class="feat"><b>Terastallization</b></span>
     <span class="feat"><b>225-move</b> overhaul</span>
     <span class="feat"><b>Rebuilt</b> bosses &amp; trainers</span>
+    <span class="feat"><b>Toggleable</b> mechanics</span>
   </div>
   <div class="cta">
-    <a class="dl" href="https://github.com/Madop67/pokeyellow-m/releases">Download the patch <span class="ar">↓</span></a>
+    <a class="dl" href="#get">Download the patch <span class="ar">↓</span></a>
     <a class="dl ghost" href="#guides">Read the guides</a>
-    <span class="ctanote">Patch link coming soon — apply over your own legally-owned Yellow ROM.</span>
-  </div>
 </header>
 
 <!-- WHAT IT IS -->
@@ -142,6 +141,12 @@
   <p class="lead">Everything about Yellow you remember, running on the battle engine you actually want.</p>
   <p>Chromatic Yellow keeps Kanto's map, story, and 151 Pokémon, then modernizes the machinery underneath. Damage is decided by a full Gen 6+ type chart — with <strong>Steel, Dark, Fairy, Sound, and Light</strong> added as real attacking types — and each move has its own physical-or-special category instead of being locked to its type. Special Attack and Special Defense are separate stats, EVs and critical hits follow modern rules, and any Pokémon can <strong>Terastallize</strong> once per battle to change its type on the fly.</p>
   <p>On top of the engine sits a complete content pass: the entire move list was redesigned so every type has a full damage ladder, and every trainer in the game — from the first bug catcher to the Champion — was rebuilt with a deliberate moveset and smarter AI. The guides below walk you through all of it.</p>
+  <p>And none of it is forced on you. A new <strong>MECHANICS</strong> entry on the in-game Options screen lets you switch three of the headline changes on or off at any time — the choices save with your game.</p>
+  <div class="callout">
+    <b>TYPE ADD</b> — keep the fork's added <b>Sound</b> and <b>Light</b> types, or retire them for a standard Gen 6 chart (they revert to Normal everywhere).<br>
+    <b>EXP RULES</b> — modern whole-party EXP, or classic Gen 1 rules where only the Pokémon that fought share the spoils.<br>
+    <b>TERA</b> — turn Terastallization off entirely, for you <em>and</em> the boss aces.
+  </div>
 </section>
 
 <!-- GUIDES -->
@@ -214,15 +219,13 @@
   <p class="lead">Chromatic Yellow ships as a patch you apply to your own Pokémon Yellow ROM.</p>
   <p>Because this is a modification of a copyrighted game, only the <strong>patch</strong> is distributed — never a full ROM. You supply a legally-owned copy of Pokémon Yellow, apply the patch, and play the result in any Game Boy Color emulator or on hardware via flashcart.</p>
   <div class="cta" style="margin-top:8px">
-    <a class="dl" href="#get">Download the patch <span class="ar">↓</span></a>
-    <span class="ctanote">Placeholder — point this at the built <code>pokeyellow.patch</code> once it's hosted.</span>
+    <a class="dl" href="https://github.com/Madop67/pokeyellow-m/releases">Download the patch <span class="ar">↓</span></a>
   </div>
   <ol class="rules" style="margin-top:22px">
     <li><b>Get a Pokémon Yellow ROM</b><span>Use your own legally-owned copy. The patch is built against the standard Yellow release.</span></li>
-    <li><b>Apply the patch</b><span>Open the downloaded patch and your ROM in a patcher, then export the patched ROM. The project builds the patch with <code>make yellow_vc</code>.</span></li>
+    <li><b>Apply the patch</b><span>Open the downloaded patch and your ROM in a patcher, then export the patched ROM.</span></li>
     <li><b>Play it</b><span>Load the patched ROM in a Game Boy Color emulator or on real hardware. Save files from vanilla Yellow are not compatible — start fresh.</span></li>
   </ol>
-  <div class="callout"><b>Wiring the download.</b> The button above is a placeholder anchor. When a patch file is hosted (or committed alongside these docs), set its <code>href</code> to that file — e.g. <code>href="pokeyellow.patch"</code> with a <code>download</code> attribute — and the page is ready to ship.</div>
 </section>
 
 <footer>

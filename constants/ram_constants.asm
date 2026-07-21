@@ -40,6 +40,12 @@ DEF TEXT_DELAY_FAST   EQU %001 ; 1
 DEF TEXT_DELAY_MEDIUM EQU %011 ; 3
 DEF TEXT_DELAY_SLOW   EQU %101 ; 5
 
+; wGameplayOptions (extra fork-mechanic toggles; 0 = current fork behavior)
+	const_def
+	const BIT_LEGACY_EXP    ; 0 ; set = classic divided/participant EXP
+	const BIT_NO_TERA       ; 1 ; set = Terastallization disabled
+	const BIT_VANILLA_TYPES ; 2 ; set = Sound/Light disabled (Gen 6 vanilla)
+
 ; wPrinterSettings
 DEF PRINTER_BRIGHTNESS_LIGHTEST EQU $0
 DEF PRINTER_BRIGHTNESS_LIGHTER  EQU $20

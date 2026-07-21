@@ -15,6 +15,9 @@ TeraTypeList:
 ; Let the player choose the Tera Type of party mon [wWhichPokemon].
 ; The caller (StatusScreen) redraws the screen afterwards.
 TeraTypePicker::
+	ld a, [wGameplayOptions]
+	bit BIT_NO_TERA, a
+	ret nz ; Terastallization disabled in Options -> MECHANICS; SELECT does nothing
 	ld a, [wCurrentMenuItem]
 	push af
 	call ClearScreen
