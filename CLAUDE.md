@@ -139,6 +139,14 @@ Key top-level files/dirs:
   `special_moves.asm` overrides shown in bold). Produced by `tools/gen_trainer_docs.py`
   (which imports the parsers in `gen_pokemon_docs.py`) — **do not hand-edit it; rerun that
   script after changing trainer parties, special moves, or any Pokémon/move data.**
+- `docs/move_reference.md` — **generated** standalone per-move reference: type, category,
+  power, accuracy, PP, TM/HM slot, and a plain-English description of each move's secondary
+  effect (including exact proc chance for chance-based side effects, e.g. "10% chance to
+  paralyze"). Produced by `tools/gen_move_reference.py` (imports the parsers in
+  `gen_pokemon_docs.py`). Side-effect chances are hardcoded in that script from the
+  `BattleRandom` rolls in `engine/battle/effects.asm` — **do not hand-edit the doc; rerun
+  the script after changing move data, and update the script's chance tables if you change
+  an effect's proc rate in `effects.asm`.**
 - `tools/gen_regular_movesets.py` — **generator, not a doc**: (re)writes the regular-trainer
   half of `data/trainers/special_moves.asm` from the game data, applying the Phase 4
   "boss-lite" moveset doctrine (STAB + coverage + one utility, level-capped, natural-pool
@@ -154,6 +162,14 @@ Key top-level files/dirs:
   sweep), the walkthrough sorted by location rather than class, with its implementation log.
   Its per-region example tables are hand-written; the doctrine it documents is implemented by
   `tools/gen_regular_movesets.py`.
+
+### Publishing docs to the site
+
+The sibling repo `../pokeyellow-m-site` (separate git remote, deployed as a Cloudflare
+Worker/Pages site) publishes copies of everything under `docs/` — the generated
+references, the design specs, and the hand-written guides. There is no automated sync:
+after regenerating or editing anything in `docs/`, copy the changed file(s) into
+`pokeyellow-m-site/` and commit/push there too, or the live site drifts out of date.
 
 ### Build dependency system
 
