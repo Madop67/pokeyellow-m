@@ -129,32 +129,44 @@ Key top-level files/dirs:
 - `docs/pokemon_reference.md` — **generated** reference for all 151 Pokémon and every move
   *as they exist in this fork* (stats incl. split Sp. Atk/Sp. Def, EV yields, catch rate,
   base exp, growth rate, evolutions, locations, level-up movesets, TM/HM compatibility,
-  plus the full type chart and move table). It is produced by
-  `tools/gen_pokemon_docs.py` from the game data files — **do not hand-edit it; rerun that
-  script after changing any Pokémon/move data** so the doc stays in sync. It is the fastest
-  way to see the fork's current balance without decoding the raw data tables.
+  plus the full type chart and move table). Produced by `tools/gen_pokemon_docs.py` from
+  the game data files — **do not hand-edit it.** It is the fastest way to see the fork's
+  current balance without decoding the raw data tables.
 - `docs/trainer_reference.md` — **generated** reference for every trainer battle in the game
   (all classes, not just bosses): class, location, party, each Pokémon's level/types, and
   the exact moveset it uses in battle (level-up default per `WriteMonMoves`, with
   `special_moves.asm` overrides shown in bold). Produced by `tools/gen_trainer_docs.py`
-  (which imports the parsers in `gen_pokemon_docs.py`) — **do not hand-edit it; rerun that
-  script after changing trainer parties, special moves, or any Pokémon/move data.**
+  (which imports the parsers in `gen_pokemon_docs.py`) — **do not hand-edit it.**
 - `docs/move_reference.md` — **generated** standalone per-move reference: type, category,
   power, accuracy, PP, TM/HM slot, and a plain-English description of each move's secondary
   effect (including exact proc chance for chance-based side effects, e.g. "10% chance to
   paralyze"). Produced by `tools/gen_move_reference.py` (imports the parsers in
   `gen_pokemon_docs.py`). Side-effect chances are hardcoded in that script from the
-  `BattleRandom` rolls in `engine/battle/effects.asm` — **do not hand-edit the doc; rerun
-  the script after changing move data, and update the script's chance tables if you change
-  an effect's proc rate in `effects.asm`.**
+  `BattleRandom` rolls in `engine/battle/effects.asm` — **do not hand-edit the doc,** and
+  update the script's chance tables if you change an effect's proc rate in `effects.asm`.
 - `tools/gen_regular_movesets.py` — **generator, not a doc**: (re)writes the regular-trainer
   half of `data/trainers/special_moves.asm` from the game data, applying the Phase 4
   "boss-lite" moveset doctrine (STAB + coverage + one utility, level-capped, natural-pool
   preferred, emitted as surgical per-slot overrides). Preserves the hand-authored boss and
-  vanilla-quirk blocks verbatim. Rerun after changing trainer/move/Pokémon data, then rerun
-  `gen_trainer_docs.py` and rebuild. Note: the `SpecialTrainerMoves` table + its reader
+  vanilla-quirk blocks verbatim. Note: the `SpecialTrainerMoves` table + its reader
   `ApplySpecialTrainerMoves` live in the floating `"Trainer Special Moves"` bank (main.asm),
   reached via `callfar` from `ReadTrainer` — they outgrew "Battle Engine 6".
+
+  **Whenever you change any Pokémon, move, or trainer data, rerun all four generators
+  above** — not just whichever one's output you happen to be looking at — so
+  `docs/*.md` and `data/trainers/special_moves.asm` don't drift out of sync with each
+  other or with the data:
+
+  ```sh
+  python3 tools/gen_regular_movesets.py
+  python3 tools/gen_pokemon_docs.py
+  python3 tools/gen_move_reference.py
+  python3 tools/gen_trainer_docs.py
+  ```
+
+  Run `gen_regular_movesets.py` first — `gen_trainer_docs.py` reads
+  `special_moves.asm` as-is, so it must go last to reflect any AI moveset changes the
+  others cause. Rebuild (both `make` and `make yellow_vc`) afterward.
 - `docs/trainer_overhaul_plan.html` — design spec for the trainer-battle overhaul (item AI,
   competitive movesets, rebuilt six-mon boss teams) with an implementation log of what
   shipped. Hand-written; update it when continuing that work.

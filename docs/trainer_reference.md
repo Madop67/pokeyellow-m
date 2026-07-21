@@ -2349,7 +2349,7 @@ _Lv 66–70 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tauros | 66 | Normal | Headbutt · Tail Whip · Leer · Double-Edge |
+| 1 | Tauros | 66 | Normal | Tail Whip · Leer · Double-Edge · Earthquake |
 | 2 | Exeggutor | 67 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
 | 3 | Arcanine | 68 | Fire | Leer · Roar · Fire Fang · Fire Punch |
 | 4 | Blastoise | 69 | Water | Bite · Withdraw · Double-Edge · Hydro Pump |
@@ -2360,10 +2360,10 @@ _Lv 66–70 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tauros | 66 | Normal | Headbutt · Tail Whip · Leer · Double-Edge |
+| 1 | Tauros | 66 | Normal | Tail Whip · Leer · Double-Edge · Earthquake |
 | 2 | Exeggutor | 67 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
 | 3 | Arcanine | 68 | Fire | Leer · Roar · Fire Fang · Fire Punch |
-| 4 | Venusaur | 69 | Grass/Poison | Growth · Energy Ball · Sleep Powder · Solarbeam |
+| 4 | Venusaur | 69 | Grass/Poison | Energy Ball · Sleep Powder · Solarbeam · Earth Power |
 | 5 | Gyarados | 70 | Water/Flying | Crunch · Hydro Pump · Hyper Beam · Waterfall |
 
 ### Prof. Oak #3 — Unused
@@ -2371,7 +2371,7 @@ _Lv 66–70 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tauros | 66 | Normal | Headbutt · Tail Whip · Leer · Double-Edge |
+| 1 | Tauros | 66 | Normal | Tail Whip · Leer · Double-Edge · Earthquake |
 | 2 | Exeggutor | 67 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
 | 3 | Arcanine | 68 | Fire | Leer · Roar · Fire Fang · Fire Punch |
 | 4 | Charizard | 69 | Fire/Flying | Headbutt · Air Cutter · Slash · Flamethrower |
@@ -2991,7 +2991,7 @@ _Lv 45 · 2 Pokémon_
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Kingler | 45 | Water | Headbutt · Leer · Razor Shell · Crabhammer |
-| 2 | Starmie | 45 | Water/Light | Harden · Bubblebeam · Aurora Beam · Surf |
+| 2 | Starmie | 45 | Water/Light | Bubblebeam · Aurora Beam · Surf · Psychic |
 
 ### Cooltrainer♂ #5 — Victory Road 1F
 _Lv 42 · 4 Pokémon_
@@ -3408,7 +3408,7 @@ _Lv 45–53 · 6 Pokémon_
 | 1 | Sandslash | 47 | Ground | Slash · Poison Sting · Swift · Earthquake |
 | 2 | Exeggcute | 45 | Grass/Psychic | Leech Seed · Stun Spore · Poisonpowder · Solarbeam |
 | 3 | Magneton | 45 | Electric/Steel | Supersonic · Mirror Shot · Thunder Wave · Flash Cannon |
-| 4 | Ninetales | 47 | Fire | Roar · Tail Whip · Flame Burst · Flamethrower |
+| 4 | Ninetales | 47 | Fire | Tail Whip · Flame Burst · Flamethrower · Dazzle Gleam |
 | 5 | Kadabra | 50 | Psychic | Psybeam · Recover · Psychic · Reflect |
 | 6 | Vaporeon | 53 | Water | Haze · Mist · Acid Armor · Hydro Pump |
 

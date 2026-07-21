@@ -319,6 +319,7 @@ LickitungEvosMoves:
 	db 23, DEFENSE_CURL
 	db 39, SCREECH
 	db 43, STRENGTH
+	db 47, ICE_BEAM
 	db 0
 ExeggcuteEvosMoves:
 ; Evolutions
@@ -585,6 +586,7 @@ FearowEvosMoves:
 	db 34, DRILL_PECK
 	db 43, AGILITY
 	db 47, STRENGTH
+	db 50, EARTHQUAKE
 	db 0
 PidgeyEvosMoves:
 ; Evolutions
@@ -647,6 +649,7 @@ ChanseyEvosMoves:
 	db 48, LIGHT_SCREEN
 	db 52, SPIRAL_BEAM
 	db 54, DOUBLE_EDGE
+	db 56, ICE_BEAM
 	db 0
 MachokeEvosMoves:
 ; Evolutions
@@ -668,6 +671,7 @@ MrMimeEvosMoves:
 	db 39, MEDITATE
 	db 47, SUBSTITUTE
 	db 51, PSYCHIC_M
+	db 53, THUNDERBOLT
 	db 0
 HitmonleeEvosMoves:
 ; Evolutions
@@ -780,6 +784,7 @@ ElectabuzzEvosMoves:
 	db 42, THUNDERPUNCH
 	db 49, LIGHT_SCREEN
 	db 54, THUNDER
+	db 56, PSYCHIC_M
 	db 0
 MagnetonEvosMoves:
 ; Evolutions
@@ -852,6 +857,7 @@ TaurosEvosMoves:
 	db 28, TAIL_WHIP
 	db 35, LEER
 	db 51, DOUBLE_EDGE
+	db 54, EARTHQUAKE
 	db 0
 MissingNo3DEvosMoves:
 ; Evolutions
@@ -883,6 +889,7 @@ FarfetchdEvosMoves:
 	db 31, AGILITY
 	db 39, SLASH
 	db 43, STRENGTH
+	db 48, LEAF_BLADE
 	db 0
 VenonatEvosMoves:
 ; Evolutions
@@ -975,6 +982,7 @@ MoltresEvosMoves:
 	db 52, FLAMETHROWER
 	db 55, AGILITY
 	db 60, FLY
+	db 62, PSYCHIC_M
 	db 0
 ArticunoEvosMoves:
 ; Evolutions
@@ -985,6 +993,7 @@ ArticunoEvosMoves:
 	db 51, HURRICANE
 	db 55, AGILITY
 	db 60, MIST
+	db 62, SHADOW_BALL
 	db 0
 ZapdosEvosMoves:
 ; Evolutions
@@ -996,6 +1005,7 @@ ZapdosEvosMoves:
 	db 51, THUNDER
 	db 55, AGILITY
 	db 60, LIGHT_SCREEN
+	db 63, EARTH_POWER
 	db 0
 DittoEvosMoves:
 ; Evolutions
@@ -1055,6 +1065,7 @@ NinetalesEvosMoves:
 ; Learnset
 	db 22, FLAME_BURST
 	db 38, FLAMETHROWER
+	db 46, DAZZLE_GLEAM
 	db 0
 PikachuEvosMoves:
 ; Evolutions
@@ -1078,6 +1089,7 @@ RaichuEvosMoves:
 	db 0
 ; Learnset
 	db 38, THUNDERBOLT
+	db 46, IRON_TAIL
 	db 0
 MissingNo56EvosMoves:
 ; Evolutions
@@ -1156,6 +1168,7 @@ SeadraEvosMoves:
 	db 24, LEER
 	db 41, AGILITY
 	db 52, HYDRO_PUMP
+	db 55, DRAGON_PULSE
 	db 0
 MissingNo5EEvosMoves:
 ; Evolutions
@@ -1233,6 +1246,7 @@ WigglytuffEvosMoves:
 	db 1, SING
 	db 30, DRAIN_KISS
 	db 38, HYPER_VOICE
+	db 44, THUNDERBOLT
 	db 0
 EeveeEvosMoves:
 ; Evolutions
@@ -1391,6 +1405,7 @@ DodrioEvosMoves:
 	db 45, TRI_ATTACK
 	db 51, AGILITY
 	db 52, STRENGTH
+	db 55, DIG
 	db 0
 PrimeapeEvosMoves:
 ; Evolutions
@@ -1487,6 +1502,7 @@ MachampEvosMoves:
 	db 44, SEISMIC_TOSS
 	db 52, HI_JUMP_KICK
 	db 52, SUBMISSION
+	db 56, STONE_EDGE
 	db 0
 MissingNo7FEvosMoves:
 ; Evolutions
@@ -1546,6 +1562,7 @@ SnorlaxEvosMoves:
 	db 41, HARDEN
 	db 48, DOUBLE_EDGE
 	db 56, HYPER_BEAM
+	db 58, ICE_PUNCH
 	db 0
 MagikarpEvosMoves:
 ; Evolutions
@@ -1576,6 +1593,7 @@ MukEvosMoves:
 	db 52, POISON_JAB
 	db 53, SCREECH
 	db 60, ACID_ARMOR
+	db 62, FIRE_PUNCH
 	db 0
 MissingNo8AEvosMoves:
 ; Evolutions
@@ -1621,6 +1639,7 @@ ClefableEvosMoves:
 ; Learnset
 	db 1, SING
 	db 38, DAZZLE_GLEAM
+	db 45, ICE_BEAM
 	db 0
 WeezingEvosMoves:
 ; Evolutions
@@ -1684,6 +1703,7 @@ AlakazamEvosMoves:
 	db 31, RECOVER
 	db 38, PSYCHIC_M
 	db 42, REFLECT
+	db 50, FOCUS_BLAST
 	db 0
 PidgeottoEvosMoves:
 ; Evolutions
@@ -1709,6 +1729,7 @@ PidgeotEvosMoves:
 	db 44, AGILITY
 	db 52, STRENGTH
 	db 54, MIRROR_MOVE
+	db 58, IRON_HEAD
 	db 0
 StarmieEvosMoves:
 ; Evolutions
@@ -1717,6 +1738,7 @@ StarmieEvosMoves:
 	db 22, BUBBLEBEAM
 	db 30, AURORA_BEAM
 	db 38, SURF
+	db 44, PSYCHIC_M
 	db 0
 BulbasaurEvosMoves:
 ; Evolutions
@@ -1742,6 +1764,7 @@ VenusaurEvosMoves:
 	db 52, ENERGY_BALL
 	db 55, SLEEP_POWDER
 	db 65, SOLARBEAM
+	db 68, EARTH_POWER
 	db 0
 TentacruelEvosMoves:
 ; Evolutions
@@ -1753,6 +1776,7 @@ TentacruelEvosMoves:
 	db 35, BARRIER
 	db 43, SCREECH
 	db 50, HYDRO_PUMP
+	db 54, ICE_BEAM
 	db 0
 MissingNo9CEvosMoves:
 ; Evolutions
@@ -2036,6 +2060,7 @@ VileplumeEvosMoves:
 ; Learnset
 	db 15, POISONPOWDER
 	db 30, SLUDGE
+	db 48, SHADOW_BALL
 	db 0
 BellsproutEvosMoves:
 ; Evolutions
@@ -2071,4 +2096,5 @@ VictreebelEvosMoves:
 	db 15, POISONPOWDER
 	db 30, CROSS_POISON
 	db 38, ENERGY_BALL
+	db 48, EARTHQUAKE
 	db 0

@@ -1887,7 +1887,7 @@ HoldemDrawCommon:
 HoldemEraseActionMenu:
 	hlcoord 11, 10
 	ld e, 4 ; rows
-	ld a, " "
+	ld a, CHARVAL(" ")
 .row
 	ld c, 9 ; cols
 .col
@@ -2108,13 +2108,26 @@ HoldemCoord:
 	ret
 
 ; b = x, c = y, hl = 4-byte BCD source -> print chip amount at (x,y).
+; Only the low wHoldemChipWidth bytes (2 for coins, 3 for money) are shown, so
+; the number stays narrow enough not to run into the CPU cards on the same row.
 HoldemPrintChipAt:
 	push hl
 	ld d, b
 	ld e, c
 	call HoldemCoord ; hl = coord
-	pop de ; de = BCD source
-	ld c, LEADING_ZEROES | 4
+	pop de ; de = BCD source (big-endian: byte 0 is most significant)
+	ld a, [wHoldemChipWidth]
+	ld b, a ; b = width
+	ld a, 4
+	sub b ; a = 4 - width = leading bytes to skip
+	add e
+	ld e, a
+	ld a, d
+	adc 0
+	ld d, a ; de -> low `width` bytes
+	ld a, LEADING_ZEROES
+	or b
+	ld c, a ; LEADING_ZEROES | width
 	call PrintBCDNumber
 	ret
 

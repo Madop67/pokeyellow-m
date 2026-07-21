@@ -395,6 +395,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 52 | Energy Ball | Grass | Special | 90 | 100% | 15 | |
 | 55 | Sleep Powder | Grass | Status | — | 75% | 15 | |
 | 65 | Solarbeam | Grass | Special | 120 | 85% | 5 | |
+| 68 | Earth Power | Ground | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM01 Cut, HM04 Strength, TM01 Sludge Bomb, TM03 Swords Dance, TM06 Toxic, TM09 Energy Ball, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM21 Mega Drain, TM22 Solarbeam, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM44 Rest, TM50 Substitute
 
@@ -840,6 +841,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 44 | Agility | Psychic | Status | — | 100% | 30 | |
 | 52 | Strength | Normal | Physical | 90 | 100% | 15 | |
 | 54 | Mirror Move | Flying | Status | — | 100% | 20 | |
+| 58 | Iron Head | Steel | Physical | 65 | 100% | 20 | |
 
 **TM/HM compatibility:** HM02 Fly, TM02 Air Slash, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM39 Swift, TM44 Rest, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -983,6 +985,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 34 | Drill Peck | Flying | Physical | 90 | 100% | 15 | |
 | 43 | Agility | Psychic | Status | — | 100% | 30 | |
 | 47 | Strength | Normal | Physical | 90 | 100% | 15 | |
+| 50 | Earthquake | Ground | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM02 Fly, TM02 Air Slash, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM31 Mimic, TM32 Double Team, TM39 Swift, TM44 Rest, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -1101,6 +1104,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 1 | Growl | Sound | Status | — | 100% | 40 | retyped Normal → Sound |
 | 1 | Thunder Wave | Electric | Status | — | 100% | 20 | |
 | 38 | Thunderbolt | Electric | Special | 90 | 100% | 15 | |
+| 46 | Iron Tail | Steel | Physical | 120 | 85% | 5 | |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM19 Seismic Toss, TM23 Iron Tail, TM24 Thunderbolt, TM25 Thunder, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM39 Swift, TM44 Rest, TM45 Thunder Wave, TM50 Substitute
 
@@ -1391,6 +1395,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 1 | Minimize | Normal | Status | — | 100% | 20 | |
 | 1 | Sing | Sound | Status | — | 55% | 15 | retyped Normal → Sound |
 | 38 | Dazzle Gleam | Fairy | Special | 90 | 100% | 15 | |
+| 45 | Ice Beam | Ice | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM05 Dazzle Gleam, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM12 Hyper Voice, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM18 Counter, TM19 Seismic Toss, TM22 Solarbeam, TM24 Thunderbolt, TM25 Thunder, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM35 Metronome, TM38 Fire Blast, TM44 Rest, TM45 Thunder Wave, TM46 Light Screen, TM49 Tri Attack, TM50 Substitute
 
@@ -1445,6 +1450,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 1 | Tail Whip | Normal | Status | — | 100% | 30 | |
 | 22 | Flame Burst | Fire | Special | 65 | 100% | 20 | |
 | 38 | Flamethrower | Fire | Special | 90 | 100% | 15 | |
+| 46 | Dazzle Gleam | Fairy | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, TM05 Dazzle Gleam, TM06 Toxic, TM10 Double-Edge, TM12 Hyper Voice, TM15 Hyper Beam, TM18 Counter, TM20 Flamethrower, TM28 Dig, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM38 Fire Blast, TM39 Swift, TM44 Rest, TM50 Substitute
 
@@ -1505,6 +1511,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 1 | Sing | Sound | Status | — | 55% | 15 | retyped Normal → Sound |
 | 30 | Drain Kiss | Fairy | Special | 60 | 100% | 20 | |
 | 38 | Hyper Voice | Sound | Special | 90 | 100% | 15 | |
+| 44 | Thunderbolt | Electric | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM05 Dazzle Gleam, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM12 Hyper Voice, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM18 Counter, TM19 Seismic Toss, TM22 Solarbeam, TM24 Thunderbolt, TM25 Thunder, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM38 Fire Blast, TM44 Rest, TM45 Thunder Wave, TM46 Light Screen, TM49 Tri Attack, TM50 Substitute
 
@@ -1656,6 +1663,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 1 | Stun Spore | Grass | Status | — | 75% | 30 | |
 | 15 | Poisonpowder | Poison | Status | — | 75% | 35 | |
 | 30 | Sludge | Poison | Special | 65 | 100% | 20 | |
+| 48 | Shadow Ball | Ghost | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM01 Cut, HM04 Strength, TM01 Sludge Bomb, TM03 Swords Dance, TM06 Toxic, TM09 Energy Ball, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM21 Mega Drain, TM22 Solarbeam, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM44 Rest, TM50 Substitute
 
@@ -2246,6 +2254,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 31 | Recover | Normal | Status | — | 100% | 20 | |
 | 38 | Psychic | Psychic | Special | 90 | 100% | 15 | side effect now lowers Sp. Def (was Special) |
 | 42 | Reflect | Psychic | Status | — | 100% | 20 | |
+| 50 | Focus Blast | Fighting | Special | 120 | 85% | 5 | |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM04 Shadow Ball, TM05 Dazzle Gleam, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM19 Seismic Toss, TM28 Dig, TM29 Psychic, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM35 Metronome, TM44 Rest, TM45 Thunder Wave, TM46 Light Screen, TM49 Tri Attack, TM50 Substitute
 
@@ -2328,6 +2337,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 44 | Seismic Toss | Fighting | Physical | * | 100% | 20 | |
 | 52 | Hi Jump Kick | Fighting | Physical | 90 | 100% | 15 | |
 | 52 | Submission | Fighting | Physical | 120 | 85% | 10 | |
+| 56 | Stone Edge | Rock | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, TM06 Toxic, TM07 Stone Edge, TM10 Double-Edge, TM15 Hyper Beam, TM17 Aura Sphere, TM18 Counter, TM19 Seismic Toss, TM26 Earthquake, TM27 Fissure, TM28 Dig, TM31 Mimic, TM32 Double Team, TM35 Metronome, TM38 Fire Blast, TM44 Rest, TM48 Rock Slide, TM50 Substitute
 
@@ -2426,6 +2436,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 15 | Poisonpowder | Poison | Status | — | 75% | 35 | |
 | 30 | Cross Poison | Poison | Physical | 65 | 100% | 25 | |
 | 38 | Energy Ball | Grass | Special | 90 | 100% | 15 | |
+| 48 | Earthquake | Ground | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM01 Cut, HM04 Strength, TM01 Sludge Bomb, TM03 Swords Dance, TM06 Toxic, TM09 Energy Ball, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM21 Mega Drain, TM22 Solarbeam, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM44 Rest, TM50 Substitute
 
@@ -2511,6 +2522,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 35 | Barrier | Psychic | Status | — | 100% | 30 | |
 | 43 | Screech | Sound | Status | — | 85% | 40 | retyped Normal → Sound |
 | 50 | Hydro Pump | Water | Special | 120 | 85% | 5 | |
+| 54 | Ice Beam | Ice | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM01 Cut, HM03 Surf, TM01 Sludge Bomb, TM03 Swords Dance, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM12 Hyper Voice, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM18 Counter, TM21 Mega Drain, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM44 Rest, TM50 Substitute
 
@@ -2808,6 +2820,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 31 | Agility | Psychic | Status | — | 100% | 30 | |
 | 39 | Slash | Normal | Physical | 65 | 100% | 20 | |
 | 43 | Strength | Normal | Physical | 90 | 100% | 15 | |
+| 48 | Leaf Blade | Grass | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM01 Cut, HM02 Fly, HM04 Strength, TM02 Air Slash, TM03 Swords Dance, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM39 Swift, TM44 Rest, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -2867,6 +2880,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 45 | Tri Attack | Normal | Special | 65 | 100% | 25 | |
 | 51 | Agility | Psychic | Status | — | 100% | 30 | |
 | 52 | Strength | Normal | Physical | 90 | 100% | 15 | |
+| 55 | Dig | Ground | Physical | 120 | 85% | 10 | |
 
 **TM/HM compatibility:** HM02 Fly, HM04 Strength, TM02 Air Slash, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM44 Rest, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -2985,6 +2999,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 52 | Poison Jab | Poison | Physical | 90 | 100% | 15 | |
 | 53 | Screech | Sound | Status | — | 85% | 40 | retyped Normal → Sound |
 | 60 | Acid Armor | Poison | Status | — | 100% | 40 | |
+| 62 | Fire Punch | Fire | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, TM01 Sludge Bomb, TM06 Toxic, TM12 Hyper Voice, TM15 Hyper Beam, TM18 Counter, TM21 Mega Drain, TM24 Thunderbolt, TM25 Thunder, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM38 Fire Blast, TM44 Rest, TM47 Explosion, TM50 Substitute
 
@@ -3538,6 +3553,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 23 | Defense Curl | Normal | Status | — | 100% | 40 | |
 | 39 | Screech | Sound | Status | — | 85% | 40 | retyped Normal → Sound |
 | 43 | Strength | Normal | Physical | 90 | 100% | 15 | |
+| 47 | Ice Beam | Ice | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM01 Cut, HM03 Surf, HM04 Strength, TM03 Swords Dance, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM12 Hyper Voice, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM19 Seismic Toss, TM24 Thunderbolt, TM25 Thunder, TM26 Earthquake, TM27 Fissure, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM38 Fire Blast, TM44 Rest, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -3678,6 +3694,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 48 | Light Screen | Psychic | Status | — | 100% | 30 | |
 | 52 | Spiral Beam | Normal | Special | 90 | 100% | 15 | |
 | 54 | Double-Edge | Normal | Physical | 120 | 85% | 10 | |
+| 56 | Ice Beam | Ice | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM12 Hyper Voice, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM19 Seismic Toss, TM22 Solarbeam, TM24 Thunderbolt, TM25 Thunder, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM35 Metronome, TM38 Fire Blast, TM41 Softboiled, TM44 Rest, TM45 Thunder Wave, TM46 Light Screen, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -3796,6 +3813,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 24 | Leer | Normal | Status | — | 100% | 30 | |
 | 41 | Agility | Psychic | Status | — | 100% | 30 | |
 | 52 | Hydro Pump | Water | Special | 120 | 85% | 5 | |
+| 55 | Dragon Pulse | Dragon | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM03 Surf, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM18 Counter, TM31 Mimic, TM32 Double Team, TM39 Swift, TM42 Dragon Pulse, TM44 Rest, TM50 Substitute
 
@@ -3947,6 +3965,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 22 | Bubblebeam | Water | Special | 65 | 100% | 20 | |
 | 30 | Aurora Beam | Light | Special | 65 | 100% | 20 | retyped Ice → Light |
 | 38 | Surf | Water | Special | 90 | 100% | 15 | |
+| 44 | Psychic | Psychic | Special | 90 | 100% | 15 | side effect now lowers Sp. Def (was Special) |
 
 **TM/HM compatibility:** HM03 Surf, HM05 Flash, TM05 Dazzle Gleam, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM18 Counter, TM24 Thunderbolt, TM25 Thunder, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM37 Photon Beam, TM39 Swift, TM44 Rest, TM45 Thunder Wave, TM46 Light Screen, TM49 Tri Attack, TM50 Substitute
 
@@ -3977,6 +3996,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 39 | Meditate | Psychic | Status | — | 100% | 40 | |
 | 47 | Substitute | Normal | Status | — | 100% | 10 | |
 | 51 | Psychic | Psychic | Special | 90 | 100% | 15 | side effect now lowers Sp. Def (was Special) |
+| 53 | Thunderbolt | Electric | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM05 Dazzle Gleam, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM19 Seismic Toss, TM22 Solarbeam, TM24 Thunderbolt, TM25 Thunder, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM35 Metronome, TM44 Rest, TM45 Thunder Wave, TM50 Substitute
 
@@ -4068,6 +4088,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 42 | Thunderpunch | Electric | Physical | 90 | 100% | 15 | |
 | 49 | Light Screen | Psychic | Status | — | 100% | 30 | |
 | 54 | Thunder | Electric | Special | 120 | 85% | 5 | |
+| 56 | Psychic | Psychic | Special | 90 | 100% | 15 | side effect now lowers Sp. Def (was Special) |
 
 **TM/HM compatibility:** HM04 Strength, HM05 Flash, TM06 Toxic, TM10 Double-Edge, TM12 Hyper Voice, TM15 Hyper Beam, TM18 Counter, TM19 Seismic Toss, TM24 Thunderbolt, TM25 Thunder, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM35 Metronome, TM39 Swift, TM44 Rest, TM45 Thunder Wave, TM50 Substitute
 
@@ -4153,6 +4174,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 28 | Tail Whip | Normal | Status | — | 100% | 30 | |
 | 35 | Leer | Normal | Status | — | 100% | 30 | |
 | 51 | Double-Edge | Normal | Physical | 120 | 85% | 10 | |
+| 54 | Earthquake | Ground | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM04 Strength, TM06 Toxic, TM10 Double-Edge, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM24 Thunderbolt, TM25 Thunder, TM26 Earthquake, TM27 Fissure, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM38 Fire Blast, TM44 Rest, TM47 Explosion, TM49 Tri Attack, TM50 Substitute
 
@@ -4608,6 +4630,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 41 | Harden | Normal | Status | — | 100% | 30 | |
 | 48 | Double-Edge | Normal | Physical | 120 | 85% | 10 | |
 | 56 | Hyper Beam | Normal | Special | 120 | 85% | 5 | |
+| 58 | Ice Punch | Ice | Physical | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM03 Surf, HM04 Strength, TM06 Toxic, TM07 Stone Edge, TM08 Crunch, TM10 Double-Edge, TM11 Bubblebeam, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM16 Pay Day, TM18 Counter, TM19 Seismic Toss, TM22 Solarbeam, TM24 Thunderbolt, TM25 Thunder, TM26 Earthquake, TM27 Fissure, TM29 Psychic, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM35 Metronome, TM38 Fire Blast, TM44 Rest, TM47 Explosion, TM48 Rock Slide, TM49 Tri Attack, TM50 Substitute
 
@@ -4636,6 +4659,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 51 | Hurricane | Flying | Special | 120 | 85% | 5 | |
 | 55 | Agility | Psychic | Status | — | 100% | 30 | |
 | 60 | Mist | Ice | Status | — | 100% | 30 | |
+| 62 | Shadow Ball | Ghost | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM02 Fly, TM02 Air Slash, TM06 Toxic, TM10 Double-Edge, TM11 Bubblebeam, TM13 Ice Beam, TM14 Blizzard, TM15 Hyper Beam, TM18 Counter, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM39 Swift, TM44 Rest, TM46 Light Screen, TM50 Substitute
 
@@ -4665,6 +4689,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 51 | Thunder | Electric | Special | 120 | 85% | 5 | |
 | 55 | Agility | Psychic | Status | — | 100% | 30 | |
 | 60 | Light Screen | Psychic | Status | — | 100% | 30 | |
+| 63 | Earth Power | Ground | Special | 90 | 100% | 15 | |
 
 **TM/HM compatibility:** HM02 Fly, HM05 Flash, TM02 Air Slash, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM24 Thunderbolt, TM25 Thunder, TM30 Shock Wave, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM39 Swift, TM44 Rest, TM45 Thunder Wave, TM46 Light Screen, TM50 Substitute
 
@@ -4694,6 +4719,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 | 52 | Flamethrower | Fire | Special | 90 | 100% | 15 | |
 | 55 | Agility | Psychic | Status | — | 100% | 30 | |
 | 60 | Fly | Flying | Physical | 120 | 85% | 10 | |
+| 62 | Psychic | Psychic | Special | 90 | 100% | 15 | side effect now lowers Sp. Def (was Special) |
 
 **TM/HM compatibility:** HM02 Fly, TM02 Air Slash, TM06 Toxic, TM10 Double-Edge, TM15 Hyper Beam, TM18 Counter, TM20 Flamethrower, TM31 Mimic, TM32 Double Team, TM33 Reflect, TM38 Fire Blast, TM39 Swift, TM44 Rest, TM46 Light Screen, TM50 Substitute
 
