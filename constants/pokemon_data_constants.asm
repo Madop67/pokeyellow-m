@@ -23,6 +23,10 @@ DEF BASE_GROWTH_RATE rb
 DEF BASE_TMHM        rb (NUM_TM_HM + 7) / 8
 DEF BASE_DATA_SIZE EQU _RS
 
+; the longest level-up learnset in the game, and so the most moves the pokemon
+; menu's RELEARN option can ever list at once
+DEF MAX_RELEARNABLE_MOVES EQU 11
+
 ; party_struct members (see macros/ram.asm)
 rsreset
 DEF MON_SPECIES    rb

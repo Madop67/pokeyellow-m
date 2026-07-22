@@ -2153,9 +2153,9 @@ DisplayBattleMenu::
 	ld a, $2 ; select the "ITEM" menu
 	jp .upperLeftMenuItemWasNotSelected
 .oldManName
-	db "OLD MAN@"
+	db "Old man@"
 .profOakName
-	db "PROF.OAK@"
+	db "Prof.Oak@"
 .handleBattleMenuInput
 	ld a, [wBattleAndStartSavedMenuItem]
 	ld [wCurrentMenuItem], a
@@ -2824,7 +2824,7 @@ MoveDisabledText:
 	text_end
 
 WhichTechniqueString:
-	db "WHICH TECHNIQUE?@"
+	db "Which technique?@"
 
 SelectMenuItem_CursorUp:
 	ld a, [wCurrentMenuItem]
@@ -2962,7 +2962,7 @@ ENDC
 	jp MoveSelectionMenu
 
 TeraIndicatorText:
-	db "TERA@"
+	db "Tera@"
 
 SwapMovesInMenu:
 IF DEF(_DEBUG)
@@ -3122,7 +3122,7 @@ DisabledText:
 	db "Disabled!@"
 
 TypeText:
-	db "TYPE@"
+	db "Type@"
 
 SelectEnemyMove:
 	ld a, [wLinkState]
@@ -4888,7 +4888,7 @@ ApplyAttackToEnemyPokemon:
 	cp SONICBOOM
 	jr z, .storeDamage
 ; fixed-damage fallback (was Psywave; Dragon Rage and Psywave were removed
-; in the move overhaul, so only Seismic Toss/Night Shade/Sonicboom reach here)
+; in the move overhaul, so only Seismic Toss/Night Shade/SonicBoom reach here)
 	ld a, [hl]
 	ld b, a
 	srl a
@@ -5005,7 +5005,7 @@ ApplyAttackToPlayerPokemon:
 	cp SONICBOOM
 	jr z, .storeDamage
 ; fixed-damage fallback (was Psywave; Dragon Rage and Psywave were removed
-; in the move overhaul, so only Seismic Toss/Night Shade/Sonicboom reach here)
+; in the move overhaul, so only Seismic Toss/Night Shade/SonicBoom reach here)
 	ld a, [hl]
 	ld b, a
 	srl a

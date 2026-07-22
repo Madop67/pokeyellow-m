@@ -345,7 +345,7 @@ CeruleanCityCooltrainerF1Text:
 	ldh a, [hRandomAdd]
 	cp 180 ; 76/256 chance of 1st dialogue
 	jr c, .notFirstText
-	ld hl, .ElectrodeUseSonicboomText
+	ld hl, .ElectrodeUseSonicBoomText
 	call PrintText
 	jr .end
 .notFirstText
@@ -361,8 +361,8 @@ CeruleanCityCooltrainerF1Text:
 .end
 	jp TextScriptEnd
 
-.ElectrodeUseSonicboomText:
-	text_far _CeruleanCityCooltrainerF1ElectrodeUseSonicboomText
+.ElectrodeUseSonicBoomText:
+	text_far _CeruleanCityCooltrainerF1ElectrodeUseSonicBoomText
 	text_end
 
 .ElectrodePunchText:

@@ -2375,19 +2375,19 @@ HoldemRankChars: db "23456789TJQKA"
 HoldemSuitChars: db "SHDC"
 
 ; PlaceString labels (raw, "@"-terminated)
-HoldemTitleStr:      db "HOLD EM@"
-HoldemBoardStr:      db "BOARD@"
-HoldemPotStr:        db "POT@"
-HoldemYouStr:        db "YOU@"
+HoldemTitleStr:      db "Hold EM@"
+HoldemBoardStr:      db "Board@"
+HoldemPotStr:        db "Pot@"
+HoldemYouStr:        db "You@"
 HoldemCpuStr:        db "CPU@"
-HoldemFoldStr:       db "FOLD@"
-HoldemCheckStr:      db "CHECK@"
-HoldemCallStr:       db "CALL@"
-HoldemRaiseStr:      db "RAISE@"
+HoldemFoldStr:       db "Fold@"
+HoldemCheckStr:      db "Check@"
+HoldemCallStr:       db "Call@"
+HoldemRaiseStr:      db "Raise@"
 HoldemHiddenStr:     db "??@"
 HoldemPlayAgainStr:  db "Play again?@"
-HoldemYesStr:        db "YES@"
-HoldemNoStr:         db "NO@"
+HoldemYesStr:        db "Yes@"
+HoldemNoStr:         db "No@"
 HoldemYouWinStr:     db "You win the pot!@"
 HoldemDealerWinsStr: db "You lose the pot.@"
 
@@ -2414,7 +2414,7 @@ HoldemCpuRaisesStr:    db "CPU raises.@"
 ; PrintText messages
 HoldemDealerIntroText:
 	text "Care for a hand"
-	line "of TEXAS HOLD EM?"
+	line "of Texas hold EM?"
 	done
 
 HoldemTableIntroText:
@@ -2424,7 +2424,7 @@ HoldemTableIntroText:
 
 HoldemChooseCurrencyText:
 	text "Wager with money?"
-	line "(NO uses COINS)"
+	line "(No uses coins)"
 	done
 
 HoldemChooseStakesText:

@@ -179,4 +179,4 @@ GetTeraEntryCoord:
 	jr .rowLoop
 
 TeraPickerTitleText:
-	db "CHOOSE TERA TYPE@"
+	db "Choose Tera type@"

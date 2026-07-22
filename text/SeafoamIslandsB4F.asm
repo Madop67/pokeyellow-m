@@ -9,6 +9,6 @@ _SeafoamIslandsB4FBouldersSignText::
 	done
 
 _SeafoamIslandsB4FDangerSignText::
-	text "DANGER"
+	text "Danger"
 	line "Fast current!"
 	done

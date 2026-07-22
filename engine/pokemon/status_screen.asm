@@ -234,17 +234,17 @@ NamePointers2:
 	dw wDayCareMonName
 
 TypesIDNoOTText:
-	db   "TYPE1/"
-	next "TYPE2/"
+	db   "Type1/"
+	next "Type2/"
 	next "<ID>№/"
 	next "OT/"
 	next "@"
 
 StatusText:
-	db "STATUS/@"
+	db "Status/@"
 
 TeraLabelText:
-	db "TERA/@"
+	db "Tera/@"
 
 ; Like WaitForTextScrollButtonPress, but also returns when SELECT is pressed
 ; while a party mon is displayed in the overworld, so the Tera Type picker
@@ -386,11 +386,11 @@ PrintStatsBox:
 	ret
 
 .StatsText:
-	db   "ATK"
-	next "DEF"
-	next "SPD"
-	next "SP.A"
-	next "SP.D@"
+	db   "Atk"
+	next "Def"
+	next "Spd"
+	next "Sp.A"
+	next "Sp.D@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
@@ -563,8 +563,8 @@ CalcExpToLevelUp:
 	ret
 
 StatusScreenExpText:
-	db   "EXP POINTS"
-	next "LEVEL UP@"
+	db   "Exp points"
+	next "Level Up@"
 
 StatusScreen_ClearName:
 	ld bc, NAME_LENGTH - 1

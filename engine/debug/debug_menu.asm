@@ -67,8 +67,8 @@ DebugBattleRivalName:
 	db "Juerry@"
 
 DebugMenuOptions:
-	db   "FIGHT"
-	next "DEBUG@"
+	db   "Fight"
+	next "Debug@"
 
 TestBattle: ; unreferenced except in _DEBUG
 	ld a, 1

@@ -360,22 +360,22 @@ DisplayFieldMoveMonMenu:
 	ld [hli], a ; wFieldMoves + 2
 	ld [hli], a ; wFieldMoves + 3
 	ld [hli], a ; wNumFieldMoves
-	ld [hl], 12 ; wFieldMovesLeftmostXCoord
+	ld [hl], FIELD_MOVE_MENU_LEFTMOST_X ; wFieldMovesLeftmostXCoord
 	call GetMonFieldMoves
 	ld a, [wNumFieldMoves]
 	and a
 	jr nz, .fieldMovesExist
 
 ; no field moves
-	hlcoord 11, 11
-	lb bc, 5, 7
+	hlcoord FIELD_MOVE_MENU_LEFTMOST_X - 1, 11
+	lb bc, NUM_POKEMON_MENU_ENTRIES, 19 - FIELD_MOVE_MENU_LEFTMOST_X
 	call TextBoxBorder
 	call UpdateSprites
-	ld a, 12
+	ld a, FIELD_MOVE_MENU_LEFTMOST_X
 	ldh [hFieldMoveMonMenuTopMenuItemX], a
-	hlcoord 13, 12
+	hlcoord FIELD_MOVE_MENU_LEFTMOST_X + 1, 12
 	ld de, PokemonMenuEntries
-	jp PlaceString
+	jp PlacePokemonMenuEntries
 
 .fieldMovesExist
 	push af
@@ -388,18 +388,17 @@ DisplayFieldMoveMonMenu:
 	ld e, a
 	ld d, 0
 	add hl, de
-	ld b, 5
+	ld b, NUM_POKEMON_MENU_ENTRIES
 	ld a, 18
 	sub e
 	ld c, a
 	pop af
 
-; For each field move, move the top of the text box up 2 rows while the leaving
+; For each field move, move the top of the text box up a row while leaving
 ; the bottom of the text box at the bottom of the screen.
-	ld de, -SCREEN_WIDTH * 2
+	ld de, -SCREEN_WIDTH
 .textBoxHeightLoop
 	add hl, de
-	inc b
 	inc b
 	dec a
 	jr nz, .textBoxHeightLoop
@@ -419,7 +418,7 @@ DisplayFieldMoveMonMenu:
 	ld e, a
 	ld d, 0
 	add hl, de
-	ld de, -SCREEN_WIDTH * 2
+	ld de, -SCREEN_WIDTH
 	ld a, [wNumFieldMoves]
 .calcFirstFieldMoveYLoop
 	add hl, de
@@ -453,7 +452,7 @@ DisplayFieldMoveMonMenu:
 	ld d, b
 	ld e, c
 	call PlaceString
-	ld bc, SCREEN_WIDTH * 2
+	ld bc, SCREEN_WIDTH
 	add hl, bc
 	pop de
 	jr .printNamesLoop
@@ -469,14 +468,28 @@ DisplayFieldMoveMonMenu:
 	ld d, 0
 	add hl, de
 	ld de, PokemonMenuEntries
-	jp PlaceString
+	jp PlacePokemonMenuEntries
+
+; The pokemon menu is too tall to fit five entries at the usual two rows per
+; line, so its whole list (field moves included) is packed one row per entry.
+PlacePokemonMenuEntries:
+	ldh a, [hUILayoutFlags]
+	set BIT_SINGLE_SPACED_LINES, a
+	ldh [hUILayoutFlags], a
+	call PlaceString
+	ldh a, [hUILayoutFlags]
+	res BIT_SINGLE_SPACED_LINES, a
+	ldh [hUILayoutFlags], a
+	ret
 
 INCLUDE "data/moves/field_move_names.asm"
 
 PokemonMenuEntries:
-	db   "STATS"
-	next "SWITCH"
-	next "CANCEL@"
+	db   "Stats"
+	next "Relearn"
+	next "Rename"
+	next "Switch"
+	next "Cancel@"
 
 GetMonFieldMoves:
 	ld a, [wWhichPokemon]

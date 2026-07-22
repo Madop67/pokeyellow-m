@@ -59,10 +59,10 @@ DiplomaCongrats:
 	next "diploma certifies"
 	next "that you have"
 	next "completed your"
-	next "#DEX.@"
+	next "#Dex.@"
 
 DiplomaGameFreak:
-	db "GAME FREAK@"
+	db "Game Freak@"
 
 DisplayDiplomaBottom:
 	call ClearScreen
@@ -120,7 +120,7 @@ DiplomaMewTiles:
 INCBIN "gfx/diploma/diploma_mew.tilemap"
 
 DiplomaPlayTime:
-	db "PLAY TIME@"
+	db "Play time@"
 
 DiplomaDrawHorizontalBorder:
 	ld c, SCREEN_WIDTH / 2
