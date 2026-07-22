@@ -39,8 +39,8 @@ DEF FIRST_SE_ID EQU const_value
 	const SE_DARKEN_MON_PALETTE        ; $F9 used in Smokescreen/Smog/etc.
 	const SE_WATER_DROPLETS_EVERYWHERE ; $FA used in Mist/Surf/Toxic/etc.
 	const SE_SHAKE_SCREEN              ; $FB used in Earthquake/Fissure/etc.
-	const SE_RESET_SCREEN_PALETTE      ; $FC used in Leer/Thunderpunch/etc.
-	const SE_DARK_SCREEN_PALETTE       ; $FD used in Hyper Beam/Thunderpunch/etc.
+	const SE_RESET_SCREEN_PALETTE      ; $FC used in Leer/ThunderPunch/etc.
+	const SE_DARK_SCREEN_PALETTE       ; $FD used in Hyper Beam/ThunderPunch/etc.
 	const SE_DARK_SCREEN_FLASH         ; $FE used in Cut/Take Down/etc.
 
 ; subanimations that are part of move animations

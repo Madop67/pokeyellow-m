@@ -597,13 +597,13 @@ GBPrinter_UpdateStatusMessage:
 	db   "@"
 .CheckingLink:
 	db   ""
-	next " CHECKING LINK...@"
+	next " Checking Link...@"
 .Transmitting:
 	db   ""
-	next "  TRANSMITTING...@"
+	next "  Transmitting...@"
 .Printing:
 	db   ""
-	next "    PRINTING...@"
+	next "    Printing...@"
 .Error1:
 	db   " Printer Error 1"
 	next ""
@@ -809,8 +809,8 @@ PrintPCBox_DrawPage1:
 	call PrintPCBox_PlaceBoxMonInfo
 	ret
 
-.PokemonListString: db "POKéMON LIST@"
-.BoxString: db "BOX@"
+.PokemonListString: db "Pokémon list@"
+.BoxString: db "Box@"
 
 PrintPCBox_DrawPage2:
 	call ClearScreen

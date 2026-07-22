@@ -1196,6 +1196,16 @@ wAlphabetCase:: db
 wNamingScreenLetter:: db
 
 NEXTU
+; the pokemon menu's RELEARN option (see engine/pokemon/move_relearner.asm).
+; LearnMove clobbers the start of this union, so the list is rebuilt after every
+; attempt to learn a move.
+wRelearnCount:: db
+wRelearnMoves:: ds MAX_RELEARNABLE_MOVES
+wRelearnMonLevel:: db
+; the learnset move currently being considered for the list
+wRelearnCandidate:: db
+
+NEXTU
 wChangeMonPicEnemyTurnSpecies:: db
 wChangeMonPicPlayerTurnSpecies:: db
 

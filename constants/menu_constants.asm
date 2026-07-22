@@ -1,6 +1,13 @@
 DEF BAG_ITEM_CAPACITY EQU 20
 DEF PC_ITEM_CAPACITY  EQU 50
 
+; pokemon menu (see PokemonMenuEntries in engine/menus/text_box.asm):
+; STATS, RELEARN, RENAME, SWITCH, CANCEL, printed below any field moves
+DEF NUM_POKEMON_MENU_ENTRIES EQU 5
+; leftmost tile the menu's entries can start in, unless a field move with a
+; longer name (see FieldMoveDisplayData) pushes it further left
+DEF FIELD_MOVE_MENU_LEFTMOST_X EQU 11
+
 ; text box IDs
 	const_def 1
 	const MESSAGE_BOX                       ; $01

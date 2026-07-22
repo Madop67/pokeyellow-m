@@ -343,21 +343,21 @@ DrawPokedexVerticalLine:
 	ret
 
 PokedexSeenText:
-	db "SEEN@"
+	db "Seen@"
 
 PokedexOwnText:
-	db "OWN@"
+	db "Own@"
 
 PokedexContentsText:
-	db "CONTENTS@"
+	db "Contents@"
 
 PokedexMenuItemsText:
-	db   "DATA"
-	next "CRY"
-	next "AREA"
-	next "MOVE"
+	db   "Data"
+	next "Cry"
+	next "Area"
+	next "Move"
 	next "PRNT"
-	next "QUIT@"
+	next "Quit@"
 
 Pokedex_PlacePokemonList:
 	xor a

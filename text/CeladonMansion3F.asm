@@ -10,7 +10,7 @@ _CeladonMansion3FProgrammerText2::
 	para "What a surprise!"
 	line "I never expected"
 	cont "anyone to fill a"
-	cont "#DEX."
+	cont "#Dex."
 	done
 
 _CeladonMansion3FGraphicArtistText::
@@ -24,16 +24,16 @@ _CeladonMansion3FGraphicArtistText2::
 	line "artist!"
 
 	para "Wow, you finished"
-	line "your #DEX!"
-	cont "Want me to PRINT"
-	cont "out a DIPLOMA"
+	line "your #Dex!"
+	cont "Want me to Print"
+	cont "out a diploma"
 	cont "as proof?"
 	done
 
 _CeladonMansion3FGraphicArtistText3::
 	text "Just tell me if"
-	line "you want to PRINT"
-	cont "out a DIPLOMA."
+	line "you want to Print"
+	cont "out a diploma."
 	done
 
 _CeladonMansion3FGraphicArtistText4::
@@ -42,17 +42,17 @@ _CeladonMansion3FGraphicArtistText4::
 
 _CeladonMansion3FGraphicArtistText5::
 	text "OK, let's not"
-	line "PRINT."
+	line "Print."
 	done
 
 _CeladonMansion3FWriterText::
 	text "I wrote the story!"
-	line "Isn't ERIKA cute?"
+	line "Isn't Erika cute?"
 
-	para "I like MISTY a"
+	para "I like Misty a"
 	line "lot too!"
 
-	para "Oh, and SABRINA,"
+	para "Oh, and Sabrina,"
 	line "I like her!"
 	done
 
@@ -61,7 +61,7 @@ _CeladonMansion3FWriterText2::
 
 	para "It's great you"
 	line "caught all the"
-	cont "#MON! Thanks!"
+	cont "#mon! Thanks!"
 	done
 
 _CeladonMansion3FGameDesignerText::
@@ -71,7 +71,7 @@ _CeladonMansion3FGameDesignerText::
 	line "designer!"
 
 	para "Filling up your"
-	line "#DEX is tough,"
+	line "#Dex is tough,"
 	cont "but don't quit!"
 
 	para "When you finish,"
@@ -81,14 +81,14 @@ _CeladonMansion3FGameDesignerText::
 _CeladonMansion3FGameDesignerCompletedDexText::
 	text "Wow! Excellent!"
 	line "You completed"
-	cont "your #DEX!"
+	cont "your #Dex!"
 	cont "Congratulations!"
 	cont "...@"
 	text_end
 
 _CeladonMansion3FGameDesignerCompletedDexText2::
 	text "Go show off your"
-	line "DIPLOMA to"
+	line "diploma to"
 	cont "the development"
 	cont "crew."
 	done
@@ -113,6 +113,6 @@ _CeladonMansion3FGameScriptPCText::
 	done
 
 _CeladonMansion3FDevRoomSignText::
-	text "GAME FREAK"
+	text "Game Freak"
 	line "Development Room"
 	done

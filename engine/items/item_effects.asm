@@ -2561,10 +2561,8 @@ ItemUseTMHM:
 	pop af
 	ld [wWhichPokemon], a
 
-	ld a, [wCurItem]
-	call IsItemHM
-	ret c
-	jp RemoveUsedItem
+	; TMs are reusable in this fork, so neither TMs nor HMs are consumed
+	ret
 
 BootedUpTMText:
 	text_far _BootedUpTMText

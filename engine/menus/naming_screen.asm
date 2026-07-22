@@ -255,6 +255,18 @@ DisplayNamingScreen:
 	ret nc
 	dec hl
 .addLetter
+	ld a, [wNamingScreenNameLength]
+	and a
+	jr nz, .notFirstLetter
+; the name's first letter is its only capital, so drop to the lower case page
+; once it's been entered. Redraw the alphabet by returning to
+; .selectReturnPoint instead of .ABStartReturnPoint.
+	ld a, 1
+	ld [wAlphabetCase], a
+	pop de
+	ld de, .selectReturnPoint
+	push de
+.notFirstLetter
 	ld a, [wNamingScreenLetter]
 	ld [hli], a
 	ld [hl], '@'
@@ -498,13 +510,13 @@ PrintNamingText:
 	jp PlaceString
 
 YourTextString:
-	db "YOUR @"
+	db "Your @"
 
 RivalsTextString:
-	db "RIVAL's @"
+	db "Rival's @"
 
 NameTextString:
-	db "NAME?@"
+	db "Name?@"
 
 NicknameTextString:
-	db "NICKNAME?@"
+	db "Nickname?@"

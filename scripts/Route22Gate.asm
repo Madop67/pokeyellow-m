@@ -66,7 +66,7 @@ Route22GateGuardText:
 	ld a, [wObtainedBadges]
 	bit BIT_BOULDERBADGE, a
 	jr nz, .has_boulderbadge
-	ld hl, Route22GateGuardNoBoulderbadgeText
+	ld hl, Route22GateGuardNoBoulderBadgeText
 	call PrintText
 	call Route22GateMovePlayerDownScript
 	ld a, SCRIPT_ROUTE22GATE_PLAYER_MOVING
@@ -79,8 +79,8 @@ Route22GateGuardText:
 	ld [wRoute22GateCurScript], a
 	jp TextScriptEnd
 
-Route22GateGuardNoBoulderbadgeText:
-	text_far _Route22GateGuardNoBoulderbadgeText
+Route22GateGuardNoBoulderBadgeText:
+	text_far _Route22GateGuardNoBoulderBadgeText
 	text_asm
 	ld a, SFX_DENIED
 	call PlaySoundWaitForCurrent

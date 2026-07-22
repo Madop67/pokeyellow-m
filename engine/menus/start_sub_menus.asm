@@ -34,7 +34,7 @@ StartMenu_Pokemon::
 	ld [wTextBoxID], a
 	call DisplayTextBoxID ; display pokemon menu options
 	ld hl, wFieldMoves
-	lb bc, 2, 12 ; max menu item ID, top menu item Y
+	lb bc, NUM_POKEMON_MENU_ENTRIES - 1, 12 ; max menu item ID, top menu item Y
 	ld e, 5
 .adjustMenuVariablesLoop
 	dec e
@@ -43,7 +43,6 @@ StartMenu_Pokemon::
 	and a ; end of field moves?
 	jr z, .storeMenuVariables
 	inc b
-	dec c
 	dec c
 	jr .adjustMenuVariablesLoop
 .storeMenuVariables
@@ -61,7 +60,11 @@ StartMenu_Pokemon::
 	ld [hli], a ; menu watched keys
 	xor a
 	ld [hl], a
+	ld hl, hUILayoutFlags
+	set BIT_DOUBLE_SPACED_MENU, [hl] ; single-spaced rows
 	call HandleMenuInput
+	ld hl, hUILayoutFlags
+	res BIT_DOUBLE_SPACED_MENU, [hl]
 	push af
 	call LoadScreenTilesFromBuffer1
 	pop af
@@ -76,6 +79,12 @@ StartMenu_Pokemon::
 	dec b
 	cp b
 	jr z, .choseSwitch
+	dec b
+	cp b
+	jp z, .choseRename
+	dec b
+	cp b
+	jp z, .choseRelearn
 	dec b
 	cp b
 	jp z, .choseStats
@@ -99,6 +108,18 @@ StartMenu_Pokemon::
 	ld [wMonDataLocation], a
 	predef StatusScreen
 	predef StatusScreen2
+	call ReloadMapData
+	jp StartMenu_Pokemon
+.choseRelearn
+	call ClearSprites
+	farcall MoveRelearnerMenu
+	call ReloadMapData
+	jp StartMenu_Pokemon
+.choseRename
+; DisplayNameRaterScreen renames [wWhichPokemon], showing the mon whose species
+; DisplayPartyMenu left in wCurPartySpecies.
+	call ClearSprites
+	farcall DisplayNameRaterScreen
 	call ReloadMapData
 	jp StartMenu_Pokemon
 .choseOutOfBattleMove
@@ -587,13 +608,13 @@ TrainerInfo_FarCopyData:
 	jp FarCopyData
 
 TrainerInfo_NameMoneyTimeText:
-	db   "NAME/"
-	next "MONEY/"
-	next "TIME/@"
+	db   "Name/"
+	next "Money/"
+	next "Time/@"
 
 ; $76 is a circle tile
 TrainerInfo_BadgesText:
-	db $76,"BADGES",$76,"@"
+	db $76,"Badges",$76,"@"
 
 ; draws a text box on the trainer info screen
 ; height is always 6

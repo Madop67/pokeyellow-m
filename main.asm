@@ -164,6 +164,8 @@ INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
+; shares this bank with evos_moves.asm so it can call GetMonLearnset directly
+INCLUDE "engine/pokemon/move_relearner.asm"
 
 
 ; Moved out of "Battle Engine 6" to make room for the expanded move list;
