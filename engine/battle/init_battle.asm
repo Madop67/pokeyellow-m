@@ -167,9 +167,12 @@ LoadMonBackPic:
 	call ClearScreenArea
 	ld hl,  wMonHBackSprite - wMonHeader
 	call UncompressMonSprite
-	predef ScaleSpriteByTwo
+; Back pics are Gen 2's native 6x6 rather than a 4x4 pic doubled to 7x7, so they
+; take the same path front pics do: centered in the 7*7 buffer, then merged.
 	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
+	ld a, BACK_SPRITE_DIMENSIONS
+	ld c, a
+	call LoadUncompressedSpriteData
 	ld hl, vSprites
 	ld de, vBackPic
 	ld c, (2 * SPRITEBUFFERSIZE) / 16 ; count of 16-byte chunks to be copied

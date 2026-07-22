@@ -399,3 +399,47 @@ _OaksLabScientistText::
 	text "I study #mon as"
 	line "Prof.Oak's aide."
 	done
+
+_OaksLabOakChallengeText::
+	text "Oak: <PLAYER>! So"
+	line "you're the"
+	cont "Champion now."
+
+	para "You know, I was"
+	line "quite a trainer"
+	cont "in my day."
+
+	para "Let me see how far"
+	line "you've really"
+	cont "come!"
+	done
+
+_OaksLabOakDefeatedText::
+	text "Oak: Marvelous!"
+
+	para "The years have"
+	line "caught up to me,"
+	cont "it seems."
+	done
+
+_OaksLabOakVictoryText::
+	text "Oak: Research is"
+	line "no substitute for"
+	cont "experience!"
+
+	para "Train up and come"
+	line "see me again."
+	done
+
+_OaksLabOakAfterBattleText::
+	text "Oak: A fine"
+	line "battle, <PLAYER>!"
+
+	para "I'm off to Route"
+	line "22 to gather more"
+	cont "data."
+
+	para "Find me there if"
+	line "you want another"
+	cont "round!"
+	done

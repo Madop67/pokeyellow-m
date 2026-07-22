@@ -14,6 +14,8 @@ Route22_ScriptPointers:
 	dw_const Route22Rival2AfterBattleScript, SCRIPT_ROUTE22_RIVAL2_AFTER_BATTLE
 	dw_const Route22Rival2ExitScript,        SCRIPT_ROUTE22_RIVAL2_EXIT
 	dw_const Route22NoopScript,              SCRIPT_ROUTE22_NOOP
+	dw_const Route22OakStartBattleScript,    SCRIPT_ROUTE22_OAK_START_BATTLE
+	dw_const Route22OakAfterBattleScript,    SCRIPT_ROUTE22_OAK_AFTER_BATTLE
 
 Route22SetDefaultScript:
 	xor a ; SCRIPT_ROUTE22_DEFAULT
@@ -373,10 +375,41 @@ Route22Rival2ExitScript:
 	ld [wRoute22CurScript], a
 	ret
 
+; postgame Prof. Oak battle 2 of 3, started from Route22OakText
+Route22OakStartBattleScript:
+	ld a, OPP_PROF_OAK
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	ld hl, Route22OakDefeatedText
+	ld de, Route22OakVictoryText
+	call SaveEndBattleTextPointers
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld a, SCRIPT_ROUTE22_OAK_AFTER_BATTLE
+	ld [wRoute22CurScript], a
+	ret
+
+Route22OakAfterBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, Route22SetDefaultScript ; blacked out, leave the challenge available
+	ld a, [wBattleResult]
+	and a
+	jp nz, Route22SetDefaultScript ; didn't win
+	SetEvent EVENT_BEAT_PROF_OAK_2
+	SetEvent EVENT_PROF_OAK_IN_CERULEAN_CAVE
+	ld a, TOGGLE_CERULEAN_CAVE_1F_OAK
+	ld [wToggleableObjectIndex], a
+	predef ShowObject
+	jp Route22SetDefaultScript
+
 Route22_TextPointers:
 	def_text_pointers
 	dw_const Route22Rival1Text,            TEXT_ROUTE22_RIVAL1
 	dw_const Route22Rival2Text,            TEXT_ROUTE22_RIVAL2
+	dw_const Route22OakText,               TEXT_ROUTE22_OAK
 	dw_const Route22PokemonLeagueSignText, TEXT_ROUTE22_POKEMON_LEAGUE_SIGN
 
 Route22Rival1Text:
@@ -388,6 +421,36 @@ Route22Rival2Text:
 	text_asm
 	farcall Route22PrintRival2Text
 	jp TextScriptEnd
+
+Route22OakText:
+	text_asm
+	CheckEvent EVENT_BEAT_PROF_OAK_2
+	jr nz, .already_beat_oak
+	ld hl, Route22OakChallengeText
+	call PrintText
+	ld a, SCRIPT_ROUTE22_OAK_START_BATTLE
+	ld [wRoute22CurScript], a
+	jp TextScriptEnd
+.already_beat_oak
+	ld hl, Route22OakAfterBattleText
+	call PrintText
+	jp TextScriptEnd
+
+Route22OakChallengeText:
+	text_far _Route22OakChallengeText
+	text_end
+
+Route22OakAfterBattleText:
+	text_far _Route22OakAfterBattleText
+	text_end
+
+Route22OakDefeatedText:
+	text_far _Route22OakDefeatedText
+	text_end
+
+Route22OakVictoryText:
+	text_far _Route22OakVictoryText
+	text_end
 
 Route22PokemonLeagueSignText:
 	text_asm

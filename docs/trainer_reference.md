@@ -22,9 +22,9 @@ hand-edit; rerun that script after changing trainer, move, or Pokémon data.
 - **Bug Catcher** — 15 battles
 - **Lass** — 19 battles
 - **Sailor** — 8 battles
-- **Jr. Trainer♂** — 10 battles
-- **Jr. Trainer♀** — 25 battles
-- **Poké Maniac** — 7 battles
+- **Jr.Trainer♂** — 10 battles
+- **Jr.Trainer♀** — 25 battles
+- **Pokémaniac** — 7 battles
 - **Super Nerd** — 12 battles
 - **Hiker** — 14 battles
 - **Biker** — 15 battles
@@ -42,7 +42,7 @@ hand-edit; rerun that script after changing trainer, move, or Pokémon data.
 - **Bird Keeper** — 17 battles
 - **Blackbelt** — 9 battles
 - **Rival (early)** — 3 battles
-- **Prof. Oak** — 3 battles
+- **Prof.Oak** — 3 battles
 - **Scientist** — 13 battles
 - **Giovanni** ⭐ — 3 battles
 - **Rocket** — 49 battles
@@ -51,7 +51,7 @@ hand-edit; rerun that script after changing trainer, move, or Pokémon data.
 - **Bruno** ⭐ — 1 battle
 - **Brock** ⭐ — 1 battle
 - **Misty** ⭐ — 1 battle
-- **Lt. Surge** ⭐ — 1 battle
+- **Lt.Surge** ⭐ — 1 battle
 - **Erika** ⭐ — 1 battle
 - **Koga** ⭐ — 1 battle
 - **Blaine** ⭐ — 1 battle
@@ -543,9 +543,9 @@ _Lv 24 · 1 Pokémon_
 
 ---
 
-## Jr. Trainer♂
+## Jr.Trainer♂
 
-### Jr. Trainer♂ #1 — Pewter Gym
+### Jr.Trainer♂ #1 — Pewter Gym
 _Lv 9 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -553,7 +553,7 @@ _Lv 9 · 2 Pokémon_
 | 1 | Diglett | 9 | Ground | Tackle · **Cut** · **Counter** · **Double Team** |
 | 2 | Sandshrew | 9 | Ground | Tackle · **Cut** · **Swift** · **Swords Dance** |
 
-### Jr. Trainer♂ #2 — Route 24/Route 25
+### Jr.Trainer♂ #2 — Route 24/Route 25
 _Lv 14 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -561,21 +561,21 @@ _Lv 14 · 2 Pokémon_
 | 1 | Rattata | 14 | Normal | Tackle · **Pay Day** · Quick Attack · Bite |
 | 2 | Ekans | 14 | Poison | Tackle · **Counter** · Poison Sting · **Mega Drain** |
 
-### Jr. Trainer♂ #3 — Route 24
+### Jr.Trainer♂ #3 — Route 24
 _Lv 18 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Mankey | 18 | Fighting | Tackle · **Shock Wave** · Low Kick · **Rock Slide** |
 
-### Jr. Trainer♂ #4 — Unused
+### Jr.Trainer♂ #4 — Unused
 _Lv 20 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Squirtle | 20 | Water | Tackle · Tail Whip · Water Gun |
 
-### Jr. Trainer♂ #5 — Route 6
+### Jr.Trainer♂ #5 — Route 6
 _Lv 16 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -583,7 +583,7 @@ _Lv 16 · 2 Pokémon_
 | 1 | Spearow | 16 | Normal/Flying | Peck · **Tri Attack** · **Pay Day** · Tackle |
 | 2 | Raticate | 16 | Normal | Tackle · Quick Attack · **Tri Attack** · Bite |
 
-### Jr. Trainer♂ #6 — Unused
+### Jr.Trainer♂ #6 — Unused
 _Lv 18 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -592,7 +592,7 @@ _Lv 18 · 3 Pokémon_
 | 2 | Diglett | 18 | Ground | Tackle · Growl |
 | 3 | Sandshrew | 18 | Ground | Tackle · Sand-Attack · Bulldoze · Slash |
 
-### Jr. Trainer♂ #7 — Unused
+### Jr.Trainer♂ #7 — Unused
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -600,7 +600,7 @@ _Lv 21 · 2 Pokémon_
 | 1 | Growlithe | 21 | Fire | Bite · Roar · Ember |
 | 2 | Charmander | 21 | Fire | Tackle · Growl · Ember · Leer |
 
-### Jr. Trainer♂ #8 — Route 9
+### Jr.Trainer♂ #8 — Route 9
 _Lv 19 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -610,7 +610,7 @@ _Lv 19 · 4 Pokémon_
 | 3 | Ekans | 19 | Poison | Tackle · **Rock Slide** · Poison Sting · Bite |
 | 4 | Sandshrew | 19 | Ground | Tackle · Sand-Attack · Bulldoze · Slash |
 
-### Jr. Trainer♂ #9 — Route 12
+### Jr.Trainer♂ #9 — Route 12
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -618,7 +618,7 @@ _Lv 29 · 2 Pokémon_
 | 1 | Nidoran♂ | 29 | Poison | Headbutt · Low Kick · Poison Sting · **Tackle** |
 | 2 | Nidorino | 29 | Poison | Low Kick · Poison Sting · Cross Poison · **Headbutt** |
 
-### Jr. Trainer♂ #10 — Route 6
+### Jr.Trainer♂ #10 — Route 6
 _Lv 16 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -628,16 +628,16 @@ _Lv 16 · 1 Pokémon_
 
 ---
 
-## Jr. Trainer♀
+## Jr.Trainer♀
 
-### Jr. Trainer♀ #1 — Cerulean Gym
+### Jr.Trainer♀ #1 — Cerulean Gym
 _Lv 19 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Goldeen | 19 | Water | Peck · **Swift** · Supersonic · **Bubblebeam** |
 
-### Jr. Trainer♀ #2 — Unused
+### Jr.Trainer♀ #2 — Unused
 _Lv 16 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -645,7 +645,7 @@ _Lv 16 · 2 Pokémon_
 | 1 | Oddish | 16 | Grass/Poison | Mega Drain · Poisonpowder |
 | 2 | Bellsprout | 16 | Grass/Poison | Vine Whip · Growth · Tackle · Poisonpowder |
 
-### Jr. Trainer♀ #3 — Route 6
+### Jr.Trainer♀ #3 — Route 6
 _Lv 16 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -654,14 +654,14 @@ _Lv 16 · 3 Pokémon_
 | 2 | Pidgey | 16 | Normal/Flying | Gust · Sand-Attack · Tackle · Quick Attack |
 | 3 | Pidgey | 16 | Normal/Flying | Gust · Sand-Attack · Tackle · Quick Attack |
 
-### Jr. Trainer♀ #4 — Unused
+### Jr.Trainer♀ #4 — Unused
 _Lv 22 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Bulbasaur | 22 | Grass/Poison | Growl · Leech Seed · Vine Whip · Poisonpowder |
 
-### Jr. Trainer♀ #5 — Route 9
+### Jr.Trainer♀ #5 — Route 9
 _Lv 18 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -671,14 +671,14 @@ _Lv 18 · 4 Pokémon_
 | 3 | Oddish | 18 | Grass/Poison | Mega Drain · **Counter** · Stun Spore · **Cut** |
 | 4 | Bellsprout | 18 | Grass/Poison | **Vine Whip** · Tackle · **Mega Drain** · Sleep Powder |
 
-### Jr. Trainer♀ #6 — Route 9
+### Jr.Trainer♀ #6 — Route 9
 _Lv 23 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Meowth | 23 | Normal | Tackle · **Tri Attack** · Bite · Pay Day |
 
-### Jr. Trainer♀ #7 — Route 10
+### Jr.Trainer♀ #7 — Route 10
 _Lv 20 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -686,7 +686,7 @@ _Lv 20 · 2 Pokémon_
 | 1 | Jigglypuff | 20 | Sound/Fairy | Sing · Tackle · **Bubblebeam** · **Tri Attack** |
 | 2 | Clefairy | 20 | Fairy | Tackle · **Tri Attack** · Sing · **Bubblebeam** |
 
-### Jr. Trainer♀ #8 — Route 10
+### Jr.Trainer♀ #8 — Route 10
 _Lv 21 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -694,7 +694,7 @@ _Lv 21 · 2 Pokémon_
 | 1 | Pidgey | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 | 2 | Pidgeotto | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 
-### Jr. Trainer♀ #9 — Rock Tunnel B1F
+### Jr.Trainer♀ #9 — Rock Tunnel B1F
 _Lv 21 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -703,7 +703,7 @@ _Lv 21 · 3 Pokémon_
 | 2 | Pidgey | 21 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 | 3 | Meowth | 21 | Normal | Tackle · **Tri Attack** · Bite · Pay Day |
 
-### Jr. Trainer♀ #10 — Rock Tunnel B1F
+### Jr.Trainer♀ #10 — Rock Tunnel B1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -711,7 +711,7 @@ _Lv 22 · 2 Pokémon_
 | 1 | Oddish | 22 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
 | 2 | Bulbasaur | 22 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 
-### Jr. Trainer♀ #11 — Celadon Gym
+### Jr.Trainer♀ #11 — Celadon Gym
 _Lv 24 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -719,7 +719,7 @@ _Lv 24 · 2 Pokémon_
 | 1 | Bulbasaur | 24 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 | 2 | Ivysaur | 24 | Grass/Poison | **Tackle** · Leech Seed · Vine Whip · **Mega Drain** |
 
-### Jr. Trainer♀ #12 — Route 13
+### Jr.Trainer♀ #12 — Route 13
 _Lv 24 · 5 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -730,7 +730,7 @@ _Lv 24 · 5 Pokémon_
 | 4 | Pidgey | 24 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 | 5 | Meowth | 24 | Normal | **Tackle** · Bite · Pay Day · Screech |
 
-### Jr. Trainer♀ #13 — Route 13
+### Jr.Trainer♀ #13 — Route 13
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -738,7 +738,7 @@ _Lv 30 · 2 Pokémon_
 | 1 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
 | 2 | Poliwag | 30 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
 
-### Jr. Trainer♀ #14 — Route 13
+### Jr.Trainer♀ #14 — Route 13
 _Lv 27 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -748,7 +748,7 @@ _Lv 27 · 4 Pokémon_
 | 3 | Pidgey | 27 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 | 4 | Pidgeotto | 27 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
-### Jr. Trainer♀ #15 — Route 13
+### Jr.Trainer♀ #15 — Route 13
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -757,7 +757,7 @@ _Lv 28 · 3 Pokémon_
 | 2 | Poliwag | 28 | Water | Water Gun · Hypnosis · Tackle · **Bubblebeam** |
 | 3 | Horsea | 28 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
 
-### Jr. Trainer♀ #16 — Route 20
+### Jr.Trainer♀ #16 — Route 20
 _Lv 31 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -765,7 +765,7 @@ _Lv 31 · 2 Pokémon_
 | 1 | Goldeen | 31 | Water | Peck · **Surf** · Supersonic · Headbutt |
 | 2 | Seaking | 31 | Water | Supersonic · **Peck** · Razor Shell · Headbutt |
 
-### Jr. Trainer♀ #17 — Rock Tunnel 1F
+### Jr.Trainer♀ #17 — Rock Tunnel 1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -773,7 +773,7 @@ _Lv 22 · 2 Pokémon_
 | 1 | Bellsprout | 22 | Grass/Poison | Tackle · **Vine Whip** · Sleep Powder · **Mega Drain** |
 | 2 | Clefairy | 22 | Fairy | Tackle · **Tri Attack** · Sing · **Bubblebeam** |
 
-### Jr. Trainer♀ #18 — Rock Tunnel 1F
+### Jr.Trainer♀ #18 — Rock Tunnel 1F
 _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -782,7 +782,7 @@ _Lv 20 · 3 Pokémon_
 | 2 | Oddish | 20 | Grass/Poison | Mega Drain · **Cut** · **Counter** · Sleep Powder |
 | 3 | Pidgey | 20 | Normal/Flying | Sand-Attack · Tackle · Quick Attack · **Gust** |
 
-### Jr. Trainer♀ #19 — Rock Tunnel 1F
+### Jr.Trainer♀ #19 — Rock Tunnel 1F
 _Lv 19 · 4 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -792,7 +792,7 @@ _Lv 19 · 4 Pokémon_
 | 3 | Rattata | 19 | Normal | Tackle · **Tri Attack** · Quick Attack · Bite |
 | 4 | Bellsprout | 19 | Grass/Poison | **Vine Whip** · Tackle · **Mega Drain** · Sleep Powder |
 
-### Jr. Trainer♀ #20 — Route 15
+### Jr.Trainer♀ #20 — Route 15
 _Lv 28 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -801,7 +801,7 @@ _Lv 28 · 3 Pokémon_
 | 2 | Oddish | 28 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
 | 3 | Oddish | 28 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
 
-### Jr. Trainer♀ #21 — Route 15
+### Jr.Trainer♀ #21 — Route 15
 _Lv 29 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -809,14 +809,14 @@ _Lv 29 · 2 Pokémon_
 | 1 | Pidgey | 29 | Normal/Flying | Tackle · Quick Attack · **Sand-Attack** · Wing Attack |
 | 2 | Pidgeotto | 29 | Normal/Flying | **Gust** · Quick Attack · **Sand-Attack** · Headbutt |
 
-### Jr. Trainer♀ #22 — Route 15
+### Jr.Trainer♀ #22 — Route 15
 _Lv 33 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Clefairy | 33 | Fairy | Sing · **Tackle** · Drain Kiss · **Dazzle Gleam** |
 
-### Jr. Trainer♀ #23 — Route 15
+### Jr.Trainer♀ #23 — Route 15
 _Lv 29 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -825,7 +825,7 @@ _Lv 29 · 3 Pokémon_
 | 2 | Oddish | 29 | Grass/Poison | **Mega Drain** · **Cut** · Sleep Powder · Acid |
 | 3 | Tangela | 29 | Grass | Tackle · Headbutt · Mega Drain · Vine Whip |
 
-### Jr. Trainer♀ #24 — Route 20
+### Jr.Trainer♀ #24 — Route 20
 _Lv 30 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -834,7 +834,7 @@ _Lv 30 · 3 Pokémon_
 | 2 | Horsea | 30 | Water | Water Gun · Smokescreen · **Bubblebeam** · **Swift** |
 | 3 | Seel | 30 | Water | Headbutt · Water Gun · **Pay Day** · **Bubblebeam** |
 
-### Jr. Trainer♀ #25 — Route 6
+### Jr.Trainer♀ #25 — Route 6
 _Lv 20 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -844,9 +844,9 @@ _Lv 20 · 1 Pokémon_
 
 ---
 
-## Poké Maniac
+## Pokémaniac
 
-### Poké Maniac #1 — Route 10
+### Pokémaniac #1 — Route 10
 _Lv 30 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -854,7 +854,7 @@ _Lv 30 · 2 Pokémon_
 | 1 | Rhyhorn | 30 | Ground/Rock | Headbutt · Bone Club · **Rock Slide** · **Shock Wave** |
 | 2 | Lickitung | 30 | Normal | Supersonic · Headbutt · **Bubblebeam** · **Tackle** |
 
-### Poké Maniac #2 — Route 10
+### Pokémaniac #2 — Route 10
 _Lv 20 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -862,7 +862,7 @@ _Lv 20 · 2 Pokémon_
 | 1 | Cubone | 20 | Ground | **Tackle** · Bone Club · **Bubblebeam** · Headbutt |
 | 2 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
 
-### Poké Maniac #3 — Rock Tunnel B1F
+### Pokémaniac #3 — Rock Tunnel B1F
 _Lv 20 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -871,7 +871,7 @@ _Lv 20 · 3 Pokémon_
 | 2 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
 | 3 | Slowpoke | 20 | Water/Psychic | Confusion · **Thunder Wave** · **Bubblebeam** · **Tri Attack** |
 
-### Poké Maniac #4 — Rock Tunnel B1F
+### Pokémaniac #4 — Rock Tunnel B1F
 _Lv 22 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -879,14 +879,14 @@ _Lv 22 · 2 Pokémon_
 | 1 | Charmander | 22 | Fire | **Tackle** · Ember · **Swift** · Headbutt |
 | 2 | Cubone | 22 | Ground | **Tackle** · Bone Club · **Bubblebeam** · Headbutt |
 
-### Poké Maniac #5 — Rock Tunnel B1F
+### Pokémaniac #5 — Rock Tunnel B1F
 _Lv 25 · 1 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
 | 1 | Slowpoke | 25 | Water/Psychic | Confusion · **Thunder Wave** · Headbutt · **Bubblebeam** |
 
-### Poké Maniac #6 — Victory Road 2F
+### Pokémaniac #6 — Victory Road 2F
 _Lv 40 · 3 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -895,7 +895,7 @@ _Lv 40 · 3 Pokémon_
 | 2 | Lapras | 40 | Water/Ice | Strength · **Bubblebeam** · **Sing** · Ice Beam |
 | 3 | Lickitung | 40 | Normal | Headbutt · **Hyper Voice** · **Tackle** · **Supersonic** |
 
-### Poké Maniac #7 — Rock Tunnel 1F
+### Pokémaniac #7 — Rock Tunnel 1F
 _Lv 23 · 2 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
@@ -2342,40 +2342,43 @@ _Lv 15–18 · 4 Pokémon_
 
 ---
 
-## Prof. Oak
+## Prof.Oak
 
-### Prof. Oak #1 — Unused
-_Lv 66–70 · 5 Pokémon_
-
-| # | Pokémon | Lv | Types | Moves |
-|---|---------|----|-------|-------|
-| 1 | Tauros | 66 | Normal | Tail Whip · Leer · Double-Edge · Earthquake |
-| 2 | Exeggutor | 67 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
-| 3 | Arcanine | 68 | Fire | Leer · Roar · Fire Fang · Fire Punch |
-| 4 | Blastoise | 69 | Water | Bite · Withdraw · Double-Edge · Hydro Pump |
-| 5 | Gyarados | 70 | Water/Flying | Crunch · Hydro Pump · Hyper Beam · Waterfall |
-
-### Prof. Oak #2 — Unused
-_Lv 66–70 · 5 Pokémon_
+### Prof.Oak #1 — Oak's Lab
+_Lv 66–71 · 6 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tauros | 66 | Normal | Tail Whip · Leer · Double-Edge · Earthquake |
-| 2 | Exeggutor | 67 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
-| 3 | Arcanine | 68 | Fire | Leer · Roar · Fire Fang · Fire Punch |
-| 4 | Venusaur | 69 | Grass/Poison | Energy Ball · Sleep Powder · Solarbeam · Earth Power |
-| 5 | Gyarados | 70 | Water/Flying | Crunch · Hydro Pump · Hyper Beam · Waterfall |
+| 1 | Tauros | 66 | Normal | **Double-Edge** · **Earthquake** · **Ice Beam** · **Thunderbolt** |
+| 2 | Exeggutor | 67 | Grass/Psychic | **Energy Ball** · **Psychic** · **Hypnosis** · **Reflect** |
+| 3 | Arcanine | 68 | Fire | **Fire Blast** · **Crunch** · **Dragon Pulse** · **Reflect** |
+| 4 | Gyarados | 69 | Water/Flying | **Hydro Pump** · **Crunch** · **Air Slash** · **Ice Beam** |
+| 5 | Nidoking | 69 | Poison/Ground | **Earthquake** · **Sludge Bomb** · **Ice Beam** · **Thunderbolt** |
+| 6 | Blastoise | 71 | Water | **Hydro Pump** · **Ice Beam** · **Earthquake** · **Withdraw** |
 
-### Prof. Oak #3 — Unused
-_Lv 66–70 · 5 Pokémon_
+### Prof.Oak #2 — Route 22
+_Lv 70–75 · 6 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |
 |---|---------|----|-------|-------|
-| 1 | Tauros | 66 | Normal | Tail Whip · Leer · Double-Edge · Earthquake |
-| 2 | Exeggutor | 67 | Grass/Psychic | Mega Drain · Headbutt · Psybeam · Energy Ball |
-| 3 | Arcanine | 68 | Fire | Leer · Roar · Fire Fang · Fire Punch |
-| 4 | Charizard | 69 | Fire/Flying | Headbutt · Air Cutter · Slash · Flamethrower |
-| 5 | Gyarados | 70 | Water/Flying | Crunch · Hydro Pump · Hyper Beam · Waterfall |
+| 1 | Tauros | 70 | Normal | **Double-Edge** · **Earthquake** · **Ice Beam** · **Thunderbolt** |
+| 2 | Exeggutor | 71 | Grass/Psychic | **Energy Ball** · **Psychic** · **Hypnosis** · **Explosion** |
+| 3 | Arcanine | 72 | Fire | **Flamethrower** · **Crunch** · **Dig** · **Double-Edge** |
+| 4 | Gyarados | 73 | Water/Flying | **Hydro Pump** · **Crunch** · **Ice Beam** · **Iron Tail** |
+| 5 | Aerodactyl | 73 | Rock/Flying | **Stone Edge** · **Air Slash** · **Crunch** · **Agility** |
+| 6 | Venusaur | 75 | Grass/Poison | **Solarbeam** · **Sludge Bomb** · **Earth Power** · **Sleep Powder** |
+
+### Prof.Oak #3 — Cerulean Cave 1F
+_Lv 74–79 · 6 Pokémon_
+
+| # | Pokémon | Lv | Types | Moves |
+|---|---------|----|-------|-------|
+| 1 | Tauros | 74 | Normal | **Double-Edge** · **Earthquake** · **Ice Beam** · **Fire Blast** |
+| 2 | Exeggutor | 75 | Grass/Psychic | **Energy Ball** · **Psychic** · **Hypnosis** · **Explosion** |
+| 3 | Arcanine | 76 | Fire | **Fire Blast** · **Crunch** · **Dragon Pulse** · **Double-Edge** |
+| 4 | Gyarados | 77 | Water/Flying | **Hydro Pump** · **Crunch** · **Ice Beam** · **Air Slash** |
+| 5 | Snorlax | 77 | Normal | **Double-Edge** · **Earthquake** · **Ice Punch** · **Amnesia** |
+| 6 | Charizard | 79 | Fire/Flying | **Fire Blast** · **Air Slash** · **Dragon Pulse** · **Earthquake** |
 
 
 ---
@@ -3169,9 +3172,9 @@ _Lv 18–21 · 6 Pokémon_
 
 ---
 
-## Lt. Surge ⭐
+## Lt.Surge ⭐
 
-### Lt. Surge #1
+### Lt.Surge #1
 _Lv 24–28 · 6 Pokémon_
 
 | # | Pokémon | Lv | Types | Moves |

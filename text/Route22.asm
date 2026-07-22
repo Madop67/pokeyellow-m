@@ -102,3 +102,43 @@ _Route22PokemonLeagueSignText::
 	text "#mon League"
 	line "Front Gate"
 	done
+
+_Route22OakChallengeText::
+	text "Oak: There you"
+	line "are, <PLAYER>!"
+
+	para "This road is where"
+	line "every trainer's"
+	cont "journey ends up."
+
+	para "Mine did too, a"
+	line "long time ago."
+
+	para "Show me that walk"
+	line "again!"
+	done
+
+_Route22OakDefeatedText::
+	text "Oak: Ho! You've"
+	line "gotten sharper!"
+	done
+
+_Route22OakVictoryText::
+	text "Oak: The road to"
+	line "the League is not"
+	cont "kind, <PLAYER>."
+
+	para "Rest up and try"
+	line "me again."
+	done
+
+_Route22OakAfterBattleText::
+	text "Oak: Splendid!"
+
+	para "One more test,"
+	line "then. Meet me"
+	cont "inside the cave"
+	cont "north of Cerulean."
+
+	para "Come prepared!"
+	done

@@ -102,6 +102,7 @@ ToggleableObjectStates:
 	toggleable_objects_for ROUTE_22
 	toggle_object_state ROUTE22_RIVAL1, OFF
 	toggle_object_state ROUTE22_RIVAL2, OFF
+	toggle_object_state ROUTE22_OAK, OFF
 
 	toggleable_objects_for ROUTE_24
 	toggle_object_state ROUTE24_COOLTRAINER_M1,  ON
@@ -138,6 +139,7 @@ ToggleableObjectStates:
 	toggle_object_state CERULEANCAVE1F_MAX_ELIXER, ON
 	toggle_object_state CERULEANCAVE1F_MAX_REVIVE, ON
 	toggle_object_state CERULEANCAVE1F_ULTRA_BALL, ON
+	toggle_object_state CERULEANCAVE1F_OAK, OFF
 
 	toggleable_objects_for POKEMON_TOWER_2F
 	toggle_object_state POKEMONTOWER2F_RIVAL, ON
