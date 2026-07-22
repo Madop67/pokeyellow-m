@@ -1,6 +1,7 @@
 	object_const_def
 	const_export ROUTE22_RIVAL1
 	const_export ROUTE22_RIVAL2
+	const_export ROUTE22_OAK
 
 Route22_Object:
 	db $2c ; border block
@@ -14,5 +15,6 @@ Route22_Object:
 	def_object_events
 	object_event 25,  5, SPRITE_BLUE, STAY, NONE, TEXT_ROUTE22_RIVAL1
 	object_event 25,  5, SPRITE_BLUE, STAY, NONE, TEXT_ROUTE22_RIVAL2
+	object_event 25,  6, SPRITE_OAK, STAY, NONE, TEXT_ROUTE22_OAK
 
 	def_warps_to ROUTE_22

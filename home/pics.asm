@@ -9,36 +9,29 @@ UncompressMonSprite::
 	ld a, [hl]
 	ld [wSpriteInputPtr+1], a
 ; define (by index number) the bank that a pokemon's image is in
-; index = FOSSIL_KABUTOPS: bank $B
-;       index < $1F:       bank $9 ("Pics 1")
-; $1F ≤ index < $4A:       bank $A ("Pics 2")
-; $4A ≤ index < $74:       bank $B ("Pics 3")
-; $74 ≤ index < $99:       bank $C ("Pics 4")
-; $99 ≤ index:             bank $D ("Pics 5")
+; each bank holds a contiguous run of species in internal index order, so a
+; walk of the table below finds the right one; see tools/pack_pic_banks.py
 	ld a, [wCurPartySpecies]
-	ld b, a
-	cp FOSSIL_KABUTOPS
-	ld a, BANK(FossilKabutopsPic)
-	jr z, .GotBank
-	ld a, b
-	cp TANGELA + 1
-	ld a, BANK("Pics 1")
+	ld hl, .PicBanks
+.FindBank
+	cp [hl]      ; carry if this species is below the entry's upper bound
+	inc hl
 	jr c, .GotBank
-	ld a, b
-	cp MOLTRES + 1
-	ld a, BANK("Pics 2")
-	jr c, .GotBank
-	ld a, b
-	cp BEEDRILL + 2
-	ld a, BANK("Pics 3")
-	jr c, .GotBank
-	ld a, b
-	cp STARMIE + 1
-	ld a, BANK("Pics 4")
-	jr c, .GotBank
-	ld a, BANK("Pics 5")
+	inc hl
+	jr .FindBank
 .GotBank
+	ld a, [hl]
 	jp UncompressSpriteData
+
+; upper bound (exclusive) and the bank holding every pic below it
+.PicBanks
+	db GASTLY,     BANK("Pics 1")
+	db MAGNETON,   BANK("Pics 2")
+	db SEADRA,     BANK("Pics 3")
+	db BUTTERFREE, BANK("Pics 4")
+	db VENUSAUR,   BANK("Pics 5")
+	db MON_GHOST,  BANK("Pics 6") ; also both fossil pics
+	db $ff,        BANK(GhostPic)
 
 ; de: destination location
 LoadMonFrontSprite::

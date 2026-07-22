@@ -12,7 +12,8 @@
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING
-	const_skip 5
+	const EVENT_BEAT_PROF_OAK_1
+	const_skip 4
 	const EVENT_FOLLOWED_OAK_INTO_LAB_2
 	const EVENT_OAK_ASKED_TO_CHOOSE_MON
 	const EVENT_GOT_STARTER
@@ -480,6 +481,8 @@
 	const EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
 	const EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
 	const EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	const EVENT_PROF_OAK_ON_ROUTE_22
+	const EVENT_BEAT_PROF_OAK_2
 
 ; Route 23 events
 	const_next $530
@@ -730,6 +733,8 @@
 	const_next $8C0
 	const_skip
 	const EVENT_BEAT_MEWTWO
+	const EVENT_PROF_OAK_IN_CERULEAN_CAVE
+	const EVENT_BEAT_PROF_OAK_3
 
 ; Indigo Plateau events
 	const_next $8E0

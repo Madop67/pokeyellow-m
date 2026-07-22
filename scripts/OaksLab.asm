@@ -35,6 +35,8 @@ OaksLab_ScriptPointers:
 	dw_const OaksLabOakGivesPokedexScript,           SCRIPT_OAKSLAB_OAK_GIVES_POKEDEX
 	dw_const OaksLabRivalLeavesWithPokedexScript,    SCRIPT_OAKSLAB_RIVAL_LEAVES_WITH_POKEDEX
 	dw_const OaksLabNoopScript,                      SCRIPT_OAKSLAB_NOOP
+	dw_const OaksLabOakStartBattleScript,            SCRIPT_OAKSLAB_OAK_START_BATTLE
+	dw_const OaksLabOakEndBattleScript,              SCRIPT_OAKSLAB_OAK_END_BATTLE
 
 OaksLabDefaultScript:
 	CheckEvent EVENT_OAK_APPEARED_IN_PALLET
@@ -636,6 +638,40 @@ OaksLabRivalLeavesWithPokedexScript:
 OaksLabNoopScript:
 	ret
 
+; postgame Prof. Oak battle 1 of 3, started from OaksLabOak1Text
+OaksLabOakStartBattleScript:
+	ld a, OPP_PROF_OAK
+	ld [wCurOpponent], a
+	ld a, 1
+	ld [wTrainerNo], a
+	ld hl, OaksLabOakDefeatedText
+	ld de, OaksLabOakVictoryText
+	call SaveEndBattleTextPointers
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+
+	ld a, SCRIPT_OAKSLAB_OAK_END_BATTLE
+	ld [wOaksLabCurScript], a
+	ret
+
+OaksLabOakEndBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jr z, .done ; blacked out, leave the challenge available
+	ld a, [wBattleResult]
+	and a
+	jr nz, .done ; didn't win
+	SetEvent EVENT_BEAT_PROF_OAK_1
+	SetEvent EVENT_PROF_OAK_ON_ROUTE_22
+	ld a, TOGGLE_ROUTE_22_OAK
+	ld [wToggleableObjectIndex], a
+	predef ShowObject
+.done
+	ld a, SCRIPT_OAKSLAB_NOOP
+	ld [wOaksLabCurScript], a
+	ret
+
 OaksLabScript_RemoveParcel:
 	ld hl, wBagItems
 	ld bc, 0
@@ -806,6 +842,20 @@ OaksLabRivalExclamationScript:
 
 OaksLabOak1Text:
 	text_asm
+	CheckEvent EVENT_BEAT_CHAMPION_RIVAL
+	jr z, .not_champion_yet
+	CheckEvent EVENT_BEAT_PROF_OAK_1
+	jr nz, .already_beat_oak
+	ld hl, .OakChallengeText
+	call PrintText
+	ld a, SCRIPT_OAKSLAB_OAK_START_BATTLE
+	ld [wOaksLabCurScript], a
+	jp TextScriptEnd
+.already_beat_oak
+	ld hl, .OakAfterBattleText
+	call PrintText
+	jp TextScriptEnd
+.not_champion_yet
 	CheckEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS
 	jr nz, .already_got_poke_balls
 	ld hl, wPokedexOwned
@@ -913,6 +963,22 @@ OaksLabOak1Text:
 
 .HowIsYourPokedexComingText:
 	text_far _OaksLabOak1HowIsYourPokedexComingText
+	text_end
+
+.OakChallengeText:
+	text_far _OaksLabOakChallengeText
+	text_end
+
+.OakAfterBattleText:
+	text_far _OaksLabOakAfterBattleText
+	text_end
+
+OaksLabOakDefeatedText:
+	text_far _OaksLabOakDefeatedText
+	text_end
+
+OaksLabOakVictoryText:
+	text_far _OaksLabOakVictoryText
 	text_end
 
 OaksLabPokedexText:

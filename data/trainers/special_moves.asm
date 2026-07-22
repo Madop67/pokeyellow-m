@@ -2597,4 +2597,103 @@ SpecialTrainerMoves:
 	db 6, 4, ACID_ARMOR
 	db 0
 
+	db PROF_OAK, 1 ; Oak's Lab, Blastoise branch
+	; Tauros
+	db 1, 1, DOUBLE_EDGE
+	db 1, 2, EARTHQUAKE
+	db 1, 3, ICE_BEAM
+	db 1, 4, THUNDERBOLT
+	; Exeggutor
+	db 2, 1, ENERGY_BALL
+	db 2, 2, PSYCHIC_M
+	db 2, 3, HYPNOSIS
+	db 2, 4, REFLECT
+	; Arcanine
+	db 3, 1, FIRE_BLAST
+	db 3, 2, CRUNCH
+	db 3, 3, DRAGON_PULSE
+	db 3, 4, REFLECT
+	; Gyarados
+	db 4, 1, HYDRO_PUMP
+	db 4, 2, CRUNCH
+	db 4, 3, AIR_SLASH
+	db 4, 4, ICE_BEAM
+	; Nidoking
+	db 5, 1, EARTHQUAKE
+	db 5, 2, SLUDGE_BOMB
+	db 5, 3, ICE_BEAM
+	db 5, 4, THUNDERBOLT
+	; Blastoise (ace)
+	db 6, 1, HYDRO_PUMP
+	db 6, 2, ICE_BEAM
+	db 6, 3, EARTHQUAKE
+	db 6, 4, WITHDRAW
+	db 0
+
+	db PROF_OAK, 2 ; Route 22, Venusaur branch
+	; Tauros
+	db 1, 1, DOUBLE_EDGE
+	db 1, 2, EARTHQUAKE
+	db 1, 3, ICE_BEAM
+	db 1, 4, THUNDERBOLT
+	; Exeggutor
+	db 2, 1, ENERGY_BALL
+	db 2, 2, PSYCHIC_M
+	db 2, 3, HYPNOSIS
+	db 2, 4, EXPLOSION
+	; Arcanine
+	db 3, 1, FLAMETHROWER
+	db 3, 2, CRUNCH
+	db 3, 3, DIG
+	db 3, 4, DOUBLE_EDGE
+	; Gyarados
+	db 4, 1, HYDRO_PUMP
+	db 4, 2, CRUNCH
+	db 4, 3, ICE_BEAM
+	db 4, 4, IRON_TAIL
+	; Aerodactyl
+	db 5, 1, STONE_EDGE
+	db 5, 2, AIR_SLASH
+	db 5, 3, CRUNCH
+	db 5, 4, AGILITY
+	; Venusaur (ace)
+	db 6, 1, SOLARBEAM
+	db 6, 2, SLUDGE_BOMB
+	db 6, 3, EARTH_POWER
+	db 6, 4, SLEEP_POWDER
+	db 0
+
+	db PROF_OAK, 3 ; Cerulean Cave 1F, Charizard branch
+	; Tauros
+	db 1, 1, DOUBLE_EDGE
+	db 1, 2, EARTHQUAKE
+	db 1, 3, ICE_BEAM
+	db 1, 4, FIRE_BLAST
+	; Exeggutor
+	db 2, 1, ENERGY_BALL
+	db 2, 2, PSYCHIC_M
+	db 2, 3, HYPNOSIS
+	db 2, 4, EXPLOSION
+	; Arcanine
+	db 3, 1, FIRE_BLAST
+	db 3, 2, CRUNCH
+	db 3, 3, DRAGON_PULSE
+	db 3, 4, DOUBLE_EDGE
+	; Gyarados
+	db 4, 1, HYDRO_PUMP
+	db 4, 2, CRUNCH
+	db 4, 3, ICE_BEAM
+	db 4, 4, AIR_SLASH
+	; Snorlax
+	db 5, 1, DOUBLE_EDGE
+	db 5, 2, EARTHQUAKE
+	db 5, 3, ICE_PUNCH
+	db 5, 4, AMNESIA
+	; Charizard (ace)
+	db 6, 1, FIRE_BLAST
+	db 6, 2, AIR_SLASH
+	db 6, 3, DRAGON_PULSE
+	db 6, 4, EARTHQUAKE
+	db 0
+
 	db -1 ; end

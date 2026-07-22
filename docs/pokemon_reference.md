@@ -1706,7 +1706,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 75 &nbsp; **Base exp:** 128 &nbsp; **Growth:** Medium Fast
 - **Evolution:** evolves from **Paras** (Level 24)
 - **Locations:**
-  - In-game trade: give Tangela, receive “SPIKE” (Route 18 Gate 2F)
+  - In-game trade: give Tangela, receive “Spike” (Route 18 Gate 2F)
 
 **Level-up moves**
 
@@ -1830,7 +1830,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 50 &nbsp; **Base exp:** 153 &nbsp; **Growth:** Medium Fast
 - **Evolution:** evolves from **Diglett** (Level 26)
 - **Locations:**
-  - In-game trade: give Lickitung, receive “GURIO” (Route 11 Gate 2F)
+  - In-game trade: give Lickitung, receive “Gurio” (Route 11 Gate 2F)
 
 **Level-up moves**
 
@@ -2297,7 +2297,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 90 &nbsp; **Base exp:** 146 &nbsp; **Growth:** Medium Slow
 - **Evolution:** evolves into **Machamp** (Trade); evolves from **Machop** (Level 28)
 - **Locations:**
-  - In-game trade: give Cubone, receive “RICKY” (Underground Path Route 5)
+  - In-game trade: give Cubone, receive “Ricky” (Underground Path Route 5)
 
 **Level-up moves**
 
@@ -2924,7 +2924,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 75 &nbsp; **Base exp:** 176 &nbsp; **Growth:** Medium Fast
 - **Evolution:** evolves from **Seel** (Level 34)
 - **Locations:**
-  - In-game trade: give Growlithe, receive “CEZANNE” (Cinnabar Lab Trade Room)
+  - In-game trade: give Growlithe, receive “Cezanne” (Cinnabar Lab Trade Room)
 
 **Level-up moves**
 
@@ -2984,7 +2984,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 75 &nbsp; **Base exp:** 157 &nbsp; **Growth:** Medium Fast
 - **Evolution:** evolves from **Grimer** (Level 38)
 - **Locations:**
-  - In-game trade: give Kangaskhan, receive “STICKY” (Cinnabar Lab Fossil Room)
+  - In-game trade: give Kangaskhan, receive “Sticky” (Cinnabar Lab Fossil Room)
 
 **Level-up moves**
 
@@ -3648,7 +3648,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 60 &nbsp; **Base exp:** 204 &nbsp; **Growth:** Slow
 - **Evolution:** evolves from **Rhyhorn** (Level 42)
 - **Locations:**
-  - In-game trade: give Golduck, receive “BUFFY” (Cinnabar Lab Trade Room)
+  - In-game trade: give Golduck, receive “Buffy” (Cinnabar Lab Trade Room)
 
 **Level-up moves**
 
@@ -3981,7 +3981,7 @@ Power `—` = status move; `*` = set/varies. High-crit moves: Karate Chop, Razor
 - **Catch rate:** 45 &nbsp; **Base exp:** 136 &nbsp; **Growth:** Medium Fast
 - **Evolution:** none
 - **Locations:**
-  - In-game trade: give Clefairy, receive “MILES” (Route 2 Trade House)
+  - In-game trade: give Clefairy, receive “Miles” (Route 2 Trade House)
 
 **Level-up moves**
 

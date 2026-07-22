@@ -32,4 +32,8 @@ BossTeraTable:
 	db RIVAL3,   1, ELECTRIC     ; Champion Jolteon
 	db RIVAL3,   2, FIRE         ; Champion Flareon
 	db RIVAL3,   3, WATER        ; Champion Vaporeon
+	; postgame Prof. Oak fights
+	db PROF_OAK, 1, WATER        ; Oak's Lab Blastoise
+	db PROF_OAK, 2, GRASS        ; Route 22 Venusaur
+	db PROF_OAK, 3, FIRE         ; Cerulean Cave 1F Charizard
 	db -1 ; end

@@ -2264,7 +2264,7 @@ wToggleableObjectList:: ds 16 * 2 + 1
 wGameProgressFlags::
 wOaksLabCurScript:: db
 wPalletTownCurScript:: db
-	ds 1
+wCeruleanCave1FCurScript:: db ; was unused padding
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
 	ds 2
