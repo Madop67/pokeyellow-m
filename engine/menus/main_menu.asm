@@ -29,54 +29,117 @@ MainMenu:
 	call LoadFontTilePatterns
 	ld hl, wStatusFlags5
 	set BIT_NO_TEXT_DELAY, [hl]
+	call ClearSprites
 	ld a, [wSaveFileStatus]
 	cp 1
 	jr z, .noSaveFile
-; there's a save file
+; --- layout with a save file ---
+; top box: Current Save (full width); middle row: New Game | Option;
+; bottom box: More... (full width)
 	hlcoord 0, 0
-	lb bc, 10, 13
+	lb bc, 4, 18
 	call TextBoxBorder
-	hlcoord 2, 2
-	ld de, ContinueText
+	hlcoord 4, 1
+	ld de, CurrentSaveText
 	call PlaceString
-	jr .next2
-.noSaveFile
-	hlcoord 0, 0
-	lb bc, 8, 13
+	hlcoord 0, 6
+	lb bc, 2, 9
 	call TextBoxBorder
-	hlcoord 2, 2
+	hlcoord 2, 7
 	ld de, NewGameText
 	call PlaceString
-.next2
+	hlcoord 11, 6
+	lb bc, 2, 7
+	call TextBoxBorder
+	hlcoord 13, 7
+	ld de, OptionText
+	call PlaceString
+	hlcoord 0, 10
+	lb bc, 2, 18
+	call TextBoxBorder
+	hlcoord 3, 11
+	ld de, MoreText
+	call PlaceString
+	call FillCurrentSaveBox
+	jr .menuReady
+.noSaveFile
+; --- layout with no save file: Current Save box dropped, everything shifts up ---
+	hlcoord 0, 0
+	lb bc, 2, 9
+	call TextBoxBorder
+	hlcoord 2, 1
+	ld de, NewGameText
+	call PlaceString
+	hlcoord 11, 0
+	lb bc, 2, 7
+	call TextBoxBorder
+	hlcoord 13, 1
+	ld de, OptionText
+	call PlaceString
+	hlcoord 0, 4
+	lb bc, 2, 18
+	call TextBoxBorder
+	hlcoord 3, 5
+	ld de, MoreText
+	call PlaceString
+.menuReady
 	ld hl, wStatusFlags5
 	res BIT_NO_TEXT_DELAY, [hl]
+	ld a, $ff ; keep UpdateSprites from clobbering our custom menu OAM
+	ld [wUpdateSpritesEnabled], a
 	call UpdateSprites
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wLastMenuItem], a
-	ld [wMenuJoypadPollCount], a
-	inc a
-	ld [wTopMenuItemX], a
-	inc a
-	ld [wTopMenuItemY], a
-	ld a, PAD_A | PAD_B | PAD_START
-	ld [wMenuWatchedKeys], a
-	ld a, [wSaveFileStatus]
-	inc a ; extra slot for the Records option
-	inc a ; extra slot for the Poker option
-	ld [wMaxMenuItem], a
-	call HandleMenuInput
-	bit B_PAD_B, a
-	jp nz, DisplayTitleScreen ; if so, go back to the title screen
+	call PlaceMainMenuCursor
+.inputLoop
+	call JoypadLowSensitivity
+	ldh a, [hJoy5]
+	and a
+	jr z, .inputLoop
+	ld b, a
+	bit B_PAD_A, b
+	jr nz, .selected
+	bit B_PAD_B, b
+	jp nz, DisplayTitleScreen ; B returns to the title screen
+; a direction was pressed: index the current box's neighbour table
+	ld a, [wCurrentMenuItem]
+	call GetMainMenuNeighbors ; hl -> {up, down, left, right}
+	bit B_PAD_UP, b
+	jr nz, .move
+	inc hl
+	bit B_PAD_DOWN, b
+	jr nz, .move
+	inc hl
+	bit B_PAD_LEFT, b
+	jr nz, .move
+	inc hl
+	bit B_PAD_RIGHT, b
+	jr nz, .move
+	jr .inputLoop
+.move
+	ld a, [hl]
+	cp $ff ; no box in that direction?
+	jr z, .inputLoop
+	push af
+	ld a, [wCurrentMenuItem]
+	call EraseMainMenuCursor
+	pop af
+	ld [wCurrentMenuItem], a
+	call PlaceMainMenuCursor
+	jr .inputLoop
+.selected
+	ld a, SFX_PRESS_AB
+	call PlaySound
 	ld c, 20
 	call DelayFrames
 	ld a, [wCurrentMenuItem]
 	ld b, a
 	ld a, [wSaveFileStatus]
 	cp 2
-	jp z, .skipInc
-; If there's no save file, increment the current menu item so that the numbers
-; are the same whether or not there's a save file.
+	jr z, .skipInc
+; With no save file the Current Save slot is absent, so shift the index up to
+; keep the action numbers identical to the save-file layout.
 	inc b
 .skipInc
 	ld a, b
@@ -87,12 +150,10 @@ MainMenu:
 	cp 2
 	jr z, .choseOption
 	cp 3
-	jr z, .choseRecords
-; b == 4: Poker (free-play Texas Hold'em; never touches saved coins/money)
-	callfar HoldemFreePlay
-	jp .mainMenuLoop
-.choseRecords
-	callfar DisplayRecordsMenu_
+	jr z, .choseMore
+	jr .inputLoop
+.choseMore
+	call DisplayMoreMenu
 	jp .mainMenuLoop
 .choseOption
 	call DisplayOptionMenu
@@ -100,22 +161,8 @@ MainMenu:
 	ld [wOptionsInitialized], a
 	jp .mainMenuLoop
 .choseContinue
-	call DisplayContinueGameInfo
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
-.inputLoop
-	xor a
-	ldh [hJoyPressed], a
-	ldh [hJoyReleased], a
-	ldh [hJoyHeld], a
-	call Joypad
-	ldh a, [hJoyHeld]
-	bit B_PAD_A, a
-	jr nz, .pressedA
-	bit B_PAD_B, a
-	jp nz, .mainMenuLoop
-	jr .inputLoop
-.pressedA
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	ld a, PLAYER_DIR_DOWN
@@ -191,39 +238,227 @@ SpecialEnterMap::
 	ret nz
 	jp EnterMap
 
-ContinueText:
-	db "Continue"
-	next ""
+CurrentSaveText:
+	db "Current Save@"
+NewGameText:
+	db "New Game@"
+OptionText:
+	db "Option@"
+MoreText:
+	db "More...@"
+
+; Fill the Current Save box with money, play time, the party (as pokéballs),
+; and the player's overworld sprite.
+FillCurrentSaveBox:
+	hlcoord 6, 3
+	ld de, wPlayerMoney
+	ld c, 3 | LEADING_ZEROES | MONEY_SIGN
+	call PrintBCDNumber
+	hlcoord 6, 4
+	call PrintPlayTime
 	; fallthrough
 
-NewGameText:
-	db   "New Game"
-	next "Option"
-	next "Records"
-	next "Poker@"
-
-DisplayContinueGameInfo:
+DrawCurrentSaveSprites:
+; The player's overworld sprite (OBJ tiles $00-$03) as a 2x2 block near the box's
+; left edge, then one pokéball per party member to its right.
+	call ClearSprites
 	xor a
-	ldh [hAutoBGTransferEnabled], a
-	hlcoord 4, 7
-	lb bc, 8, 14
-	call TextBoxBorder
-	hlcoord 5, 9
-	ld de, SaveScreenInfoText
-	call PlaceString
-	hlcoord 12, 9
-	ld de, wPlayerName
-	call PlaceString
-	hlcoord 17, 11
-	call PrintNumBadges
-	hlcoord 16, 13
-	call PrintNumOwnedMons
-	hlcoord 13, 15
-	call PrintPlayTime
+	ld [wWalkBikeSurfState], a
+	call LoadPlayerSpriteGraphics
+	ld hl, wShadowOAM + 6 * 4 ; sprites 0-5 are reserved for the pokéballs
+; top-left
+	ld a, 2 * 8 + OAM_Y_OFS
+	ld [hli], a
+	ld a, 2 * 8 + OAM_X_OFS
+	ld [hli], a
+	xor a
+	ld [hli], a ; tile 0
+	ld [hli], a ; attributes
+; top-right
+	ld a, 2 * 8 + OAM_Y_OFS
+	ld [hli], a
+	ld a, 3 * 8 + OAM_X_OFS
+	ld [hli], a
 	ld a, 1
-	ldh [hAutoBGTransferEnabled], a
-	ld c, 30
-	jp DelayFrames
+	ld [hli], a
+	xor a
+	ld [hli], a
+; bottom-left
+	ld a, 3 * 8 + OAM_Y_OFS
+	ld [hli], a
+	ld a, 2 * 8 + OAM_X_OFS
+	ld [hli], a
+	ld a, 2
+	ld [hli], a
+	xor a
+	ld [hli], a
+; bottom-right
+	ld a, 3 * 8 + OAM_Y_OFS
+	ld [hli], a
+	ld a, 3 * 8 + OAM_X_OFS
+	ld [hli], a
+	ld a, 3
+	ld [hli], a
+	xor a
+	ld [hli], a
+; pokéballs, reusing the battle HUD helpers (which live in another bank)
+	callfar LoadPartyPokeballGfx
+	ld hl, wPartyMons
+	ld de, wPartyCount
+	callfar SetupPokeballs
+	ld hl, wBaseCoordX
+	ld a, 6 * 8 + OAM_X_OFS ; X of the first ball
+	ld [hli], a
+	ld a, 2 * 8 + OAM_Y_OFS ; Y of the ball row
+	ld [hl], a
+	ld a, 8
+	ld [wHUDPokeballGfxOffsetX], a
+	xor a
+	ld [wdef4], a
+	ld hl, wShadowOAM
+	callfar WritePokeballOAMData
+	ld a, $ff
+	ld [wUpdateSpritesEnabled], a
+	ret
+
+; The submenu reached from the main menu's "More..." box.
+DisplayMoreMenu:
+	call ClearScreen
+	call RunDefaultPaletteCommand
+	call LoadTextBoxTilePatterns
+	call LoadFontTilePatterns
+	hlcoord 2, 2
+	lb bc, 4, 12
+	call TextBoxBorder
+	hlcoord 4, 4
+	ld de, RecordsMenuText
+	call PlaceString
+	hlcoord 4, 6
+	ld de, PokerMenuText
+	call PlaceString
+	xor a
+	ld [wCurrentMenuItem], a
+	ld [wLastMenuItem], a
+	ld [wMenuJoypadPollCount], a
+	ld a, 3
+	ld [wTopMenuItemX], a
+	ld a, 4
+	ld [wTopMenuItemY], a
+	ld a, 1
+	ld [wMaxMenuItem], a
+	ld a, PAD_A | PAD_B
+	ld [wMenuWatchedKeys], a
+	call HandleMenuInput
+	bit B_PAD_B, a
+	ret nz
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .poker
+	callfar DisplayRecordsMenu_
+	ret
+.poker
+	callfar HoldemFreePlay
+	ret
+
+RecordsMenuText:
+	db "Records@"
+PokerMenuText:
+	db "Poker@"
+
+; --- 2D box-to-box cursor for the main menu ---
+
+PlaceMainMenuCursor:
+; a = box position
+	call GetMainMenuCursorCoord
+	ld [hl], '▶'
+	ret
+
+EraseMainMenuCursor:
+; a = box position
+	call GetMainMenuCursorCoord
+	ld [hl], ' '
+	ret
+
+GetMainMenuCursorCoord:
+; in: a = box position; out: hl = tilemap address of that box's cursor tile
+	push af
+	call GetMainMenuCursorTable ; hl = table base
+	pop af
+	add a ; entries are 2 bytes (x, y)
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli] ; x
+	ld c, a
+	ld a, [hl]  ; y
+	ld b, a
+	ld hl, wTileMap
+	ld de, SCREEN_WIDTH
+	inc b
+.rowLoop
+	dec b
+	jr z, .rowsDone
+	add hl, de
+	jr .rowLoop
+.rowsDone
+	ld e, c
+	ld d, 0
+	add hl, de
+	ret
+
+GetMainMenuCursorTable:
+	ld a, [wSaveFileStatus]
+	cp 1 ; no save file?
+	jr z, .noSave
+	ld hl, SaveCursorCoords
+	ret
+.noSave
+	ld hl, NoSaveCursorCoords
+	ret
+
+GetMainMenuNeighbors:
+; in: a = box position; out: hl -> 4 bytes {up, down, left, right}; b preserved
+	ld hl, SaveMenuNeighbors
+	push af
+	ld a, [wSaveFileStatus]
+	cp 1 ; no save file?
+	jr nz, .haveBase
+	pop af
+	ld hl, NoSaveMenuNeighbors
+	jr .index
+.haveBase
+	pop af
+.index
+	add a
+	add a ; entries are 4 bytes
+	ld e, a
+	ld d, 0
+	add hl, de
+	ret
+
+SaveCursorCoords:
+; x, y of each box's cursor tile
+	db  2,  1 ; Current Save
+	db  1,  7 ; New Game
+	db 12,  7 ; Option
+	db  1, 11 ; More...
+
+NoSaveCursorCoords:
+	db  1,  1 ; New Game
+	db 12,  1 ; Option
+	db  1,  5 ; More...
+
+SaveMenuNeighbors:
+; up, down, left, right target positions ($ff = no box that way)
+	db $ff,   1, $ff, $ff ; Current Save
+	db   0,   3, $ff,   2 ; New Game
+	db   0,   3,   1, $ff ; Option
+	db   1, $ff, $ff, $ff ; More...
+
+NoSaveMenuNeighbors:
+	db $ff,   2, $ff,   1 ; New Game
+	db $ff,   2,   0, $ff ; Option
+	db   0, $ff, $ff, $ff ; More...
 
 PrintSaveScreenText:
 	xor a

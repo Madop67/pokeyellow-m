@@ -10,7 +10,7 @@ DrawEnemyPokeballs:
 	call LoadPartyPokeballGfx
 	jp SetupEnemyPartyPokeballs
 
-LoadPartyPokeballGfx:
+LoadPartyPokeballGfx::
 	ld de, PokeballTileGraphics
 	ld hl, vSprites tile $31
 	lb bc, BANK(PokeballTileGraphics), (PokeballTileGraphicsEnd - PokeballTileGraphics) / TILE_SIZE
@@ -48,7 +48,7 @@ SetupEnemyPartyPokeballs:
 	ld hl, wShadowOAMSprite06
 	jp WritePokeballOAMData
 
-SetupPokeballs:
+SetupPokeballs::
 	ld a, [de]
 	push af
 	ld de, wBuffer
@@ -98,7 +98,7 @@ PickPokeball:
 	add hl, bc ; next mon struct
 	ret
 
-WritePokeballOAMData:
+WritePokeballOAMData::
 	ld de, wBuffer
 	ld c, PARTY_LENGTH
 .loop
