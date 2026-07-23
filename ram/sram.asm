@@ -11,7 +11,16 @@ sHallOfFame:: ds HOF_TEAM * HOF_TEAM_CAPACITY
 
 SECTION "Save Data", SRAM
 
-	ds $598
+; Global achievement ("Records") bitfield, carved from the head of the reserved
+; padding. It lives OUTSIDE sGameData so it is never copied or erased by a save or
+; a New Game, giving it cross-playthrough persistence. The remaining padding keeps
+; sGameData at its original address (save-file compatibility depends on that).
+; A full "Clear Save" (ClearAllSRAMBanks) does wipe it — that path is a deliberate
+; factory reset, and the checksum makes the wiped ($ff) region read back as empty.
+sAchievements:: ds NUM_ACHIEVEMENT_BYTES
+sAchievementsCheckSum:: db
+
+	ds $598 - NUM_ACHIEVEMENT_BYTES - 1
 
 sGameData::
 sPlayerName::  ds NAME_LENGTH

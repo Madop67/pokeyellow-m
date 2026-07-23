@@ -276,7 +276,10 @@ SaveGameData::
 	ld [wSaveFileStatus], a
 	call SaveMainData
 	call SaveCurrentBoxData
-	jp SavePartyAndDexData
+	call SavePartyAndDexData
+	; refresh the global achievement bitfield from the now-current save state
+	callfar SyncAchievements
+	ret
 
 CalcCheckSum:
 ;Check Sum (result[1 byte] is complemented)

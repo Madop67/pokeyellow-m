@@ -135,6 +135,9 @@ Evolution_PartyMonLoop: ; loop over party mons
 	call ClearSprites
 	callfar EvolveMon
 	jp c, CancelledEvolution
+	; achievement breadcrumb: a Pokémon evolved
+	ld hl, wPendingAchievements + ACH_EVOLVE / 8
+	set ACH_EVOLVE % 8, [hl]
 	ld hl, EvolvedText
 	call PrintText
 	pop hl

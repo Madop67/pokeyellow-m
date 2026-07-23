@@ -76,7 +76,12 @@ wTempoModifier:: db
 ; regularly set to $0, but nothing ever reads it
 wUnusedAudioCounter:: dw
 
-	ds 11
+; Breadcrumbs for "moment" achievements set by in-battle/evolution HOOKs; OR'd into
+; the SRAM achievement bitfield at the next sync. Session-scoped (fine if cleared on
+; boot). Carved from this audio padding since WRAM is otherwise full.
+wPendingAchievements:: ds NUM_ACHIEVEMENT_BYTES
+
+	ds 11 - NUM_ACHIEVEMENT_BYTES
 
 
 SECTION "Sprite State Data", WRAM0

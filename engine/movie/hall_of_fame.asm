@@ -31,6 +31,8 @@ AnimateHallOfFame:
 	jr z, .skipInc ; don't wrap around to 0
 	inc [hl]
 .skipInc
+	; unlock Champion-tier achievements immediately on entering the Hall of Fame
+	callfar SyncAchievements
 	ld a, $90
 	ldh [hWY], a
 	ld c, BANK(Music_HallOfFame)

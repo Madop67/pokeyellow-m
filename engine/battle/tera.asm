@@ -55,9 +55,22 @@ CheckAndApplyPlayerTera::
 	ld [wPlayerTeraOrigTypes], a
 	ld a, [hl]
 	ld [wPlayerTeraOrigTypes + 1], a
+	; achievement breadcrumbs: Terastallized in battle, and off-type if the tera
+	; type (d) matches neither original type
+	ld hl, wPendingAchievements + ACH_TERA_BATTLE / 8
+	set ACH_TERA_BATTLE % 8, [hl]
+	ld a, [wPlayerTeraOrigTypes]
+	cp d
+	jr z, .teraOnType
+	ld a, [wPlayerTeraOrigTypes + 1]
+	cp d
+	jr z, .teraOnType
+	ld hl, wPendingAchievements + ACH_TERA_OFFTYPE / 8
+	set ACH_TERA_OFFTYPE % 8, [hl]
+.teraOnType
 	ld a, d
-	ld [hld], a ; the mon becomes pure tera type
-	ld [hl], a
+	ld [wBattleMonType1], a ; the mon becomes pure tera type
+	ld [wBattleMonType1 + 1], a
 	ld [wNamedObjectIndex], a
 	farcall CopyTypeNameToStringBuffer
 	ld hl, TerastallizedText

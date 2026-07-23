@@ -208,6 +208,11 @@ INCLUDE "engine/movie/trade2.asm"
 INCLUDE "engine/menus/options.asm"
 
 
+SECTION "Achievements", ROMX
+
+INCLUDE "engine/menus/achievements.asm"
+
+
 SECTION "Pokédex Rating", ROMX
 
 INCLUDE "engine/events/pokedex_rating.asm"

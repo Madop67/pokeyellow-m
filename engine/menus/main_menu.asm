@@ -34,7 +34,7 @@ MainMenu:
 	jr z, .noSaveFile
 ; there's a save file
 	hlcoord 0, 0
-	lb bc, 6, 13
+	lb bc, 10, 13
 	call TextBoxBorder
 	hlcoord 2, 2
 	ld de, ContinueText
@@ -42,7 +42,7 @@ MainMenu:
 	jr .next2
 .noSaveFile
 	hlcoord 0, 0
-	lb bc, 4, 13
+	lb bc, 8, 13
 	call TextBoxBorder
 	hlcoord 2, 2
 	ld de, NewGameText
@@ -62,6 +62,8 @@ MainMenu:
 	ld a, PAD_A | PAD_B | PAD_START
 	ld [wMenuWatchedKeys], a
 	ld a, [wSaveFileStatus]
+	inc a ; extra slot for the Records option
+	inc a ; extra slot for the Poker option
 	ld [wMaxMenuItem], a
 	call HandleMenuInput
 	bit B_PAD_B, a
@@ -82,6 +84,17 @@ MainMenu:
 	jr z, .choseContinue
 	cp 1
 	jp z, StartNewGame
+	cp 2
+	jr z, .choseOption
+	cp 3
+	jr z, .choseRecords
+; b == 4: Poker (free-play Texas Hold'em; never touches saved coins/money)
+	callfar HoldemFreePlay
+	jp .mainMenuLoop
+.choseRecords
+	callfar DisplayRecordsMenu_
+	jp .mainMenuLoop
+.choseOption
 	call DisplayOptionMenu
 	ld a, TRUE
 	ld [wOptionsInitialized], a
@@ -185,7 +198,9 @@ ContinueText:
 
 NewGameText:
 	db   "New Game"
-	next "Option@"
+	next "Option"
+	next "Records"
+	next "Poker@"
 
 DisplayContinueGameInfo:
 	xor a

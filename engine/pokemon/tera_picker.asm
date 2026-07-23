@@ -136,6 +136,9 @@ TeraTypePicker::
 	pop hl
 	ld [hl], a
 	ld [wLoadedMonTeraType], a
+	; achievement breadcrumb: changed a mon's Tera Type via the picker
+	ld hl, wPendingAchievements + ACH_TERA_PICKER / 8
+	set ACH_TERA_PICKER % 8, [hl]
 .done
 	pop af
 	ld [wCurrentMenuItem], a

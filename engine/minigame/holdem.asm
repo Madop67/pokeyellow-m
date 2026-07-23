@@ -75,6 +75,48 @@ HoldemTable::
 	ret nz
 	jp HoldemRunSession
 
+; Free-play entry used by the title-screen main menu ("Poker"). Heads-up Texas
+; Hold'em with play chips only: it never reads or writes wPlayerMoney /
+; wPlayerCoins (there may be no save file loaded when the main menu runs), and
+; it does no overworld-map save/rebuild (there is no map on screen - the main
+; menu simply repaints itself when we return). Everything in between reuses the
+; shared session machinery.
+HoldemFreePlay::
+	ld a, 2
+	ld [wHoldemSeatCount], a
+	xor a
+	ld [wHoldemCurrencyMode], a ; coins-style chip display
+	ld hl, HoldemFreePlayIntroText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	ret nz ; chose No
+	call HoldemChooseStakes
+	ld a, 2
+	ld [wHoldemChipWidth], a
+	; --- screen takeover (no overworld screen to preserve) ---
+	ld a, $ff
+	ld [wUpdateSpritesEnabled], a
+	call GBPalWhiteOutWithDelay3
+	call ClearSprites
+	call LoadFontTilePatterns
+	call ClearScreen
+	call RunDefaultPaletteCommand
+	call GBPalNormal
+	call HoldemInitSeats
+	call HoldemSessionLoop
+	; --- teardown: hand a cleared, normal-palette screen back to the menu,
+	;     which repaints itself; no map buffer to rebuild ---
+	call GBPalWhiteOutWithDelay3
+	ld a, 1
+	ld [wUpdateSpritesEnabled], a
+	call ClearSprites
+	call ClearScreen
+	call RunDefaultPaletteCommand
+	call GBPalNormal
+	ret
+
 ; Ask MONEY (yes) or COINS (no); sets wHoldemCurrencyMode.
 HoldemChooseCurrency:
 	ld hl, HoldemChooseCurrencyText
@@ -286,6 +328,7 @@ HoldemBuyIn:
 ; If the stack exceeds the currency's width, saturate to the currency max
 ; (AddBCD already saturates on overflow of the added bytes).
 HoldemCashOut:
+	call HoldemNoteWinnings
 	ld a, [wHoldemCurrencyMode]
 	and a
 	jr z, .coins
@@ -319,6 +362,42 @@ HoldemCashOut:
 	ld a, $99
 	ld [wPlayerCoins], a
 	ld [wPlayerCoins + 1], a
+	ret
+
+; Achievement breadcrumbs, checked against the player's cash-out stack (seat 0):
+; ACH_HOLDEM_100K when cashing out >= 100,000 in money mode, ACH_HOLDEM_9999 when
+; cashing out the 9,999 coin cap in coins mode. wHoldemStack is 4 big-endian BCD
+; bytes; money uses bytes 1-3 (6 digits), coins use bytes 2-3 (4 digits).
+HoldemNoteWinnings:
+	ld a, [wHoldemCurrencyMode]
+	and a
+	jr z, .coins
+	; money: >= 100,000 if byte 0 is set (overflow) or byte 1 >= $10
+	ld a, [wHoldemStack]
+	and a
+	jr nz, .money100k
+	ld a, [wHoldemStack + 1]
+	cp $10
+	ret c
+.money100k
+	ld hl, wPendingAchievements + ACH_HOLDEM_100K / 8
+	set ACH_HOLDEM_100K % 8, [hl]
+	ret
+.coins
+	; coins: >= 9,999 if byte 0 or 1 is set (overflow) or bytes 2-3 == $99 $99
+	ld a, [wHoldemStack]
+	ld hl, wHoldemStack + 1
+	or [hl]
+	jr nz, .coins9999
+	ld a, [wHoldemStack + 2]
+	cp $99
+	ret nz
+	ld a, [wHoldemStack + 3]
+	cp $99
+	ret nz
+.coins9999
+	ld hl, wPendingAchievements + ACH_HOLDEM_9999 / 8
+	set ACH_HOLDEM_9999 % 8, [hl]
 	ret
 
 
@@ -2420,6 +2499,11 @@ HoldemDealerIntroText:
 HoldemTableIntroText:
 	text "Grab a seat at"
 	line "the poker table?"
+	done
+
+HoldemFreePlayIntroText:
+	text "Play a free hand"
+	line "of Texas hold EM?"
 	done
 
 HoldemChooseCurrencyText:
